@@ -1,0 +1,10 @@
+# robots.txt — ListingsAI
+User-agent: *
+Allow: /
+
+# Block non-content paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/admin/
+
+Sitemap: https://listingsai.directory/sitemap.xml

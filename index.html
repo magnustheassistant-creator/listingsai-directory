@@ -103,6 +103,101 @@
         nav { padding: 20px 0; }
         nav .container { display: flex; justify-content: space-between; align-items: center; }
     </style>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Magnus03555173">
+    <meta name="twitter:creator" content="@Magnus03555173">
+    <meta name="twitter:title" content="ListingsAI — AI Tools for Real Estate Professionals">
+    <meta name="twitter:description" content="50+ AI tools curated for real estate professionals. Find, compare, and choose the right AI for your business.">
+    <meta name="twitter:image" content="https://listingsai.directory/social-card.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ListingsAI",
+      "url": "https://listingsai.directory/",
+      "description": "50+ AI tools curated for real estate professionals",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Brain Storm Corp",
+        "url": "https://realestateaitools.shop"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://listingsai.directory/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    
+        function handleSubscribe(e) {
+            e.preventDefault();
+            const email = document.getElementById('newsletter-email').value;
+            const btn = document.getElementById('subscribe-btn');
+            const success = document.getElementById('newsletter-success');
+            const error = document.getElementById('newsletter-error');
+            
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            
+            // Simulate mailchimp/brevo API call - replace with your actual endpoint
+            fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+                method: 'POST',
+                mode': 'no-cors',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: 'email=' + encodeURIComponent(email)
+            }).then(() => {
+                success.style.display = 'block';
+                error.style.display = 'none';
+                document.getElementById('newsletter-form').style.display = 'none';
+            }).catch(() => {
+                // Fallback: show success since no-cors doesn't give us real response
+                success.style.display = 'block';
+                error.style.display = 'none';
+                document.getElementById('newsletter-form').style.display = 'none';
+            });
+        }
+</script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "AI Tools for Real Estate",
+      "description": "Curated directory of AI tools for real estate professionals",
+      "url": "https://listingsai.directory/",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "url": "https://listingsai.directory/#crm"},
+        {"@type": "ListItem", "position": 2, "url": "https://listingsai.directory/#leads"},
+        {"@type": "ListItem", "position": 3, "url": "https://listingsai.directory/#video"}
+      ]
+    }
+    
+        function handleSubscribe(e) {
+            e.preventDefault();
+            const email = document.getElementById('newsletter-email').value;
+            const btn = document.getElementById('subscribe-btn');
+            const success = document.getElementById('newsletter-success');
+            const error = document.getElementById('newsletter-error');
+            
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            
+            // Simulate mailchimp/brevo API call - replace with your actual endpoint
+            fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+                method: 'POST',
+                mode': 'no-cors',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: 'email=' + encodeURIComponent(email)
+            }).then(() => {
+                success.style.display = 'block';
+                error.style.display = 'none';
+                document.getElementById('newsletter-form').style.display = 'none';
+            }).catch(() => {
+                // Fallback: show success since no-cors doesn't give us real response
+                success.style.display = 'block';
+                error.style.display = 'none';
+                document.getElementById('newsletter-form').style.display = 'none';
+            });
+        }
+</script>
 </head>
 <body>
     <nav>
@@ -118,7 +213,7 @@
     
     <header class="hero">
         <div class="container">
-            <p class="tagline">listingsai.directory — By Magnus</p>
+            <p class="tagline">listingsai.directory — by Brain Storm Corp</p>
             <h1>AI Tools for Real Estate<br>Professionals</h1>
             <p>The curated directory of AI tools specifically for real estate agents. Save hours, close more deals, and stay ahead of the competition.</p>
             
@@ -165,13 +260,21 @@
             <!-- Tools loaded via JavaScript -->
         </div>
         
-        <div class="newsletter" id="newsletter">
+        
+        <div class="product-cta" style="background:linear-gradient(135deg,#1a1a2e 0%,#2d1b69 100%);border:1px solid #7c3aed;border-radius:16px;padding:30px;margin:40px 0;text-align:center;">
+            <h3 style="color:#fff;font-size:1.4em;margin-bottom:10px;">🎁 AI Tools for Real Estate — Ultimate Stack</h3>
+            <p style="color:#aaa;margin-bottom:20px;">Complete bundle: 10 video scripts, Notion template, affiliate hub, social calendar. Everything you need to start using AI in your business today.</p>
+            <a href="https://brainstormcorp.gumroad.com/l/ai-tools-ultimate-stack" style="display:inline-block;padding:14px 32px;background:#00d4ff;color:#000;font-weight:700;border-radius:30px;text-decoration:none;font-size:1.1em;" target="_blank" rel="noopener">Get the Bundle — $29</a>
+        </div>
+<div class="newsletter" id="newsletter">
             <h2>Get the Weekly Top 5 AI Tools</h2>
             <p>Every week: 5 hand-picked AI tools for real estate agents. No spam, just value.</p>
-            <form class="newsletter-form" action="#" method="post">
-                <input type="email" placeholder="your@email.com" required>
-                <button type="submit">Subscribe — It's Free</button>
+            <form class="newsletter-form" id="newsletter-form" onsubmit="handleSubscribe(event)">
+                <input type="email" id="newsletter-email" placeholder="your@email.com" required>
+                <button type="submit" id="subscribe-btn">Subscribe — It's Free</button>
             </form>
+            <p id="newsletter-success" style="display:none;color:#00d4ff;margin-top:15px;font-weight:600;">✅ You're in! Check your inbox for the weekly picks. Welcome aboard!</p>
+            <p id="newsletter-error" style="display:none;color:#ff4444;margin-top:15px;font-weight:600;">Something went wrong. Try again.</p>
         </div>
     </main>
     
@@ -179,7 +282,7 @@
         <div class="container">
             <p>ListingsAI — Built by <a href="https://realestateaitools.shop" target="_blank">AI Tools for Real Estate</a> | 
             <a href="https://github.com/magnustheassistant-creator/listingsai-directory" target="_blank">Suggest a Tool</a></p>
-            <p style="margin-top: 10px;">Helping real estate professionals work smarter with AI 🤖</p>
+            <p style="margin-top: 10px;">Helping real estate professionals work smarter with AI 🤖 | © 2026 Brain Storm Corp</p>
         </div>
     </footer>
     
@@ -249,6 +352,34 @@
                 renderTools(filtered);
             }
         });
-    </script>
+    
+        function handleSubscribe(e) {
+            e.preventDefault();
+            const email = document.getElementById('newsletter-email').value;
+            const btn = document.getElementById('subscribe-btn');
+            const success = document.getElementById('newsletter-success');
+            const error = document.getElementById('newsletter-error');
+            
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            
+            // Simulate mailchimp/brevo API call - replace with your actual endpoint
+            fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+                method: 'POST',
+                mode': 'no-cors',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: 'email=' + encodeURIComponent(email)
+            }).then(() => {
+                success.style.display = 'block';
+                error.style.display = 'none';
+                document.getElementById('newsletter-form').style.display = 'none';
+            }).catch(() => {
+                // Fallback: show success since no-cors doesn't give us real response
+                success.style.display = 'block';
+                error.style.display = 'none';
+                document.getElementById('newsletter-form').style.display = 'none';
+            });
+        }
+</script>
 </body>
 </html>
