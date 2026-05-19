@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Real Estate Business Plan Generator | New Agent Success Tool</title>
+    <meta name="description" content="Generate a complete real estate agent business plan in minutes. Free tool for new and experienced agents. Includes market analysis, goal setting, and revenue projections.">
+    <link rel="canonical" href="https://listingsai.directory/tools/real-estate-business-plan-generator.html">
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed;--text:#e5e5e5;--muted:#888}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+        .container{max-width:800px;margin:0 auto;padding:2rem 1rem}
+        header{text-align:center;padding:2rem 0}
+        h1{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:.5rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .subtitle{color:var(--muted);font-size:.95rem}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
+        .form-group{margin-bottom:1.25rem}
+        label{display:block;margin-bottom:.4rem;font-weight:500;color:var(--accent)}
+        input,select,textarea{width:100%;padding:.75rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1rem;transition:border-color .3s}
+        input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+        textarea{resize:vertical;min-height:80px}
+        .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-size:1rem;transition:transform .2s,opacity .2s}
+        .btn:hover{transform:translateY(-2px);opacity:.9}
+        .btn-secondary{background:var(--card);border:1px solid var(--accent);color:var(--accent)}
+        .btn-secondary:hover{opacity:.8}
+        .output-section{margin-top:1.5rem;padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:12px;display:none}
+        .output-section.active{display:block}
+        .output-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-top:1rem;white-space:pre-wrap;font-size:.9rem;max-height:600px;overflow-y:auto;line-height:1.8}
+        .copy-btn{background:var(--accent);color:#000;padding:.5rem 1.2rem;border-radius:6px;border:none;cursor:pointer;font-weight:500;margin-top:.75rem}
+        .copy-btn:hover{opacity:.85}
+        .premium-badge{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:.25rem .75rem;border-radius:20px;font-size:.75rem;font-weight:600;margin-bottom:1rem}
+        .upsell{background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(124,58,237,.1));border:1px solid var(--accent);border-radius:10px;padding:1.25rem;margin-top:1.5rem;text-align:center}
+        .upsell h3{color:var(--accent);margin-bottom:.5rem;font-size:1rem}
+        .upsell p{font-size:.85rem;color:var(--muted);margin-bottom:.75rem}
+        .wallet{font-family:monospace;background:var(--bg);padding:.4rem .8rem;border-radius:6px;font-size:.8rem;color:var(--accent);word-break:break-all;display:inline-block;margin-top:.5rem}
+        .affiliate{text-align:center;margin-top:1.5rem;padding:1rem;background:var(--card);border-radius:10px}
+        .affiliate a{color:var(--accent);text-decoration:none;font-weight:500}
+        .affiliate a:hover{text-decoration:underline}
+        footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);margin-top:2rem}
+        footer a{color:var(--accent);text-decoration:none}
+        footer a:hover{text-decoration:underline}
+        .section-title{font-size:1.1rem;color:var(--accent);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+        .tag{display:inline-block;background:rgba(0,212,255,.15);color:var(--accent);padding:.15rem .6rem;border-radius:4px;font-size:.75rem;margin-right:.4rem;margin-bottom:.4rem}
+        .progress-bar{height:6px;background:var(--border);border-radius:3px;margin-top:.5rem;overflow:hidden}
+        .progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0%;transition:width 1s ease}
+        @media(max-width:600px){.container{padding:1rem}.card{padding:1rem}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <span class="premium-badge">⚡ Free Tool — No Signup</span>
+        <h1>Real Estate Business Plan Generator</h1>
+        <p class="subtitle">Build a professional agent business plan in 5 minutes — Includes market analysis, goal setting & revenue projections</p>
+    </header>
+
+    <div class="card">
+        <div class="form-group">
+            <label>Your Name / Agent Name</label>
+            <input type="text" id="agentName" placeholder="e.g. Sarah Thompson" value="">
+        </div>
+        <div class="form-group">
+            <label>Market Area (City / Neighborhoods)</label>
+            <input type="text" id="marketArea" placeholder="e.g. Austin, TX — North Loop, East Austin, Mueller" value="">
+        </div>
+        <div class="form-group">
+            <label>Your License Type</label>
+            <select id="licenseType">
+                <option value="salesperson">Salesperson</option>
+                <option value="broker">Broker</option>
+                <option value="both">Dual (Buyer's & Seller's Agent)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Years of Experience</label>
+            <select id="experience">
+                <option value="new">Brand New Agent (0-1 years)</option>
+                <option value="exp1">Experienced (1-3 years)</option>
+                <option value="exp3">Veteran (3+ years)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Primary Focus</label>
+            <select id="focus">
+                <option value="residential">Residential / Single Family</option>
+                <option value="luxury">Luxury Properties</option>
+                <option value="investment">Investment / Rental Properties</option>
+                <option value="commercial">Commercial</option>
+                <option value="farmland">Farm & Land</option>
+                <option value="multi">Multi-family / Property Management</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Your Target Annual Income ($)</label>
+            <input type="number" id="targetIncome" placeholder="e.g. 75000" value="">
+        </div>
+        <div class="form-group">
+            <label>Average Commission Split (%)</label>
+            <input type="number" id="commissionSplit" placeholder="e.g. 70" value="70">
+        </div>
+        <div class="form-group">
+            <label>Average Home Sale Price in Your Market ($)</label>
+            <input type="number" id="avgHomePrice" placeholder="e.g. 425000" value="">
+        </div>
+        <div class="form-group">
+            <label>Number of Listings You Plan to Take This Year</label>
+            <input type="number" id="targetListings" placeholder="e.g. 12" value="">
+        </div>
+        <div class="form-group">
+            <label>Lead Sources (check all that apply)</label>
+            <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem">
+                <label class="tag" style="cursor:pointer"><input type="checkbox" class="lead-source" value="Sphere of Influence" style="width:auto;margin-right:.3rem">SOI</label>
+                <label class="tag" style="cursor:pointer"><input type="checkbox" class="lead-source" value="Zillow/Realtor.com" style="width:auto;margin-right:.3rem">Zillow</label>
+                <label class="tag" style="cursor:pointer"><input type="checkbox" class="lead-source" value="Open Houses" style="width:auto;margin-right:.3rem">Open Houses</label>
+                <label class="tag" style="cursor:pointer"><input type="checkbox" class="lead-source" value="Door Knocking/Farming" style="width:auto;margin-right:.3rem">Door Knocking</label>
+                <label class="tag" style="cursor:pointer"><input type="checkbox" class="lead-source" value="Social Media (Instagram/TikTok)" style="width:auto;margin-right:.3rem">Social Media</label>
+                <label class="tag" style="cursor:pointer"><input type="checkbox" class="lead-source" value="Past Clients/Referrals" style="width:auto;margin-right:.3rem">Referrals</label>
+                <label class="tag" style="cursor:pointer"><input type="checkbox" class="lead-source" value="Investor Networks" style="width:auto;margin-right:.3rem">Investors</label>
+                <label class="tag" style="cursor:pointer"><input type="checkbox" class="lead-source" value="FSBO/Expired Listings" style="width:auto;margin-right:.3rem">FSBO/Expired</label>
+                <label class="tag" style="cursor:pointer"><input type="checkbox" class="lead-source" value="Paid Ads (Meta/Google)" style="width:auto;margin-right:.3rem">Paid Ads</label>
+                <label class="tag" style="cursor:pointer"><input type="checkbox" class="lead-source" value="Real Estate AI Tools" style="width:auto;margin-right:.3rem">AI Tools</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Real Estate Brokerage (optional)</label>
+            <input type="text" id="brokerage" placeholder="e.g. Keller Williams, Compass, eXp" value="">
+        </div>
+
+        <button class="btn" onclick="generatePlan()" id="generateBtn">⚡ Generate My Business Plan</button>
+        <div class="progress-bar" id="progressBar" style="margin-top:1rem;display:none">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+
+    <div class="output-section" id="outputSection">
+        <h2 class="section-title" id="outputTitle">📋 Your Real Estate Business Plan</h2>
+        <div class="output-box" id="outputBox"></div>
+        <button class="copy-btn" onclick="copyOutput()">📋 Copy to Clipboard</button>
+    </div>
+
+    <div class="upsell">
+        <h3>🚀 Want Unlimited Business Plans & Full Agent Templates?</h3>
+        <p>Get the Complete Agent Business Bundle — $9/month. Includes unlimited plan generation, all email templates, scripts, and premium tools.</p>
+        <div style="margin-top:.75rem">
+            <span>BNB Payment: </span><span class="wallet">bnb1q...4x7l</span>
+        </div>
+        <p style="margin-top:.75rem;font-size:.8rem"><a href="https://listingsai.directory" style="color:var(--accent)">Browse all 52+ free AI tools →</a></p>
+    </div>
+
+    <div class="affiliate">
+        <p>Looking for the best CRM for real estate agents? We recommend <a href="https://listingsai.directory/tools/crm-segment-generator.html">Jasper AI for content</a> and <a href="https://listingsai.directory/tools/lead-qualification-calculator.html">ManyChat for lead automation</a> after testing 50+ options.</p>
+    </div>
+</div>
+
+<script>
+function getFormData() {
+    const name = document.getElementById('agentName').value.trim() || 'Agent';
+    const market = document.getElementById('marketArea').value.trim() || 'Your Market Area';
+    const license = document.getElementById('licenseType').value;
+    const experience = document.getElementById('experience').value;
+    const focus = document.getElementById('focus').value;
+    const targetIncome = parseInt(document.getElementById('targetIncome').value) || 75000;
+    const split = parseInt(document.getElementById('commissionSplit').value) || 70;
+    const avgPrice = parseInt(document.getElementById('avgHomePrice').value) || 400000;
+    const targetListings = parseInt(document.getElementById('targetListings').value) || 12;
+    const brokerage = document.getElementById('brokerage').value.trim();
+    
+    const leadSources = Array.from(document.querySelectorAll('.lead-source:checked'))
+        .map(cb => cb.value);
+    
+    return { name, market, license, experience, focus, targetIncome, split, avgPrice, targetListings, brokerage, leadSources };
+}
+
+function calcDealsNeeded(income, split, price) {
+    const gross = income / (split / 100);
+    return Math.ceil(gross / (price * 0.03));
+}
+
+function calcLeadSources(deals, sources) {
+    if (sources.length === 0) return '  • Build a diverse lead strategy across multiple channels\n';
+    const perSource = Math.ceil(deals / sources.length * 2);
+    return sources.map(s => `  • ${s}: Target ${perSource} leads/month to close ${Math.ceil(deals/sources.length)} deals`).join('\n');
+}
+
+function generatePlan() {
+    const btn = document.getElementById('generateBtn');
+    btn.textContent = '⏳ Generating...';
+    btn.disabled = true;
+    
+    const pb = document.getElementById('progressBar');
+    const pf = document.getElementById('progressFill');
+    pb.style.display = 'block';
+    pf.style.style = 'width:0%';
+    
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += Math.random() * 15;
+        if (progress > 90) progress = 90;
+        pf.style.width = progress + '%';
+    }, 200);
+    
+    setTimeout(() => {
+        clearInterval(interval);
+        pf.style.width = '100%';
+        
+        const d = getFormData();
+        
+        const dealsNeeded = calcDealsNeeded(d.targetIncome, d.split, d.avgPrice);
+        const buyerDeals = Math.floor(dealsNeeded * 0.4);
+        const sellerDeals = Math.ceil(dealsNeeded * 0.6);
+        
+        const expLabel = d.experience === 'new' ? 'New Agent' : d.experience === 'exp1' ? '1-3 Year Agent' : 'Veteran Agent';
+        const focusLabel = {
+            residential: 'Residential / Single Family',
+            luxury: 'Luxury Properties ($1M+)',
+            investment: 'Investment / Rental Properties',
+            commercial: 'Commercial Real Estate',
+            farmland: 'Farm & Land',
+            multi: 'Multi-family / Property Management'
+        }[d.focus] || d.focus;
+        
+        const expNotes = {
+            new: `Focus on building your sphere of influence immediately. Target 50+ contacts in your first 90 days. Consider joining a team for leads support while you build your business.`,
+            exp1: `Leverage existing relationships and past clients for referrals. Increase your sphere reach by 25% this year. Consider expanding into FSBO and expired listing farming.`,
+            exp3: `Your experience is an asset — specialize in a niche and build authority. Consider investing in advertising and building a buyer's list for passive lead generation.`
+        }[d.experience];
+        
+        const leadSrcText = calcLeadSources(dealsNeeded, d.leadSources);
+        
+        const monthlyLeads = Math.ceil(dealsNeeded * 3.5);
+        const monthlyListings = Math.ceil(d.targetListings / 12);
+        const monthlyClosings = Math.ceil(dealsNeeded / 12);
+
+        const businessPlan = `══════════════════════════════════════════
+REAL ESTATE AGENT BUSINESS PLAN
+${d.name}${d.brokerage ? ` | ${d.brokerage}` : ''}
+Generated: ${new Date().toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'})}
+══════════════════════════════════════════
+
+SECTION 1: EXECUTIVE SUMMARY
+─────────────────────────────────────────
+Agent: ${d.name}
+Market Area: ${d.market}
+License Type: ${licenseLabel} | Years Active: ${expLabel}
+Specialization: ${focusLabel}
+Target Annual Income: $${d.targetIncome.toLocaleString()}
+Commission Split: ${d.split}%
+Average Home Price: $${d.avgPrice.toLocaleString()}
+Brokerage: ${d.brokerage || 'TBD'}
+
+${expNotes}
+
+SECTION 2: ANNUAL GOALS & REVENUE TARGETS
+─────────────────────────────────────────
+Target Annual Gross Income: $${d.targetIncome.toLocaleString()}
+Deals Required to Hit Goal: ${dealsNeeded}
+  → Seller-Side Deals: ~${sellerDeals}
+  → Buyer-Side Deals: ~${buyerDeals}
+
+Monthly Targets:
+  • Closed Deals: ${monthlyClosings}
+  • New Listings Taken: ${monthlyListings}
+  • Lead Inquiries Needed: ${monthlyLeads}+/month
+  • Conversion Rate Needed: ~${(100/(monthlyLeads/dealsNeeded)).toFixed(1)}%
+
+Annual Revenue Projection:
+  • Gross Commission Income (GCI): $${(d.targetIncome / (d.split/100)).toLocaleString()}
+  • Agent Net (after ${d.split}% split): $${d.targetIncome.toLocaleString()}
+
+SECTION 3: LEAD GENERATION STRATEGY
+─────────────────────────────────────────
+Primary Lead Channels:
+${leadSrcText}
+
+Monthly Lead Targets by Channel:
+  • SOI/Referrals: ${Math.ceil(monthlyLeads * 0.35)} leads/month
+  • Online (Zillow/Realtor): ${Math.ceil(monthlyLeads * 0.25)} leads/month
+  • Open Houses: ${Math.ceil(monthlyLeads * 0.15)} leads/month
+  • Social Media: ${Math.ceil(monthlyLeads * 0.15)} leads/month
+  • FSBO/Expired Listings: ${Math.ceil(monthlyLeads * 0.10)} leads/month
+
+90-Day Action Plan (New Agent Priority):
+  Month 1: Build your SOI list (200+ contacts)
+    → Import all past coworkers, family, friends, neighbors
+    → Join 2 local networking groups or real estate investment clubs
+    → Attend 4 open houses per week (as attendee, then host)
+  
+  Month 2: Generate first leads
+    → Host a free real estate workshop or "First-Time Buyer" seminar
+    → Door knock 20 homes in your farm area every week
+    → Launch Instagram/TikTok with 3 posts/week about market updates
+  
+  Month 3: Convert to closings
+    → Follow up with every lead within 24 hours
+    → Set up automated follow-up sequences (ManyChat recommended)
+    → Aim for first 2 closings — then replicate what's working
+
+SECTION 4: MARKETING BUDGET
+─────────────────────────────────────────
+Recommended Monthly Marketing Spend: $${Math.ceil(d.targetIncome * 0.05).toLocaleString()} - $${Math.ceil(d.targetIncome * 0.10).toLocaleString()}
+  (5-10% of projected income reinvested into business)
+
+Budget Allocation:
+  • Online Advertising (Meta/Google): $${Math.ceil(d.targetIncome * 0.03).toLocaleString()}/month
+  • CRM & Automation Tools: $50-100/month
+  • Signage & Flyers: $100-200/month
+  • Professional Photography (per listing): $150-300/listing
+  • Real Estate Organization Dues: $${Math.ceil(d.targetIncome * 0.015).toLocaleString()}/month
+
+Free Marketing (High ROI):
+  • Consistent social media posting (3-5x/week)
+  • Monthly market update email newsletter
+  • Client referral program (reward past clients for referrals)
+  • Open houses every weekend (2-4 hours, high lead gen)
+  • Door knocking in your farm area (30 min/day)
+
+SECTION 5: SPHERE OF INFLUENCE (SOI) STRATEGY
+─────────────────────────────────────────
+Your SOI is your #1 most valuable asset. Here's your 12-month plan:
+
+Month 1-3: Build the List
+  → Target: 300+ contacts in your database
+  → Sources: Facebook friends, LinkedIn connections, address book,
+    past employers, school contacts, gym, church, clubs
+
+Month 4-6: Activate SOI
+  → Monthly "Just Checking In" calls (5-10 per week)
+  → Quarterly market update cards/mails
+  → Personal handwritten notes on birthdays/holidays
+
+Month 7-12: Harvest Referrals
+  → Ask every client: "Who else might be buying or selling?"
+  → After closing gift + referral request
+  → Create a "Client Referral Program" (e.g., $500 credit toward next service)
+
+Target SOI Referrals: ${Math.ceil(dealsNeeded * 0.35)} per year
+Estimated Value: $${Math.ceil(dealsNeeded * 0.35 * d.avgPrice * 0.03).toLocaleString()} in gross commission
+
+SECTION 6: LISTING STRATEGY
+─────────────────────────────────────────
+Target Listings This Year: ${d.targetListings}
+Monthly Listing Target: ${monthlyListings}
+
+Listing Appointment Conversion:
+  • Average calls/door knocks per appt: 50
+  • Conversion rate: ~20%
+  • Listing appointments needed: ~${Math.ceil(d.targetListings * 5)} per year
+
+What Makes a Great Listing Presentation:
+  1. Local market data (days on market, price per sqft, trends)
+  2. Comparable sold listings (last 6 months)
+  3. Professional photography + virtual tour plan
+  4. Your personal marketing strategy (social media, open houses)
+  5. Pricing recommendation with CMA data
+  6. Staging suggestions and pre-listing prep checklist
+
+SECTION 7: TECHNOLOGY & TOOLS
+─────────────────────────────────────────
+Must-Have Tools for ${expLabel}s:
+  ✓ CRM: Follow up every lead systematically
+  ✓ MLS / Matrix / FlexMLS access
+  ✓ Electronic signature (DocuSign or similar)
+  ✓ Real Estate AI Tools (listing descriptions, ad copy, email templates)
+  ✓ Social scheduling tool (Later, Buffer, or Metricool)
+  ✓ ManyChat or similar for automated text follow-up
+  ✓ Google Workspace for professional email
+
+AI Tools to Speed Up Your Business:
+  → Listing Descriptions: listingsai.directory/tools/listing-description-generator
+  → Cold Email Sequences: listingsai.directory/tools/cold-email-sequence-generator
+  → Buyer Persona Builder: listingsai.directory/tools/buyer-persona-generator
+  → Open House Follow-up: listingsai.directory/tools/open-house-followup-email
+  → Real Estate Scripts: listingsai.directory/tools/cold-calling-script-generator
+
+SECTION 8: SUCCESS METRICS
+─────────────────────────────────────────
+Track These Numbers Monthly:
+
+KPI                              Target          Your Baseline
+─────────────────────────────────────────────────────────────
+Leads Generated                  ${monthlyLeads}+         ___
+Listings Taken                    ${monthlyListings}+/mo     ___
+Closings Completed                ${monthlyClosings}+/mo     ___
+Gross Commission Income (GCI)     $${(d.targetIncome/12).toLocaleString()}+/mo   ___
+Cost per Lead                    < $${Math.ceil(d.targetIncome*0.1/monthlyLeads)}         ___
+Lead-to-Showing Rate             20%+             ___
+Showing-to-Contract Rate         30%+             ___
+Client Retention / Repeat        15%+             ___
+Referral Rate                    25%+             ___
+
+REVISIT THIS PLAN EVERY 90 DAYS AND ADJUST GOALS BASED ON ACTUAL RESULTS.
+
+══════════════════════════════════════════
+Built with ❤️ by ListingsAI — listingsai.directory
+52+ free real estate AI tools at your fingertips
+══════════════════════════════════════════`;
+
+        const outputBox = document.getElementById('outputBox');
+        outputBox.textContent = businessPlan;
+        
+        const outputSection = document.getElementById('outputSection');
+        outputSection.classList.add('active');
+        
+        btn.textContent = '⚡ Generate My Business Plan';
+        btn.disabled = false;
+        
+        pb.style.display = 'none';
+        pf.style.width = '0%';
+        
+        outputSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+        
+    }, 1800);
+}
+
+function copyOutput() {
+    const text = document.getElementById('outputBox').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => { btn.textContent = '📋 Copy to Clipboard'; }, 2000);
+    });
+}
+
+// FAQ Schema
+const faqData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Is this real estate business plan generator really free?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! This is a completely free tool for real estate agents. No signup, no email required. Generate unlimited business plans instantly."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How long does it take to create a business plan?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "About 5 minutes. Fill in the form with your goals and market details, and the tool generates a complete professional business plan tailored to your situation."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "I'm a brand new real estate agent — will this help me?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. The tool includes a 90-day action plan specifically designed for new agents, including SOI building, lead generation, and first closing strategies."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How many deals do I need to close to hit my income goal?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The tool calculates this automatically based on your target income, commission split, and average home price in your market. Most agents need 8-15 deals per year at median prices."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I use this plan to show my lender or broker?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. A well-structured business plan demonstrates professionalism to lenders when establishing your business credit or applying for investment properties. Some agents use it with their broker to join high-performing teams."
+            }
+        }
+    ]
+};
+const script = document.createElement('script');
+script.type = 'application/ld+json';
+script.textContent = JSON.stringify(faqData);
+document.head.appendChild(script);
+</script>
+
+<footer>
+    <p>52+ free AI tools for real estate agents at <a href="https://listingsai.directory">listingsai.directory</a></p>
+    <p style="margin-top:.5rem">Built by Magnus AI for Ka Barang | Brain Storm Corp</p>
+</footer>
+</body>
+</html>
