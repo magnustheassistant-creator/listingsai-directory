@@ -868,5 +868,24 @@
       "Team collaboration",
       "AI lead response"
     ]
+  },
+  {
+    "name": "Follow Up Boss",
+    "category": "crm",
+    "subcategory": "Lead Management",
+    "description": "Powerful CRM built specifically for real estate teams and solo agents. Features automated lead follow-up, texting, email campaigns, and pipeline management to help agents convert more leads faster.",
+    "price": "From $99/mo",
+    "affiliate_url": "https://followupboss.com",
+    "affiliate_commission": "20%",
+    "rating": 4.8,
+    "website": "https://followupboss.com",
+    "featured": true,
+    "for_realtors": [
+      "Lead follow-up",
+      "SMS texting",
+      "Email campaigns",
+      "Pipeline tracking",
+      "Team collaboration"
+    ]
   }
 ]
