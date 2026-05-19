@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sphere of Influence Contact Tracker | Real Estate SOI Management</title>
+    <meta name="description" content="Track and manage your sphere of influence contacts for real estate lead generation. Organize past clients, referrals, and centers of influence to maximize repeat and referral business.">
+    <link rel="canonical" href="https://listingsai.directory/tools/sphere-of-influence-contact-tracker.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a sphere of influence in real estate?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Your sphere of influence (SOI) consists of people you know who can refer business to you - past clients, family, friends, coworkers, and professional contacts like lawyers, accountants, and financial advisors."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many contacts should be in my SOI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most successful agents aim for 200-500 active contacts in their sphere. Quality matters more than quantity - focus on maintaining meaningful relationships with people who are connected and likely to refer business."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should I contact my SOI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Aim to touch each contact at least 4-6 times per year through a mix of personal calls, handwritten notes, market updates, and social media engagement. Past clients should be contacted at least quarterly."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0d1117; color: #e6edf3; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        header { text-align: center; margin-bottom: 40px; }
+        h1 { font-size: 2.5rem; color: #58a6ff; margin-bottom: 10px; }
+        .subtitle { color: #8b949e; font-size: 1.1rem; }
+        .tracker-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 30px; margin-bottom: 30px; }
+        .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 8px; color: #e6edf3; font-weight: 500; }
+        input, select, textarea { width: 100%; padding: 12px; background: #0d1117; border: 1px solid #30363d; border-radius: 8px; color: #e6edf3; font-size: 1rem; font-family: inherit; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: #58a6ff; }
+        .btn { display: inline-block; background: #58a6ff; color: #0d1117; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: background 0.3s; border: none; cursor: pointer; }
+        .btn:hover { background: #79b8ff; }
+        .btn-secondary { background: #238636; }
+        .btn-secondary:hover { background: #2ea043; }
+        .btn-danger { background: #da3633; }
+        .btn-danger:hover { background: #f85149; }
+        .contacts-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .contacts-table th, .contacts-table td { padding: 12px; text-align: left; border-bottom: 1px solid #30363d; }
+        .contacts-table th { background: #0d1117; color: #58a6ff; font-weight: 600; }
+        .contacts-table tr:hover { background: #1f2937; }
+        .badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+        .badge-client { background: #238636; color: #fff; }
+        .badge-referral { background: #58a6ff; color: #0d1117; }
+        .badge-coi { background: #a371f7; color: #fff; }
+        .badge-prospect { background: #8b949e; color: #0d1117; }
+        .action-btn { padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; margin-right: 5px; }
+        .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .stat-box { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 20px; text-align: center; }
+        .stat-number { font-size: 2rem; font-weight: bold; color: #58a6ff; }
+        .stat-label { color: #8b949e; font-size: 0.9rem; margin-top: 5px; }
+        .empty-state { text-align: center; padding: 40px; color: #8b949e; }
+        .cta-section { background: linear-gradient(135deg, #161b22 0%, #1f2937 100%); border: 1px solid #30363d; border-radius: 12px; padding: 40px; text-align: center; margin-top: 40px; }
+        .cta-section h2 { color: #58a6ff; margin-bottom: 15px; font-size: 1.8rem; }
+        .cta-section p { color: #8b949e; margin-bottom: 25px; }
+        .cta-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .cta-btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.2s; }
+        .cta-btn:hover { transform: translateY(-2px); }
+        .cta-btn.primary { background: #58a6ff; color: #0d1117; }
+        .cta-btn.secondary { background: #238636; color: #fff; }
+        footer { text-align: center; padding: 40px 20px; margin-top: 40px; border-top: 1px solid #30363d; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #58a6ff; text-decoration: none; margin: 0 15px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .wallet { color: #8b949e; font-size: 0.85rem; word-break: break-all; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sphere of Influence Contact Tracker</h1>
+            <p class="subtitle">Manage and nurture your network for maximum referral business</p>
+        </header>
+
+        <div class="stats-row">
+            <div class="stat-box">
+                <div class="stat-number" id="totalContacts">0</div>
+                <div class="stat-label">Total Contacts</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="pastClients">0</div>
+                <div class="stat-label">Past Clients</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="centersOfInfluence">0</div>
+                <div class="stat-label">Centers of Influence</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="referralPartners">0</div>
+                <div class="stat-label">Referral Partners</div>
+            </div>
+        </div>
+
+        <div class="tracker-card">
+            <h2 style="margin-bottom: 20px; color: #58a6ff;">Add New Contact</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="contactName">Full Name *</label>
+                    <input type="text" id="contactName" placeholder="Enter name">
+                </div>
+                <div class="form-group">
+                    <label for="contactType">Contact Type *</label>
+                    <select id="contactType">
+                        <option value="client">Past Client</option>
+                        <option value="referral">Referral Partner</option>
+                        <option value="coi">Center of Influence</option>
+                        <option value="prospect">Prospect</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="contactCategory">Category</label>
+                    <select id="contactCategory">
+                        <option value="">Select category</option>
+                        <option value="lender">Mortgage Lender</option>
+                        <option value="attorney">Real Estate Attorney</option>
+                        <option value="accountant">Accountant/CPA</option>
+                        <option value="financial">Financial Advisor</option>
+                        <option value="insurance">Insurance Agent</option>
+                        <option value="contractor">Contractor/Handyman</option>
+                        <option value="family">Family/Friend</option>
+                        <option value="coworker">Coworker/Past Colleague</option>
+                        <option value="neighbor">Neighbor</option>
+                        <option value="community">Community Contact</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="contactEmail">Email</label>
+                    <input type="email" id="contactEmail" placeholder="email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="contactPhone">Phone</label>
+                    <input type="tel" id="contactPhone" placeholder="(555) 123-4567">
+                </div>
+                <div class="form-group">
+                    <label for="lastContact">Last Contact Date</label>
+                    <input type="date" id="lastContact">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contactNotes">Notes</label>
+                <textarea id="contactNotes" placeholder="Birthday, family details, referral history, preferences..."></textarea>
+            </div>
+            <button class="btn" onclick="addContact()">Add Contact</button>
+        </div>
+
+        <div class="tracker-card">
+            <h2 style="margin-bottom: 20px; color: #58a6ff;">Your Contacts</h2>
+            <div style="margin-bottom: 15px;">
+                <input type="text" id="searchContacts" placeholder="Search contacts..." style="max-width: 300px;" onkeyup="renderContacts()">
+            </div>
+            <div id="contactsList">
+                <div class="empty-state">No contacts yet. Add your first contact above!</div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Scale Your SOI Outreach</h2>
+            <p>Automate follow-ups and stay top-of-mind with your entire network</p>
+            <div class="cta-buttons">
+                <a href="https://www.shopperprime.com/recommends/manychat/" class="cta-btn primary" target="_blank" rel="noopener">Automate Follow-ups →</a>
+                <a href="https://www.shopperprime.com/recommends/canva/" class="cta-btn secondary" target="_blank" rel="noopener">Create Newsletter →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://listingsai.directory">Home</a>
+            <a href="https://listingsai.directory/tools">All Tools</a>
+            <a href="https://listingsai.directory/contact">Contact</a>
+        </div>
+        <p class="wallet">BNB Wallet: 0x85516247b108C62B516D50f2336D46e28684e0A1</p>
+    </footer>
+
+    <script>
+        let contacts = JSON.parse(localStorage.getItem('soiContacts')) || [];
+
+        function saveContacts() {
+            localStorage.setItem('soiContacts', JSON.stringify(contacts));
+        }
+
+        function updateStats() {
+            document.getElementById('totalContacts').textContent = contacts.length;
+            document.getElementById('pastClients').textContent = contacts.filter(c => c.type === 'client').length;
+            document.getElementById('centersOfInfluence').textContent = contacts.filter(c => c.type === 'coi').length;
+            document.getElementById('referralPartners').textContent = contacts.filter(c => c.type === 'referral').length;
+        }
+
+        function getBadgeHtml(type) {
+            const badges = {
+                client: '<span class="badge badge-client">Past Client</span>',
+                referral: '<span class="badge badge-referral">Referral</span>',
+                coi: '<span class="badge badge-coi">COI</span>',
+                prospect: '<span class="badge badge-prospect">Prospect</span>'
+            };
+            return badges[type] || '';
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return 'Never';
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        }
+
+        function renderContacts() {
+            const search = document.getElementById('searchContacts').value.toLowerCase();
+            const filtered = contacts.filter(c => 
+                c.name.toLowerCase().includes(search) ||
+                (c.email && c.email.toLowerCase().includes(search)) ||
+                (c.notes && c.notes.toLowerCase().includes(search))
+            );
+
+            if (filtered.length === 0) {
+                document.getElementById('contactsList').innerHTML = 
+                    contacts.length === 0 
+                        ? '<div class="empty-state">No contacts yet. Add your first contact above!</div>'
+                        : '<div class="empty-state">No contacts match your search.</div>';
+                return;
+            }
+
+            let html = `
+                <table class="contacts-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Category</th>
+                            <th>Last Contact</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            filtered.forEach((contact, index) => {
+                html += `
+                    <tr>
+                        <td>
+                            <strong>${contact.name}</strong>
+                            ${contact.email ? `<br><small style="color:#8b949e">${contact.email}</small>` : ''}
+                            ${contact.phone ? `<br><small style="color:#8b949e">${contact.phone}</small>` : ''}
+                        </td>
+                        <td>${getBadgeHtml(contact.contactType)}</td>
+                        <td>${contact.category || '-'}</td>
+                        <td>${formatDate(contact.lastContact)}</td>
+                        <td>
+                            <button class="btn action-btn" onclick="editContact(${index})">Edit</button>
+                            <button class="btn action-btn btn-danger" onclick="deleteContact(${index})">Delete</button>
+                        </td>
+                    </tr>
+                    ${contact.notes ? `<tr><td colspan="5" style="color:#8b949e;font-size:0.9rem;padding-top:0;">📝 ${contact.notes}</td></tr>` : ''}
+                `;
+            });
+
+            html += '</tbody></table>';
+            document.getElementById('contactsList').innerHTML = html;
+        }
+
+        function addContact() {
+            const name = document.getElementById('contactName').value.trim();
+            if (!name) {
+                alert('Please enter a name');
+                return;
+            }
+
+            const contact = {
+                name: name,
+                contactType: document.getElementById('contactType').value,
+                category: document.getElementById('contactCategory').value,
+                email: document.getElementById('contactEmail').value.trim(),
+                phone: document.getElementById('contactPhone').value.trim(),
+                lastContact: document.getElementById('lastContact').value,
+                notes: document.getElementById('contactNotes').value.trim(),
+                dateAdded: new Date().toISOString()
+            };
+
+            contacts.push(contact);
+            saveContacts();
+            updateStats();
+            renderContacts();
+
+            // Clear form
+            document.getElementById('contactName').value = '';
+            document.getElementById('contactEmail').value = '';
+            document.getElementById('contactPhone').value = '';
+            document.getElementById('contactCategory').value = '';
+            document.getElementById('lastContact').value = '';
+            document.getElementById('contactNotes').value = '';
+        }
+
+        function editContact(index) {
+            const contact = contacts[index];
+            const newName = prompt('Edit name:', contact.name);
+            if (newName && newName.trim()) {
+                contact.name = newName.trim();
+                contact.email = prompt('Edit email:', contact.email) || contact.email;
+                contact.phone = prompt('Edit phone:', contact.phone) || contact.phone;
+                contact.lastContact = prompt('Edit last contact (YYYY-MM-DD):', contact.lastContact) || contact.lastContact;
+                contact.notes = prompt('Edit notes:', contact.notes) || contact.notes;
+                saveContacts();
+                updateStats();
+                renderContacts();
+            }
+        }
+
+        function deleteContact(index) {
+            if (confirm('Are you sure you want to delete this contact?')) {
+                contacts.splice(index, 1);
+                saveContacts();
+                updateStats();
+                renderContacts();
+            }
+        }
+
+        // Initialize
+        updateStats();
+        renderContacts();
+    </script>
+</body>
+</html>

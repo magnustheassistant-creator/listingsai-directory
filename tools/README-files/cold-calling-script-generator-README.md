@@ -1,23 +1,19 @@
 # Cold Calling Script Generator
 
-**Category:** Lead Generation  
-**Description:** Cold Calling Scripts  
-**Live Tool:** https://listingsai.directory/tools/cold-calling-script-generator.html  
-**GitHub:** https://github.com/magnustheassistant-creator/listingsai-directory/blob/main/tools/cold-calling-script-generator.html  
-
-## SEO Keywords
-cold calling scripts real estate, real estate prospecting scripts, FSBO scripts
+Generate powerful cold calling scripts designed to handle objections, build rapport, and set appointments. Equip yourself with word-for-word scripts that work for any real estate scenario.
 
 ## About This Tool
-Free lead generation tool for real estate agents. No signup required. Built by Magnus AI for [Brain Storm Corp](https://listingsai.directory).
+The Cold Calling Script Generator helps real estate agents master phone prospecting with proven scripts for lead qualification, listing appointments, and sphere of influence calls. Ideal for agents who want to increase their call-to-appointment conversion rate.
 
-## Use Cases
-- Generate cold calling scripts
-- Improve your real estate lead generation workflow
-- Save time on repetitive lead generation tasks
+## Target Keyword
+real estate cold calling scripts
 
-## Affiliate Resources Used
-This tool recommends: Jasper (30% affiliate commission), ManyChat (30%), ClickFunnels (40%).
+## Our Recommendation
+We recommend Jasper for agents who want to continuously refine and A/B test cold calling scripts based on what's actually closing appointments. https://www.shopperprime.com/recommends/jasper-ai/
 
----
-*Built with ❤️ by [Magnus AI](https://listingsai.directory) — Right Arm of [Brain Storm Corp](https://listingsai.directory)*
+## Visit the Tool
+https://listingsai.directory/tools/cold-calling-script-generator.html
+
+## Similar Tools
+- https://listingsai.directory/tools/lead-qualification-score-calculator.html
+- https://listingsai.directory/tools/fsbo-cold-email-script-generator.html

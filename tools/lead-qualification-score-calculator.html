@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Qualification Score Calculator | Real Estate Lead Scoring Tool</title>
+    <meta name="description" content="Calculate and qualify real estate leads with our free lead scoring calculator. Score prospects based on budget, timeline, motivation, and readiness to help prioritize your outreach.">
+    <link rel="canonical" href="https://listingsai.directory/tools/lead-qualification-score-calculator.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a lead qualification score?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A lead qualification score is a numeric value that helps real estate agents prioritize leads based on their likelihood to convert. Scores are calculated using factors like budget, timeline, motivation, and readiness to act."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is the lead score calculated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our calculator assigns points for budget range, timeline, motivation level, and readiness to work with an agent. Scores range from 0-100, with higher scores indicating more qualified leads."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What score indicates a hot lead?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Leads scoring 75-100 are considered hot leads with high conversion potential. Scores of 50-74 indicate warm leads that need nurturing. Scores below 50 are cold leads requiring more education and relationship building."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0d1117; color: #e6edf3; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        header { text-align: center; margin-bottom: 40px; }
+        h1 { font-size: 2.5rem; color: #58a6ff; margin-bottom: 10px; }
+        .subtitle { color: #8b949e; font-size: 1.1rem; }
+        .calculator-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 30px; margin-bottom: 30px; }
+        .form-group { margin-bottom: 25px; }
+        label { display: block; margin-bottom: 8px; color: #e6edf3; font-weight: 500; }
+        select, input[type="range"] { width: 100%; padding: 12px; background: #0d1117; border: 1px solid #30363d; border-radius: 8px; color: #e6edf3; font-size: 1rem; }
+        select:focus, input:focus { outline: none; border-color: #58a6ff; }
+        .range-labels { display: flex; justify-content: space-between; color: #8b949e; font-size: 0.85rem; margin-top: 5px; }
+        .score-display { text-align: center; padding: 30px; background: #0d1117; border-radius: 12px; margin-top: 20px; }
+        .score-number { font-size: 4rem; font-weight: bold; color: #58a6ff; }
+        .score-label { font-size: 1.2rem; color: #8b949e; margin-top: 10px; }
+        .score-description { margin-top: 15px; padding: 15px; background: #161b22; border-radius: 8px; color: #e6edf3; }
+        .btn { display: inline-block; background: #58a6ff; color: #0d1117; padding: 15px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background 0.3s; border: none; cursor: pointer; }
+        .btn:hover { background: #79b8ff; }
+        .cta-section { background: linear-gradient(135deg, #161b22 0%, #1f2937 100%); border: 1px solid #30363d; border-radius: 12px; padding: 40px; text-align: center; margin-top: 40px; }
+        .cta-section h2 { color: #58a6ff; margin-bottom: 15px; font-size: 1.8rem; }
+        .cta-section p { color: #8b949e; margin-bottom: 25px; }
+        .cta-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .cta-btn { padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.2s; }
+        .cta-btn:hover { transform: translateY(-2px); }
+        .cta-btn.primary { background: #58a6ff; color: #0d1117; }
+        .cta-btn.secondary { background: #238636; color: #fff; }
+        footer { text-align: center; padding: 40px 20px; margin-top: 40px; border-top: 1px solid #30363d; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #58a6ff; text-decoration: none; margin: 0 15px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .wallet { color: #8b949e; font-size: 0.85rem; word-break: break-all; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lead Qualification Score Calculator</h1>
+            <p class="subtitle">Score and prioritize your real estate leads with data-driven insights</p>
+        </header>
+
+        <div class="calculator-card">
+            <div class="form-group">
+                <label for="budget">Budget Range</label>
+                <select id="budget">
+                    <option value="0">Select budget range</option>
+                    <option value="10">Under $200,000</option>
+                    <option value="20">$200,000 - $350,000</option>
+                    <option value="30">$350,000 - $500,000</option>
+                    <option value="40">$500,000 - $750,000</option>
+                    <option value="50">$750,000 - $1,000,000</option>
+                    <option value="60">$1,000,000+</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="timeline">Purchase Timeline</label>
+                <select id="timeline">
+                    <option value="0">Select timeline</option>
+                    <option value="5">Just browsing</option>
+                    <option value="10">6+ months</option>
+                    <option value="20">3-6 months</option>
+                    <option value="30">1-3 months</option>
+                    <option value="40">Within 30 days</option>
+                    <option value="50">Ready now</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="motivation">Motivation Level</label>
+                <select id="motivation">
+                    <option value="0">Select motivation</option>
+                    <option value="10">Curious but not committed</option>
+                    <option value="20">Actively considering</option>
+                    <option value="30">Very motivated</option>
+                    <option value="40">Extremely motivated - must buy/sell</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="readiness">Agent Readiness</label>
+                <select id="readiness">
+                    <option value="0">Select readiness</option>
+                    <option value="5">Already working with another agent</option>
+                    <option value="15">Has a referral/appointment scheduled</option>
+                    <option value="25">Reached out to multiple agents</option>
+                    <option value="35">Ready to interview agents</option>
+                    <option value="50">Specifically seeking new representation</option>
+                </select>
+            </div>
+
+            <div class="score-display">
+                <div class="score-number" id="scoreValue">0</div>
+                <div class="score-label">Lead Score</div>
+                <div class="score-description" id="scoreDescription">Answer the questions above to calculate your lead score</div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Turn Leads Into Clients with Better Tools</h2>
+            <p>Streamline your lead management and conversion workflow with industry-leading platforms</p>
+            <div class="cta-buttons">
+                <a href="https://www.shopperprime.com/recommends/clickfunnels/" class="cta-btn primary" target="_blank" rel="noopener">Build Lead Funnels →</a>
+                <a href="https://www.shopperprime.com/recommends/jasper-ai/" class="cta-btn secondary" target="_blank" rel="noopener">AI Copywriting →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://listingsai.directory">Home</a>
+            <a href="https://listingsai.directory/tools">All Tools</a>
+            <a href="https://listingsai.directory/contact">Contact</a>
+        </div>
+        <p class="wallet">BNB Wallet: 0x85516247b108C62B516D50f2336D46e28684e0A1</p>
+    </footer>
+
+    <script>
+        const inputs = ['budget', 'timeline', 'motivation', 'readiness'];
+        
+        function calculateScore() {
+            let total = 0;
+            inputs.forEach(id => {
+                const val = parseInt(document.getElementById(id).value) || 0;
+                total += val;
+            });
+            
+            const score = Math.min(total, 100);
+            document.getElementById('scoreValue').textContent = score;
+            
+            let description, color;
+            if (score >= 75) {
+                description = "🔥 Hot Lead - High priority! This prospect is ready to convert. Reach out immediately with personalized communication.";
+                color = "#f85149";
+            } else if (score >= 50) {
+                description = "🌡️ Warm Lead - Good potential. Continue nurturing with valuable content and schedule a consultation call.";
+                color = "#ffa657";
+            } else if (score >= 25) {
+                description = "❄️ Cool Lead - Has interest but needs education. Provide market insights and build relationship over time.";
+                color = "#8b949e";
+            } else {
+                description = "💀 Cold Lead - Early stage prospect. Focus on brand building and long-term nurturing campaigns.";
+                color = "#6e7681";
+            }
+            
+            document.getElementById('scoreDescription').textContent = description;
+            document.getElementById('scoreValue').style.color = color;
+        }
+        
+        inputs.forEach(id => {
+            document.getElementById(id).addEventListener('change', calculateScore);
+        });
+    </script>
+</body>
+</html>

@@ -1,23 +1,19 @@
 # Buyer Persona Generator
 
-**Category:** Lead Generation  
-**Description:** Buyer Personas  
-**Live Tool:** https://listingsai.directory/tools/buyer-persona-generator.html  
-**GitHub:** https://github.com/magnustheassistant-creator/listingsai-directory/blob/main/tools/buyer-persona-generator.html  
-
-## SEO Keywords
-buyer persona real estate, real estate marketing, ideal client profile
+Create detailed buyer personas that help you understand your ideal client's motivations, concerns, and buying journey. Align your marketing and sales strategies with what buyers actually want.
 
 ## About This Tool
-Free lead generation tool for real estate agents. No signup required. Built by Magnus AI for [Brain Storm Corp](https://listingsai.directory).
+The Buyer Persona Generator helps real estate agents develop data-driven profiles of their target clients. Essential for agents who want to create more targeted marketing campaigns and provide better service to prospective buyers.
 
-## Use Cases
-- Generate buyer personas
-- Improve your real estate lead generation workflow
-- Save time on repetitive lead generation tasks
+## Target Keyword
+real estate buyer persona
 
-## Affiliate Resources Used
-This tool recommends: Jasper (30% affiliate commission), ManyChat (30%), ClickFunnels (40%).
+## Our Recommendation
+We recommend Jasper for agents who want to build comprehensive buyer personas faster using AI analysis of market data and buyer behavior patterns. https://www.shopperprime.com/recommends/jasper-ai/
 
----
-*Built with ❤️ by [Magnus AI](https://listingsai.directory) — Right Arm of [Brain Storm Corp](https://listingsai.directory)*
+## Visit the Tool
+https://listingsai.directory/tools/buyer-persona-generator.html
+
+## Similar Tools
+- https://listingsai.directory/tools/lead-qualification-score-calculator.html
+- https://listingsai.directory/tools/real-estate-lead-magnet-generator.html
