@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools for Real Estate Agents — Free Directory | ListingsAI</title>
+    <meta name="description" content="Browse 50+ free AI tools for real estate agents. Generate listing descriptions, lead quizzes, ROI calculators, email sequences, and more. No signup required.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://listingsai.directory/tools/">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        body { background: #0a0a0a; color: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { font-size: 2.5em; background: linear-gradient(90deg, #00d4ff, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
+        .header p { color: #888; }
+        .back-link { color: #00d4ff; text-decoration: none; margin-bottom: 20px; display: inline-block; }
+        .back-link:hover { text-decoration: underline; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .tool-card { background: #111; border: 1px solid #222; border-radius: 16px; padding: 24px; transition: all 0.3s; }
+        .tool-card:hover { border-color: #00d4ff; transform: translateY(-2px); }
+        .tool-card h3 { color: #fff; margin-bottom: 8px; }
+        .tool-card p { color: #888; font-size: 0.9em; margin-bottom: 15px; }
+        .tool-link { display: inline-block; padding: 8px 16px; background: #00d4ff; color: #000; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.85em; }
+        .tool-link:hover { background: #00b8df; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-link">← Back to ListingsAI</a>
+        <div class="header">
+            <h1>Free AI Tools for Real Estate</h1>
+            <p>50+ free browser-based tools. No signup. No cost. Just results.</p>
+        </div>
+        <div class="grid" id="toolsGrid">
+            <!-- Tools loaded dynamically from parent index -->
+            <p style="color:#888">Loading tools...</p>
+        </div>
+    </div>
+    <script>
+        fetch('../tools.json')
+            .then(r => r.json())
+            .then(tools => {
+                const grid = document.getElementById('toolsGrid');
+                // Filter to only tools that have corresponding HTML files in /tools/
+                const toolNames = [/* populated by server include */];
+                grid.innerHTML = tools.slice(0, 60).map(t => `
+                    <div class="tool-card">
+                        <h3>${t.name}</h3>
+                        <p>${t.description ? t.description.substring(0,100) : ''}</p>
+                        <a href="../tools/${t.name.toLowerCase().replace(/\s+/g,'-')}-generator.html" class="tool-link">Use Free →</a>
+                    </div>
+                `).join('');
+            })
+            .catch(() => {
+                document.getElementById('toolsGrid').innerHTML = '<p style="color:#ef4444">Failed to load tools. Please try again.</p>';
+            });
+    </script>
+</body>
+</html>
