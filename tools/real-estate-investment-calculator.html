@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Real Estate Investment Calculator — Free IRR & Cap Rate Tool</title>
+<meta name="description" content="Analyze real estate investments with IRR, cap rate, cash-on-cash return, and 5-year projection. Free tool for investors and agents evaluating deals.">
+<link rel="canonical" href="https://listingsai.directory/tools/real-estate-investment-calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>*,*x{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:#0a0a0f;color:#f1f5f9;min-height:100vh}.container{max-width:900px;margin:0 auto;padding:40px 20px}header{text-align:center;margin-bottom:32px}.badge{background:linear-gradient(135deg,#00d4ff,#7c3aed);color:#000;font-size:.75em;font-weight:700;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:12px}h1{font-size:2em;margin-bottom:8px}.subtitle{color:#64748b}.card{background:#111;border:1px solid #222;border-radius:16px;padding:24px;margin-bottom:14px}.card-title{font-size:.8em;color:#00d4ff;font-weight:700;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:block;font-size:.82em;color:#64748b;margin-bottom:6px;font-weight:500}input,select,textarea{width:100%;padding:10px 12px;background:#0a0a0f;border:1px solid #222;border-radius:10px;color:#f1f5f9;font-size:.95em;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}input:focus,select:focus,textarea:focus{border-color:#00d4ff}textarea{resize:vertical;min-height:80px}button{padding:12px 24px;background:#00d4ff;color:#000;font-weight:700;font-size:.95em;border:none;border-radius:10px;cursor:pointer;transition:all .2s}button:hover{background:#00b8df;transform:translateY(-1px)}.btn-row{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}.summary-grid{display:none;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}.summary-card{background:linear-gradient(135deg,#0a1a2e,#111);border:1px solid #222;border-radius:14px;padding:18px;text-align:center}.summary-card .sum-label{font-size:.75em;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}.summary-card .sum-value{font-size:1.4em;font-weight:700;color:#00d4ff}.summary-card .sum-sub{font-size:.78em;color:#64748b;margin-top:4px}.result-box{background:#111;border:1px solid #222;border-radius:14px;padding:20px;margin-top:20px;display:none}.result-box.show{display:block}.result-box h3{color:#00d4ff;margin-bottom:14px;font-size:.9em}.output{background:#0a0a0f;border:1px solid #222;border-radius:10px;padding:14px;font-size:.88em;line-height:1.7;white-space:pre-wrap;min-height:120px;color:#22c55e;font-family:monospace}.output.error{color:#ef4444}.copy-btn{background:#7c3aed;margin-left:10px}.premium{background:linear-gradient(135deg,#7c3aed,#5b21b6);border-radius:14px;padding:20px;margin-top:20px;text-align:center}.premium h3{font-size:1.1em;margin-bottom:8px}.premium p{color:#94a3b8;font-size:.88em;margin-bottom:14px}.premium .price{font-size:1.8em;font-weight:800;color:#00d4ff}.premium .wallet{background:#0a0a0f;border:1px solid #222;border-radius:8px;padding:10px;font-size:.8em;margin-top:10px;font-family:monospace;word-break:break-all;color:#64748b}.affiliate{text-align:center;padding:16px;color:#64748b;font-size:.82em;margin-top:30px}.affiliate a{color:#00d4ff;text-decoration:none}.affiliate a:hover{text-decoration:underline}footer{text-align:center;color:#64748b;font-size:.8em;padding:20px;border-top:1px solid #111;margin-top:40px}footer a{color:#00d4ff;text-decoration:none}@media(max-width:640px){.row,.summary-grid{grid-template-columns:1fr}}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good IRR for real estate investment?","acceptedAnswer":{"@type":"Answer","text":"Most investors target 12-20% IRR for real estate deals. Cash-on-cash returns of 8-12% are considered solid for rental properties."}}]}
+</script>
+</head>
+<body>
+<div class="container">
+<header><span class="badge">ListingsAI Tool</span><h1>Real Estate Investment Calculator</h1><p class="subtitle">IRR, cap rate, cash-on-cash return, and 5-year projections — free forever</p></header>
+
+<div class="card">
+<div class="card-title">Property Details</div>
+<div class="row" style="margin-bottom:12px">
+<div><label>Purchase Price ($)</label><input id="purchasePrice" type="number" placeholder="450000"></div>
+<div><label>Down Payment ($)</label><input id="downPayment" type="number" placeholder="90000"></div>
+</div>
+<div class="row" style="margin-bottom:12px">
+<div><label>Interest Rate (%)</label><input id="interestRate" type="number" step="0.01" placeholder="7.25"></div>
+<div><label>Loan Term (years)</label><input id="loanTerm" type="number" placeholder="30"></div>
+</div>
+<div class="row" style="margin-bottom:12px">
+<div><label>Closing Costs ($)</label><input id="closingCosts" type="number" placeholder="8000"></div>
+<div><label>Repair/Initial Rehab ($)</label><input id="repairCosts" type="number" placeholder="15000"></div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-title">Income & Expenses</div>
+<div class="row" style="margin-bottom:12px">
+<div><label>Monthly Rent ($)</label><input id="monthlyRent" type="number" placeholder="2800"></div>
+<div><label>Other Monthly Income ($)</label><input id="otherIncome" type="number" placeholder="0"></div>
+</div>
+<div class="row" style="margin-bottom:12px">
+<div><label>Property Tax/year ($)</label><input id="propertyTax" type="number" placeholder="4800"></div>
+<div><label>Insurance/year ($)</label><input id="insurance" type="number" placeholder="1800"></div>
+</div>
+<div class="row" style="margin-bottom:12px">
+<div><label>HOA/month ($)</label><input id="hoa" type="number" placeholder="0"></div>
+<div><label>Vacancy Rate (%)</label><input id="vacancyRate" type="number" placeholder="5"></div>
+</div>
+<div class="row">
+<div><label>Annual Maintenance ($)</label><input id="maintenance" type="number" placeholder="3000"></div>
+<div><label>Property Management (% of rent)</label><input id="managementFee" type="number" placeholder="8"></div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-title">Investment Horizon & Exit</div>
+<div class="row" style="margin-bottom:12px">
+<div><label>Holding Period (years)</label><input id="holdingYears" type="number" placeholder="5"></div>
+<div><label>Expected Appreciation (%/yr)</label><input id="appreciation" type="number" step="0.1" placeholder="3"></div>
+</div>
+<div class="row">
+<div><label>Exit Sale Price ($)</label><input id="exitPrice" type="number" placeholder="auto"></div>
+<div><label>Selling Costs (%)</label><input id="sellingCosts" type="number" placeholder="6"></div>
+</div>
+</div>
+
+<div class="btn-row">
+<button type="button" onclick="calculate()">Analyze Investment</button>
+<button type="button" class="copy-btn" onclick="copyOutput()">Copy Report</button>
+</div>
+
+<div class="summary-grid" id="summaryGrid">
+<div class="summary-card"><div class="sum-label">Cash-on-Cash</div><div class="sum-value" id="cocReturn">--</div><div class="sum-sub">annual return</div></div>
+<div class="summary-card"><div class="sum-label">Cap Rate</div><div class="sum-value" id="capRate">--</div><div class="sum-sub">year 1</div></div>
+<div class="summary-card"><div class="sum-label">5-Year IRR</div><div class="sum-value" id="irrValue">--</div><div class="sum-sub">internal rate</div></div>
+<div class="summary-card"><div class="sum-label">Total Profit</div><div class="sum-value" id="totalProfit">--</div><div class="sum-sub">5-year projection</div></div>
+</div>
+
+<div class="result-box" id="resultBox">
+<h3>Full Investment Analysis</h3>
+<div class="output" id="output"></div>
+</div>
+
+<div class="premium">
+<h3>Unlock Pro Analysis</h3>
+<p>$9 one-time — commercial loans, BRRRR analysis, export PDF</p>
+<div class="price">$9</div>
+<div class="wallet">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+</div>
+
+<div class="affiliate">
+<a href="https://listingsai.directory" target="_blank">Browse 50+ AI real estate tools</a> — Build your investment portfolio with <a href="https://jasper.ai" target="_blank">Jasper AI</a>
+</div>
+</div>
+<script>
+function calculate() {
+    var pp = parseFloat(document.getElementById('purchasePrice').value) || 0;
+    var dp = parseFloat(document.getElementById('downPayment').value) || 0;
+    var rate = parseFloat(document.getElementById('interestRate').value) / 100 || 0;
+    var term = parseInt(document.getElementById('loanTerm').value) || 30;
+    var cc = parseFloat(document.getElementById('closingCosts').value) || 0;
+    var repair = parseFloat(document.getElementById('repairCosts').value) || 0;
+    var rent = parseFloat(document.getElementById('monthlyRent').value) || 0;
+    var other = parseFloat(document.getElementById('otherIncome').value) || 0;
+    var tax = parseFloat(document.getElementById('propertyTax').value) || 0;
+    var ins = parseFloat(document.getElementById('insurance').value) || 0;
+    var hoa = parseFloat(document.getElementById('hoa').value) || 0;
+    var vac = parseFloat(document.getElementById('vacancyRate').value) / 100 || 0;
+    var maint = parseFloat(document.getElementById('maintenance').value) || 0;
+    var mgmt = parseFloat(document.getElementById('managementFee').value) / 100 || 0;
+    var years = parseInt(document.getElementById('holdingYears').value) || 5;
+    var appr = parseFloat(document.getElementById('appreciation').value) / 100 || 0;
+    var exitP = parseFloat(document.getElementById('exitPrice').value) || 0;
+    var sellCost = parseFloat(document.getElementById('sellingCosts').value) / 100 || 0;
+
+    var out = document.getElementById('output');
+    var box = document.getElementById('resultBox');
+    var summaryGrid = document.getElementById('summaryGrid');
+
+    if(pp === 0 || dp === 0 || rent === 0) {
+        out.textContent = 'Please enter purchase price, down payment, and monthly rent.';
+        out.className = 'output error';
+        box.classList.add('show');
+        summaryGrid.style.display = 'none';
+        return;
+    }
+
+    var loan = pp - dp;
+    var monthlyRate = rate / 12;
+    var numPayments = term * 12;
+    var monthlyMortgage = loan * (monthlyRate * Math.pow(1+monthlyRate,numPayments)) / (Math.pow(1+monthlyRate,numPayments)-1);
+
+    var totalCash = dp + cc + repair;
+    var annualRent = rent * 12;
+    var grossIncome = annualRent + (other * 12);
+    var effectiveIncome = grossIncome * (1 - vac);
+    var annualExpenses = tax + ins + (hoa * 12) + maint + (annualRent * mgmt);
+    var noi = effectiveIncome - annualExpenses;
+
+    // Cap Rate
+    var capRate = (noi / pp) * 100;
+
+    // Cash-on-Cash Year 1
+    var annualDebt = monthlyMortgage * 12;
+    var annualCashFlow = noi - annualDebt;
+    var coc = (annualCashFlow / totalCash) * 100;
+
+    // 5-year projection
+    var propertyValue = pp;
+    var balance = loan;
+    var totalProfit = 0;
+    var cashFlowTotal = 0;
+    var equityGained = 0;
+
+    for(var y=1; y<=years; y++) {
+        propertyValue = propertyValue * (1 + appr);
+        // Approximate principal paydown (simplified)
+        var yearlyInterest = balance * monthlyRate * 12;
+        var yearlyPrincipal = 0;
+        for(var m=0; m<12; m++) {
+            var interestPayment = balance * monthlyRate;
+            var principalPayment = monthlyMortgage - interestPayment;
+            yearlyPrincipal += principalPayment;
+            balance -= principalPayment;
+        }
+        equityGained += yearlyPrincipal + (propertyValue * appr);
+        cashFlowTotal += annualCashFlow;
+    }
+
+    if(exitP === 0) exitP = propertyValue;
+    var netSale = exitP * (1 - sellCost);
+    var remainingLoan = balance > 0 ? balance : 0;
+    var netFromSale = netSale - remainingLoan;
+    var totalReturn = netFromSale + cashFlowTotal;
+    var totalInvested = totalCash;
+
+    // Simple IRR approximation
+    var irr = years > 0 ? (Math.pow(totalReturn / totalInvested, 1/years) - 1) * 100 : 0;
+
+    // Update summary
+    document.getElementById('cocReturn').textContent = coc.toFixed(1) + '%';
+    document.getElementById('capRate').textContent = capRate.toFixed(1) + '%';
+    document.getElementById('irrValue').textContent = irr.toFixed(1) + '%';
+    document.getElementById('totalProfit').textContent = '$' + Math.round(totalReturn/1000) + 'k';
+    summaryGrid.style.display = 'grid';
+
+    // Build full report
+    var r = 'REAL ESTATE INVESTMENT ANALYSIS
+';
+    r += 'Generated: ' + new Date().toLocaleDateString() + '
+';
+    r += '==========================================
+
+';
+    r += 'PURCHASE DETAILS
+';
+    r += 'Purchase Price:      $' + pp.toLocaleString() + '
+';
+    r += 'Down Payment:       $' + dp.toLocaleString() + ' (' + (dp/pp*100).toFixed(1) + '%)
+';
+    r += 'Closing Costs:       $' + cc.toLocaleString() + '
+';
+    r += 'Repair/Rebuild:       $' + repair.toLocaleString() + '
+';
+    r += 'TOTAL CASH IN:    $' + totalCash.toLocaleString() + '
+
+';
+    r += 'FINANCING
+';
+    r += 'Loan Amount:        $' + loan.toLocaleString() + '
+';
+    r += 'Interest Rate:         ' + (rate*100).toFixed(2) + '%
+';
+    r += 'Monthly Payment:  $' + Math.round(monthlyMortgage).toLocaleString() + '
+
+';
+    r += 'YEAR 1 INCOME & EXPENSES
+';
+    r += '------------------------------------
+';
+    r += 'Monthly Rent:         $' + rent.toLocaleString() + ' ($' + annualRent.toLocaleString() + '/yr)
+';
+    r += 'Effective Income:   $' + Math.round(effectiveIncome).toLocaleString() + ' (after ' + (vac*100).toFixed(0) + '% vacancy)
+';
+    r += 'Annual Expenses:    $' + Math.round(annualExpenses).toLocaleString() + '
+';
+    r += '  Property Tax:       $' + tax.toLocaleString() + '
+';
+    r += '  Insurance:           $' + ins.toLocaleString() + '
+';
+    r += '  HOA:                   $' + (hoa*12).toLocaleString() + '
+';
+    r += '  Maintenance:        $' + maint.toLocaleString() + '
+';
+    r += '  Property Mgmt:     $' + Math.round(annualRent*mgmt).toLocaleString() + '
+';
+    r += 'Net Operating Income:  $' + Math.round(noi).toLocaleString() + '
+';
+    r += 'Annual Debt Service:    $' + Math.round(annualDebt).toLocaleString() + '
+';
+    r += 'Annual Cash Flow:       $' + Math.round(annualCashFlow).toLocaleString() + '
+
+';
+    r += 'KEY METRICS
+';
+    r += '------------------------------------
+';
+    r += 'Cash-on-Cash Return:     ' + coc.toFixed(2) + '%
+';
+    r += 'Cap Rate:                      ' + capRate.toFixed(2) + '%
+';
+    r += 'Monthly Cash Flow:        $' + Math.round(annualCashFlow/12).toLocaleString() + '
+
+';
+    r += '5-YEAR PROJECTION (' + years + ' years @ ' + (appr*100).toFixed(1) + '% appreciation/yr)
+';
+    r += '------------------------------------
+';
+    r += 'Ending Property Value:    $' + Math.round(propertyValue).toLocaleString() + '
+';
+    r += 'Remaining Loan:             $' + Math.max(0,Math.round(balance)).toLocaleString() + '
+';
+    r += 'Net Sale Proceeds:          $' + Math.round(netFromSale).toLocaleString() + '
+';
+    r += 'Total Cash Flow (' + years + ' yrs):    $' + Math.round(cashFlowTotal).toLocaleString() + '
+';
+    r += 'TOTAL RETURN:                  $' + Math.round(totalReturn).toLocaleString() + '
+';
+    r += 'Approx IRR:                        ' + irr.toFixed(1) + '%
+';
+    r += '
+====================================
+';
+    r += 'Powered by ListingsAI
+';
+    r += 'listingsai.directory/tools/real-estate-investment-calculator
+';
+
+    out.textContent = r;
+    out.className = 'output';
+    box.classList.add('show');
+}
+
+function copyOutput() {
+    var text = document.getElementById('output').textContent;
+    if(!text || text.includes('Your')) { alert('Generate the report first!'); return; }
+    navigator.clipboard.writeText(text).then(function(){ alert('Report copied!'); });
+}
+</script>
+</body>
+</html>

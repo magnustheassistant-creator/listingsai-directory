@@ -95,9 +95,9 @@
 | # | Tool | SEO Keyword | Affiliate | Status |
 |---|---|---|---|---|
 | 53 | Real Estate Door Knocking Script Generator | door knocking scripts for real estate agents | Jasper | |
-| 54 | Real Estate Comps Calculator | free real estate comps calculator | Jasper | |
+| 54 ✅ | Real Estate Comps Calculator | free real estate comps calculator | Jasper | Built |
 | 55 | Real Estate Flyer Maker | free real estate flyer maker | Canva | |
-| 56 | Real Estate Investment Calculator | free real estate investment calculator | Jasper | |
+| 56 ✅ | Real Estate Investment Calculator | free real estate investment calculator | Jasper | Built |
 
 ---
 
