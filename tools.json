@@ -1707,5 +1707,24 @@
       "Lead scoring",
       "CRM"
     ]
+  },
+  {
+    "name": "Real Estate Door Knocking Script Generator",
+    "category": "lead-generation",
+    "subcategory": "Prospecting",
+    "description": "Generate powerful door knocking scripts for real estate agents. Free AI-powered scripts with objection handlers, qualifiers, and closes.",
+    "price": "Free",
+    "affiliate_url": "https://jasper.ai",
+    "affiliate_commission": "30%",
+    "rating": 4.7,
+    "website": "https://listingsai.directory/tools/real-estate-door-knocking-scripts.html",
+    "featured": false,
+    "for_realtors": [
+      "Door knocking",
+      "Prospecting",
+      "FSBOs",
+      "Expired listings",
+      "Farming"
+    ]
   }
 ]
