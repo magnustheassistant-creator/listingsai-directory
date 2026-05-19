@@ -1,23 +1,19 @@
 # Lead Nurture Sequence Planner
 
-**Category:** Email  
-**Description:** Lead Nurture Sequences  
-**Live Tool:** https://listingsai.directory/tools/lead-nurture-sequence-planner.html  
-**GitHub:** https://github.com/magnustheassistant-creator/listingsai-directory/blob/main/tools/lead-nurture-sequence-planner.html  
-
-## SEO Keywords
-lead nurture sequence, real estate email nurture, email automation real estate
+Design strategic follow-up sequences that move leads through your sales funnel from first contact to signed contract. Map out multi-touch campaigns across email, text, and voice that feel personal.
 
 ## About This Tool
-Free email tool for real estate agents. No signup required. Built by Magnus AI for [Brain Storm Corp](https://listingsai.directory).
+The Lead Nurture Sequence Planner helps real estate agents create systematic, multi-channel nurture campaigns that convert leads over time. Perfect for agents who want to automate follow-ups without losing the personal touch.
 
-## Use Cases
-- Generate lead nurture sequences
-- Improve your real estate email workflow
-- Save time on repetitive email tasks
+## Target Keyword
+lead nurture sequence
 
-## Affiliate Resources Used
-This tool recommends: Jasper (30% affiliate commission), ManyChat (30%), ClickFunnels (40%).
+## Our Recommendation
+We recommend ManyChat for agents who want to build automated text and Messenger nurture sequences that feel personal and deliver results. https://www.shopperprime.com/recommends/manychat/
 
----
-*Built with ❤️ by [Magnus AI](https://listingsai.directory) — Right Arm of [Brain Storm Corp](https://listingsai.directory)*
+## Visit the Tool
+https://listingsai.directory/tools/lead-nurture-sequence-planner.html
+
+## Similar Tools
+- https://listingsai.directory/tools/lead-qualification-score-calculator.html
+- https://listingsai.directory/tools/cold-calling-script-generator.html
