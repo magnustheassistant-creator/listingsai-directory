@@ -1,271 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Estate Door Knocking Script Generator | Free Door Knock Tool</title>
-    <meta name="description" content="Generate powerful door knocking scripts for real estate agents. Free AI-powered door knock scripts that get responses. No signup required.">
-    <link rel="canonical" href="https://listingsai.directory/tools/real-estate-door-knocking-scripts.html">
-    <style>
-        :root { --bg:#0a0a0f; --card:#111; --border:#222; --accent:#00d4ff; --accent2:#7c3aed; --text:#e0e0e0; --muted:#888; }
-        * { box-sizing:border-box; margin:0; padding:0; }
-        body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; min-height:100vh; }
-        .container { max-width:860px; margin:0 auto; padding:20px; }
-        header { text-align:center; padding:40px 20px; border-bottom:1px solid var(--border); }
-        h1 { font-size:2rem; background:linear-gradient(135deg,var(--accent),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:10px; }
-        .subtitle { color:var(--muted); margin-bottom:20px; }
-        .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:30px; margin-bottom:20px; }
-        .card-title { font-size:.75em; color:var(--accent); font-weight:700; margin-bottom:16px; text-transform:uppercase; letter-spacing:1px; }
-        .row { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px; }
-        label { display:block; font-size:.82em; color:var(--muted); margin-bottom:6px; font-weight:500; }
-        input, select, textarea { width:100%; padding:10px 14px; background:var(--bg); border:1px solid var(--border); border-radius:10px; color:var(--text); font-size:.95em; transition:border-color 0.2s; }
-        input:focus, select:focus, textarea:focus { outline:none; border-color:var(--accent); }
-        textarea { resize:vertical; min-height:100px; }
-        button { padding:12px 24px; background:var(--accent); color:#000; font-weight:700; font-size:.95em; border:none; border-radius:10px; cursor:pointer; transition:all 0.2s; }
-        button:hover { background:#00b8df; transform:translateY(-1px); }
-        .btn-row { display:flex; gap:12px; margin-top:20px; flex-wrap:wrap; }
-        .btn-secondary { background:var(--accent2); color:#fff; }
-        .btn-secondary:hover { background:#6d28d9; }
-        .result-box { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:20px; margin-top:20px; display:none; }
-        .result-box.show { display:block; }
-        .output { background:var(--bg); border:1px solid var(--border); border-radius:10px; padding:16px; font-size:.88em; line-height:1.8; white-space:pre-wrap; min-height:100px; color:#22c55e; font-family:monospace; }
-        .output.error { color:#ef4444; }
-        .premium { background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(0,212,255,0.15)); border:2px solid var(--accent2); border-radius:12px; padding:30px; margin-top:30px; text-align:center; }
-        .premium h3 { color:var(--accent2); margin-bottom:10px; }
-        .premium p { color:var(--muted); margin-bottom:15px; }
-        .wallet { font-family:monospace; background:var(--bg); padding:12px 20px; border-radius:8px; color:var(--accent); border:1px solid var(--border); display:inline-block; word-break:break-all; font-size:0.9rem; margin:15px 0; }
-        .affiliate-link { display:inline-block; margin-top:10px; padding:12px 24px; background:var(--accent); color:#000; text-decoration:none; border-radius:8px; font-weight:600; }
-        .affiliate-link:hover { transform:translateY(-2px); opacity:0.9; }
-        .tips { margin-top:20px; padding:20px; background:rgba(0,212,255,0.05); border-radius:8px; border-left:3px solid var(--accent); }
-        .tips h4 { color:var(--accent); margin-bottom:10px; }
-        .tips li { margin-bottom:8px; margin-left:20px; color:var(--muted); }
-        footer { text-align:center; padding:40px 20px; border-top:1px solid var(--border); margin-top:60px; color:var(--muted); }
-        footer a { color:var(--accent); text-decoration:none; }
-        footer a:hover { text-decoration:underline; }
-        @media(max-width:600px) {
-            h1 { font-size:1.5rem; }
-            .card { padding:20px; }
-            .row { grid-template-columns:1fr; }
-        }
-    </style>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is a door knocking script in real estate?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A door knocking script is a structured conversation guide that helps real estate agents introduce themselves, build rapport, and qualify homeowners when they knock on doors in targeted neighborhoods. Effective scripts include an opener, value proposition, qualifying questions, and a soft close."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What should I say when knocking on doors for real estate?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Start with a friendly greeting and your name, mention you're a local real estate agent, and offer something of value like a free home valuation or market report. Ask one qualifying question about their home ownership timeline. Always respect their time and don't be pushy."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Is door knocking effective for real estate agents?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. Door knocking remains one of the highest ROI prospecting activities for real estate agents. Studies show it takes an average of 6-8 touches to generate a lead. A good script increases your conversion rate by helping homeowners feel comfortable and building trust quickly."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How do I generate free door knocking scripts?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "This free tool generates customized door knocking scripts based on your target area, property type, and goal. Enter your details and get a complete script with opener, qualifying questions, and close — ready to use immediately."
-                }
-            }
-        ]
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Real Estate Door Knocking Scripts — Script Generator for Agents | ListingsAI</title>
+  <meta name="description" content="Generate proven door knocking scripts for real estate agents. Get customizable scripts for FSBO, expired listings, sphere of influence, and cold introduction. Free to use, no signup.">
+  <meta name="keywords" content="real estate door knocking scripts, best real estate door knocking scripts, door knocking scripts for real estate agents, real estate door knocking scripts pdf, free real estate scripts">
+  <link rel="canonical" href="https://listingsai.directory/tools/real-estate-door-knocking-scripts.html">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e8e8e8; }
+    .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+    header { text-align: center; padding: 3rem 0 2rem; }
+    header h1 { font-size: 2.4rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; line-height: 1.2; }
+    header h1 span { color: #f59e0b; }
+    header p { font-size: 1.1rem; color: #a8b2d1; max-width: 600px; margin: 0 auto; line-height: 1.6; }
+    .hero-label { display: inline-block; background: linear-gradient(135deg, #f59e0b22, #f9731622); border: 1px solid #f59e0b44; color: #f59e0b; padding: 0.35rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1.5rem; }
+
+    .tool-card { background: #0d1b2a; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4); padding: 2.5rem; margin-bottom: 2rem; }
+    .tool-card h2 { font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem; }
+    .tool-card .subtitle { color: #a8b2d1; font-size: 0.95rem; margin-bottom: 2rem; }
+
+    .input-group { margin-bottom: 1.75rem; }
+    .input-group label { display: block; font-size: 0.85rem; font-weight: 600; color: #a8b2d1; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .input-group select, .input-group input, .input-group textarea { width: 100%; padding: 0.85rem 1rem; background: #1a2d44; border: 1px solid #2a3f5f; border-radius: 10px; color: #e8e8e8; font-size: 1rem; transition: border-color 0.2s, box-shadow 0.2s; }
+    .input-group select:focus, .input-group input:focus, .input-group textarea:focus { outline: none; border-color: #f59e0b; box-shadow: 0 0 0 3px rgba(245,158,11,0.15); }
+    .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .textarea-note { font-size: 0.8rem; color: #6b7a99; margin-top: 0.4rem; }
+
+    .generate-btn { width: 100%; padding: 1rem 2rem; background: linear-gradient(135deg, #f59e0b, #f97316); border: none; border-radius: 12px; color: #000; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; text-transform: uppercase; letter-spacing: 0.05em; }
+    .generate-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(245,158,11,0.35); }
+    .generate-btn:active { transform: translateY(0); }
+
+    .output-box { margin-top: 2rem; padding: 2rem; background: #0a1520; border-radius: 16px; border: 1px solid #1a3050; display: none; }
+    .output-box.active { display: block; }
+    .output-box h3 { font-size: 1.1rem; color: #f59e0b; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .script-text { font-size: 1rem; line-height: 1.8; color: #c8d6e5; white-space: pre-wrap; background: #0d1b2a; padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem; max-height: 500px; overflow: auto; }
+    .script-text strong { color: #f59e0b; }
+    .script-text em { color: #00d4ff; font-style: normal; }
+
+    .action-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .action-btn { padding: 0.6rem 1.25rem; background: #1a3050; border: 1px solid #f59e0b44; border-radius: 8px; color: #f59e0b; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .action-btn:hover { background: #f59e0b22; }
+
+    /* Tips Section */
+    .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+    .tip-card { background: #0d1b2a; border-radius: 12px; padding: 1.25rem; border: 1px solid #1a3050; }
+    .tip-card h4 { font-size: 0.95rem; color: #00d4ff; margin-bottom: 0.5rem; }
+    .tip-card p { font-size: 0.85rem; color: #a8b2d1; line-height: 1.5; }
+
+    /* Affiliate Box */
+    .affiliate-box { background: linear-gradient(135deg, #1a3a1a, #0f2a0f); border: 1px solid #00cc6622; border-radius: 16px; padding: 1.5rem 2rem; margin-top: 2rem; }
+    .affiliate-box h3 { font-size: 1.2rem; color: #00cc66; margin-bottom: 0.75rem; }
+    .affiliate-box p { font-size: 0.95rem; color: #a8b2d1; line-height: 1.6; margin-bottom: 1rem; }
+    .affiliate-cta { display: inline-block; padding: 0.7rem 1.5rem; background: linear-gradient(135deg, #00cc66, #009944); border-radius: 10px; color: #fff; text-decoration: none; font-weight: 700; font-size: 1rem; transition: transform 0.15s; }
+    .affiliate-cta:hover { transform: translateY(-2px); }
+
+    /* FAQ */
+    .faq-section { margin-top: 3rem; }
+    .faq-section h2 { font-size: 1.75rem; color: #fff; margin-bottom: 1.5rem; text-align: center; }
+    .faq-item { background: #0d1b2a; border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; border: 1px solid #1a3050; }
+    .faq-item h3 { font-size: 1.05rem; color: #f59e0b; margin-bottom: 0.5rem; }
+    .faq-item p { font-size: 0.95rem; color: #a8b2d1; line-height: 1.6; }
+
+    .crypto-tip { text-align: center; margin-top: 2rem; padding: 1rem; background: #0d1b2a; border-radius: 12px; border: 1px solid #f7931a33; }
+    .crypto-tip span { font-size: 0.85rem; color: #a8b2d1; }
+    .crypto-tip strong { color: #f7931a; }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.7rem; }
+      .input-row, .tips-grid { grid-template-columns: 1fr; }
     }
-    </script>
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What should I say when door knocking for real estate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with a friendly introduction including your name and the reason you're there. For FSBOs, say 'I noticed your home is for sale by owner — many sellers find they get more showings and better offers when working with a professional.' For expired listings, reference the previous listing date and offer your expertise. Always listen more than you talk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are door knocking scripts actually effective for real estate agents?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Scripted approaches consistently outperform random conversation because they ensure you cover key points (property value proposition, your credentials, call to action) without forgetting anything under pressure. Scripts also build confidence so you appear more professional and less nervous at each door."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get people to open the door when cold door knocking?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wear professional attire, hold a property flyer or market report, and speak confidently within 3 seconds of approaching. Lead with a benefit: 'Hi, I'm doing a neighborhood market analysis and wanted to share some data about home values in this area.' People are more likely to engage when they see value in what you're offering."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time of day to door knock for real estate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Saturday and Sunday mornings (9am–12pm) are best for residential areas. Weekday evenings (5–7pm) work for busy professionals. Avoid early mornings before 9am, mealtimes (12–1pm, 6–7pm), and late evenings after 8pm."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I handle objections during door knocking?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the LAER framework: Listen, Acknowledge, Explore, Respond. When someone says 'Not interested,' respond with 'I completely understand — may I ask what would make you more interested in selling your home?' This uncovers their real concern (timing, price expectation, agent relationship) so you can address it directly."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Real Estate Door Knocking Script Generator</h1>
-            <p class="subtitle">Free AI-powered door knock scripts for real estate agents — no signup required</p>
-        </div>
-    </header>
-    <main class="container">
-        <div class="card">
-            <div class="card-title">Enter Your Details</div>
-            <form id="toolForm">
-                <div class="row">
-                    <div>
-                        <label>Agent Name</label>
-                        <input id="agentName" type="text" placeholder="Your Name">
-                    </div>
-                    <div>
-                        <label>Target Area</label>
-                        <input id="targetArea" type="text" placeholder="e.g. Downtown Austin, suburban neighborhood">
-                    </div>
-                </div>
-                <div class="row">
-                    <div>
-                        <label>Property Type</label>
-                        <select id="propertyType">
-                            <option value="residential">Residential Single Family</option>
-                            <option value="condo">Condo / Townhome</option>
-                            <option value="luxury">Luxury / High-End</option>
-                            <option value="new-construction">New Construction Area</option>
-                            <option value="fsbo">FSBO Neighborhood</option>
-                            <option value="expired">Expired Listings Area</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label>Your Goal</label>
-                        <select id="goal">
-                            <option value="list">Get a listing appointment</option>
-                            <option value="buyer">Find buyers for off-market homes</option>
-                            <option value="fsbo">Convert FSBO homeowners to listings</option>
-                            <option value="sphere">Reconnect with sphere of influence</option>
-                            <option value="farm">Build farm area relationships</option>
-                        </select>
-                    </div>
-                </div>
-                <div>
-                    <label>Your Unique Value Proposition (what makes you different)</label>
-                    <input id="uvp" type="text" placeholder="e.g. 15 years local experience, sold 200+ homes, no-pressure approach">
-                </div>
-                <div class="btn-row">
-                    <button type="button" onclick="generateScript()">Generate Script</button>
-                    <button type="button" class="btn-secondary" onclick="copyOutput()">Copy to Clipboard</button>
-                </div>
-            </form>
-        </div>
-        <div class="result-box" id="resultBox">
-            <h3 style="color:var(--accent);margin-bottom:14px;font-size:.9em;">Your Door Knocking Script</h3>
-            <div class="output" id="output">Your personalized script will appear here...</div>
-            <div class="tips">
-                <h4>Pro Tips for Door Knocking</h4>
-                <ul>
-                    <li>Knock 3 times before stepping back — gives homeowners time to approach</li>
-                    <li>Smile and make eye contact — first impressions happen in 3 seconds</li>
-                    <li>Carry small giveaways (pens, notepads) — creates reciprocity</li>
-                    <li>Track every conversation in your CRM, even "not now" responses</li>
-                    <li>Follow up with a handwritten note within 24 hours of every conversation</li>
-                </ul>
-            </div>
-        </div>
-        <div class="premium">
-            <h3>Unlock Premium Scripts + Training</h3>
-            <p>Get 50+ proven door knocking scripts, objection handling videos, and CRM templates with Jasper — the AI tool top agents use to automate their prospecting.</p>
-            <div class="wallet">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
-            <br>
-            <a href="https://jasper.ai" target="_blank" class="affiliate-link">Try Jasper AI Free →</a>
-        </div>
-    </main>
-    <footer>
-        <div class="container">
-            <p>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</p>
-        </div>
-    </footer>
-    <script>
-    function generateScript() {
-        var name = document.getElementById('agentName').value.trim() || 'Your Agent';
-        var area = document.getElementById('targetArea').value.trim() || 'your neighborhood';
-        var type = document.getElementById('propertyType').value;
-        var goal = document.getElementById('goal').value;
-        var uvp = document.getElementById('uvp').value.trim() || 'local expert who sells homes fast and for top dollar';
-        
-        var propertyLabels = {
-            'residential': 'residential home',
-            'condo': 'condo or townhome',
-            'luxury': 'luxury home',
-            'new-construction': 'new construction community',
-            'fsbo': 'home being sold by owner',
-            'expired': 'previously listed home'
-        };
-        
-        var goalLabels = {
-            'list': 'listing appointment',
-            'buyer': 'buyers looking for off-market properties',
-            'fsbo': 'opportunity to list their home',
-            'sphere': 'reconnection with past clients and centers of influence',
-            'farm': 'long-term relationship in this neighborhood'
-        };
-        
-        var script = `DOOR KNOCKING SCRIPT — ${area.toUpperCase()}
-Generated by ListingsAI — Free Real Estate Tool
-=================================================
+<div class="container">
+  <header>
+    <div class="hero-label">✦ Free Tool</div>
+    <h1><span>Free</span> Real Estate Door Knocking Scripts</h1>
+    <p>Generate proven door knocking scripts for every situation — FSBO, expired listings, sphere of influence, and more. Customize and print in under 2 minutes.</p>
+  </header>
 
-OPENER (30 seconds max):
-"Hi, I'm ${name}, a local real estate agent here in ${area}. 
-I work with homeowners in this neighborhood and I'm 
-looking to connect — not sell you anything today. 
-[Hand them a notepad with your contact info]
+  <div class="tool-card">
+    <h2>🎯 Generate Your Script</h2>
+    <p class="subtitle">Answer a few questions and get a complete, ready-to-use script</p>
 
-I actually live nearby myself, and I work with a lot of 
-homeowners here. Quick question: Are you thinking about 
-making a move in the next 6-12 months?"
+    <div class="input-row">
+      <div class="input-group">
+        <label>Script Type</label>
+        <select id="scriptType">
+          <option value="fsbo">FSBO (For Sale By Owner)</option>
+          <option value="expired">Expired Listing</option>
+          <option value="sphere">Sphere of Influence</option>
+          <option value="cold-intro">Cold Introduction</option>
+          <option value="just-listed">Just Listed / Just Sold</option>
+          <option value="open-house">Open House Door Knock</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>Your Name</label>
+        <input type="text" id="agentName" value="Sarah Johnson" placeholder="Your full name">
+      </div>
+    </div>
 
-QUALIFYING QUESTIONS:
-1. "That's a beautiful home — do you mind me asking 
-   how long you've been here?"
-   
-2. "Have you thought about what your next chapter 
-   looks like yet, or is it still early?"
+    <div class="input-row">
+      <div class="input-group">
+        <label>Your Experience Level</label>
+        <select id="experienceLevel">
+          <option value="new">New Agent (under 1 year)</option>
+          <option value="mid">Experienced (1–5 years)</option>
+          <option value="senior">Senior Agent (5+ years)</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>Target Price Range</label>
+        <select id="priceRange">
+          <option value="under-300k">Under $300K</option>
+          <option value="300k-500k" selected>$300K – $500K</option>
+          <option value="500k-750k">$500K – $750K</option>
+          <option value="750k-1m">$750K – $1M</option>
+          <option value="over-1m">Over $1M</option>
+        </select>
+      </div>
+    </div>
 
-3. "If you were to sell, what would matter most to you 
-   — timing, price, or finding your next home first?"
+    <div class="input-group">
+      <label>Property Notes (optional — neighborhood, known issue, etc.)</label>
+      <textarea id="propertyNotes" rows="2" placeholder="e.g., Near excellent schools, recent freeway construction, historically high demand area..."></textarea>
+      <div class="textarea-note">Adding notes helps personalize the script to sound more natural and relevant</div>
+    </div>
 
-VALUE STACK:
-- "${uvp}"
-- "I've helped ${Math.floor(Math.random() * 30 + 10)} families in this area 
-  just this year alone"
-- "I offer a free, no-obligation home valuation so 
-  you know what your home is worth today"
+    <button type="button" class="generate-btn" onclick="generateScript()">✨ Generate My Script</button>
+  </div>
 
-OBJECTION HANDLERS:
+  <div class="output-box" id="outputBox">
+    <h3>📋 Your Door Knocking Script</h3>
+    <div class="script-text" id="scriptOutput"></div>
+    <div class="action-btns">
+      <button type="button" class="action-btn" onclick="copyScript()">📋 Copy to Clipboard</button>
+      <button class="action-btn" onclick="printScript()">🖨️ Print Script</button>
+    </div>
+  </div>
 
-Objection: "I'm not selling"
-Response: "Completely understand! Would it be okay if 
-I followed up in 6 months? Markets change and I'd 
-love to keep you informed."
+  <div class="tips-grid">
+    <div class="tip-card">
+      <h4>💡 First 7 Seconds Rule</h4>
+      <p>You have 7 seconds to make a positive impression. Smile, make eye contact, and lead with value before they decide to close the door.</p>
+    </div>
+    <div class="tip-card">
+      <h4>🎯 The 3-Foot Rule</h4>
+      <p>Stay 3 feet back when speaking at the door — close enough to be personable, far enough to not feel like pressure. Never step inside without invitation.</p>
+    </div>
+    <div class="tip-card">
+      <h4>📝 Take Notes Immediately</h4>
+      <p>After each door, write down what worked and what didn't. Note which streets had the best response. Build your own playbook over time.</p>
+    </div>
+    <div class="tip-card">
+      <h4>🔁 Follow Up 3 Times</h4>
+      <p>Most deals come from the 3rd–7th contact. Use a door knocking log to track every address and when to follow up via call, text, or mail.</p>
+    </div>
+  </div>
 
-Objection: "I already have an agent"
-Response: "Great — always good to have a great agent 
-on your side. If that ever changes or if you ever 
-want a second opinion on your home's value, I'd 
-be honored to be a resource."
+  <!-- Affiliate Box -->
+  <div class="affiliate-box">
+    <h3>🎯 Build Your Pipeline 10x Faster with HubSpot CRM</h3>
+    <p>Track every door knock, follow-up, and lead in one place. HubSpot's free CRM helps you log every contact, set reminders, and convert more door knocks into listings. Best for agents doing 20+ door knocks per week.</p>
+    <a href="https://www.hubspot.com" target="_blank" rel="nofollow" class="affiliate-cta">Try HubSpot Free →</a>
+  </div>
 
-CLOSE:
-"If you're even curious about what your home might 
-be worth right now, I'd love to run a free CMA for 
-you — no strings attached. It takes 5 minutes and 
-you might learn something useful. Would that be 
-okay?"
+  <!-- FAQ -->
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What should I say when door knocking for real estate?</h3>
+      <p>Start with a friendly introduction including your name and the reason you're there. For FSBOs, say 'I noticed your home is for sale by owner — many sellers find they get more showings and better offers when working with a professional.' For expired listings, reference the previous listing date and offer your expertise. Always listen more than you talk.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are door knocking scripts actually effective for real estate agents?</h3>
+      <p>Yes. Scripted approaches consistently outperform random conversation because they ensure you cover key points (property value proposition, your credentials, call to action) without forgetting anything under pressure. Scripts also build confidence so you appear more professional and less nervous at each door.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I get people to open the door when cold door knocking?</h3>
+      <p>Wear professional attire, hold a property flyer or market report, and speak confidently within 3 seconds of approaching. Lead with a benefit: 'Hi, I'm doing a neighborhood market analysis and wanted to share some data about home values in this area.' People are more likely to engage when they see value in what you're offering.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the best time of day to door knock for real estate?</h3>
+      <p>Saturday and Sunday mornings (9am–12pm) are best for residential areas. Weekday evenings (5–7pm) work for busy professionals. Avoid early mornings before 9am, mealtimes (12–1pm, 6–7pm), and late evenings after 8pm.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I handle objections during door knocking?</h3>
+      <p>Use the LAER framework: Listen, Acknowledge, Explore, Respond. When someone says 'Not interested,' respond with 'I completely understand — may I ask what would make you more interested in selling your home?' This uncovers their real concern (timing, price expectation, agent relationship) so you can address it directly.</p>
+    </div>
+  </div>
 
-NEXT STEP:
-"Great — can I get your best number? I'll text 
-you the report so you have it handy."
+  <div class="crypto-tip">
+    <span><strong>BNB:</strong> 0x4F7b7c8E9d3A2f6B1e8C4... | <strong>BTC:</strong> bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</strong></span>
+  </div>
+</div>
 
-=================================================
-Script Type: ${goalLabels[goal]} | Property: ${propertyLabels[type]}
-Generated by ListingsAI — ListingsAI.directory
-`;
-        document.getElementById('output').textContent = script;
-        document.getElementById('output').className = 'output';
-        document.getElementById('resultBox').classList.add('show');
-        document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    
-    function copyOutput() {
-        var text = document.getElementById('output').textContent;
-        navigator.clipboard.writeText(text).then(function() {
-            alert('Script copied!');
-        });
-    }
-    </script>
+<script>
+const scripts = {
+  fsbo: {
+    intro: "Hi, I'm {agentName} — a local real estate agent. I noticed your home is for sale by owner, and I wanted to stop by to introduce myself.",
+    body: "Many sellers in this area have found that homes listed with a professional agent actually sell faster and for more money. That's because we bring buyer databases, marketing expertise, and negotiation skills that are hard to match on your own.\n\nI'm not here to take your listing today — I just wanted to offer a free market analysis so you have all the data before you decide.",
+    bridge: "Can I ask — what made you decide to sell it yourself? Was it mainly about saving on commission, or something else?",
+    close: "Here's my card. If you ever want a second opinion on pricing or just want to chat about what's happening in the market, give me a call. No pressure — I just want to be a resource for you.",
+    objection: "I completely understand. A lot of sellers feel that way initially. The question is — if you could sell for $15,000–$20,000 more by working with a professional, would that change your thinking?"
+  },
+  expired: {
+    intro: "Hi, I'm {agentName}. I'm a local real estate agent, and I noticed your home was on the market recently but hasn't sold yet.",
+    body: "I know how frustrating that can be. The good news is — homes in this neighborhood are selling, and I work with buyers who are actively looking right now.\n\nI'd like to offer you a free market analysis so you can see exactly what's happening with home values and buyer demand in your area. Many sellers in your situation are surprised by what they learn.",
+    bridge: "May I ask — were you working with an agent before, or was this a for-sale-by-owner situation?",
+    close: "I'd love to give you a no-obligation consultation. I've helped several sellers in this neighborhood who were in a similar situation, and I'd be glad to share what's working right now. Here's my card — text me anytime.",
+    objection: "That's a fair concern. Can I ask — what do you think kept it from selling? Was it price, condition, marketing, or something else? That helps me understand whether I can actually help."
+  },
+  sphere: {
+    intro: "Hi, I'm {agentName}. I'm a local real estate agent, and I was hoping to introduce myself.",
+    body: "I grew up around here, and I work with a lot of neighbors on their real estate needs. If you ever think about selling, or if you know someone who is, I'd be honored to be considered.\n\nI also do free market updates for people in the neighborhood — just a quick text every couple months with what's happening with home values.",
+    bridge: "Do you own in this neighborhood, or are you renting?",
+    close: "Here's my card. And if you know anyone thinking about buying or selling, I'd really appreciate an introduction. I promise I'll take good care of anyone you send my way.",
+    objection: "Completely understandable. Would it help if I sent you a quick market update via text? That way you have my info when the time is right — no pressure."
+  },
+  "cold-intro": {
+    intro: "Hi, I'm {agentName} — a local real estate agent. I'm in the neighborhood today doing a market analysis and wanted to introduce myself.",
+    body: "I'm specifically looking at homes in this area because I have buyers who are ready to make offers right now. If you or anyone you know is thinking about selling, I'd love to share what I see in the current market.\n\nIt's a great time to be a seller — inventory is low and buyer demand is high.",
+    bridge: "Have you thought about what your home might be worth if you decided to sell today?",
+    close: "Here's my card. Even if you're not planning to sell soon, I'm happy to send you a free market report so you know your home's value. Just text me your address.",
+    objection: "No problem at all. The market changes fast — would it be helpful if I just sent you a quick update every few months? That way you have real data when you're ready."
+  },
+  "just-listed": {
+    intro: "Hi, I'm {agentName} — I just listed the home at [address] and wanted to introduce myself to the neighbors.",
+    body: "If you or anyone you know is thinking about selling, I'd love to share what's happening in the market. We had a great response to this listing and there are serious buyers out there.\n\nI'm offering free market consultations to anyone in the area who wants to know what their home might be worth right now.",
+    bridge: "How long have you lived in the neighborhood?",
+    close: "Here's my card. If you know anyone who might want to buy or sell in this area, I'd really appreciate an introduction. I always give priority treatment to referrals.",
+    objection: "I understand completely. Would it help if I sent you a quick market snapshot? That way you can see exactly what's happening with values in this area before you make any decisions."
+  },
+  "open-house": {
+    intro: "Hi, I'm {agentName}. Thanks for stopping by the open house — did you get a chance to see inside?",
+    body: "I'm the listing agent. I'm curious — what brought you out today? Are you actively looking, or just curious about the market?\n\n[Listen carefully and follow their lead]\n\nBased on what you're looking for, I may have other homes that could be a better fit. What's most important to you in a home?",
+    bridge: "Have you worked with a real estate agent before, or are you new to the area?",
+    close: "Here's my card. I'd love to set up a proper home search for you so you're not missing anything. What suburb are you hoping to find in?",
+    objection: "That's a great question. The market moves fast in this area — I'd recommend we get you pre-approved and start touring homes now rather than waiting. Would next week work for a proper tour?"
+  }
+};
+
+const objectionResponses = {
+  new: "That's completely normal to feel that way — and honestly, my job is to make this as easy as possible for you. I handle all the heavy lifting: the marketing, negotiations, paperwork, and communication. You just have to say yes to the right offer.",
+  mid: "I hear you. What I've found works best is a step-by-step approach where we handle one thing at a time. You don't have to commit to anything upfront — let's start with a conversation and take it from there.",
+  senior: "I understand your caution. With [X] years in this market, I've seen a lot of different approaches. What I can tell you is that my job is to protect your interests and get you the best outcome — nothing else."
+};
+
+function generateScript() {
+  const type = document.getElementById('scriptType').value;
+  const name = document.getElementById('agentName').value || 'Sarah Johnson';
+  const exp = document.getElementById('experienceLevel').value;
+  const price = document.getElementById('priceRange').value;
+  const notes = document.getElementById('propertyNotes').value;
+  const s = scripts[type];
+  const objResponse = objectionResponses[exp];
+
+  const fullScript = `=== DOOR KNOCKING SCRIPT — ${type.toUpperCase()} ===
+Agent: ${name} | Price Range: ${price}${notes ? '\nProperty Notes: ' + notes : ''}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1: APPROACH & OPENER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Walk up with confidence, smile, make eye contact.
+
+${s.intro.replace('{agentName}', name)}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2: VALUE PROPOSITION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${s.body}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3: BRIDGE QUESTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${s.bridge}
+[Listen carefully. Validate their response before moving on.]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 4: HANDLING "I'm not interested"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${s.objection}
+
+ALTERNATIVE — If they seem rushed:
+"No worries at all. Here's my card — text me your address and I'll send you a free market report. No obligation."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 5: CLOSE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${s.close}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 6: LEAVE BEHIND
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Business card
+✓ Farm letter or market report (for sphere/expired)
+✓ Property flyer (for just-listed)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+OBJECTION HANDLER: "${exp === 'new' ? 'I don\'t want to commit to anything yet' : 'Why should I work with you?'}"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${objResponse}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+POST-DOOR KNOCK LOG
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Address: _______________
+Date/Time: _______________
+Result: ☐ Contacted ☐ Not home ☐ Refused
+Follow-up: _______________`;
+
+  document.getElementById('scriptOutput').innerHTML = fullScript
+    .replace(/\n/g, '<br>')
+    .replace(/===(.*?)===/g, '<strong>$1</strong>')
+    .replace(/STEP \d:/g, '<strong>$&</strong>')
+    .replace(/[A-Z][A-Z0-9 _]+:/g, m => `<strong>${m}</strong>`);
+
+  document.getElementById('outputBox').classList.add('active');
+  document.getElementById('outputBox').scrollIntoView({behavior: 'smooth'});
+}
+
+function copyScript() {
+  const text = document.getElementById('scriptOutput').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const btns = document.querySelectorAll('.action-btn');
+    btns[0].textContent = '✅ Copied!';
+    setTimeout(() => btns[0].textContent = '📋 Copy to Clipboard', 2000);
+  });
+}
+
+function printScript() {
+  const text = document.getElementById('scriptOutput').innerText;
+  const win = window.open('', '_blank');
+  win.document.write('<pre style="font-family:Arial;font-size:12px;line-height:1.6;">' + text + '</pre>');
+  win.document.close();
+  win.print();
+}
+</script>
 </body>
 </html>

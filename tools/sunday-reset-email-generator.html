@@ -211,7 +211,9 @@
             .container { padding: 15px; }
             .form-grid { grid-template-columns: 1fr; }
         }
-    </style>
+    
+.affiliate{text-align:center;padding:16px;color:#64748b;font-size:.82em;margin-top:30px}.affiliate a{color:#00d4ff;text-decoration:none}.affiliate a:hover{text-decoration:underline}
+</style>
 </head>
 <body>
     <header>
@@ -260,7 +262,7 @@
                 <label for="customMessage">Custom Message (optional)</label>
                 <textarea id="customMessage" placeholder="Add a personal touch or specific topic you want to mention..."></textarea>
             </div>
-            <button class="btn" onclick="generateEmail()">Generate Email</button>
+            <button type="button" class="btn" onclick="generateEmail()">Generate Email</button>
         </div>
 
         <div class="preview-section" id="previewSection">
@@ -451,5 +453,9 @@
             });
         }
     </script>
+
+<div class="affiliate">
+AI tools for real estate agents — <a href="https://manychat.com" target="_blank">Automate CRM follow-ups with ManyChat</a> (30% affiliate commission) | <a href="https://jasper.ai" target="_blank">Create faster content with Jasper</a> (30% commission)
+</div>
 </body>
 </html>

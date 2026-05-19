@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Real Estate Comps Calculator — Free Comparable Sales Tool</title>
+<meta name="description" content="Find and compare real estate comps (comparable sales) to determine accurate property value. Free tool with adjusted comps, price-per-sqft analysis, and CMA-ready export.">
+<link rel="canonical" href="https://listingsai.directory/tools/real-estate-comps-calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>*,*x{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:#0a0a0f;color:#f1f5f9;min-height:100vh}.container{max-width:900px;margin:0 auto;padding:40px 20px}header{text-align:center;margin-bottom:32px}.badge{background:linear-gradient(135deg,#00d4ff,#7c3aed);color:#000;font-size:.75em;font-weight:700;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:12px}h1{font-size:2em;margin-bottom:8px}.subtitle{color:#64748b}.card{background:#111;border:1px solid #222;border-radius:16px;padding:24px;margin-bottom:14px}.card-title{font-size:.8em;color:#00d4ff;font-weight:700;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:block;font-size:.82em;color:#64748b;margin-bottom:6px;font-weight:500}input,select,textarea{width:100%;padding:10px 12px;background:#0a0a0f;border:1px solid #222;border-radius:10px;color:#f1f5f9;font-size:.95em;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}input:focus,select:focus,textarea:focus{border-color:#00d4ff}textarea{resize:vertical;min-height:80px}button{padding:12px 24px;background:#00d4ff;color:#000;font-weight:700;font-size:.95em;border:none;border-radius:10px;cursor:pointer;transition:all .2s}button:hover{background:#00b8df;transform:translateY(-1px)}.btn-row{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}.comps-grid{display:none;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}.comp-card{background:#0a1a2e;border:1px solid #333;border-radius:14px;padding:18px;font-size:.88em}.comp-card .comp-price{font-size:1.2em;font-weight:700;color:#00d4ff;margin-bottom:6px}.comp-card .comp-detail{color:#94a3b8;margin-bottom:4px}.comp-card .comp-diff{font-weight:600;padding:2px 8px;border-radius:6px;font-size:.8em;display:inline-block}.comp-diff.up{background:#22c55e20;color:#22c55e}.comp-diff.down{background:#ef444420;color:#ef4444}.summary-grid{display:none;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}.summary-card{background:linear-gradient(135deg,#0a1a2e,#111);border:1px solid #222;border-radius:14px;padding:18px;text-align:center}.summary-card .sum-label{font-size:.75em;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}.summary-card .sum-value{font-size:1.4em;font-weight:700;color:#00d4ff}.summary-card .sum-sub{font-size:.78em;color:#64748b;margin-top:4px}.result-box{background:#111;border:1px solid #222;border-radius:14px;padding:20px;margin-top:20px;display:none}.result-box.show{display:block}.result-box h3{color:#00d4ff;margin-bottom:14px;font-size:.9em}.output{background:#0a0a0f;border:1px solid #222;border-radius:10px;padding:14px;font-size:.88em;line-height:1.7;white-space:pre-wrap;min-height:120px;color:#22c55e;font-family:monospace}.output.error{color:#ef4444}.copy-btn{background:#7c3aed;margin-left:10px}.premium{background:linear-gradient(135deg,#7c3aed,#5b21b6);border-radius:14px;padding:20px;margin-top:20px;text-align:center}.premium h3{font-size:1.1em;margin-bottom:8px}.premium p{color:#94a3b8;font-size:.88em;margin-bottom:14px}.premium .price{font-size:1.8em;font-weight:800;color:#00d4ff}.premium .wallet{background:#0a0a0f;border:1px solid #222;border-radius:8px;padding:10px;font-size:.8em;margin-top:10px;font-family:monospace;word-break:break-all;color:#64748b}.affiliate{text-align:center;padding:16px;color:#64748b;font-size:.82em;margin-top:30px}.affiliate a{color:#00d4ff;text-decoration:none}.affiliate a:hover{text-decoration:underline}footer{text-align:center;color:#64748b;font-size:.8em;padding:20px;border-top:1px solid #111;margin-top:40px}footer a{color:#00d4ff;text-decoration:none}@media(max-width:640px){.row,.comps-grid,.summary-grid{grid-template-columns:1fr}}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I find real estate comps for free?","acceptedAnswer":{"@type":"Answer","text":"Enter the subject property and up to 3 comps below. The tool calculates price-per-sqft, price-per-room, and adjusted value using location and condition adjustments."}}]}
+</script>
+</head>
+<body>
+<div class="container">
+<header><span class="badge">ListingsAI Tool</span><h1>Real Estate Comps Calculator</h1><p class="subtitle">Compare comparable sales to determine accurate property value — free forever</p></header>
+
+<div class="card">
+<div class="card-title">Subject Property (The One You're Valuing)</div>
+<div class="row" style="margin-bottom:12px">
+<div><label>Subject Address / ID</label><input id="subjectAddress" type="text" placeholder="123 Main St, Austin TX 78701"></div>
+<div><label>Subject Sq Ft</label><input id="subjectSqft" type="number" placeholder="1850"></div>
+</div>
+<div class="row" style="margin-bottom:12px">
+<div><label>Bedrooms</label><input id="subjectBeds" type="number" placeholder="3"></div>
+<div><label>Bathrooms</label><input id="subjectBaths" type="number" placeholder="2"></div>
+</div>
+<div class="row">
+<div><label>Year Built</label><input id="subjectYear" type="number" placeholder="2005"></div>
+<div><label>Condition (1-5)</label><select id="subjectCondition"><option value="5">5 - Move-in Ready</option><option value="4">4 - Good</option><option value="3" selected>3 - Fair</option><option value="2">2 - Needs Work</option><option value="1">1 - Major Rehab</option></select></div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-title">Comparable Sales (Enter up to 3)</div>
+<div class="row" style="margin-bottom:12px">
+<div><label>Comp 1 Address</label><input id="comp1Address" type="text" placeholder="456 Oak Ave, Austin TX 78702"></div>
+<div><label>Sale Price</label><input id="comp1Price" type="number" placeholder="425000"></div>
+</div>
+<div class="row" style="margin-bottom:12px">
+<div><label>Sq Ft</label><input id="comp1Sqft" type="number" placeholder="1920"></div>
+<div><label>$/Sq Ft</label><input id="comp1Psf" type="number" placeholder="221"></div>
+</div>
+<div class="row" style="margin-bottom:12px">
+<div><label>Beds</label><input id="comp1Beds" type="number" placeholder="3"></div>
+<div><label>Baths</label><input id="comp1Baths" type="number" placeholder="2"></div>
+</div>
+<div class="row" style="margin-bottom:16px">
+<div><label>Condition (1-5)</label><select id="comp1Condition"><option value="5">5 - Move-in Ready</option><option value="4">4 - Good</option><option value="3" selected>3 - Fair</option><option value="2">2 - Needs Work</option><option value="1">1 - Major Rehab</option></select></div>
+<div><label>Days on Market</label><input id="comp1Dom" type="number" placeholder="30"></div>
+</div>
+
+<div style="border-top:1px solid #222;padding-top:16px;margin-top:4px">
+<div class="row" style="margin-bottom:12px">
+<div><label>Comp 2 Address</label><input id="comp2Address" type="text" placeholder="789 Pine Rd, Austin TX 78703 (optional)"></div>
+<div><label>Sale Price</label><input id="comp2Price" type="number" placeholder=""></div>
+</div>
+<div class="row" style="margin-bottom:12px">
+<div><label>Sq Ft</label><input id="comp2Sqft" type="number" placeholder=""></div>
+<div><label>Beds</label><input id="comp2Beds" type="number" placeholder=""></div>
+</div>
+<div class="row" style="margin-bottom:12px">
+<div><label>Baths</label><input id="comp2Baths" type="number" placeholder=""></div>
+<div><label>Condition (1-5)</label><select id="comp2Condition"><option value="">--</option><option value="5">5 - Move-in Ready</option><option value="4">4 - Good</option><option value="3" selected>3 - Fair</option><option value="2">2 - Needs Work</option><option value="1">1 - Major Rehab</option></select></div>
+</div>
+</div>
+
+<div style="border-top:1px solid #222;padding-top:16px;margin-top:4px">
+<div class="row" style="margin-bottom:12px">
+<div><label>Comp 3 Address</label><input id="comp3Address" type="text" placeholder="321 Elm St, Austin TX 78704 (optional)"></div>
+<div><label>Sale Price</label><input id="comp3Price" type="number" placeholder=""></div>
+</div>
+<div class="row">
+<div><label>Sq Ft</label><input id="comp3Sqft" type="number" placeholder=""></div>
+<div><label>Beds</label><input id="comp3Beds" type="number" placeholder=""></div>
+</div>
+</div>
+</div>
+
+<div class="btn-row">
+<button type="button" onclick="calculate()">Calculate Comps</button>
+<button type="button" class="copy-btn" onclick="copyOutput()">Copy Report</button>
+</div>
+
+<div class="summary-grid" id="summaryGrid">
+<div class="summary-card"><div class="sum-label">Avg $/Sq Ft</div><div class="sum-value" id="avgPsf">--</div><div class="sum-sub">from comps</div></div>
+<div class="summary-card"><div class="sum-label">Suggested Value</div><div class="sum-value" id="suggestedValue">--</div><div class="sum-sub">after adjustments</div></div>
+<div class="summary-card"><div class="sum-label">Price Range</div><div class="sum-value" id="priceRange">--</div><div class="sum-sub">low to high</div></div>
+<div class="summary-card"><div class="sum-label">Avg DOM</div><div class="sum-value" id="avgDom">--</div><div class="sum-sub">days on market</div></div>
+</div>
+
+<div class="comps-grid" id="compsGrid"></div>
+
+<div class="result-box" id="resultBox">
+<h3>Full CMA Report</h3>
+<div class="output" id="output"></div>
+</div>
+
+<div class="premium">
+<h3>Unlock CMA Pro Report</h3>
+<p>$9 one-time — export PDF, add 10 comps, neighborhood analytics</p>
+<div class="price">$9</div>
+<div class="wallet">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+</div>
+
+<div class="affiliate">
+<a href="https://listingsai.directory" target="_blank">Browse 50+ AI real estate tools</a> — CMA-ready reports with <a href="https://jasper.ai" target="_blank">Jasper AI</a>
+</div>
+</div>
+<script>
+function calculate() {
+    var subjectSqft = parseFloat(document.getElementById('subjectSqft').value) || 0;
+    var subjectBeds = parseInt(document.getElementById('subjectBeds').value) || 0;
+    var subjectBaths = parseFloat(document.getElementById('subjectBaths').value) || 0;
+    var subjectCondition = parseInt(document.getElementById('subjectCondition').value) || 3;
+    var subjectAddress = document.getElementById('subjectAddress').value || 'Subject Property';
+
+    var comps = [];
+    for(var i=1;i<=3;i++) {
+        var price = parseFloat(document.getElementById('comp'+i+'Price').value) || 0;
+        var sqft = parseFloat(document.getElementById('comp'+i+'Sqft').value) || 0;
+        var beds = parseInt(document.getElementById('comp'+i+'Beds').value) || 0;
+        var baths = parseFloat(document.getElementById('comp'+i+'Baths').value) || 0;
+        var condition = parseInt(document.getElementById('comp'+i+'Condition').value) || 3;
+        var dom = parseInt(document.getElementById('comp'+i+'Dom').value) || 0;
+        var addr = document.getElementById('comp'+i+'Address').value || 'Comp '+i;
+        if(price > 0 && sqft > 0) {
+            comps.push({price:price,sqft:sqft,beds:beds,baths:baths,condition:condition,dom:dom,addr:addr});
+        }
+    }
+
+    var out = document.getElementById('output');
+    var box = document.getElementById('resultBox');
+    var summaryGrid = document.getElementById('summaryGrid');
+    var compsGrid = document.getElementById('compsGrid');
+
+    if(comps.length === 0) {
+        out.textContent = 'Please enter at least one comparable sale with price and sq ft.';
+        out.className = 'output error';
+        box.classList.add('show');
+        summaryGrid.style.display = 'none';
+        compsGrid.style.display = 'none';
+        return;
+    }
+
+    // Calculate avg price per sqft
+    var totalPsf = 0;
+    var totalDom = 0;
+    for(var c of comps) { totalPsf += c.price/c.sqft; totalDom += c.dom; }
+    var avgPsf = totalPsf / comps.length;
+    var avgDom = Math.round(totalDom / comps.length);
+
+    // Estimated value based on subject sqft
+    var rawEstimate = avgPsf * (subjectSqft || 1800);
+
+    // Adjustment for condition: each point = 3% adjustment
+    var avgCompCondition = comps.reduce(function(s,c){return s+c.condition;},0)/comps.length;
+    var condAdjust = (subjectCondition - avgCompCondition) * 0.03 * rawEstimate;
+
+    var adjustedValue = rawEstimate + condAdjust;
+    var lowValue = adjustedValue * 0.95;
+    var highValue = adjustedValue * 1.05;
+
+    // Update summary
+    document.getElementById('avgPsf').textContent = '$' + avgPsf.toFixed(0);
+    document.getElementById('suggestedValue').textContent = '$' + Math.round(adjustedValue/1000) + 'k';
+    document.getElementById('priceRange').textContent = '$' + Math.round(lowValue/1000) + 'k-' + Math.round(highValue/1000) + 'k';
+    document.getElementById('avgDom').textContent = avgDom;
+    summaryGrid.style.display = 'grid';
+
+    // Build comp cards
+    compsGrid.innerHTML = '';
+    for(var c of comps) {
+        var compPsf = (c.price/c.sqft).toFixed(0);
+        var diff = ((c.price/subjectSqft) - avgPsf).toFixed(0);
+        var diffClass = diff >= 0 ? 'up' : 'down';
+        var diffSign = diff >= 0 ? '+$' : '-$';
+        var card = document.createElement('div');
+        card.className = 'comp-card';
+        card.innerHTML = '<div class="comp-price">$' + c.price.toLocaleString() + '</div><div class="comp-detail">'+c.addr.substring(0,20)+'</div><div class="comp-detail">'+c.sqft+' sqft | '+c.beds+'bd/'+c.baths+'ba</div><div class="comp-detail">$'+compPsf+' / sqft</div><div style="margin-top:8px"><span class="comp-diff '+diffClass+'">'+diffSign+Math.abs(diff)+'</span></div>';
+        compsGrid.appendChild(card);
+    }
+    compsGrid.style.display = 'grid';
+
+    // Build full report
+    var report = 'REAL ESTATE COMPARABLE ANALYSIS
+';
+    report += 'Generated: ' + new Date().toLocaleDateString() + '
+';
+    report += '====================================
+
+';
+    report += 'SUBJECT PROPERTY
+';
+    report += 'Address: ' + subjectAddress + '
+';
+    report += 'Size: ' + subjectSqft + ' sq ft | ' + subjectBeds + ' bed | ' + subjectBaths + ' bath
+';
+    report += 'Condition: ' + subjectCondition + '/5
+
+';
+    report += 'COMPARABLE SALES (' + comps.length + ' found)
+';
+    report += '------------------------------------
+';
+    for(var c of comps) {
+        report += '
+' + c.addr + '
+';
+        report += '  Sale Price: $' + c.price.toLocaleString() + '
+';
+        report += '  Size: ' + c.sqft + ' sqft | $' + (c.price/c.sqft).toFixed(0) + '/sqft
+';
+        report += '  Beds/Baths: ' + c.beds + '/' + c.baths + ' | Condition: ' + c.condition + '/5
+';
+        report += '  Days on Market: ' + c.dom + '
+';
+    }
+    report += '
+====================================
+';
+    report += 'VALUATION SUMMARY
+';
+    report += '------------------------------------
+';
+    report += 'Average $/sqft (comps):  $' + avgPsf.toFixed(2) + '
+';
+    report += 'Raw Estimate (subject sqft):  $' + Math.round(rawEstimate).toLocaleString() + '
+';
+    report += 'Condition Adjustment:  ' + (condAdjust >= 0 ? '+' : '') + '$' + Math.round(condAdjust).toLocaleString() + '
+';
+    report += 'ADJUSTED VALUE:  $' + Math.round(adjustedValue).toLocaleString() + '
+';
+    report += 'Price Range (95-105%):  $' + Math.round(lowValue).toLocaleString() + ' - $' + Math.round(highValue).toLocaleString() + '
+';
+    report += 'Average Days on Market: ' + avgDom + ' days
+';
+    report += '
+====================================
+';
+    report += 'Powered by ListingsAI - Free Real Estate Comps Tool
+';
+    report += 'listingsai.directory/tools/real-estate-comps-calculator
+';
+
+    out.textContent = report;
+    out.className = 'output';
+    box.classList.add('show');
+}
+
+function copyOutput() {
+    var text = document.getElementById('output').textContent;
+    if(!text || text.includes('Your')) {
+        alert('Generate the report first!');
+        return;
+    }
+    navigator.clipboard.writeText(text).then(function(){ alert('Report copied!'); });
+}
+</script>
+</body>
+</html>

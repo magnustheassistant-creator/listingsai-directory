@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Estate Market Update Generator | Monthly Report Template</title>
+    <link rel="canonical" href="https://listingsai.directory/tools/market-update-generator.html">
     <meta name="description" content="Generate professional real estate market update reports. Create compelling monthly market analysis for agents and clients.">
     <h1>Real Estate Market Update Generator</h1>
     <style>
@@ -39,6 +40,7 @@
         footer{text-align:center;margin-top:40px;padding:20px;color:#666;font-size:14px}
         footer a{color:var(--accent);text-decoration:none}
         @media(max-width:600px){.card{padding:15px}.stats-grid{grid-template-columns:1fr}}
+        .affiliate{text-align:center;padding:16px;color:#64748b;font-size:.82em;margin-top:30px}.affiliate a{color:#00d4ff;text-decoration:none}.affiliate a:hover{text-decoration:underline}
     </style>
 </head>
 <body>
@@ -67,7 +69,7 @@
             <label>Custom Data (optional)</label>
             <textarea id="customData" placeholder="Any specific stats or insights you want to include..."></textarea>
         </div>
-        <button onclick="generateReport()">Generate Market Report</button>
+        <button type="button" onclick="generateReport()">Generate Market Report</button>
     </div>
 
     <div class="output" id="output">
@@ -229,5 +231,6 @@ function copyReport(){
 </script>
 
 <footer>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</footer>
+<div class="affiliate">AI tools for real estate agents — <a href="https://manychat.com" target="_blank">Automate CRM follow-ups with ManyChat</a> (30% affiliate commission) | <a href="https://jasper.ai" target="_blank">Create faster content with Jasper</a> (30% commission)</div>
 </body>
 </html>
