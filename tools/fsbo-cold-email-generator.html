@@ -123,15 +123,15 @@
         <div class="result-section" id="resultSection">
             <div class="card">
                 <div class="variation-tabs">
-                    <button class="tab-btn active" onclick="showVariation(0, this)">Version A</button>
-                    <button class="tab-btn" onclick="showVariation(1, this)">Version B</button>
-                    <button class="tab-btn" onclick="showVariation(2, this)">Version C</button>
+                    <button class="tab-btn active">Version A</button>
+                    <button class="tab-btn">Version B</button>
+                    <button class="tab-btn">Version C</button>
                 </div>
                 <div class="email-output" id="emailOutput">
                     <h4>Subject: Quick question about your home on <span id="subjStreet"></span></h4>
                     <p id="emailBody"></p>
                 </div>
-                <button class="copy-btn" onclick="copyEmail()">📋 Copy to Clipboard</button>
+                <button class="copy-btn">📋 Copy to Clipboard</button>
             </div>
             <div class="premium-upsell">
                 <h3>Unlock AI-Powered Email Sequences</h3>
@@ -361,7 +361,9 @@ Best,
             document.querySelector('.copy-btn').textContent = '✅ Copied!';
             setTimeout(() => document.querySelector('.copy-btn').textContent = '📋 Copy to Clipboard', 2000);
         }
-    </script>
+    
+
+</script>
 <div class="affiliate">AI tools for real estate agents — <a href="https://manychat.com" target="_blank">Automate CRM follow-ups with ManyChat</a> (30% affiliate commission) | <a href="https://jasper.ai" target="_blank">Create faster content with Jasper</a> (30% commission)</div>
 </body>
 </html>

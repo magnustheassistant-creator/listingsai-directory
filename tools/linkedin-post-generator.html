@@ -69,7 +69,7 @@
             <label>Your Name / Brokerage (optional)</label>
             <input type="text" id="agentName" placeholder="e.g., Sarah, Agent at XYZ Realty">
         </div>
-        <button type="button" onclick="generatePost()">Generate LinkedIn Post</button>
+        <button type="button">Generate LinkedIn Post</button>
     </div>
 
     <div class="output" id="output">
@@ -300,7 +300,7 @@ function generatePost(){
             <span class="category">${template.emoji} ${template.category}</span>
             <p class="post-text">${post}</p>
             <p class="hashtags">${hashtags}</p>
-            <span class="copy-btn" onclick="copyPost(this)">📋 Copy Post</span>
+            <span class="copy-btn">📋 Copy Post</span>
         </div>
     `;
     
@@ -314,6 +314,8 @@ function copyPost(el){
         setTimeout(() => { el.textContent = '📋 Copy Post'; }, 2000);
     });
 }
+
+
 </script>
 
 <footer>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</footer>

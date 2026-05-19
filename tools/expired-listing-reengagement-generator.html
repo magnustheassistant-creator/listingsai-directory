@@ -125,14 +125,14 @@
                 <input type="text" id="agentName" placeholder="Enter your name">
             </div>
 
-            <button type="button" class="btn" onclick="generateContent()">Generate Outreach Scripts</button>
+            <button type="button" class="btn">Generate Outreach Scripts</button>
 
             <div class="output-section" id="outputSection" style="display: none;">
                 <div class="channel-tabs">
-                    <button class="tab-btn active" onclick="showTab('voice')">📞 Voicemail</button>
-                    <button class="tab-btn" onclick="showTab('email')">✉️ Email</button>
-                    <button class="tab-btn" onclick="showTab('text')">💬 Text</button>
-                    <button class="tab-btn" onclick="showTab('door')">🚪 Door Knock</button>
+                    <button class="tab-btn active"voice')">📞 Voicemail</button>
+                    <button class="tab-btn"email')">✉️ Email</button>
+                    <button class="tab-btn"text')">💬 Text</button>
+                    <button class="tab-btn"door')">🚪 Door Knock</button>
                 </div>
 
                 <div class="output-box">
@@ -152,7 +152,7 @@
                         <h3>Door Knock Script</h3>
                         <div class="output-text" id="doorOutput"></div>
                     </div>
-                    <button class="btn copy-btn" onclick="copyCurrentTab()">Copy to Clipboard</button>
+                    <button class="btn copy-btn">Copy to Clipboard</button>
                 </div>
             </div>
         </div>
@@ -252,7 +252,7 @@ I can also run a quick analysis on your specific home and show you exactly what 
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
             document.getElementById(tab).classList.add('active');
-            document.querySelector(`[onclick="showTab('${tab}')"]`).classList.add('active');
+            document.querySelector(`[${tab}')"]`).classList.add('active');
             currentTab = tab;
         }
 
@@ -264,7 +264,9 @@ I can also run a quick analysis on your specific home and show you exactly what 
                 setTimeout(() => btn.textContent = 'Copy to Clipboard', 2000);
             });
         }
-    </script>
+    
+
+</script>
 <div class="affiliate">AI tools for real estate agents — <a href="https://manychat.com" target="_blank">Automate CRM follow-ups with ManyChat</a> (30% affiliate commission) | <a href="https://jasper.ai" target="_blank">Create faster content with Jasper</a> (30% commission)</div>
 
 <div class="affiliate">

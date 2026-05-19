@@ -137,7 +137,7 @@
         <div class="card">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:10px;">
                 <h2 style="font-size:1.2rem; color:var(--accent);">Your Contacts</h2>
-                <button class="btn btn-sm" onclick="openModal()">+ Add Contact</button>
+                <button class="btn btn-sm">+ Add Contact</button>
             </div>
             <div style="overflow-x:auto;">
                 <table id="contactsTable">
@@ -170,7 +170,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="modalTitle">Add Contact</h3>
-                <button class="close-modal" onclick="closeModal()">&times;</button>
+                <button class="close-modal">&times;</button>
             </div>
             <form id="contactForm">
                 <input type="hidden" id="contactId">
@@ -248,8 +248,8 @@
                         <td>${c.lastContact || 'Never'}</td>
                         <td style="max-width:150px; overflow:hidden; text-overflow:ellipsis;">${c.notes || ''}</td>
                         <td class="actions">
-                            <button class="edit-btn" onclick="editContact(${i})">Edit</button>
-                            <button class="delete-btn" onclick="deleteContact(${i})">Delete</button>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
                         </td>
                     </tr>
                 `).join('');
@@ -327,7 +327,9 @@
         });
 
         renderContacts();
-    </script>
+    
+
+</script>
 
 <div class="affiliate">
 AI tools for real estate agents — <a href="https://manychat.com" target="_blank">Automate CRM follow-ups with ManyChat</a> (30% affiliate commission) | <a href="https://jasper.ai" target="_blank">Create faster content with Jasper</a> (30% commission)

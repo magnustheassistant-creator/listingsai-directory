@@ -93,19 +93,19 @@
         <div class="generator-card">
             <h2 style="margin-bottom: 15px; color: #58a6ff;">1. Choose Your Lead Magnet Type</h2>
             <div class="type-selector">
-                <button class="type-btn active" onclick="selectType('guide', this)">📚 Guide/E-Book</button>
-                <button class="type-btn" onclick="selectType('checklist', this)">✅ Checklist</button>
-                <button class="type-btn" onclick="selectType('report', this)">📊 Report/Analysis</button>
-                <button class="type-btn" onclick="selectType('tool', this)">🛠️ Interactive Tool</button>
-                <button class="type-btn" onclick="selectType('video', this)">🎥 Video Course</button>
+                <button class="type-btn active"guide', this)">📚 Guide/E-Book</button>
+                <button class="type-btn"checklist', this)">✅ Checklist</button>
+                <button class="type-btn"report', this)">📊 Report/Analysis</button>
+                <button class="type-btn"tool', this)">🛠️ Interactive Tool</button>
+                <button class="type-btn"video', this)">🎥 Video Course</button>
             </div>
 
             <h2 style="margin-bottom: 15px; color: #58a6ff;">2. Select Your Target Audience</h2>
             <div class="type-selector">
-                <button class="type-btn active" onclick="selectAudience('buyer', this)">🏠 First-Time Buyers</button>
-                <button class="type-btn" onclick="selectAudience('seller', this)">💰 Home Sellers</button>
-                <button class="type-btn" onclick="selectAudience('investor', this)">📈 Investors</button>
-                <button class="type-btn" onclick="selectAudience('relocation', this)">🏡 Relocation</button>
+                <button class="type-btn active"buyer', this)">🏠 First-Time Buyers</button>
+                <button class="type-btn"seller', this)">💰 Home Sellers</button>
+                <button class="type-btn"investor', this)">📈 Investors</button>
+                <button class="type-btn"relocation', this)">🏡 Relocation</button>
             </div>
 
             <div class="form-group">
@@ -118,13 +118,13 @@
                 <input type="text" id="marketArea" placeholder="e.g., Austin, TX Metro">
             </div>
 
-            <button type="button" class="btn" onclick="generateLeadMagnet()">Generate Lead Magnet</button>
+            <button type="button" class="btn">Generate Lead Magnet</button>
 
             <div class="output-section" id="outputSection" style="display: none;">
                 <div class="output-box">
                     <h3>Your Lead Magnet Strategy:</h3>
                     <div class="output-text" id="leadMagnetOutput"></div>
-                    <button class="btn copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
+                    <button class="btn copy-btn">Copy to Clipboard</button>
                 </div>
             </div>
         </div>
@@ -132,27 +132,27 @@
         <div class="generator-card">
             <h2 style="margin-bottom: 15px; color: #58a6ff;">Quick Lead Magnet Ideas</h2>
             <div class="ideas-grid">
-                <div class="idea-card" onclick="quickIdea(0)">
+                <div class="idea-card">
                     <h4>🔎 "What's Your Home Worth?"</h4>
                     <p>Instant valuation tool with email capture</p>
                 </div>
-                <div class="idea-card" onclick="quickIdea(1)">
+                <div class="idea-card">
                     <h4>📋 First-Time Buyer Guide</h4>
                     <p>Complete roadmap from search to closing</p>
                 </div>
-                <div class="idea-card" onclick="quickIdea(2)">
+                <div class="idea-card">
                     <h4>🏡 Pre-Listing Prep Checklist</h4>
                     <p>Seller preparation roadmap</p>
                 </div>
-                <div class="idea-card" onclick="quickIdea(3)">
+                <div class="idea-card">
                     <h4>💰 Off-Market Opportunities</h4>
                     <p>Exclusive inventory report</p>
                 </div>
-                <div class="idea-card" onclick="quickIdea(4)">
+                <div class="idea-card">
                     <h4>📊 Neighborhood Report</h4>
                     <p>School ratings, trends, and insights</p>
                 </div>
-                <div class="idea-card" onclick="quickIdea(5)">
+                <div class="idea-card">
                     <h4>🔧 DIY Maintenance Guide</h4>
                     <p>First-year homeowner handbook</p>
                 </div>
@@ -394,7 +394,9 @@ Est. Conversion Rate: 25-40% with proper placement
                 setTimeout(() => btn.textContent = 'Copy to Clipboard', 2000);
             });
         }
-    </script>
+    
+
+</script>
 
 <div class="affiliate">
 AI tools for real estate agents — <a href="https://manychat.com" target="_blank">Automate CRM follow-ups with ManyChat</a> (30% affiliate commission) | <a href="https://jasper.ai" target="_blank">Create faster content with Jasper</a> (30% commission)

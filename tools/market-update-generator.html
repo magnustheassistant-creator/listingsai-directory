@@ -69,7 +69,7 @@
             <label>Custom Data (optional)</label>
             <textarea id="customData" placeholder="Any specific stats or insights you want to include..."></textarea>
         </div>
-        <button type="button" onclick="generateReport()">Generate Market Report</button>
+        <button type="button">Generate Market Report</button>
     </div>
 
     <div class="output" id="output">
@@ -77,7 +77,7 @@
             <h2 style="color:var(--accent);margin-bottom:15px">Market Report Preview</h2>
             <div class="stats-grid" id="statsGrid"></div>
             <div class="market-report" id="reportContent"></div>
-            <span class="copy-btn" onclick="copyReport()">📋 Copy Report</span>
+            <span class="copy-btn">📋 Copy Report</span>
         </div>
     </div>
 
@@ -228,6 +228,8 @@ function copyReport(){
         alert('Report copied to clipboard!');
     });
 }
+
+
 </script>
 
 <footer>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</footer>

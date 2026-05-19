@@ -102,17 +102,17 @@
       </div>
       <label>Select Landing Page Type</label>
       <div class="type-selector">
-        <div class="type-btn active" onclick="selectType('buyer')">
+        <div class="type-btn active"buyer')">
           <div class="type-btn-icon">🏠</div>
           <div class="type-btn-label">Buyer Lead Gen</div>
           <div class="type-btn-desc">Generate buyer leads</div>
         </div>
-        <div class="type-btn" onclick="selectType('seller')">
+        <div class="type-btn"seller')">
           <div class="type-btn-icon">📊</div>
           <div class="type-btn-label">Seller Lead Gen</div>
           <div class="type-btn-desc">Capture seller leads</div>
         </div>
-        <div class="type-btn" onclick="selectType('community')">
+        <div class="type-btn"community')">
           <div class="type-btn-icon">🌆</div>
           <div class="type-btn-label">Community Report</div>
           <div class="type-btn-desc">Gated content capture</div>
@@ -139,16 +139,16 @@
     </div>
 
     <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-      <button type="button" class="btn" onclick="generateLandingPage()">
+      <button type="button" class="btn">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         Generate Landing Page
       </button>
-      <button class="btn btn-secondary" onclick="resetForm()">Reset</button>
+      <button class="btn btn-secondary">Reset</button>
     </div>
 
     <div class="output-section" id="outputSection" style="display:none;">
       <div class="preview-box">
-        <button class="copy-btn" onclick="copyLandingPage()">Copy HTML</button>
+        <button class="copy-btn">Copy HTML</button>
         <div id="landingPagePreview" class="preview-frame"></div>
       </div>
     </div>
@@ -350,7 +350,9 @@
 
     // Set default offer on load
     document.getElementById('offer').value = pageData.buyer.defaultOffer;
-  </script>
+  
+
+</script>
 
 <div class="affiliate">
 AI tools for real estate agents — <a href="https://manychat.com" target="_blank">Automate CRM follow-ups with ManyChat</a> (30% affiliate commission) | <a href="https://jasper.ai" target="_blank">Create faster content with Jasper</a> (30% commission)

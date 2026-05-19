@@ -246,15 +246,15 @@
       <div class="control-group">
         <label>Color Theme</label>
         <div class="theme-picker">
-          <div class="theme-swatch active" style="background: linear-gradient(135deg, #1e3a5f, #2d5a87);" data-theme="flyer-theme-1" onclick="selectTheme(this)"></div>
-          <div class="theme-swatch" style="background: linear-gradient(135deg, #2d1b69, #4a2c82);" data-theme="flyer-theme-2" onclick="selectTheme(this)"></div>
-          <div class="theme-swatch" style="background: linear-gradient(135deg, #1b4d3e, #2d7a5f);" data-theme="flyer-theme-3" onclick="selectTheme(this)"></div>
-          <div class="theme-swatch" style="background: linear-gradient(135deg, #5c2a0a, #8b4513);" data-theme="flyer-theme-4" onclick="selectTheme(this)"></div>
-          <div class="theme-swatch" style="background: linear-gradient(135deg, #3d3d3d, #5a5a5a);" data-theme="flyer-theme-5" onclick="selectTheme(this)"></div>
+          <div class="theme-swatch active" style="background: linear-gradient(135deg, #1e3a5f, #2d5a87);" data-theme="flyer-theme-1"></div>
+          <div class="theme-swatch" style="background: linear-gradient(135deg, #2d1b69, #4a2c82);" data-theme="flyer-theme-2"></div>
+          <div class="theme-swatch" style="background: linear-gradient(135deg, #1b4d3e, #2d7a5f);" data-theme="flyer-theme-3"></div>
+          <div class="theme-swatch" style="background: linear-gradient(135deg, #5c2a0a, #8b4513);" data-theme="flyer-theme-4"></div>
+          <div class="theme-swatch" style="background: linear-gradient(135deg, #3d3d3d, #5a5a5a);" data-theme="flyer-theme-5"></div>
         </div>
       </div>
 
-      <button type="button" class="generate-btn" onclick="generateFlyer()">✨ Generate Flyer HTML</button>
+      <button type="button" class="generate-btn">✨ Generate Flyer HTML</button>
     </div>
   </div>
 
@@ -263,7 +263,7 @@
     <div class="flyer-html-output">
       <pre id="flyerHTML"></pre>
     </div>
-    <button class="copy-btn" onclick="copyHTML()">📋 Copy to Clipboard</button>
+    <button class="copy-btn">📋 Copy to Clipboard</button>
   </div>
 
   <!-- Affiliate Box -->
@@ -381,6 +381,8 @@ function copyHTML() {
     setTimeout(() => btn.textContent = '📋 Copy to Clipboard', 2000);
   });
 }
+
+
 </script>
 </body>
 </html>

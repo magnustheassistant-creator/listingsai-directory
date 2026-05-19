@@ -122,11 +122,11 @@
       </div>
 
       <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <button type="button" class="btn" onclick="generateSheet()">
+        <button type="button" class="btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           Generate Sign-in Sheet
         </button>
-        <button class="btn btn-secondary" onclick="printSheet()">
+        <button class="btn btn-secondary">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
           Print Sheet
         </button>
@@ -135,7 +135,7 @@
 
     <div class="output-section" id="outputSection" style="display:none;">
       <div class="output-box">
-        <button class="copy-btn" onclick="copySheet()">Copy</button>
+        <button class="copy-btn">Copy</button>
         <pre id="outputContent"></pre>
       </div>
     </div>
@@ -289,7 +289,9 @@ ${tableRows}──────────────────────�
       printWindow.document.close();
       printWindow.print();
     }
-  </script>
+  
+
+</script>
 
 <div class="affiliate">
 AI tools for real estate agents — <a href="https://manychat.com" target="_blank">Automate CRM follow-ups with ManyChat</a> (30% affiliate commission) | <a href="https://jasper.ai" target="_blank">Create faster content with Jasper</a> (30% commission)

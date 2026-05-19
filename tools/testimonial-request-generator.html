@@ -71,7 +71,7 @@
             <label>Agent Name</label>
             <input type="text" id="agentName" placeholder="e.g., Sarah Johnson">
         </div>
-        <button type="button" onclick="generateTemplates()">Generate Testimonial Requests</button>
+        <button type="button">Generate Testimonial Requests</button>
     </div>
 
     <div class="tips-section">
@@ -275,7 +275,7 @@ function generateTemplates(){
         <div class="template-card">
             <span class="channel">📧 ${channel.charAt(0).toUpperCase() + channel.slice(1)} Request</span>
             <p class="template-text">${finalTemplate}</p>
-            <span class="copy-btn" onclick="copyTemplate(this)">📋 Copy Template</span>
+            <span class="copy-btn">📋 Copy Template</span>
         </div>
     `;
     
@@ -289,6 +289,8 @@ function copyTemplate(el){
         setTimeout(() => { el.textContent = '📋 Copy Template'; }, 2000);
     });
 }
+
+
 </script>
 
 <footer>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</footer>

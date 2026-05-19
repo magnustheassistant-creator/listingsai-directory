@@ -167,7 +167,7 @@
                 <label for="contactNotes">Notes</label>
                 <textarea id="contactNotes" placeholder="Birthday, family details, referral history, preferences..."></textarea>
             </div>
-            <button class="btn" onclick="addContact()">Add Contact</button>
+            <button class="btn">Add Contact</button>
         </div>
 
         <div class="tracker-card">
@@ -271,8 +271,8 @@
                         <td>${contact.category || '-'}</td>
                         <td>${formatDate(contact.lastContact)}</td>
                         <td>
-                            <button class="btn action-btn" onclick="editContact(${index})">Edit</button>
-                            <button class="btn action-btn btn-danger" onclick="deleteContact(${index})">Delete</button>
+                            <button class="btn action-btn">Edit</button>
+                            <button class="btn action-btn btn-danger">Delete</button>
                         </td>
                     </tr>
                     ${contact.notes ? `<tr><td colspan="5" style="color:#8b949e;font-size:0.9rem;padding-top:0;">📝 ${contact.notes}</td></tr>` : ''}
@@ -342,7 +342,9 @@
         // Initialize
         updateStats();
         renderContacts();
-    </script>
+    
+
+</script>
 
 <div class="affiliate">
 AI tools for real estate agents — <a href="https://manychat.com" target="_blank">Automate CRM follow-ups with ManyChat</a> (30% affiliate commission) | <a href="https://jasper.ai" target="_blank">Create faster content with Jasper</a> (30% commission)

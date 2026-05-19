@@ -178,15 +178,15 @@
       <div class="textarea-note">Adding notes helps personalize the script to sound more natural and relevant</div>
     </div>
 
-    <button type="button" class="generate-btn" onclick="generateScript()">✨ Generate My Script</button>
+    <button type="button" class="generate-btn">✨ Generate My Script</button>
   </div>
 
   <div class="output-box" id="outputBox">
     <h3>📋 Your Door Knocking Script</h3>
     <div class="script-text" id="scriptOutput"></div>
     <div class="action-btns">
-      <button type="button" class="action-btn" onclick="copyScript()">📋 Copy to Clipboard</button>
-      <button class="action-btn" onclick="printScript()">🖨️ Print Script</button>
+      <button type="button" class="action-btn">📋 Copy to Clipboard</button>
+      <button class="action-btn">🖨️ Print Script</button>
     </div>
   </div>
 
@@ -387,6 +387,8 @@ function printScript() {
   win.document.close();
   win.print();
 }
+
+
 </script>
 </body>
 </html>

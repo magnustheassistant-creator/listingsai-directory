@@ -67,14 +67,14 @@
             <label>Location (optional)</label>
             <input type="text" id="location" placeholder="e.g., Austin, TX">
         </div>
-        <button type="button" onclick="generateFAQ()">Generate FAQ</button>
+        <button type="button">Generate FAQ</button>
     </div>
 
     <div class="output" id="output">
         <div class="card">
             <h2 style="color:var(--accent);margin-bottom:15px">Your FAQ Section</h2>
             <div id="faqContainer"></div>
-            <span class="copy-btn" onclick="toggleHTML()">📄 View HTML</span>
+            <span class="copy-btn">📄 View HTML</span>
             <div class="html-output" id="htmlOutput"></div>
         </div>
     </div>
@@ -243,6 +243,8 @@ function toggleHTML(){
     const output = document.getElementById('htmlOutput');
     output.style.display = output.style.display === 'none' ? 'block' : 'none';
 }
+
+
 </script>
 
 <footer>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</footer>

@@ -68,14 +68,14 @@
             <label>Contact Info</label>
             <input type="text" id="contact" placeholder="e.g., sarah@realestate.com | (512) 555-0123">
         </div>
-        <button type="button" onclick="generateNewsletter()">Build Newsletter</button>
+        <button type="button">Build Newsletter</button>
     </div>
 
     <div class="output" id="output">
         <div class="card">
             <h2 style="color:var(--accent);margin-bottom:15px">Newsletter Preview</h2>
             <div class="newsletter-preview" id="preview"></div>
-            <span class="copy-btn" onclick="copyNewsletter()">📋 Copy HTML</span>
+            <span class="copy-btn">📋 Copy HTML</span>
         </div>
     </div>
 
@@ -254,6 +254,8 @@ function copyNewsletter(){
         alert('Newsletter HTML copied to clipboard!');
     });
 }
+
+
 </script>
 
 <footer>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</footer>

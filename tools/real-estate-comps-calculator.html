@@ -81,8 +81,8 @@
 </div>
 
 <div class="btn-row">
-<button type="button" onclick="calculate()">Calculate Comps</button>
-<button type="button" class="copy-btn" onclick="copyOutput()">Copy Report</button>
+<button type="button">Calculate Comps</button>
+<button type="button" class="copy-btn">Copy Report</button>
 </div>
 
 <div class="summary-grid" id="summaryGrid">
@@ -259,6 +259,8 @@ function copyOutput() {
     }
     navigator.clipboard.writeText(text).then(function(){ alert('Report copied!'); });
 }
+
+
 </script>
 </body>
 </html>

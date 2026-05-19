@@ -98,11 +98,11 @@
         Select Your Call Type
       </div>
       <div class="tab-buttons">
-        <button type="button" class="tab-btn active" onclick="selectScript('fsbo')">FSBO</button>
-        <button type="button" class="tab-btn" onclick="selectScript('expired')">Expired Listing</button>
-        <button type="button" class="tab-btn" onclick="selectScript('sphere')">Sphere of Influence</button>
-        <button type="button" class="tab-btn" onclick="selectScript('geo')">Geographic Farming</button>
-        <button type="button" class="tab-btn" onclick="selectScript('pastclient')">Past Client Re-engagement</button>
+        <button type="button" class="tab-btn active"fsbo')">FSBO</button>
+        <button type="button" class="tab-btn"expired')">Expired Listing</button>
+        <button type="button" class="tab-btn"sphere')">Sphere of Influence</button>
+        <button type="button" class="tab-btn"geo')">Geographic Farming</button>
+        <button type="button" class="tab-btn"pastclient')">Past Client Re-engagement</button>
       </div>
       <div style="margin-top: 16px;">
         <label>Your Name (for personalization)</label>
@@ -115,18 +115,18 @@
     </div>
 
     <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-      <button type="button" class="btn" onclick="generateScript()">
+      <button type="button" class="btn">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
         Generate Script
       </button>
-      <button type="button" class="btn btn-secondary" onclick="clearScript()">Clear</button>
+      <button type="button" class="btn btn-secondary">Clear</button>
     </div>
 
     <div class="output-section" id="outputSection" style="display:none;">
       <div class="script-box" id="scriptOutput">
         <div class="script-header">
           <div class="script-title" id="scriptTitle">FSBO Cold Call Script</div>
-          <button type="button" class="copy-btn" onclick="copyScript()">Copy Script</button>
+          <button type="button" class="copy-btn">Copy Script</button>
         </div>
         <div class="script-meta" id="scriptMeta">Script Duration: 2-3 minutes</div>
         <div id="scriptContent"></div>
@@ -349,7 +349,9 @@
       document.querySelectorAll('input').forEach(el => el.value = '');
       document.getElementById('outputSection').style.display = 'none';
     }
-  </script>
+  
+
+</script>
 <div class="affiliate">AI tools for real estate agents — <a href="https://manychat.com" target="_blank">Automate CRM follow-ups with ManyChat</a> (30% affiliate commission) | <a href="https://jasper.ai" target="_blank">Create faster content with Jasper</a> (30% commission)</div>
 </body>
 </html>

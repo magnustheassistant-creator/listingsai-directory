@@ -197,16 +197,16 @@
     </div>
 
     <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-      <button type="button" class="btn" onclick="generatePersona()">
+      <button type="button" class="btn">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         Generate Buyer Persona
       </button>
-      <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear Form</button>
+      <button type="button" class="btn btn-secondary">Clear Form</button>
     </div>
 
     <div class="output-section" id="outputSection" style="display:none;">
       <div class="persona-card" id="personaOutput">
-        <button type="button" class="copy-btn" onclick="copyPersona()">Copy</button>
+        <button type="button" class="copy-btn" onclick="copyOutput()">Copy</button>
       </div>
     </div>
 
@@ -346,7 +346,7 @@
       `;
 
       const output = document.getElementById('personaOutput');
-      output.innerHTML = '<button type="button" class="copy-btn" onclick="copyPersona()">Copy</button>' + personaHTML;
+      output.innerHTML = '<button type="button" class="copy-btn" onclick="copyOutput()">Copy</button>' + personaHTML;
       document.getElementById('outputSection').style.display = 'block';
     }
 
@@ -366,7 +366,9 @@
       });
       document.getElementById('outputSection').style.display = 'none';
     }
-  </script>
+  
+
+</script>
 <div class="affiliate">AI tools for real estate agents — <a href="https://manychat.com" target="_blank">Automate CRM follow-ups with ManyChat</a> (30% affiliate commission) | <a href="https://jasper.ai" target="_blank">Create faster content with Jasper</a> (30% commission)</div>
 </body>
 </html>

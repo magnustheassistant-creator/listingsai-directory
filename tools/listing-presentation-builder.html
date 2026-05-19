@@ -257,13 +257,13 @@
                 <label for="marketData">Market Analysis Notes</label>
                 <textarea id="marketData" placeholder="Days on market: 14&#10;Price per sqft: $173&#10;Similar homes sold: 8 in last 90 days"></textarea>
             </div>
-            <button class="btn" onclick="buildPresentation()">Build Presentation</button>
+            <button class="btn">Build Presentation</button>
         </div>
 
         <div class="presentation-output" id="presentationOutput">
             <h2 style="margin-bottom: 20px; color: var(--accent); text-align: center;">Your Listing Presentation</h2>
             <div id="slidesContainer"></div>
-            <button class="copy-btn" onclick="copyAllSlides()" style="width: 100%; margin-top: 15px;">Copy All Slides Text</button>
+            <button class="copy-btn" style="width: 100%; margin-top: 15px;">Copy All Slides Text</button>
         </div>
 
         <div class="cta-section">
@@ -449,7 +449,9 @@
                 alert('Presentation copied to clipboard! Paste into Canva or your presentation tool.');
             });
         }
-    </script>
+    
+
+</script>
 <div class="affiliate">AI tools for real estate agents — <a href="https://manychat.com" target="_blank">Automate CRM follow-ups with ManyChat</a> (30% affiliate commission) | <a href="https://jasper.ai" target="_blank">Create faster content with Jasper</a> (30% commission)</div>
 </body>
 </html>

@@ -71,7 +71,7 @@
             <label>Property Location</label>
             <input type="text" id="location" placeholder="e.g., Austin, TX">
         </div>
-        <button type="button" onclick="generateTitles()">Generate YouTube Titles</button>
+        <button type="button">Generate YouTube Titles</button>
     </div>
 
     <div class="output" id="output">
@@ -200,7 +200,7 @@ function generateTitles(){
     container.innerHTML = titles.map((t, i) => {
         let title = t.text.replace(/\[Location\]/g, location).replace(/\[Keyword\]/g, keyword);
         return `
-            <div class="title-card" onclick="copyTitle(this)">
+            <div class="title-card">
                 <span class="badge ${t.badge}">${t.badge}</span>
                 <span class="number">#${i + 1}</span>
                 <p class="title-text">${title}</p>
@@ -220,6 +220,8 @@ function copyTitle(el){
         setTimeout(() => { tip.innerHTML = '💡 Click to copy'; }, 2000);
     });
 }
+
+
 </script>
 
 <footer>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</footer>

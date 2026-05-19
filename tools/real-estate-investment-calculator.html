@@ -67,8 +67,8 @@
 </div>
 
 <div class="btn-row">
-<button type="button" onclick="calculate()">Analyze Investment</button>
-<button type="button" class="copy-btn" onclick="copyOutput()">Copy Report</button>
+<button type="button">Analyze Investment</button>
+<button type="button" class="copy-btn">Copy Report</button>
 </div>
 
 <div class="summary-grid" id="summaryGrid">
@@ -288,6 +288,8 @@ function copyOutput() {
     if(!text || text.includes('Your')) { alert('Generate the report first!'); return; }
     navigator.clipboard.writeText(text).then(function(){ alert('Report copied!'); });
 }
+
+
 </script>
 </body>
 </html>

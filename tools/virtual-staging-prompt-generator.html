@@ -175,8 +175,8 @@
             <textarea id="additionalInstructions" placeholder="e.g., 'Include a reading nook by the window', 'Make it feel like a high-end resort', 'Add plants and books for warmth'..."></textarea>
         </div>
         <div class="btn-group">
-            <button type="button" class="btn btn-primary" onclick="generatePrompt()">Generate Prompt</button>
-            <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear</button>
+            <button type="button" class="btn btn-primary">Generate Prompt</button>
+            <button type="button" class="btn btn-secondary">Clear</button>
         </div>
     </div>
 
@@ -186,7 +186,7 @@
             <span class="room-tag" id="roomTag"></span>
             <pre id="promptOutput"></pre>
         </div>
-        <button class="btn btn-primary copy-btn" onclick="copyPrompt()">Copy Prompt</button>
+        <button class="btn btn-primary copy-btn">Copy Prompt</button>
         <div class="disclosure-note">
             <strong>MLS Disclosure Reminder:</strong> When using virtually staged images on MLS or public listings, add "Virtually Staged" text on the image per NAR guidelines and your local MLS rules.
         </div>
@@ -327,6 +327,8 @@
         document.getElementById('additionalInstructions').value = '';
         document.getElementById('resultCard').classList.remove('visible');
     }
+
+
 </script>
 
 <div class="affiliate">

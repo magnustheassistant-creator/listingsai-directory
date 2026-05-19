@@ -142,7 +142,7 @@
     </div>
 
     <div class="btn-row">
-        <button type="button" class="btn" onclick="calculate()">📊 Calculate ROI</button>
+        <button type="button" class="btn">📊 Calculate ROI</button>
     </div>
 
     <div class="results" id="results">
@@ -178,14 +178,14 @@
         </div>
 
         <div class="verdict" id="verdict"></div>
-        <p class="lock-note">🔒 <a href="#" onclick="showBuy()" style="color: var(--accent);">Unlock full version</a> — $9, detailed reports + export</p>
+        <p class="lock-note">🔒 <a href="#" style="color: var(--accent);">Unlock full version</a> — $9, detailed reports + export</p>
     </div>
 </div>
 
 <!-- Buy Overlay -->
 <div class="buy-overlay" id="buyOverlay">
     <div class="buy-card" style="position: relative;">
-        <button type="button" class="close-overlay" onclick="hideBuy()">×</button>
+        <button type="button" class="close-overlay">×</button>
         <h3>Unlock Full Version</h3>
         <p>Get detailed PDF reports, cash flow projections, 5-year forecast, and export to CSV.</p>
         <span class="price">$9</span>
@@ -266,6 +266,8 @@ function calculate() {
 
 function showBuy() { document.getElementById('buyOverlay').classList.add('show'); }
 function hideBuy() { document.getElementById('buyOverlay').classList.remove('show'); }
+
+
 </script>
 <div class="affiliate"><a href="https://listingsai.directory" target="_blank">Browse 50+ AI tools for real estate</a> - ListingsAI recommends ManyChat for real estate CRMs <a href="https://manychat.com" target="_blank">Try here</a></div></body>
 </html>

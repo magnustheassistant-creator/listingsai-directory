@@ -98,165 +98,165 @@
         <label style="display:block;margin-bottom:6px;font-size:0.85em;color:var(--muted);">Email (for your report)</label>
         <input type="email" id="userEmail" placeholder="alex@email.com">
         <div class="btn-row">
-            <button class="btn" onclick="goToStep(1)" style="width:100%;">Start Quiz →</button>
+            <button class="btn" style="width:100%;">Start Quiz →</button>
         </div>
     </div>
 
     <!-- Questions -->
     <div class="card hidden" id="step-1">
         <div class="question-label">1. What's your primary reason for buying real estate?</div>
-        <div class="option" onclick="selectOption(this, 1, 'buy')">
+        <div class="option"buy')">
             <div class="option-radio"></div>
             <span>Primary residence — find my forever home</span>
             <span class="option-score">+2 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 1, 'invest')">
+        <div class="option"invest')">
             <div class="option-radio"></div>
             <span>Investment — rental income and appreciation</span>
             <span class="option-score">+3 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 1, 'flip')">
+        <div class="option"flip')">
             <div class="option-radio"></div>
             <span>Fix and flip — buy, renovate, sell for profit</span>
             <span class="option-score">+4 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 1, 'relocate')">
+        <div class="option"relocate')">
             <div class="option-radio"></div>
             <span>Relocating — job move or lifestyle change</span>
             <span class="option-score">+2 pts</span>
         </div>
         <div class="btn-row">
-            <button class="btn btn-secondary" onclick="goToStep(0)">← Back</button>
-            <button class="btn" onclick="nextStep(1)" id="next1" disabled>Next →</button>
+            <button class="btn btn-secondary">← Back</button>
+            <button class="btn" id="next1" disabled>Next →</button>
         </div>
     </div>
 
     <div class="card hidden" id="step-2">
         <div class="question-label">2. What's your current budget range?</div>
-        <div class="option" onclick="selectOption(this, 2, 'under300')">
+        <div class="option"under300')">
             <div class="option-radio"></div><span>Under $300,000</span><span class="option-score">+1 pt</span>
         </div>
-        <div class="option" onclick="selectOption(this, 2, '300to500')">
+        <div class="option"300to500')">
             <div class="option-radio"></div><span>$300,000 – $500,000</span><span class="option-score">+2 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 2, '500to750')">
+        <div class="option"500to750')">
             <div class="option-radio"></div><span>$500,000 – $750,000</span><span class="option-score">+3 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 2, '750to1m')">
+        <div class="option"750to1m')">
             <div class="option-radio"></div><span>$750,000 – $1,000,000</span><span class="option-score">+4 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 2, 'over1m')">
+        <div class="option"over1m')">
             <div class="option-radio"></div><span>Over $1,000,000</span><span class="option-score">+5 pts</span>
         </div>
         <div class="btn-row">
-            <button class="btn btn-secondary" onclick="goToStep(1)">← Back</button>
-            <button class="btn" onclick="nextStep(2)" id="next2" disabled>Next →</button>
+            <button class="btn btn-secondary">← Back</button>
+            <button class="btn" id="next2" disabled>Next →</button>
         </div>
     </div>
 
     <div class="card hidden" id="step-3">
         <div class="question-label">3. How soon are you looking to make a decision?</div>
-        <div class="option" onclick="selectOption(this, 3, 'asap')">
+        <div class="option"asap')">
             <div class="option-radio"></div><span>Ready to move — within 30 days</span><span class="option-score">+5 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 3, '1to3')">
+        <div class="option"1to3')">
             <div class="option-radio"></div><span>1–3 months — researching now</span><span class="option-score">+4 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 3, '3to6')">
+        <div class="option"3to6')">
             <div class="option-radio"></div><span>3–6 months — exploring options</span><span class="option-score">+2 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 3, '6plus')">
+        <div class="option"6plus')">
             <div class="option-radio"></div><span>6+ months — just browsing</span><span class="option-score">+1 pt</span>
         </div>
         <div class="btn-row">
-            <button class="btn btn-secondary" onclick="goToStep(2)">← Back</button>
-            <button class="btn" onclick="nextStep(3)" id="next3" disabled>Next →</button>
+            <button class="btn btn-secondary">← Back</button>
+            <button class="btn" id="next3" disabled>Next →</button>
         </div>
     </div>
 
     <div class="card hidden" id="step-4">
         <div class="question-label">4. What's your financing situation?</div>
-        <div class="option" onclick="selectOption(this, 4, 'cash')">
+        <div class="option"cash')">
             <div class="option-radio"></div><span>All cash — no mortgage needed</span><span class="option-score">+5 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 4, 'preapproved')">
+        <div class="option"preapproved')">
             <div class="option-radio"></div><span>Pre-approved — ready to close</span><span class="option-score">+4 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 4, 'prequal')">
+        <div class="option"prequal')">
             <div class="option-radio"></div><span>Pre-qualified — in process</span><span class="option-score">+3 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 4, 'financing')">
+        <div class="option"financing')">
             <div class="option-radio"></div><span>Planning to finance — need to start process</span><span class="option-score">+2 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 4, 'unclear')">
+        <div class="option"unclear')">
             <div class="option-radio"></div><span>Not sure yet — need guidance</span><span class="option-score">+1 pt</span>
         </div>
         <div class="btn-row">
-            <button class="btn btn-secondary" onclick="goToStep(3)">← Back</button>
-            <button class="btn" onclick="nextStep(4)" id="next4" disabled>Next →</button>
+            <button class="btn btn-secondary">← Back</button>
+            <button class="btn" id="next4" disabled>Next →</button>
         </div>
     </div>
 
     <div class="card hidden" id="step-5">
         <div class="question-label">5. Which features matter most to you?</div>
-        <div class="option" onclick="selectOption(this, 5, 'location')">
+        <div class="option"location')">
             <div class="option-radio"></div><span>Location — walkability, commute, neighborhood</span><span class="option-score">+3 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 5, 'space')">
+        <div class="option"space')">
             <div class="option-radio"></div><span>Space — bedrooms, yard, square footage</span><span class="option-score">+2 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 5, 'modern')">
+        <div class="option"modern')">
             <div class="option-radio"></div><span>Modern updates — smart home, renovated kitchen</span><span class="option-score">+2 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 5, 'appreciation')">
+        <div class="option"appreciation')">
             <div class="option-radio"></div><span>Appreciation potential — area growth trends</span><span class="option-score">+4 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 5, 'passive')">
+        <div class="option"passive')">
             <div class="option-radio"></div><span>Passive income — rental yield and cash flow</span><span class="option-score">+5 pts</span>
         </div>
         <div class="btn-row">
-            <button class="btn btn-secondary" onclick="goToStep(4)">← Back</button>
-            <button class="btn" onclick="nextStep(5)" id="next5" disabled>Next →</button>
+            <button class="btn btn-secondary">← Back</button>
+            <button class="btn" id="next5" disabled>Next →</button>
         </div>
     </div>
 
     <div class="card hidden" id="step-6">
         <div class="question-label">6. How familiar are you with AI-powered real estate tools?</div>
-        <div class="option" onclick="selectOption(this, 6, 'expert')">
+        <div class="option"expert')">
             <div class="option-radio"></div><span>Expert — already using AI tools daily</span><span class="option-score">+4 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 6, 'familiar')">
+        <div class="option"familiar')">
             <div class="option-radio"></div><span>Familiar — tried a few, want more</span><span class="option-score">+3 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 6, 'somewhat')">
+        <div class="option"somewhat')">
             <div class="option-radio"></div><span>Somewhat — heard about them, haven't tried</span><span class="option-score">+2 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 6, 'new')">
+        <div class="option"new')">
             <div class="option-radio"></div><span>New to AI — but interested to learn</span><span class="option-score">+1 pt</span>
         </div>
         <div class="btn-row">
-            <button class="btn btn-secondary" onclick="goToStep(5)">← Back</button>
-            <button class="btn" onclick="nextStep(6)" id="next6" disabled>Next →</button>
+            <button class="btn btn-secondary">← Back</button>
+            <button class="btn" id="next6" disabled>Next →</button>
         </div>
     </div>
 
     <div class="card hidden" id="step-7">
         <div class="question-label">7. What's your investment experience level?</div>
-        <div class="option" onclick="selectOption(this, 7, 'veteran')">
+        <div class="option"veteran')">
             <div class="option-radio"></div><span>Veteran — 5+ properties, active investor</span><span class="option-score">+5 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 7, 'experienced')">
+        <div class="option"experienced')">
             <div class="option-radio"></div><span>Experienced — 1-4 properties owned</span><span class="option-score">+3 pts</span>
         </div>
-        <div class="option" onclick="selectOption(this, 7, 'first')">
+        <div class="option"first')">
             <div class="option-radio"></div><span>First-time investor — learning the market</span><span class="option-score">+1 pt</span>
         </div>
-        <div class="option" onclick="selectOption(this, 7, 'curious')">
+        <div class="option"curious')">
             <div class="option-radio"></div><span>Curious — just exploring real estate</span><span class="option-score">+1 pt</span>
         </div>
         <div class="btn-row">
-            <button class="btn btn-secondary" onclick="goToStep(6)">← Back</button>
-            <button class="btn" onclick="showResults()" id="next7" disabled>See My Results →</button>
+            <button class="btn btn-secondary">← Back</button>
+            <button class="btn" id="next7" disabled>See My Results →</button>
         </div>
     </div>
 
@@ -427,6 +427,8 @@ function showResults() {
     document.getElementById('action3').innerText = actions[2];
     document.getElementById('actionPrice').innerText = price;
 }
+
+
 </script>
 <div class="affiliate">AI tools for real estate agents — <a href="https://manychat.com" target="_blank">Automate CRM follow-ups with ManyChat</a> (30% affiliate commission) | <a href="https://jasper.ai" target="_blank">Create faster content with Jasper</a> (30% commission)</div>
 </body>
