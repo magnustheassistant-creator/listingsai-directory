@@ -206,7 +206,7 @@
 
     <div class="output-section" id="outputSection" style="display:none;">
       <div class="persona-card" id="personaOutput">
-        <button type="button" class="copy-btn" onclick="copyOutput()">button" class="copy-btn" onclick="copyOutput"Copy</button>
+        <button type="button" class="copy-btn" onclick="copyPersona()">Copy</button>
       </div>
     </div>
 
@@ -346,7 +346,7 @@
       `;
 
       const output = document.getElementById('personaOutput');
-      output.innerHTML = '<button type="button" class="copy-btn" onclick="copyOutput()">button" class="copy-btn" onclick="copyOutput"Copy</button>' + personaHTML;
+      output.innerHTML = '<button type="button" class="copy-btn" onclick="copyPersona()">Copy</button>' + personaHTML;
       document.getElementById('outputSection').style.display = 'block';
     }
 
