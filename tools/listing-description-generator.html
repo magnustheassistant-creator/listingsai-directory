@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Listing Description Generator — ListingsAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #0a0a0f; --card: #111; --border: #222; --accent: #00d4ff; --accent2: #7c3aed; --text: #f1f5f9; --muted: #64748b; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        header { text-align: center; margin-bottom: 40px; }
+        .badge { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #000; font-size: 0.75em; font-weight: 700; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 12px; }
+        h1 { font-size: 2.2em; margin-bottom: 10px; }
+        .subtitle { color: var(--muted); font-size: 1.1em; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; margin-bottom: 20px; }
+        .card h2 { font-size: 1.1em; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        label { display: block; font-size: 0.85em; color: var(--muted); margin-bottom: 6px; font-weight: 500; }
+        input, select, textarea { width: 100%; padding: 12px 14px; background: #0a0a0f; border: 1px solid var(--border); border-radius: 10px; color: var(--text); font-size: 0.95em; font-family: 'Inter', sans-serif; outline: none; transition: border-color 0.2s; }
+        input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+        textarea { resize: vertical; min-height: 120px; }
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: var(--accent); color: #000; font-weight: 700; font-size: 1em; border: none; border-radius: 10px; cursor: pointer; transition: all 0.2s; }
+        .btn:hover { background: #00b8df; transform: translateY(-1px); }
+        .btn-secondary { background: var(--card); color: var(--text); border: 1px solid var(--border); }
+        .btn-secondary:hover { border-color: var(--accent); }
+        .btn-row { display: flex; gap: 12px; margin-top: 20px; }
+        #output { display: none; margin-top: 24px; }
+        #output.show { display: block; }
+        .output-box { background: linear-gradient(135deg, #0a1a2e 0%, #0a0a0f 100%); border: 1px solid var(--accent); border-radius: 16px; padding: 24px; position: relative; }
+        .output-label { font-size: 0.75em; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+        #description-result { font-size: 1.05em; line-height: 1.7; white-space: pre-wrap; }
+        .copy-btn { position: absolute; top: 20px; right: 20px; background: var(--accent); color: #000; border: none; padding: 8px 16px; border-radius: 8px; font-size: 0.85em; font-weight: 600; cursor: pointer; }
+        .copy-btn:hover { background: #00b8df; }
+        .buy-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 100; align-items: center; justify-content: center; }
+        .buy-overlay.show { display: flex; }
+        .buy-card { background: var(--card); border: 1px solid var(--accent2); border-radius: 20px; padding: 40px; max-width: 480px; text-align: center; }
+        .buy-card h3 { font-size: 1.5em; margin-bottom: 10px; }
+        .buy-card p { color: var(--muted); margin-bottom: 24px; font-size: 0.95em; }
+        .price { font-size: 2.5em; font-weight: 700; color: var(--accent); }
+        .price-note { color: var(--muted); font-size: 0.8em; margin-bottom: 24px; display: block; }
+        .buy-links { display: flex; flex-direction: column; gap: 12px; }
+        .buy-links a { display: block; padding: 14px; background: var(--accent); color: #000; text-decoration: none; font-weight: 700; border-radius: 10px; transition: all 0.2s; }
+        .buy-links a:hover { background: #00b8df; }
+        .close-overlay { position: absolute; top: 16px; right: 20px; background: none; border: none; color: var(--muted); font-size: 1.5em; cursor: pointer; }
+        .generator-btn { font-size: 0.9em; padding: 10px 20px; }
+        .lock-msg { font-size: 0.75em; color: var(--muted); text-align: center; margin-top: 10px; }
+        @media (max-width: 600px) { .row { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <span class="badge">ListingsAI Tool</span>
+        <h1>AI Listing Description Generator</h1>
+        <p class="subtitle">Enter property details → Get a professional, SEO-optimized listing description in seconds</p>
+    </header>
+
+    <div class="card">
+        <h2>📋 Property Details</h2>
+        <div class="row">
+            <div>
+                <label>Property Type</label>
+                <select id="type">
+                    <option value="luxury">Luxury / High-End</option>
+                    <option value="family">Family Home</option>
+                    <option value="starter">Starter Home / Condo</option>
+                    <option value="investment">Investment / Rental</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="land">Land / Lot</option>
+                </select>
+            </div>
+            <div>
+                <label>Style / Architecture</label>
+                <input id="style" placeholder="e.g. Modern farmhouse, Mid-century, Craftsman">
+            </div>
+        </div>
+        <div style="margin-top: 16px;">
+            <label>Address or Location</label>
+            <input id="address" placeholder="123 Oak Street, Austin, TX">
+        </div>
+        <div class="row" style="margin-top: 16px;">
+            <div>
+                <label>Bedrooms</label>
+                <input id="beds" type="number" placeholder="3">
+            </div>
+            <div>
+                <label>Bathrooms</label>
+                <input id="baths" type="number" step="0.5" placeholder="2.5">
+            </div>
+        </div>
+        <div class="row" style="margin-top: 16px;">
+            <div>
+                <label>Square Footage</label>
+                <input id="sqft" placeholder="2,400">
+            </div>
+            <div>
+                <label>Lot Size (optional)</label>
+                <input id="lot" placeholder="0.25 acres">
+            </div>
+        </div>
+        <div style="margin-top: 16px;">
+            <label>Price (optional)</label>
+            <input id="price" placeholder="$425,000">
+        </div>
+        <div style="margin-top: 16px;">
+            <label>Year Built (optional)</label>
+            <input id="year" placeholder="2018">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>✨ Key Features & Upgrades</h2>
+        <textarea id="features" placeholder="e.g. Chef's kitchen with quartz countertops, renovated master bath, smart home system, large backyard with pool, new HVAC 2024, walk-in closets, home office..."></textarea>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Tone & Focus</h2>
+        <div class="row">
+            <div>
+                <label>Tone</label>
+                <select id="tone">
+                    <option value="luxury">Luxury / Sophisticated</option>
+                    <option value="warm">Warm / Family-Friendly</option>
+                    <option value="professional">Professional / Clean</option>
+                    <option value="exciting">Exciting / FOMO-Inducing</option>
+                </select>
+            </div>
+            <div>
+                <label>Length</label>
+                <select id="length">
+                    <option value="short">Short — 80 words</option>
+                    <option value="medium" selected>Medium — 150 words</option>
+                    <option value="long">Long — 250 words</option>
+                </select>
+            </div>
+        </div>
+        <div style="margin-top: 16px;">
+            <label>Target Buyer (optional)</label>
+            <input id="target" placeholder="e.g. First-time homebuyers, Luxury buyers, Investors">
+        </div>
+    </div>
+
+    <div class="btn-row">
+        <button class="btn generator-btn" onclick="generate()">✨ Generate Description</button>
+        <button class="btn btn-secondary" onclick="clearForm()">Clear</button>
+    </div>
+
+    <div id="output">
+        <div class="output-box">
+            <div class="output-label">Your Listing Description</div>
+            <button class="copy-btn" onclick="copyOutput()">📋 Copy</button>
+            <div id="description-result"></div>
+        </div>
+        <p class="lock-msg" id="lock-msg">🔒 <a href="#" onclick="showBuy()" style="color: var(--accent);">Unlock full version</a> — $9 one-time, remove watermark</p>
+    </div>
+
+    <p style="text-align: center; color: var(--muted); font-size: 0.8em; margin-top: 40px;">
+        Built by ListingsAI · <a href="https://listingsai.directory" style="color: var(--accent);">Browse 50+ AI tools for real estate</a>
+    </p>
+</div>
+
+<!-- Buy Overlay -->
+<div class="buy-overlay" id="buyOverlay">
+    <div class="buy-card" style="position: relative;">
+        <button class="close-overlay" onclick="hideBuy()">×</button>
+        <h3>Unlock Full Version</h3>
+        <p>Get unlimited listing descriptions, SEO keywords, social media versions, and priority support.</p>
+        <span class="price">$9</span>
+        <span class="price-note">one-time payment · lifetime access</span>
+        <div class="buy-links">
+            <a href="[PAYPAL-BUY-LINK]" target="_blank">💳 Buy with PayPal</a>
+            <a href="[STRIPE-BUY-LINK]" target="_blank">💳 Buy with Card (Stripe)</a>
+        </div>
+        <p style="color: var(--muted); font-size: 0.8em; margin-top: 16px;">After payment, receive download link instantly.</p>
+    </div>
+</div>
+
+<script>
+const templates = {
+    luxury: {
+        short: `Experience unparalleled luxury at {address}. This architectural masterpiece showcases {style} design with soaring ceilings, wide-plank oak floors, and a chef's kitchen that rivals five-star restaurants. Smart home integration, private cinema, and resort-style outdoor living complete this extraordinary estate.`,
+        medium: `Welcome to {address} — where {style} design meets extraordinary living. This stunning residence features {beds} expansive bedrooms, {baths} designer baths, and an open-concept great room with floor-to-ceiling windows framing breathtaking views. The gourmet kitchen boasts custom cabinetry, premium appliances, and a walk-in pantry. Outdoor entertaining is effortless on the covered loggia with built-in kitchen and fireplace. Smart home automation, wine cellar, home gym, and a 3-car garage complete this exceptional offering.`,
+        long: `An architectural triumph set on a premium lot in one of the city's most coveted neighborhoods, {address} represents the pinnacle of {style} design. This extraordinary estate offers {beds} bedrooms, {baths} spa-inspired bathrooms, and over {sqft} square feet of meticulously crafted living space. The main level showcases hand-laid herringbone oak floors, a double-height foyer, formal living and dining rooms, and a private study. The chef's kitchen features custom Italian cabinetry, a 6-burner Wolf range, dual dishwashers, and a butler's pantry. The primary suite offers a sitting room, dual custom closets, and a spa bath with soaking tub and rainfall shower. Additional highlights include a lower-level entertainment suite, elevator, generator, and professionally landscaped grounds with saltwater pool and outdoor kitchen.`
+    },
+    family: {
+        short: `Perfect for growing families! This charming {style} home at {address} offers {beds} spacious bedrooms, {baths} updated baths, and an open floor plan that keeps everyone connected. The fenced backyard is ideal for kids and pets, with community pool access nearby. Top-rated schools within walking distance.`,
+        medium: `Ideal for families seeking space and comfort, this welcoming {style} home at {address} features {beds} generously sized bedrooms, {baths} updated bathrooms, and an open-concept main level perfect for everyday living and entertaining. The heart of the home is the renovated kitchen with stainless appliances, quartz counters, and a large island that seats the whole family. Downstairs, a finished basement provides play space or a home office. The private backyard has mature trees, a deck, and room to garden. Located in a family-friendly neighborhood with community parks, top-rated schools, and easy commute access.`,
+        long: `Warm, inviting, and ready for your family to make it home. This lovingly maintained {style} residence at {address} sits on a tree-lined street in one of the area's most family-friendly neighborhoods. {beds} bedrooms and {baths} bathrooms provide ample space, with the primary suite offering a walk-in closet and ensuite bath. The main level flows seamlessly from the updated kitchen — with its farmhouse sink, gas range, and breakfast nook — to the light-filled family room with a stone fireplace. A formal dining room, home office, and mudroom round out the main floor. The fully fenced backyard features mature landscaping, a playset, and a shaded patio. The finished basement offers additional living space, and the detached garage has room for two cars plus storage. Community pool, walking trails, and top-rated schools all within minutes.`
+    },
+    starter: {
+        short: `Starter home perfection! This move-in ready gem at {address} features {beds} bedrooms, {baths} baths, and an efficient open layout. Updated kitchen, new windows, and a private yard — all at an accessible price point. FHA financing welcome.`,
+        medium: `Smart first step or downsizing win — this move-in ready home at {address} delivers everything you need without the extras you don't. {beds} bedrooms and {baths} baths are well-proportioned and bright, with fresh paint and updated flooring throughout. The open living area combines the kitchen and family room, maximizing space and natural light. Recent updates include a new roof, updated electrical, and modern appliances. The private backyard is low-maintenance and perfect for outdoor dining. Minutes to shopping, dining, and commuter routes. Low HOA and no hidden fees. Don't miss this opportunity to stop renting and start owning.`,
+        long: null
+    },
+    investment: {
+        short: `Strong investment opportunity! This {beds}-bed, {baths}-bath property at {address} is positioned for excellent rental income or a quick flip. Comparable rents of ${rentalEstimate}/month. Sought-after location with high tenant demand. Bring all offers.`,
+        medium: null,
+        long: null
+    }
+};
+
+const toneAdjustments = {
+    luxury: { words: ['signature', 'residence', 'offering', 'premium', 'executive', 'resort-style', 'curated', ' bespoke'] },
+    warm: { words: ['welcoming', 'charming', 'cozy', 'loved', 'family-friendly', 'garden-view', 'sun-filled', 'tree-lined'] },
+    professional: { words: ['well-appointed', 'move-in ready', 'updated', 'functional', 'pristine', 'spacious', 'updated', 'designed'] },
+    exciting: { words: ['stunning', 'showstopping', 'must-see', "don't miss", 'rare find', 'act fast', 'dream home', 'jaw-dropping'] }
+};
+
+function generate() {
+    const type = document.getElementById('type').value;
+    const style = document.getElementById('style').value || 'beautiful';
+    const address = document.getElementById('address').value || '[Property Address]';
+    const beds = document.getElementById('beds').value || '3';
+    const baths = document.getElementById('baths').value || '2';
+    const sqft = document.getElementById('sqft').value || '';
+    const price = document.getElementById('price').value || '';
+    const features = document.getElementById('features').value || '';
+    const tone = document.getElementById('tone').value;
+    const length = document.getElementById('length').value;
+    
+    let template = templates[type]?.[length] || templates.family.medium;
+    
+    // Build description
+    let desc = template
+        .replace(/{address}/g, address)
+        .replace(/{style}/g, style)
+        .replace(/{beds}/g, beds)
+        .replace(/{baths}/g, baths)
+        .replace(/{sqft}/g, sqft ? sqft + ' sq ft' : '')
+        .replace(/{price}/g, price ? `Priced at ${price}` : '');
+    
+    // Add features if provided
+    if (features) {
+        const featureList = features.split(',').map(f => f.trim()).filter(Boolean);
+        if (featureList.length > 0) {
+            desc += `\n\nHighlights include: ${featureList.slice(0, 5).join(', ')}.`;
+        }
+    }
+    
+    // Tone adjustment
+    const toneWords = toneAdjustments[tone]?.words || toneAdjustments.professional.words;
+    desc = desc.replace(/\b(gorgeous|beautiful|stunning|lovely)/gi, toneWords[Math.floor(Math.random() * toneWords.length)]);
+    
+    // Price in description
+    if (price) {
+        desc += `\n\nPriced at ${price} — schedule your private showing today.`;
+    }
+    
+    // Show result
+    document.getElementById('output').classList.add('show');
+    document.getElementById('description-result').innerText = desc;
+    document.getElementById('description-result').innerHTML += '\n\n---\n✨ Generated by ListingsAI — AI Tools for Real Estate Professionals';
+    document.getElementById('lock-msg').style.display = 'block';
+}
+
+function copyOutput() {
+    const text = document.getElementById('description-result').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = '📋 Copy', 2000);
+    });
+}
+
+function clearForm() {
+    document.querySelectorAll('input, textarea').forEach(el => el.value = '');
+    document.getElementById('output').classList.remove('show');
+}
+
+function showBuy() {
+    document.getElementById('buyOverlay').classList.add('show');
+}
+function hideBuy() {
+    document.getElementById('buyOverlay').classList.remove('show');
+}
+</script>
+</body>
+</html>

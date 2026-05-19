@@ -887,5 +887,59 @@
       "Pipeline tracking",
       "Team collaboration"
     ]
+  },
+  {
+    "name": "AI Listing Description Generator",
+    "category": "tools",
+    "subcategory": "Free Tool",
+    "description": "Enter property details and get a professional, SEO-optimized listing description in seconds. Includes tone options for luxury, family, and investment properties.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/listing-description-generator.html",
+    "featured": true,
+    "for_realtors": [
+      "Listing descriptions",
+      "SEO copy",
+      "Property marketing",
+      "Social media"
+    ],
+    "image": ""
+  },
+  {
+    "name": "Real Estate ROI Calculator",
+    "category": "tools",
+    "subcategory": "Free Tool",
+    "description": "Analyze rental income, fix-and-flip profit, and long-term hold returns. Calculates cash-on-cash return, cap rate, and monthly cash flow with full expense breakdown.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/roi-calculator.html",
+    "featured": true,
+    "for_realtors": [
+      "Investment analysis",
+      "Rental property",
+      "Fix and flip",
+      "Cap rate analysis"
+    ],
+    "image": ""
+  },
+  {
+    "name": "Lead Qualification Quiz",
+    "category": "tools",
+    "subcategory": "Lead Generation",
+    "description": "7-question interactive quiz that qualifies real estate leads by budget, timeline, financing, and investment experience. Shows personalization and recommendations.",
+    "price": "Free / $14 premium",
+    "affiliate_url": "",
+    "rating": 4.4,
+    "website": "https://listingsai.directory/tools/lead-quiz.html",
+    "featured": true,
+    "for_realtors": [
+      "Lead qualification",
+      "Lead magnet",
+      "Client assessment",
+      "Nurture sequences"
+    ],
+    "image": ""
   }
 ]

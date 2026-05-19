@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate ROI Calculator — ListingsAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #0a0a0f; --card: #111; --border: #222; --accent: #00d4ff; --accent2: #7c3aed; --success: #22c55e; --warning: #f59e0b; --text: #f1f5f9; --muted: #64748b; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+        .container { max-width: 860px; margin: 0 auto; padding: 40px 20px; }
+        header { text-align: center; margin-bottom: 36px; }
+        .badge { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #000; font-size: 0.75em; font-weight: 700; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 12px; }
+        h1 { font-size: 2em; margin-bottom: 10px; }
+        .subtitle { color: var(--muted); }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 26px; margin-bottom: 16px; }
+        .card-title { font-size: 0.85em; color: var(--accent); font-weight: 700; margin-bottom: 18px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 8px; }
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        label { display: block; font-size: 0.82em; color: var(--muted); margin-bottom: 6px; font-weight: 500; }
+        input, select { width: 100%; padding: 11px 13px; background: #0a0a0f; border: 1px solid var(--border); border-radius: 10px; color: var(--text); font-size: 0.95em; font-family: 'Inter', sans-serif; outline: none; transition: border-color 0.2s; }
+        input:focus, select:focus { border-color: var(--accent); }
+        .btn { padding: 13px 26px; background: var(--accent); color: #000; font-weight: 700; font-size: 0.95em; border: none; border-radius: 10px; cursor: pointer; transition: all 0.2s; }
+        .btn:hover { background: #00b8df; transform: translateY(-1px); }
+        .btn-row { display: flex; gap: 12px; margin-top: 20px; }
+        .results { display: none; margin-top: 28px; }
+        .results.show { display: block; }
+        .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .result-card { background: linear-gradient(135deg, #0a1a2e 0%, var(--card) 100%); border: 1px solid var(--border); border-radius: 14px; padding: 20px; text-align: center; }
+        .result-card.highlight { border-color: var(--accent); }
+        .result-label { font-size: 0.78em; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .result-value { font-size: 1.8em; font-weight: 700; color: var(--text); }
+        .result-value.positive { color: var(--success); }
+        .result-value.negative { color: #ef4444; }
+        .result-value.neutral { color: var(--warning); }
+        .result-sub { font-size: 0.72em; color: var(--muted); margin-top: 4px; }
+        .breakdown { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; margin-top: 16px; }
+        .breakdown h3 { font-size: 0.9em; color: var(--accent); margin-bottom: 14px; }
+        .breakdown-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.88em; }
+        .breakdown-row:last-child { border-bottom: none; font-weight: 700; color: var(--accent); }
+        .breakdown-row span:last-child { color: var(--text); }
+        .verdict { margin-top: 20px; padding: 20px; border-radius: 14px; font-weight: 600; text-align: center; font-size: 1em; }
+        .verdict.good { background: rgba(34, 197, 94, 0.1); color: var(--success); border: 1px solid var(--success); }
+        .verdict.mediocre { background: rgba(245, 158, 11, 0.1); color: var(--warning); border: 1px solid var(--warning); }
+        .verdict.bad { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444; }
+        .buy-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 100; align-items: center; justify-content: center; }
+        .buy-overlay.show { display: flex; }
+        .buy-card { background: var(--card); border: 1px solid var(--accent2); border-radius: 20px; padding: 40px; max-width: 460px; text-align: center; position: relative; }
+        .buy-card h3 { font-size: 1.4em; margin-bottom: 10px; }
+        .buy-card p { color: var(--muted); margin-bottom: 24px; font-size: 0.95em; }
+        .price { font-size: 2.5em; font-weight: 700; color: var(--accent); }
+        .price-note { color: var(--muted); font-size: 0.8em; margin-bottom: 24px; display: block; }
+        .buy-links { display: flex; flex-direction: column; gap: 12px; }
+        .buy-links a { display: block; padding: 14px; background: var(--accent); color: #000; text-decoration: none; font-weight: 700; border-radius: 10px; }
+        .close-overlay { position: absolute; top: 16px; right: 20px; background: none; border: none; color: var(--muted); font-size: 1.5em; cursor: pointer; }
+        .lock-note { text-align: center; color: var(--muted); font-size: 0.8em; margin-top: 14px; }
+        @media (max-width: 640px) { .row, .results-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <span class="badge">ListingsAI Tool</span>
+        <h1>Real Estate ROI Calculator</h1>
+        <p class="subtitle">Analyze rental income, flip profit, and long-term appreciation potential</p>
+    </header>
+
+    <div class="card">
+        <div class="card-title">🏠 Property Details</div>
+        <div class="row">
+            <div>
+                <label>Purchase Price ($)</label>
+                <input id="purchasePrice" type="number" placeholder="350000">
+            </div>
+            <div>
+                <label>Property Type</label>
+                <select id="propertyType">
+                    <option value="rental">Rental Property</option>
+                    <option value="flip">Fix & Flip</option>
+                    <option value="hold">Long-term Hold</option>
+                    <option value="commercial">Commercial</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 14px;">
+            <div>
+                <label>Down Payment ($)</label>
+                <input id="downPayment" type="number" placeholder="70000">
+            </div>
+            <div>
+                <label>Interest Rate (%)</label>
+                <input id="interestRate" type="number" step="0.1" placeholder="7.0">
+            </div>
+        </div>
+        <div class="row" style="margin-top: 14px;">
+            <div>
+                <label>Loan Term (years)</label>
+                <input id="loanTerm" type="number" value="30" placeholder="30">
+            </div>
+            <div>
+                <label>Monthly Rent ($)</label>
+                <input id="monthlyRent" type="number" placeholder="2200">
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">💸 Expenses (Annual or Monthly)</div>
+        <div class="row">
+            <div>
+                <label>Property Taxes / year ($)</label>
+                <input id="propertyTax" type="number" placeholder="4200">
+            </div>
+            <div>
+                <label>Insurance / year ($)</label>
+                <input id="insurance" type="number" placeholder="1800">
+            </div>
+        </div>
+        <div class="row" style="margin-top: 14px;">
+            <div>
+                <label>HOA / month ($)</label>
+                <input id="hoa" type="number" placeholder="0">
+            </div>
+            <div>
+                <label>Maintenance Reserve (% of rent)</label>
+                <input id="maintenance" type="number" value="10" placeholder="10">
+            </div>
+        </div>
+        <div class="row" style="margin-top: 14px;">
+            <div>
+                <label>Vacancy Rate (%)</label>
+                <input id="vacancy" type="number" value="8" placeholder="8">
+            </div>
+            <div>
+                <label>Property Management (%)</label>
+                <input id="management" type="number" value="10" placeholder="10">
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-row">
+        <button class="btn" onclick="calculate()">📊 Calculate ROI</button>
+    </div>
+
+    <div class="results" id="results">
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="result-label">Cash-on-Cash Return</div>
+                <div class="result-value" id="cashOnCash">—</div>
+                <div class="result-sub">annual return on cash invested</div>
+            </div>
+            <div class="result-card">
+                <div class="result-label">Monthly Net Cash Flow</div>
+                <div class="result-value" id="monthlyCashFlow">—</div>
+                <div class="result-sub">after all expenses</div>
+            </div>
+            <div class="result-card highlight">
+                <div class="result-label">Cap Rate</div>
+                <div class="result-value" id="capRate">—</div>
+                <div class="result-sub">net operating income / price</div>
+            </div>
+        </div>
+
+        <div class="breakdown" id="breakdown" style="display:none;">
+            <h3>📋 Cash Flow Breakdown</h3>
+            <div class="breakdown-row"><span>Monthly Rent</span><span id="b-rent">—</span></div>
+            <div class="breakdown-row"><span>Vacancy Loss (-<span id="b-vacancyPct">—</span>%)</span><span id="b-vacancy">—</span></div>
+            <div class="breakdown-row"><span>Property Management (-<span id="b-mgmtPct">—</span>%)</span><span id="b-management">—</span></div>
+            <div class="breakdown-row"><span>Maintenance Reserve (-<span id="b-maintPct">—</span>%)</span><span id="b-maintenance">—</span></div>
+            <div class="breakdown-row"><span>Mortgage (P&I)</span><span id="b-mortgage">—</span></div>
+            <div class="breakdown-row"><span>Property Taxes</span><span id="b-taxes">—</span></div>
+            <div class="breakdown-row"><span>Insurance</span><span id="b-insurance">—</span></div>
+            <div class="breakdown-row"><span>HOA</span><span id="b-hoa">—</span></div>
+            <div class="breakdown-row"><span>Net Monthly Cash Flow</span><span id="b-net">—</span></div>
+        </div>
+
+        <div class="verdict" id="verdict"></div>
+        <p class="lock-note">🔒 <a href="#" onclick="showBuy()" style="color: var(--accent);">Unlock full version</a> — $9, detailed reports + export</p>
+    </div>
+</div>
+
+<!-- Buy Overlay -->
+<div class="buy-overlay" id="buyOverlay">
+    <div class="buy-card" style="position: relative;">
+        <button class="close-overlay" onclick="hideBuy()">×</button>
+        <h3>Unlock Full Version</h3>
+        <p>Get detailed PDF reports, cash flow projections, 5-year forecast, and export to CSV.</p>
+        <span class="price">$9</span>
+        <span class="price-note">one-time · lifetime access</span>
+        <div class="buy-links">
+            <a href="[PAYPAL-BUY-LINK]" target="_blank">💳 Buy with PayPal</a>
+            <a href="[STRIPE-BUY-LINK]" target="_blank">💳 Buy with Card (Stripe)</a>
+        </div>
+    </div>
+</div>
+
+<script>
+function calculate() {
+    const purchasePrice = parseFloat(document.getElementById('purchasePrice').value) || 0;
+    const downPayment = parseFloat(document.getElementById('downPayment').value) || 0;
+    const interestRate = (parseFloat(document.getElementById('interestRate').value) || 7) / 100;
+    const loanTerm = parseFloat(document.getElementById('loanTerm').value) || 30;
+    const monthlyRent = parseFloat(document.getElementById('monthlyRent').value) || 0;
+    const propertyTax = (parseFloat(document.getElementById('propertyTax').value) || 0) / 12;
+    const insurance = (parseFloat(document.getElementById('insurance').value) || 0) / 12;
+    const hoa = parseFloat(document.getElementById('hoa').value) || 0;
+    const maintenancePct = parseFloat(document.getElementById('maintenance').value) || 10;
+    const vacancyPct = parseFloat(document.getElementById('vacancy').value) || 8;
+    const managementPct = parseFloat(document.getElementById('management').value) || 10;
+
+    const loanAmount = purchasePrice - downPayment;
+    const monthlyRate = interestRate / 12;
+    const numPayments = loanTerm * 12;
+    const mortgagePayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1);
+
+    const grossRent = monthlyRent;
+    const vacancyLoss = grossRent * (vacancyPct / 100);
+    const managementCost = grossRent * (managementPct / 100);
+    const maintenanceCost = grossRent * (maintenancePct / 100);
+    const totalExpenses = propertyTax + insurance + hoa + maintenanceCost;
+    const totalWithMortgage = totalExpenses + mortgagePayment;
+    const netOperatingIncome = grossRent - vacancyLoss - managementCost - maintenanceCost - propertyTax - insurance - hoa;
+    const netCashFlow = netOperatingIncome - mortgagePayment;
+    const annualCashFlow = netCashFlow * 12;
+    const annualCashOnCash = downPayment > 0 ? (annualCashFlow / downPayment) * 100 : 0;
+    const capRate = purchasePrice > 0 ? (netOperatingIncome * 12 / purchasePrice) * 100 : 0;
+
+    document.getElementById('cashOnCash').innerText = annualCashOnCash.toFixed(1) + '%';
+    document.getElementById('cashOnCash').className = 'result-value ' + (annualCashOnCash >= 8 ? 'positive' : annualCashOnCash >= 4 ? 'neutral' : 'negative');
+    document.getElementById('monthlyCashFlow').innerText = '$' + Math.round(netCashFlow);
+    document.getElementById('monthlyCashFlow').className = 'result-value ' + (netCashFlow >= 200 ? 'positive' : netCashFlow >= 0 ? 'neutral' : 'negative');
+    document.getElementById('capRate').innerText = capRate.toFixed(2) + '%';
+    document.getElementById('capRate').className = 'result-value ' + (capRate >= 6 ? 'positive' : capRate >= 4 ? 'neutral' : 'negative');
+
+    document.getElementById('b-rent').innerText = '$' + Math.round(grossRent);
+    document.getElementById('b-vacancyPct').innerText = vacancyPct;
+    document.getElementById('b-vacancy').innerText = '-$' + Math.round(vacancyLoss);
+    document.getElementById('b-mgmtPct').innerText = managementPct;
+    document.getElementById('b-management').innerText = '-$' + Math.round(managementCost);
+    document.getElementById('b-maintPct').innerText = maintenancePct;
+    document.getElementById('b-maintenance').innerText = '-$' + Math.round(maintenanceCost);
+    document.getElementById('b-mortgage').innerText = '-$' + Math.round(mortgagePayment);
+    document.getElementById('b-taxes').innerText = '-$' + Math.round(propertyTax);
+    document.getElementById('b-insurance').innerText = '-$' + Math.round(insurance);
+    document.getElementById('b-hoa').innerText = '-$' + Math.round(hoa);
+    document.getElementById('b-net').innerText = '$' + Math.round(netCashFlow);
+    document.getElementById('breakdown').style.display = 'block';
+
+    const verdict = document.getElementById('verdict');
+    if (annualCashOnCash >= 8) {
+        verdict.className = 'verdict good';
+        verdict.innerText = '✅ Strong investment — Cash-on-cash return above 8%';
+    } else if (annualCashOnCash >= 4) {
+        verdict.className = 'verdict mediocre';
+        verdict.innerText = '⚠️ Decent deal — Consider negotiating price or improving terms';
+    } else {
+        verdict.className = 'verdict bad';
+        verdict.innerText = '❌ Negative or weak cash flow — Not recommended as-is';
+    }
+
+    document.getElementById('results').classList.add('show');
+}
+
+function showBuy() { document.getElementById('buyOverlay').classList.add('show'); }
+function hideBuy() { document.getElementById('buyOverlay').classList.remove('show'); }
+</script>
+</body>
+</html>
