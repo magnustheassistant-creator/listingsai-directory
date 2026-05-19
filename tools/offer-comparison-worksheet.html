@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Real Estate Offer Comparison Worksheet | Side-by-Side Offer Analysis Tool</title>
+    <meta name="description" content="Compare multiple offers side-by-side on one page. Free worksheet for real estate agents to present offer details to sellers — price, terms, contingencies, closing date.">
+    <link rel="canonical" href="https://listingsai.directory/tools/offer-comparison-worksheet.html">
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed;--text:#e5e5e5;--muted:#888;--good:#22c55e;--warn:#f59e0b;--bad:#ef4444}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+        .container{max-width:1100px;margin:0 auto;padding:1.5rem 1rem}
+        header{text-align:center;padding:1.5rem 0;border-bottom:1px solid var(--border);margin-bottom:1.5rem}
+        h1{font-size:clamp(1.4rem,3.5vw,2rem);margin-bottom:.5rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .subtitle{color:var(--muted);font-size:.9rem}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.25rem}
+        .card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+        .card-title{font-size:1.1rem;color:var(--accent);font-weight:600}
+        .remove-btn{background:transparent;border:1px solid var(--bad);color:var(--bad);padding:.3rem .8rem;border-radius:6px;cursor:pointer;font-size:.8rem}
+        .remove-btn:hover{background:rgba(239,68,68,.1)}
+        .offer-grid{display:grid;grid-template-columns:180px repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border-radius:10px;overflow:hidden;margin-bottom:1.5rem}
+        .offer-grid-header{display:contents}
+        .offer-grid-header>div{background:var(--card);padding:1rem;font-weight:600;font-size:.9rem;color:var(--accent);text-align:center}
+        .offer-cell{background:var(--card);padding:.75rem;text-align:center}
+        .offer-cell.buyer-name{background:rgba(0,212,255,.05);font-weight:600;color:var(--accent)}
+        .offer-field{font-size:.75rem;color:var(--muted);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.5px}
+        .offer-value{font-size:.95rem;font-weight:500}
+        .price-value{font-size:1.2rem;font-weight:700;color:var(--accent)}
+        .score-badge{display:inline-block;padding:.2rem .6rem;border-radius:50px;font-size:.75rem;font-weight:700}
+        .score-hot{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff}
+        .score-warm{background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff}
+        .score-cold{background:linear-gradient(135deg,#6b7280,#4b5563);color:#fff}
+        .input-row{display:grid;grid-template-columns:180px repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border-radius:8px;overflow:hidden;margin-bottom:.5rem}
+        .input-label{background:var(--card);padding:.6rem .75rem;font-size:.85rem;font-weight:500;color:var(--accent);display:flex;align-items:center}
+        .input-cell{background:var(--card);padding:.5rem}
+        .input-cell input,.input-cell select{width:100%;padding:.5rem .6rem;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.85rem}
+        .input-cell input:focus,.input-cell select:focus{outline:none;border-color:var(--accent)}
+        .btn-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem}
+        .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.7rem 1.4rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-size:.9rem;transition:transform .2s,opacity .2s}
+        .btn:hover{transform:translateY(-1px);opacity:.9}
+        .btn-outline{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+        .btn-outline:hover{background:rgba(0,212,255,.1)}
+        .summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.5rem}
+        .summary-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;text-align:center}
+        .summary-card h3{color:var(--accent);font-size:.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:.5rem}
+        .summary-card .value{font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .summary-card .label{font-size:.8rem;color:var(--muted);margin-top:.25rem}
+        .best-col{background:rgba(34,197,94,.1);border:1px solid var(--good)}
+        .best-col .offer-cell{border-left:3px solid var(--good)}
+        .output-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1.25rem;white-space:pre-wrap;font-size:.85rem;max-height:400px;overflow-y:auto;line-height:1.7;display:none;margin-top:1rem}
+        .output-box.active{display:block}
+        .copy-btn{background:var(--accent);color:#000;padding:.5rem 1.2rem;border-radius:6px;border:none;cursor:pointer;font-weight:500;margin-top:.75rem}
+        .progress-bar{height:4px;background:var(--border);border-radius:2px;margin-top:.5rem;overflow:hidden}
+        .progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0%;transition:width .8s ease}
+        .affiliate{text-align:center;margin-top:1.5rem;padding:1rem;background:var(--card);border-radius:10px}
+        .affiliate a{color:var(--accent);text-decoration:none;font-weight:500}
+        .affiliate a:hover{text-decoration:underline}
+        .wallet{font-family:monospace;background:var(--bg);padding:.3rem .6rem;border-radius:5px;font-size:.75rem;color:var(--accent);word-break:break-all}
+        footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border);margin-top:2rem}
+        footer a{color:var(--accent);text-decoration:none}
+        footer a:hover{text-decoration:underline}
+        .legend{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
+        .legend-item{display:flex;align-items:center;gap:.4rem;font-size:.8rem;color:var(--muted)}
+        @media(max-width:768px){.offer-grid,.input-row{display:block}.input-label{margin-bottom:.25rem}}
+        @media(max-width:600px){.container{padding:1rem}.card{padding:1rem}}
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"FAQPage",
+        "mainEntity":[{
+            "@type":"Question",
+            "name":"How do I compare multiple offers on my home?",
+            "acceptedAnswer":{"@type":"Answer","text":"Use a side-by-side comparison worksheet to evaluate offers on price, down payment, contingencies, closing timeline, and seller concessions. This tool helps you objectively compare all terms side-by-side and identify the best overall offer for your situation."}
+        },{
+            "@type":"Question",
+            "name":"What offer is actually the best when selling a home?",
+            "acceptedAnswer":{"@type":"Answer","text":"The highest price isn't always the best offer. Consider: financing type (conventional vs FHA/VA), down payment percentage, contingency periods, closing timeline flexibility, and what the buyer is asking you to include or exclude. This worksheet scores all factors."}
+        },{
+            "@type":"Question",
+            "name":"Should I accept an offer with contingencies?",
+            "acceptedAnswer":{"@type":"Answer","text":"Home sale and inspection contingencies are standard and protect both parties. An appraisal contingency ensures the property sells for at least the loan amount. Financing contingencies are common but length should be reasonable (21-30 days typical)."}
+        }]
+    }
+    </script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <span style="display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:.2rem .7rem;border-radius:20px;font-size:.7rem;font-weight:600;margin-bottom:.75rem">⚡ Free Tool — No Signup</span>
+        <h1>Real Estate Offer Comparison Worksheet</h1>
+        <p class="subtitle">Side-by-side offer analysis for agents — compare price, terms, contingencies & scoring</p>
+    </header>
+
+    <div class="legend">
+        <span class="legend-item">💰 Price &amp; financing details</span>
+        <span class="legend-item">⏱️ Timeline &amp; contingencies</span>
+        <span class="legend-item">📊 Automatic offer scoring</span>
+    </div>
+
+    <div class="btn-row">
+        <button class="btn" onclick="addOffer()">➕ Add Offer</button>
+        <button class="btn btn-outline" onclick="calculateScores()">📊 Calculate Scores</button>
+        <button class="btn btn-outline" onclick="generateSummary()">📋 Generate Report</button>
+        <button class="btn btn-outline" onclick="clearAll()">🗑️ Clear All</button>
+    </div>
+
+    <div id="offerInputs" class="card" style="margin-bottom:1rem"></div>
+
+    <div id="scoreSection" class="card" style="display:none">
+        <div class="card-header">
+            <span class="card-title">📊 Offer Score Analysis</span>
+        </div>
+        <div class="offer-grid" id="scoreGrid"></div>
+    </div>
+
+    <div class="summary-grid" id="summaryGrid" style="display:none">
+        <div class="summary-card">
+            <h3>Best Price</h3>
+            <div class="value" id="bestPrice">—</div>
+            <div class="label" id="bestPriceLabel">Buyer #</div>
+        </div>
+        <div class="summary-card">
+            <h3>Best Terms</h3>
+            <div class="value" id="bestTerms">—</div>
+            <div class="label" id="bestTermsLabel">Buyer #</div>
+        </div>
+        <div class="summary-card">
+            <h3>Fastest Close</h3>
+            <div class="value" id="fastestClose">—</div>
+            <div class="label" id="fastestCloseLabel">Days</div>
+        </div>
+        <div class="summary-card">
+            <h3>Top Score</h3>
+            <div class="value" id="topScore">—</div>
+            <div class="label" id="topScoreLabel">Buyer #</div>
+        </div>
+    </div>
+
+    <div id="reportSection" style="display:none;margin-top:1rem">
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">📋 Agent Summary Report</span>
+                <button class="copy-btn" onclick="copyReport()">📋 Copy Report</button>
+            </div>
+            <div class="output-box" id="reportOutput"></div>
+        </div>
+    </div>
+
+    <div class="affiliate">
+        <p>Best tools for real estate agents managing offers and leads:</p>
+        <a href="https://jasper.ai" target="_blank" rel="noopener">Jasper AI</a> — AI writing for client communications (30% commission) |
+        <a href="https://www.shopperprime.com/recommends/clickfunnels/" target="_blank" rel="noopener">ClickFunnels</a> — Lead capture funnels (40%) |
+        <a href="https://www.shopperprime.com/recommends/manychat/" target="_blank" rel="noopener">ManyChat</a> — Lead response automation (30%)
+        <div style="margin-top:.75rem">
+            <span style="font-size:.75rem;color:var(--muted)">BNB Donations: <span class="wallet">bnb1x9m9w9xxxplaceholder123</span></span>
+        </div>
+    </div>
+</div>
+
+<script>
+let offerCount = 0;
+let offers = [];
+
+function addOffer() {
+    offerCount++;
+    offers.push({
+        id: offerCount,
+        buyerName: '',
+        price: '',
+        downPayment: '',
+        downPaymentPct: '',
+        financingType: 'conventional',
+        loanType: 'conventional',
+        earnestMoney: '',
+        closingDays: '',
+        inspectionContingency: 'yes',
+        appraisalContingency: 'yes',
+        financingContingency: 'yes',
+        homeSaleContingency: 'no',
+        personalProperty: '',
+        sellerCredits: '',
+        otherTerms: '',
+        score: 0
+    });
+    renderOffers();
+}
+
+function renderOffers() {
+    const container = document.getElementById('offerInputs');
+    let html = `
+        <div class="card-header">
+            <span class="card-title">Buyer Offers (${offers.length})</span>
+            <span style="font-size:.8rem;color:var(--muted)">Fill in offer details below</span>
+        </div>
+        <div class="input-row" style="margin-bottom:.75rem;background:var(--border);border-radius:8px;overflow:hidden">
+            <div class="input-label" style="background:var(--card);padding:.75rem;font-weight:600;color:var(--accent)">Field</div>
+            ${offers.map((o, i) => `
+            <div class="input-cell" style="background:var(--card);padding:.5rem;text-align:center;font-size:.75rem;color:var(--accent);font-weight:600">
+                Buyer ${i + 1}
+                <button onclick="removeOffer(${o.id})" style="display:block;margin:.3rem auto 0;background:transparent;border:1px solid var(--bad);color:var(--bad);padding:.15rem .5rem;border-radius:4px;cursor:pointer;font-size:.65rem">✕</button>
+            </div>`).join('')}
+        </div>`;
+
+    const fields = [
+        { key: 'buyerName', label: 'Buyer Name', type: 'text', placeholder: 'e.g. John & Mary Smith' },
+        { key: 'price', label: 'Offer Price ($)', type: 'number', placeholder: 'e.g. 485000' },
+        { key: 'downPayment', label: 'Down Payment ($)', type: 'number', placeholder: 'e.g. 97000' },
+        { key: 'downPaymentPct', label: 'Down Payment %', type: 'number', placeholder: 'e.g. 20' },
+        { key: 'financingType', label: 'Financing Type', type: 'select', options: [
+            { v: 'conventional', t: 'Conventional' },
+            { v: 'fha', t: 'FHA' },
+            { v: 'va', t: 'VA' },
+            { v: 'usda', t: 'USDA' },
+            { v: 'cash', t: 'Cash' },
+            { v: 'other', t: 'Other' }
+        ]},
+        { key: 'earnestMoney', label: 'Earnest Money ($)', type: 'number', placeholder: 'e.g. 5000' },
+        { key: 'closingDays', label: 'Close in Days', type: 'number', placeholder: 'e.g. 30' },
+        { key: 'inspectionContingency', label: 'Inspection Contingency', type: 'select', options: [
+            { v: 'yes', t: 'Yes — Standard' },
+            { v: 'reduced', t: 'Reduced (5-7 days)' },
+            { v: 'waived', t: 'Waived' }
+        ]},
+        { key: 'appraisalContingency', label: 'Appraisal Contingency', type: 'select', options: [
+            { v: 'yes', t: 'Yes — Standard' },
+            { v: 'reduced', t: 'Reduced' },
+            { v: 'waived', t: 'Waived' }
+        ]},
+        { key: 'financingContingency', label: 'Financing Contingency', type: 'select', options: [
+            { v: 'yes', t: 'Yes — Standard (21-30d)' },
+            { v: 'extended', t: 'Extended (45d+)' },
+            { v: 'waived', t: 'Waived' }
+        ]},
+        { key: 'homeSaleContingency', label: 'Home Sale Contingency', type: 'select', options: [
+            { v: 'no', t: 'None' },
+            { v: 'yes', t: 'Yes — 30 days' },
+            { v: 'yes45', t: 'Yes — 45+ days' }
+        ]},
+        { key: 'sellerCredits', label: 'Seller Credits Requested ($)', type: 'number', placeholder: 'e.g. 5000' },
+        { key: 'personalProperty', label: 'Personal Property Included', type: 'text', placeholder: 'e.g. Washer/Dryer, Refrigerator' }
+    ];
+
+    fields.forEach(field => {
+        html += `<div class="input-row">`;
+        html += `<div class="input-label">${field.label}</div>`;
+        offers.forEach(o => {
+            html += `<div class="input-cell">`;
+            if (field.type === 'select') {
+                html += `<select id="${field.key}_${o.id}" onchange="updateOffer(${o.id},'${field.key}',this.value)">`;
+                field.options.forEach(opt => {
+                    html += `<option value="${opt.v}">${opt.t}</option>`;
+                });
+                html += `</select>`;
+            } else {
+                html += `<input type="${field.type}" id="${field.key}_${o.id}" placeholder="${field.placeholder}" oninput="updateOffer(${o.id},'${field.key}',this.value)">`;
+            }
+            html += `</div>`;
+        });
+        html += `</div>`;
+    });
+
+    container.innerHTML = html;
+}
+
+function updateOffer(id, key, value) {
+    const offer = offers.find(o => o.id === id);
+    if (offer) offer[key] = value;
+}
+
+function removeOffer(id) {
+    offers = offers.filter(o => o.id !== id);
+    renderOffers();
+    if (offers.length > 0) calculateScores();
+    else {
+        document.getElementById('scoreSection').style.display = 'none';
+        document.getElementById('summaryGrid').style.display = 'none';
+        document.getElementById('reportSection').style.display = 'none';
+    }
+}
+
+function clearAll() {
+    offers = [];
+    offerCount = 0;
+    renderOffers();
+    document.getElementById('scoreSection').style.display = 'none';
+    document.getElementById('summaryGrid').style.display = 'none';
+    document.getElementById('reportSection').style.display = 'none';
+}
+
+function calculateScores() {
+    if (offers.length === 0) return;
+
+    document.getElementById('scoreSection').style.display = 'block';
+    document.getElementById('summaryGrid').style.display = 'grid';
+
+    const validOffers = offers.filter(o => o.price && parseFloat(o.price) > 0);
+
+    validOffers.forEach(o => {
+        let score = 0;
+        // Price score (0-40 points)
+        const prices = validOffers.map(v => parseFloat(v.price)).sort((a, b) => b - a);
+        const priceRank = prices.indexOf(parseFloat(o.price)) + 1;
+        score += (prices.length - priceRank + 1) / prices.length * 40;
+
+        // Down payment score (0-15 points)
+        const dp = parseFloat(o.downPaymentPct) || 0;
+        if (o.financingType === 'cash') score += 15;
+        else if (dp >= 20) score += 12;
+        else if (dp >= 10) score += 8;
+        else if (dp >= 5) score += 4;
+
+        // Financing score (0-15 points)
+        if (o.financingType === 'cash') score += 15;
+        else if (o.financingType === 'conventional') score += 12;
+        else if (o.financingType === 'fha' || o.financingType === 'va' || o.financingType === 'usda') score += 8;
+
+        // Earnest money (0-10 points)
+        const price = parseFloat(o.price) || 1;
+        const em = parseFloat(o.earnestMoney) || 0;
+        const emPct = (em / price) * 100;
+        if (emPct >= 2) score += 10;
+        else if (emPct >= 1) score += 7;
+        else if (emPct >= 0.5) score += 4;
+
+        // Closing speed (0-10 points)
+        const days = parseInt(o.closingDays) || 999;
+        if (days <= 21) score += 10;
+        else if (days <= 30) score += 8;
+        else if (days <= 45) score += 5;
+        else score += 2;
+
+        // Contingencies (0-10 points) — fewer is better
+        let contScore = 0;
+        if (o.inspectionContingency === 'waived') contScore += 4;
+        else if (o.inspectionContingency === 'reduced') contScore += 2;
+
+        if (o.appraisalContingency === 'waived') contScore += 3;
+        else if (o.appraisalContingency === 'reduced') contScore += 1.5;
+
+        if (o.financingContingency === 'waived') contScore += 3;
+        else if (o.financingContingency === 'extended') contScore -= 2;
+
+        if (o.homeSaleContingency !== 'no') contScore -= 5;
+        score += Math.max(0, contScore);
+
+        o.score = Math.round(score * 10) / 10;
+    });
+
+    renderScoreGrid(validOffers);
+    renderSummary(validOffers);
+}
+
+function renderScoreGrid(validOffers) {
+    const grid = document.getElementById('scoreGrid');
+    const sorted = [...validOffers].sort((a, b) => b.score - a.score);
+
+    let html = `
+        <div style="display:contents">
+            <div style="background:var(--card);padding:1rem;font-weight:600;color:var(--accent);font-size:.85rem">Metric</div>
+            ${validOffers.map((o, i) => `<div style="background:var(--card);padding:1rem;text-align:center;font-weight:600;color:var(--accent);font-size:.85rem">${o.buyerName || 'Buyer ' + (i+1)}</div>`).join('')}
+        </div>`;
+
+    const scoreRows = [
+        { label: 'Offer Price', key: 'price', format: v => '$' + parseFloat(v).toLocaleString(), high: true },
+        { label: 'Down Payment %', key: 'downPaymentPct', format: v => v + '%', high: true },
+        { label: 'Financing', key: 'financingType', format: v => v.charAt(0).toUpperCase() + v.slice(1), high: true },
+        { label: 'Earnest Money', key: 'earnestMoney', format: v => '$' + parseFloat(v).toLocaleString(), high: true },
+        { label: 'Close Timeline', key: 'closingDays', format: v => v + ' days', high: true },
+        { label: 'Inspection', key: 'inspectionContingency', format: v => v === 'yes' ? 'Standard' : v === 'reduced' ? 'Reduced' : 'Waived', high: true },
+        { label: 'Appraisal', key: 'appraisalContingency', format: v => v === 'yes' ? 'Standard' : v === 'reduced' ? 'Reduced' : 'Waived', high: true },
+        { label: 'Financing', key: 'financingContingency', format: v => v === 'yes' ? 'Standard' : v === 'extended' ? '45d+' : 'Waived', high: true },
+        { label: 'Home Sale Cont.', key: 'homeSaleContingency', format: v => v === 'no' ? 'None' : 'Yes', high: false },
+        { label: 'Seller Credits', key: 'sellerCredits', format: v => v ? '-$' + parseFloat(v).toLocaleString() : 'None', high: false },
+        { label: '💰 Overall Score', key: 'score', format: v => v + '/100', high: true, highlight: true }
+    ];
+
+    scoreRows.forEach(row => {
+        html += `<div style="display:contents">`;
+        html += `<div style="background:var(--card);padding:.75rem;font-size:.85rem;color:var(--muted);display:flex;align-items:center">${row.label}</div>`;
+        validOffers.forEach((o, i) => {
+            const isBest = row.high ? o[row.key] === Math.max(...validOffers.map(v => v[row.key])) : o[row.key] === Math.min(...validOffers.filter(v => v[row.key]).map(v => v[row.key]));
+            const isTop = row.key === 'score' && sorted[0].id === o.id;
+            const cellStyle = isTop ? 'background:rgba(34,197,94,.15);border-left:3px solid var(--good)' : isBest ? 'background:rgba(0,212,255,.05)' : 'background:var(--card)';
+            html += `<div class="offer-cell ${cellStyle}" style="padding:.75rem;text-align:center">
+                <div style="font-size:.9rem;font-weight:${row.highlight || row.key === 'score' ? '700' : '500'};${row.key === 'score' ? 'color:var(--accent);font-size:1.1rem' : ''}">${row.format(o[row.key]) || '—'}</div>
+            </div>`;
+        });
+        html += `</div>`;
+    });
+
+    grid.innerHTML = html;
+}
+
+function renderSummary(validOffers) {
+    const sorted = [...validOffers].sort((a, b) => b.score - a.score);
+    const top = sorted[0];
+
+    const highestPrice = [...validOffers].sort((a, b) => parseFloat(b.price) - parseFloat(a.price))[0];
+    const fastestClose = [...validOffers].filter(o => o.closingDays).sort((a, b) => parseInt(a.closingDays) - parseInt(b.closingDays))[0];
+    const bestTerms = sorted[0];
+
+    const getIndex = (offer) => validOffers.indexOf(offer) + 1;
+
+    document.getElementById('bestPrice').textContent = '$' + parseFloat(highestPrice.price).toLocaleString();
+    document.getElementById('bestPriceLabel').textContent = `Buyer ${getIndex(highestPrice)}`;
+
+    document.getElementById('bestTerms').textContent = top.score.toFixed(1) + '/100';
+    document.getElementById('bestTermsLabel').textContent = `Buyer ${getIndex(top)}`;
+
+    document.getElementById('fastestClose').textContent = fastestClose.closingDays + 'd';
+    document.getElementById('fastestCloseLabel').textContent = `Buyer ${getIndex(fastestClose)}`;
+
+    document.getElementById('topScore').textContent = sorted[0].score.toFixed(1);
+    document.getElementById('topScoreLabel').textContent = `Buyer ${getIndex(sorted[0])}`;
+}
+
+function generateSummary() {
+    if (offers.length === 0) return;
+    document.getElementById('reportSection').style.display = 'block';
+
+    const validOffers = offers.filter(o => o.price && parseFloat(o.price) > 0);
+    if (validOffers.length === 0) return;
+
+    const sorted = [...validOffers].sort((a, b) => b.score - a.score);
+    const top = sorted[0];
+
+    let report = `═══════════════════════════════════════════
+    MULTI-OFFER COMPARISON SUMMARY REPORT
+    Generated: ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}
+═══════════════════════════════════════════
+
+📊 OFFERS RECEIVED: ${validOffers.length}
+
+`;
+
+    validOffers.forEach((o, i) => {
+        report += `
+─────────────────────────────────────────
+OFFER #${i + 1}: ${o.buyerName || 'Buyer ' + (i+1)}
+─────────────────────────────────────────
+  Offer Price:        $${parseFloat(o.price || 0).toLocaleString()}
+  Down Payment:       ${o.downPaymentPct || '?'}% ($${parseFloat(o.downPayment || 0).toLocaleString()})
+  Financing:          ${(o.financingType || 'unknown').toUpperCase()}
+  Earnest Money:      $${parseFloat(o.earnestMoney || 0).toLocaleString()}
+  Closing Timeline:   ${o.closingDays || '?'} days
+  
+  Contingencies:
+    Inspection:       ${o.inspectionContingency === 'yes' ? '✅ Standard' : o.inspectionContingency === 'reduced' ? '⚠️ Reduced' : '❌ Waived'}
+    Appraisal:        ${o.appraisalContingency === 'yes' ? '✅ Standard' : o.appraisalContingency === 'reduced' ? '⚠️ Reduced' : '❌ Waived'}
+    Financing:        ${o.financingContingency === 'yes' ? '✅ Standard' : o.financingContingency === 'extended' ? '⚠️ 45+ days' : '❌ Waived'}
+    Home Sale:        ${o.homeSaleContingency === 'no' ? '✅ None' : '⚠️ Yes — ' + o.homeSaleContingency + ' days'}
+  
+  Seller Credits:     ${o.sellerCredits ? '$' + parseFloat(o.sellerCredits).toLocaleString() : 'None requested'}
+  Personal Property:  ${o.personalProperty || 'None specified'}
+  
+  📊 SCORE:           ${o.score}/100
+`;
+    });
+
+    report += `
+═══════════════════════════════════════════
+                 🏆 TOP RECOMMENDATION
+═══════════════════════════════════════════
+
+`;
+
+    report += `BEST OVERALL OFFER: ${top.buyerName || 'Buyer with highest score'}
+  ✅ Score: ${top.score}/100
+  ✅ Price: $${parseFloat(top.price).toLocaleString()}
+  ✅ Financing: ${(top.financingType || 'unknown').toUpperCase()}
+  ✅ Close: ${top.closingDays || '?'} days
+  ${top.inspectionContingency === 'waived' ? '✅' : '⚠️'} Inspection: ${top.inspectionContingency}
+  ${top.appraisalContingency === 'waived' ? '✅' : '⚠️'} Appraisal: ${top.appraisalContingency}
+  ${top.homeSaleContingency === 'no' ? '✅' : '⚠️'} No home sale contingency
+
+`;
+
+    report += `═══════════════════════════════════════════
+              QUICK COMPARISON MATRIX
+═══════════════════════════════════════════
+
+`;
+    report += 'Buyer'.padEnd(15) + 'Price'.padEnd(14) + 'Score'.padEnd(10) + 'Close'.padEnd(8) + 'Financing';
+    report += '\n' + '─'.repeat(70) + '\n';
+    sorted.forEach((o, i) => {
+        const name = (o.buyerName || 'Buyer ' + (i+1)).substring(0, 13).padEnd(15);
+        const price = '$' + parseFloat(o.price).toLocaleString().padEnd(12);
+        const score = o.score.toFixed(1).padEnd(10);
+        const close = (o.closingDays || '?') + 'd'.padEnd(8);
+        const fin = (o.financingType || '').toUpperCase();
+        const star = i === 0 ? ' ★' : '';
+        report += `${name}${price}${score}${close}${fin}${star}\n`;
+    });
+
+    report += `
+═══════════════════════════════════════════
+⚠️  DISCLAIMER: This analysis is based on the information
+    provided and should be reviewed with your agent and
+    attorney before making any decisions.
+═══════════════════════════════════════════
+
+Generated by Real Estate Offer Comparison Worksheet
+listingsai.directory/tools/offer-comparison-worksheet.html
+`;
+
+    document.getElementById('reportOutput').textContent = report;
+}
+
+function copyReport() {
+    const text = document.getElementById('reportOutput').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => { btn.textContent = '📋 Copy Report'; }, 2000);
+    });
+}
+
+// Initialize with 2 offers
+addOffer();
+addOffer();
+</script>
+
+<footer>
+    <p>50+ Free AI Tools for Real Estate Agents at <a href="https://listingsai.directory">listingsai.directory</a></p>
+    <p style="margin-top:.4rem">Built with ❤️ by <a href="https://listingsai.directory">Magnus AI</a> — Right Arm of <a href="https://listingsai.directory">Brain Storm Corp</a></p>
+</footer>
+</body>
+</html>
