@@ -9,7 +9,13 @@
     "rating": 4.9,
     "website": "https://chat.openai.com",
     "featured": true,
-    "for_realtors": ["Writing listings", "Email drafts", "Social posts", "Market analysis", "Client Q&A"],
+    "for_realtors": [
+      "Writing listings",
+      "Email drafts",
+      "Social posts",
+      "Market analysis",
+      "Client Q&A"
+    ],
     "image": "chatgpt.svg"
   },
   {
@@ -23,7 +29,12 @@
     "rating": 4.7,
     "website": "https://jasper.ai",
     "featured": true,
-    "for_realtors": ["Listing descriptions", "Property copy", "Email sequences", "Blog posts"]
+    "for_realtors": [
+      "Listing descriptions",
+      "Property copy",
+      "Email sequences",
+      "Blog posts"
+    ]
   },
   {
     "name": "Craftbay",
@@ -36,33 +47,47 @@
     "rating": 4.5,
     "website": "https://craftbay.io",
     "featured": false,
-    "for_realtors": ["Landing pages", "Ad copy", "Email sequences"]
+    "for_realtors": [
+      "Landing pages",
+      "Ad copy",
+      "Email sequences"
+    ]
   },
   {
     "name": "ManyChat",
     "category": "automation",
     "subcategory": "Messenger/Text AI",
-    "description": "AI-powered chatbot for Instagram, Facebook Messenger, and SMS. Automates lead response within 5 minutes — critical for real estate.",
+    "description": "AI-powered chatbot for Instagram, Facebook Messenger, and SMS. Automates lead response within 5 minutes \u2014 critical for real estate.",
     "price": "From $15/mo",
     "affiliate_url": "https://manychat.com",
     "affiliate_commission": "40%",
     "rating": 4.8,
     "website": "https://manychat.com",
     "featured": true,
-    "for_realtors": ["Lead response", "SMS automation", "Instagram DM", "Follow-up sequences"]
+    "for_realtors": [
+      "Lead response",
+      "SMS automation",
+      "Instagram DM",
+      "Follow-up sequences"
+    ]
   },
   {
     "name": "ClickFunnels",
     "category": "crm",
     "subcategory": "Sales Funnels",
-    "description": "Build complete real estate sales funnels — lead capture, property showcases, consultation booking, and automated follow-up.",
+    "description": "Build complete real estate sales funnels \u2014 lead capture, property showcases, consultation booking, and automated follow-up.",
     "price": "From $147/mo",
     "affiliate_url": "https://clickfunnels.com",
     "affiliate_commission": "40%",
     "rating": 4.6,
     "website": "https://clickfunnels.com",
     "featured": true,
-    "for_realtors": ["Lead capture", "Property funnels", "Webinar registration", "Listing lead magnets"]
+    "for_realtors": [
+      "Lead capture",
+      "Property funnels",
+      "Webinar registration",
+      "Listing lead magnets"
+    ]
   },
   {
     "name": "Rechat",
@@ -74,7 +99,12 @@
     "rating": 4.7,
     "website": "https://rechat.com",
     "featured": false,
-    "for_realtors": ["Lead management", "Transactions", "Team collaboration", "Document storage"]
+    "for_realtors": [
+      "Lead management",
+      "Transactions",
+      "Team collaboration",
+      "Document storage"
+    ]
   },
   {
     "name": "Likable.ai",
@@ -86,7 +116,12 @@
     "rating": 4.6,
     "website": "https://likable.ai",
     "featured": true,
-    "for_realtors": ["Auto posts", "Hashtag suggestions", "Content calendar", "Multi-platform"]
+    "for_realtors": [
+      "Auto posts",
+      "Hashtag suggestions",
+      "Content calendar",
+      "Multi-platform"
+    ]
   },
   {
     "name": "HomeBot",
@@ -98,7 +133,12 @@
     "rating": 4.5,
     "website": "https://homebot.ai",
     "featured": false,
-    "for_realtors": ["SOI nurturing", "Market updates", "New listing alerts", "Anniversary reminders"]
+    "for_realtors": [
+      "SOI nurturing",
+      "Market updates",
+      "New listing alerts",
+      "Anniversary reminders"
+    ]
   },
   {
     "name": "Lone Wolf",
@@ -110,7 +150,12 @@
     "rating": 4.7,
     "website": "https://lwre.com",
     "featured": false,
-    "for_realtors": ["Full CRM", "Transactions", "Team management", "Lead pipeline"]
+    "for_realtors": [
+      "Full CRM",
+      "Transactions",
+      "Team management",
+      "Lead pipeline"
+    ]
   },
   {
     "name": "Matterport",
@@ -122,7 +167,12 @@
     "rating": 4.8,
     "website": "https://matterport.com",
     "featured": true,
-    "for_realtors": ["3D tours", "Virtual open houses", "Property showcases", "Remote buyer tours"]
+    "for_realtors": [
+      "3D tours",
+      "Virtual open houses",
+      "Property showcases",
+      "Remote buyer tours"
+    ]
   },
   {
     "name": "Veed.io",
@@ -135,7 +185,12 @@
     "rating": 4.6,
     "website": "https://veed.io",
     "featured": false,
-    "for_realtors": ["Reels", "Captions", "Listing videos", "Testimonial videos"]
+    "for_realtors": [
+      "Reels",
+      "Captions",
+      "Listing videos",
+      "Testimonial videos"
+    ]
   },
   {
     "name": "InVideo",
@@ -148,7 +203,12 @@
     "rating": 4.5,
     "website": "https://invideo.io",
     "featured": false,
-    "for_realtors": ["Property videos", "Social ads", "Templates", "Brand kits"]
+    "for_realtors": [
+      "Property videos",
+      "Social ads",
+      "Templates",
+      "Brand kits"
+    ]
   },
   {
     "name": "Midjourney",
@@ -160,7 +220,12 @@
     "rating": 4.7,
     "website": "https://midjourney.com",
     "featured": false,
-    "for_realtors": ["Property staging", "Concept art", "Marketing visuals", "Social images"]
+    "for_realtors": [
+      "Property staging",
+      "Concept art",
+      "Marketing visuals",
+      "Social images"
+    ]
   },
   {
     "name": "Stockimg.ai",
@@ -172,7 +237,12 @@
     "rating": 4.4,
     "website": "https://stockimg.ai",
     "featured": false,
-    "for_realtors": ["Property images", "Logos", "Social graphics", "Marketing materials"]
+    "for_realtors": [
+      "Property images",
+      "Logos",
+      "Social graphics",
+      "Marketing materials"
+    ]
   },
   {
     "name": "FireBug / JotForm",
@@ -185,7 +255,12 @@
     "rating": 4.6,
     "website": "https://jotform.com",
     "featured": false,
-    "for_realtors": ["Lead forms", "Listing inquiries", "Contact forms", "Calculators"]
+    "for_realtors": [
+      "Lead forms",
+      "Listing inquiries",
+      "Contact forms",
+      "Calculators"
+    ]
   },
   {
     "name": "CallPage",
@@ -197,7 +272,11 @@
     "rating": 4.7,
     "website": "https://callpage.io",
     "featured": false,
-    "for_realtors": ["Instant callbacks", "Lead qualification", "Appointment booking"]
+    "for_realtors": [
+      "Instant callbacks",
+      "Lead qualification",
+      "Appointment booking"
+    ]
   },
   {
     "name": "Velocify",
@@ -209,7 +288,12 @@
     "rating": 4.5,
     "website": "https://velocify.com",
     "featured": false,
-    "for_realtors": ["Lead management", "Auto-dialer", "Text campaigns", "Email drips"]
+    "for_realtors": [
+      "Lead management",
+      "Auto-dialer",
+      "Text campaigns",
+      "Email drips"
+    ]
   },
   {
     "name": "Ylopo",
@@ -221,7 +305,12 @@
     "rating": 4.6,
     "website": "https://ylopo.com",
     "featured": false,
-    "for_realtors": ["Lead gen", "Chatbot", "PPC", "Nurturing"]
+    "for_realtors": [
+      "Lead gen",
+      "Chatbot",
+      "PPC",
+      "Nurturing"
+    ]
   },
   {
     "name": "Chatflex",
@@ -233,7 +322,12 @@
     "rating": 4.5,
     "website": "https://chatflex.com",
     "featured": false,
-    "for_realtors": ["Website chatbot", "Lead qualification", "Showing booking", "24/7 support"]
+    "for_realtors": [
+      "Website chatbot",
+      "Lead qualification",
+      "Showing booking",
+      "24/7 support"
+    ]
   },
   {
     "name": "Ava",
@@ -245,7 +339,12 @@
     "rating": 4.6,
     "website": "https://ava.ai",
     "featured": false,
-    "for_realtors": ["Video tours", "Voiceover", "Property narrations", "Social video"]
+    "for_realtors": [
+      "Video tours",
+      "Voiceover",
+      "Property narrations",
+      "Social video"
+    ]
   },
   {
     "name": "Claude",
@@ -257,7 +356,12 @@
     "rating": 4.8,
     "website": "https://claude.ai",
     "featured": true,
-    "for_realtors": ["Market analysis", "Long content", "Comparative analysis", "Research"]
+    "for_realtors": [
+      "Market analysis",
+      "Long content",
+      "Comparative analysis",
+      "Research"
+    ]
   },
   {
     "name": "Perplexity",
@@ -269,7 +373,12 @@
     "rating": 4.7,
     "website": "https://perplexity.ai",
     "featured": false,
-    "for_realtors": ["Market research", "Neighborhood data", "Competitor analysis", "Trend research"]
+    "for_realtors": [
+      "Market research",
+      "Neighborhood data",
+      "Competitor analysis",
+      "Trend research"
+    ]
   },
   {
     "name": "Writesonic",
@@ -282,7 +391,12 @@
     "rating": 4.5,
     "website": "https://writesonic.com",
     "featured": false,
-    "for_realtors": ["Listing copy", "Blog posts", "Ad copy", "SEO content"]
+    "for_realtors": [
+      "Listing copy",
+      "Blog posts",
+      "Ad copy",
+      "SEO content"
+    ]
   },
   {
     "name": "Surfer SEO",
@@ -295,7 +409,12 @@
     "rating": 4.6,
     "website": "https://surferseo.com",
     "featured": true,
-    "for_realtors": ["Article optimization", "Keyword research", "Content briefs", "SEO audits"]
+    "for_realtors": [
+      "Article optimization",
+      "Keyword research",
+      "Content briefs",
+      "SEO audits"
+    ]
   },
   {
     "name": "Otter.ai",
@@ -307,7 +426,11 @@
     "rating": 4.7,
     "website": "https://otter.ai",
     "featured": false,
-    "for_realtors": ["Meeting notes", "Consultation transcripts", "Follow-up summaries"]
+    "for_realtors": [
+      "Meeting notes",
+      "Consultation transcripts",
+      "Follow-up summaries"
+    ]
   },
   {
     "name": "Zapier",
@@ -320,7 +443,12 @@
     "rating": 4.8,
     "website": "https://zapier.com",
     "featured": true,
-    "for_realtors": ["CRM sync", "Lead routing", "Email automation", "Form integrations"]
+    "for_realtors": [
+      "CRM sync",
+      "Lead routing",
+      "Email automation",
+      "Form integrations"
+    ]
   },
   {
     "name": "HubSpot",
@@ -333,7 +461,12 @@
     "rating": 4.6,
     "website": "https://hubspot.com",
     "featured": false,
-    "for_realtors": ["Free CRM", "Email marketing", "Lead pipeline", "Meeting scheduling"]
+    "for_realtors": [
+      "Free CRM",
+      "Email marketing",
+      "Lead pipeline",
+      "Meeting scheduling"
+    ]
   },
   {
     "name": "Freshsales (Freshworks)",
@@ -346,7 +479,12 @@
     "rating": 4.4,
     "website": "https://freshsales.io",
     "featured": false,
-    "for_realtors": ["AI scoring", "Built-in phone", "Email sequences", "Pipeline management"]
+    "for_realtors": [
+      "AI scoring",
+      "Built-in phone",
+      "Email sequences",
+      "Pipeline management"
+    ]
   },
   {
     "name": "Drift",
@@ -358,7 +496,12 @@
     "rating": 4.5,
     "website": "https://drift.com",
     "featured": false,
-    "for_realtors": ["Website chatbot", "Lead qualification", "Meeting booking", "B2B real estate"]
+    "for_realtors": [
+      "Website chatbot",
+      "Lead qualification",
+      "Meeting booking",
+      "B2B real estate"
+    ]
   },
   {
     "name": "Recut",
@@ -370,7 +513,12 @@
     "rating": 4.6,
     "website": "https://recut.video",
     "featured": false,
-    "for_realtors": ["Video editing", "Filler removal", "Property tours", "Testimonials"]
+    "for_realtors": [
+      "Video editing",
+      "Filler removal",
+      "Property tours",
+      "Testimonials"
+    ]
   },
   {
     "name": "Klaviyo",
@@ -383,7 +531,12 @@
     "rating": 4.7,
     "website": "https://klaviyo.com",
     "featured": true,
-    "for_realtors": ["Email newsletters", "Drip campaigns", "Lead nurture", "Automated follow-up"]
+    "for_realtors": [
+      "Email newsletters",
+      "Drip campaigns",
+      "Lead nurture",
+      "Automated follow-up"
+    ]
   },
   {
     "name": "Loom",
@@ -395,7 +548,12 @@
     "rating": 4.8,
     "website": "https://loom.com",
     "featured": false,
-    "for_realtors": ["Client updates", "Listing videos", "Feedback", "Team communication"]
+    "for_realtors": [
+      "Client updates",
+      "Listing videos",
+      "Feedback",
+      "Team communication"
+    ]
   },
   {
     "name": "Canva",
@@ -408,7 +566,12 @@
     "rating": 4.9,
     "website": "https://canva.com",
     "featured": false,
-    "for_realtors": ["Flyers", "Social posts", "Branding", "Presentations"]
+    "for_realtors": [
+      "Flyers",
+      "Social posts",
+      "Branding",
+      "Presentations"
+    ]
   },
   {
     "name": "AdCreative.ai",
@@ -421,7 +584,12 @@
     "rating": 4.5,
     "website": "https://adcreative.io",
     "featured": false,
-    "for_realtors": ["Facebook ads", "Google ads", "Ad creatives", "A/B testing"]
+    "for_realtors": [
+      "Facebook ads",
+      "Google ads",
+      "Ad creatives",
+      "A/B testing"
+    ]
   },
   {
     "name": "Google Gemini",
@@ -433,7 +601,12 @@
     "rating": 4.7,
     "website": "https://gemini.google.com",
     "featured": false,
-    "for_realtors": ["Property analysis", "Listing generation", "Market insights", "Image analysis"]
+    "for_realtors": [
+      "Property analysis",
+      "Listing generation",
+      "Market insights",
+      "Image analysis"
+    ]
   },
   {
     "name": "Notion",
@@ -446,7 +619,12 @@
     "rating": 4.8,
     "website": "https://notion.so",
     "featured": true,
-    "for_realtors": ["Lead tracking", "Transaction management", "Content planning", "Team wiki"]
+    "for_realtors": [
+      "Lead tracking",
+      "Transaction management",
+      "Content planning",
+      "Team wiki"
+    ]
   },
   {
     "name": "Tailwind",
@@ -459,7 +637,12 @@
     "rating": 4.5,
     "website": "https://tailwind.email",
     "featured": false,
-    "for_realtors": ["Email newsletters", "Property updates", "Market reports", "Branded emails"]
+    "for_realtors": [
+      "Email newsletters",
+      "Property updates",
+      "Market reports",
+      "Branded emails"
+    ]
   },
   {
     "name": "Placelist",
@@ -471,7 +654,12 @@
     "rating": 4.4,
     "website": "https://placelist.com",
     "featured": false,
-    "for_realtors": ["FSBO leads", "Expired leads", "Equity search", "Prospect lists"]
+    "for_realtors": [
+      "FSBO leads",
+      "Expired leads",
+      "Equity search",
+      "Prospect lists"
+    ]
   },
   {
     "name": "ReCAPTCHA-free forms (Tally)",
@@ -484,7 +672,12 @@
     "rating": 4.6,
     "website": "https://tally.so",
     "featured": false,
-    "for_realtors": ["Lead forms", "Contact forms", "Survey forms", "Listing inquiries"]
+    "for_realtors": [
+      "Lead forms",
+      "Contact forms",
+      "Survey forms",
+      "Listing inquiries"
+    ]
   },
   {
     "name": "BatchGPT",
@@ -496,7 +689,12 @@
     "rating": 4.3,
     "website": "https://batchgpt.ai",
     "featured": false,
-    "for_realtors": ["Bulk descriptions", "Neighborhood data", "Data processing", "List generation"]
+    "for_realtors": [
+      "Bulk descriptions",
+      "Neighborhood data",
+      "Data processing",
+      "List generation"
+    ]
   },
   {
     "name": "CoPilot AI",
@@ -508,7 +706,12 @@
     "rating": 4.6,
     "website": "https://copilot.ai",
     "featured": false,
-    "for_realtors": ["LinkedIn outreach", "Lead generation", "Content scheduling", "Network growth"]
+    "for_realtors": [
+      "LinkedIn outreach",
+      "Lead generation",
+      "Content scheduling",
+      "Network growth"
+    ]
   },
   {
     "name": "Dooly",
@@ -520,7 +723,12 @@
     "rating": 4.5,
     "website": "https://dooly.ai",
     "featured": false,
-    "for_realtors": ["CRM updates", "Call summaries", "Email tracking", "Auto-tasks"]
+    "for_realtors": [
+      "CRM updates",
+      "Call summaries",
+      "Email tracking",
+      "Auto-tasks"
+    ]
   },
   {
     "name": "Rentcast",
@@ -533,7 +741,12 @@
     "rating": 4.6,
     "website": "https://rentcast.io",
     "featured": false,
-    "for_realtors": ["Market analysis", "Rent estimates", "Property valuations", "Comparables"]
+    "for_realtors": [
+      "Market analysis",
+      "Rent estimates",
+      "Property valuations",
+      "Comparables"
+    ]
   },
   {
     "name": "Valprep",
@@ -545,7 +758,12 @@
     "rating": 4.5,
     "website": "https://valprep.com",
     "featured": false,
-    "for_realtors": ["CMA reports", "AVM", "Property valuations", "Investor reports"]
+    "for_realtors": [
+      "CMA reports",
+      "AVM",
+      "Property valuations",
+      "Investor reports"
+    ]
   },
   {
     "name": "Real Geeks",
@@ -557,7 +775,12 @@
     "rating": 4.5,
     "website": "https://realgeeks.com",
     "featured": false,
-    "for_realtors": ["Lead gen", "IDX websites", "CRM", "Lead qualification"]
+    "for_realtors": [
+      "Lead gen",
+      "IDX websites",
+      "CRM",
+      "Lead qualification"
+    ]
   },
   {
     "name": "IXACT Contact",
@@ -569,7 +792,12 @@
     "rating": 4.4,
     "website": "https://ixactcontact.com",
     "featured": false,
-    "for_realtors": ["Built for realtors", "Email marketing", "Transactions", "Referral tracking"]
+    "for_realtors": [
+      "Built for realtors",
+      "Email marketing",
+      "Transactions",
+      "Referral tracking"
+    ]
   },
   {
     "name": "Voom",
@@ -581,19 +809,29 @@
     "rating": 4.7,
     "website": "https://voom.io",
     "featured": false,
-    "for_realtors": ["Property videos", "Slideshow tours", "Social video", "Music tracks"]
+    "for_realtors": [
+      "Property videos",
+      "Slideshow tours",
+      "Social video",
+      "Music tracks"
+    ]
   },
   {
     "name": "CloudPano",
     "category": "video",
     "subcategory": "360 Tours",
-    "description": "Create 360° virtual tours for real estate. AI-powered tour editing and hotspots.",
+    "description": "Create 360\u00b0 virtual tours for real estate. AI-powered tour editing and hotspots.",
     "price": "From $25/mo",
     "affiliate_url": "",
     "rating": 4.6,
     "website": "https://cloudpano.com",
     "featured": false,
-    "for_realtors": ["360 tours", "Virtual open houses", "Property showcases", "Embeddable tours"]
+    "for_realtors": [
+      "360 tours",
+      "Virtual open houses",
+      "Property showcases",
+      "Embeddable tours"
+    ]
   },
   {
     "name": "Scriptology",
@@ -605,6 +843,30 @@
     "rating": 4.8,
     "website": "https://scriptology.com",
     "featured": true,
-    "for_realtors": ["Cold calling scripts", "Door knocking", "Listing presentations", "Objection handling"]
+    "for_realtors": [
+      "Cold calling scripts",
+      "Door knocking",
+      "Listing presentations",
+      "Objection handling"
+    ]
+  },
+  {
+    "name": "Follow Up Boss",
+    "category": "crm",
+    "subcategory": "Lead & Transaction Management",
+    "description": "AI-powered CRM designed for real estate teams. Combines lead management, automated follow-ups, and transaction tracking in one platform with strong AI features for lead response and nurturing.",
+    "price": "From $99/mo",
+    "affiliate_url": "",
+    "affiliate_commission": "",
+    "rating": 4.7,
+    "website": "https://followupboss.com",
+    "featured": false,
+    "for_realtors": [
+      "Lead management",
+      "Automated follow-ups",
+      "Transaction tracking",
+      "Team collaboration",
+      "AI lead response"
+    ]
   }
 ]
