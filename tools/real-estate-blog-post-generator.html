@@ -143,7 +143,7 @@
             <input type="text" id="agentName" placeholder="e.g. Sarah Thompson">
         </div>
 
-        <button class="btn btn-full" onclick="generatePost()">
+        <button class="btn btn-full" onclick="generatePost()">btn btn-full" onclick="generatePost"
             <span>✍️</span> Generate Blog Post
         </button>
         <div id="progressBar" class="progress-bar" style="margin-top:1rem;display:none">
@@ -154,7 +154,7 @@
     <div id="outputSection" class="output-section">
         <div class="section-title">📝 Generated Blog Post</div>
         <div class="output-box" id="generatedContent"></div>
-        <button class="copy-btn" onclick="copyContent()">📋 Copy to Clipboard</button>
+        <button class="copy-btn" onclick="copyContent()">copy-btn" onclick="copyContent"📋 Copy to Clipboard</button>
         <div class="word-count" id="wordCount"></div>
     </div>
 
@@ -828,20 +828,8 @@ function copyContent() {
 
 });
 
-(function() {
-  var ATTRS = ['onclick'];
-  var handlers = document.querySelectorAll('button[' + ATTRS.join('], button[') + ']');
-  handlers.forEach(function(btn) {
-    var h = btn.getAttribute('onclick');
-    var m = h.match(/^(\w+)\(/);
-    if (m) {
-      var fn = window[m[1]];
-      if (typeof fn === 'function') {
-        btn.addEventListener('click', fn);
-      }
-    }
-  });
 })();
+
 </script>
 
 <footer>

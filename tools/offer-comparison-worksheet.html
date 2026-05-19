@@ -100,10 +100,10 @@
     </div>
 
     <div class="btn-row">
-        <button class="btn" onclick="addOffer()">➕ Add Offer</button>
-        <button class="btn btn-outline" onclick="calculateScores()">📊 Calculate Scores</button>
-        <button class="btn btn-outline" onclick="generateSummary()">📋 Generate Report</button>
-        <button class="btn btn-outline" onclick="clearAll()">🗑️ Clear All</button>
+        <button class="btn" onclick="addOffer()">btn" onclick="addOffer"➕ Add Offer</button>
+        <button class="btn btn-outline" onclick="calculateScores()">btn btn-outline" onclick="calculateScores"📊 Calculate Scores</button>
+        <button class="btn btn-outline" onclick="generateSummary()">btn btn-outline" onclick="generateSummary"📋 Generate Report</button>
+        <button class="btn btn-outline" onclick="clearAll()">btn btn-outline" onclick="clearAll"🗑️ Clear All</button>
     </div>
 
     <div id="offerInputs" class="card" style="margin-bottom:1rem"></div>
@@ -142,7 +142,7 @@
         <div class="card">
             <div class="card-header">
                 <span class="card-title">📋 Agent Summary Report</span>
-                <button class="copy-btn" onclick="copyReport()">📋 Copy Report</button>
+                <button class="copy-btn" onclick="copyReport()">copy-btn" onclick="copyReport"📋 Copy Report</button>
             </div>
             <div class="output-box" id="reportOutput"></div>
         </div>
@@ -199,7 +199,7 @@ function renderOffers() {
             ${offers.map((o, i) => `
             <div class="input-cell" style="background:var(--card);padding:.5rem;text-align:center;font-size:.75rem;color:var(--accent);font-weight:600">
                 Buyer ${i + 1}
-                <button onclick="removeOffer(${o.id})" style="display:block;margin:.3rem auto 0;background:transparent;border:1px solid var(--bad);color:var(--bad);padding:.15rem .5rem;border-radius:4px;cursor:pointer;font-size:.65rem">✕</button>
+                <button onclick="removeOffer(${o.id})" style="display:block;margin:.3rem auto 0;background:transparent;border:1px solid var(--bad);color:var(--bad);padding:.15rem .5rem;border-radius:4px;cursor:pointer;font-size:.65rem">removeOffer"✕</button>
             </div>`).join('')}
         </div>`;
 
@@ -524,20 +524,8 @@ addOffer();
 
 });
 
-(function() {
-  var ATTRS = ['onclick'];
-  var handlers = document.querySelectorAll('button[' + ATTRS.join('], button[') + ']');
-  handlers.forEach(function(btn) {
-    var h = btn.getAttribute('onclick');
-    var m = h.match(/^(\w+)\(/);
-    if (m) {
-      var fn = window[m[1]];
-      if (typeof fn === 'function') {
-        btn.addEventListener('click', fn);
-      }
-    }
-  });
 })();
+
 </script>
 
 <footer>
