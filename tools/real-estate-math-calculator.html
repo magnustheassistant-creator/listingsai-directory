@@ -73,11 +73,22 @@ function copyOutput() {
 
 
 
-// Reliable event wiring
-document.querySelectorAll('button[onclick]').forEach(function(btn) {
-  var h = btn.getAttribute('onclick');
-  btn.addEventListener('click', function() { try { eval(h); } catch(e) {} });
 });
+
+(function() {
+  var ATTRS = ['onclick'];
+  var handlers = document.querySelectorAll('button[' + ATTRS.join('], button[') + ']');
+  handlers.forEach(function(btn) {
+    var h = btn.getAttribute('onclick');
+    var m = h.match(/^(\w+)\(/);
+    if (m) {
+      var fn = window[m[1]];
+      if (typeof fn === 'function') {
+        btn.addEventListener('click', fn);
+      }
+    }
+  });
+})();
 </script>
 </body>
 </html>
