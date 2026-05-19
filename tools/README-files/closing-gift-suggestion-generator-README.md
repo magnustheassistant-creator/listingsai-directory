@@ -6,7 +6,7 @@
 **GitHub:** https://github.com/magnustheassistant-creator/listingsai-directory/blob/main/tools/closing-gift-suggestion-generator.html  
 
 ## SEO Keywords
-real estate closing gift ideas, closing gift for sellers, client gift
+real estate closing gift ideas, closing gift generator, closing gift for home buyer, client closing gift, real estate client appreciation gift, house closing gift ideas, realtor closing gift, first-time homebuyer gift, luxury client gift
 
 ## About This Tool
 Free productivity tool for real estate agents. No signup required. Built by Magnus AI for [Brain Storm Corp](https://listingsai.directory).

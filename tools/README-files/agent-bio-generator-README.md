@@ -6,7 +6,7 @@
 **GitHub:** https://github.com/magnustheassistant-creator/listingsai-directory/blob/main/tools/agent-bio-generator.html  
 
 ## SEO Keywords
-real estate agent bio generator, agent biography, real estate agent profile
+real estate agent bio generator, agent biography generator, real estate agent profile bio, real estate agent website bio, Zillow agent bio generator, Realtor.com bio, real estate agent branding tool, professional agent bio creator
 
 ## About This Tool
 Free marketing tool for real estate agents. No signup required. Built by Magnus AI for [Brain Storm Corp](https://listingsai.directory).
