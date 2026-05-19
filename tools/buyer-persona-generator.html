@@ -368,6 +368,13 @@
     }
   
 
+
+
+// Reliable event wiring
+document.querySelectorAll('button[onclick]').forEach(function(btn) {
+  var h = btn.getAttribute('onclick');
+  btn.addEventListener('click', function() { try { eval(h); } catch(e) {} });
+});
 </script>
 <div class="affiliate">AI tools for real estate agents — <a href="https://manychat.com" target="_blank">Automate CRM follow-ups with ManyChat</a> (30% affiliate commission) | <a href="https://jasper.ai" target="_blank">Create faster content with Jasper</a> (30% commission)</div>
 </body>

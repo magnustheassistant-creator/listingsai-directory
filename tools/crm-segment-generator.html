@@ -130,6 +130,13 @@ function copyOutput() {
 }
 
 
+
+
+// Reliable event wiring
+document.querySelectorAll('button[onclick]').forEach(function(btn) {
+  var h = btn.getAttribute('onclick');
+  btn.addEventListener('click', function() { try { eval(h); } catch(e) {} });
+});
 </script>
 </body>
 </html>
