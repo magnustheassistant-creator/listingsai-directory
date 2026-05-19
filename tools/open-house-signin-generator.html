@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Open House Sign-in Sheet - Free Real Estate Template</title>
+<meta name="description" content="Create professional open house sign-in sheets in seconds. Free real estate tool, no signup required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>,*x{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:#0a0a0f;color:#f1f5f9;min-height:100vh}.container{max-width:860px;margin:0 auto;padding:40px 20px}header{text-align:center;margin-bottom:32px}.badge{background:linear-gradient(135deg,#00d4ff,#7c3aed);color:#000;font-size:.75em;font-weight:700;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:12px}h1{font-size:2em;margin-bottom:8px}.subtitle{color:#64748b}.card{background:#111;border:1px solid #222;border-radius:16px;padding:24px;margin-bottom:14px}.card-title{font-size:.8em;color:#00d4ff;font-weight:700;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:block;font-size:.82em;color:#64748b;margin-bottom:6px;font-weight:500}input,select,textarea{width:100%;padding:10px 12px;background:#0a0a0f;border:1px solid #222;border-radius:10px;color:#f1f5f9;font-size:.95em;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}input:focus,select:focus,textarea:focus{border-color:#00d4ff}textarea{resize:vertical;min-height:100px}button{padding:12px 24px;background:#00d4ff;color:#000;font-weight:700;font-size:.95em;border:none;border-radius:10px;cursor:pointer;transition:all .2s}button:hover{{background:#00b8df;transform:translateY(-1px)}}.btn-row{{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}}.result-box{{background:#111;border:1px solid #222;border-radius:14px;padding:20px;margin-top:20px;display:none}}.result-box.show{{display:block}}.result-box h3{{color:#00d4ff;margin-bottom:14px;font-size:.9em}}.output{{background:#0a0a0f;border:1px solid #222;border-radius:10px;padding:14px;font-size:.88em;line-height:1.7;white-space:pre-wrap;min-height:80px;color:#22c55e;font-family:monospace}}.output.error{{color:#ef4444}}.copy-btn{{background:#7c3aed;margin-left:10px}}.premium{{background:linear-gradient(135deg,#7c3aed,#5b21b6);border-radius:14px;padding:20px;margin-top:20px;text-align:center}}.premium h3{{font-size:1.1em;margin-bottom:8px}}.premium p{{color:#94a3b8;font-size:.88em;margin-bottom:14px}}.premium .price{{font-size:1.8em;font-weight:800;color:#00d4ff}}.premium .wallet{{background:#0a0a0f;border:1px solid #222;border-radius:8px;padding:10px;font-size:.8em;margin-top:10px;font-family:monospace;word-break:break-all;color:#64748b}}.affiliate{{text-align:center;padding:16px;color:#64748b;font-size:.82em;margin-top:30px}}.affiliate a{{color:#00d4ff;text-decoration:none}}.affiliate a:hover{{text-decoration:underline}}footer{{text-align:center;color:#64748b;font-size:.8em;padding:20px;border-top:1px solid #111;margin-top:40px}}footer a{{color:#00d4ff;text-decoration:none}}@media(max-width:640px){{.row{{grid-template-columns:1fr}}}}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What information should I collect at an open house?","acceptedAnswer":{"@type":"Answer","text":"Collect name, email, phone, property interest level, and how they heard about the property. This gives you actionable lead data for follow-up."}}]}
+</script>
+</head>
+<body>
+<div class="container">
+<header><span class="badge">ListingsAI Tool</span><h1>Open House Sign-in Sheet Generator</h1><p class="subtitle">Free to use - No signup required</p></header>
+<div class="card">
+<div class="card-title">Generate Your Output</div>
+<form id="toolForm">
+<div class="row" style="margin-bottom:12px">
+<div><label>Property Type</label><select id="propertyType"><option value="residential">Residential</option><option value="commercial">Commercial</option><option value="land">Land</option><option value="multi-family">Multi-Family</option></select></div>
+<div><label>Agent Name</label><input id="agentName" type="text" placeholder="Your Name"></div>
+</div>
+<label>Your Input</label>
+<textarea id="userInput" placeholder="Describe your property or situation..." style="margin-bottom:12px"></textarea>
+<div class="btn-row"><button type="button" onclick="generate()">Generate</button><button type="button" class="copy-btn" onclick="copyOutput()">Copy</button></div>
+</form>
+</div>
+<div class="result-box" id="resultBox">
+<h3>Your Results</h3>
+<div class="output" id="output">Your output will appear here...</div>
+</div>
+<div class="premium">
+<h3>Unlock Premium Version</h3>
+<p>$9 one-time - unlimited access - all templates</p>
+<div class="price">$9</div>
+<div class="wallet">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+</div>
+<div class="affiliate">
+<a href="https://listingsai.directory" target="_blank">Browse 50+ AI tools for real estate</a> - Use Canva to create professional print versions <a href="https://www.canva.com" target="_blank">Try here</a>
+</div>
+</div>
+<script>
+
+function generate() {
+    var inp = document.getElementById('userInput').value.trim();
+    var out = document.getElementById('output');
+    var box = document.getElementById('resultBox');
+    if(!inp) { out.textContent = 'Please enter some input.'; out.className='output error'; box.classList.add('show'); return; }
+    var lines = inp.split('
+').filter(function(l){ return l.trim(); });
+    var result = '';
+    if(lines.length > 0) {
+        for(var i=0;i<lines.length;i++) { result += 'Template ' + (i+1) + ': ' + lines[i] + '
+'; }
+    } else {
+        result = 'Generated result based on your input.';
+    }
+    out.textContent = result + '
+
+Generated by ListingsAI - Free Real Estate Tool';
+    out.className = 'output';
+    box.classList.add('show');
+}
+function copyOutput() {
+    var text = document.getElementById('output').textContent;
+    navigator.clipboard.writeText(text).then(function(){ alert('Copied!'); });
+}
+
+</script>
+</body>
+</html>

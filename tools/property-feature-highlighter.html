@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Luxury Property Feature Highlighter | High-End Real Estate Copywriting</title>
+    <meta name="description" content="Transform property features into compelling luxury descriptions. Free AI tool for high-end real estate agents to showcase premium amenities elegantly.">
+    <link rel="canonical" href="https://listingsai.directory/tools/property-feature-highlighter.html">
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed;--text:#e5e5e5;--muted:#888}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+        .container{max-width:800px;margin:0 auto;padding:2rem 1rem}
+        header{text-align:center;padding:2rem 0}
+        h1{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:.5rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .subtitle{color:var(--muted);font-size:.95rem}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
+        .form-group{margin-bottom:1.25rem}
+        label{display:block;margin-bottom:.4rem;font-weight:500;color:var(--accent)}
+        input,select,textarea{width:100%;padding:.75rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1rem;transition:border-color .3s}
+        input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+        textarea{resize:vertical;min-height:100px}
+        .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-size:1rem;transition:transform .2s,opacity .2s}
+        .btn:hover{transform:translateY(-2px);opacity:.9}
+        .output-section{margin-top:1.5rem;padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:12px;display:none}
+        .output-section.active{display:block}
+        .output-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem;margin-top:1rem;white-space:pre-wrap;font-size:.95rem;max-height:400px;overflow-y:auto}
+        .copy-btn{background:var(--accent);color:#000;padding:.5rem 1rem;border-radius:6px;border:none;cursor:pointer;font-weight:500;margin-top:.75rem}
+        .copy-btn:hover{opacity:.85}
+        .premium-badge{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:.25rem .75rem;border-radius:20px;font-size:.75rem;font-weight:600;margin-bottom:1rem}
+        .upsell{background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(124,58,237,.1));border:1px solid var(--accent);border-radius:10px;padding:1.25rem;margin-top:1.5rem;text-align:center}
+        .upsell h3{color:var(--accent);margin-bottom:.5rem;font-size:1rem}
+        .upsell p{font-size:.85rem;color:var(--muted);margin-bottom:.75rem}
+        .wallet{font-family:monospace;background:var(--bg);padding:.4rem .8rem;border-radius:6px;font-size:.8rem;color:var(--accent);word-break:break-all}
+        .affiliate{text-align:center;margin-top:1.5rem;padding:1rem;background:var(--card);border-radius:10px}
+        .affiliate a{color:var(--accent);text-decoration:none;font-weight:500}
+        .affiliate a:hover{text-decoration:underline}
+        footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);margin-top:2rem}
+        footer a{color:var(--accent);text-decoration:none}
+        footer a:hover{text-decoration:underline}
+        @media(max-width:600px){.container{padding:1rem}.card{padding:1rem}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <span class="premium-badge">✨ Luxury Edition</span>
+        <h1>Luxury Property Feature Highlighter</h1>
+        <p class="subtitle">Transform ordinary features into extraordinary selling points</p>
+    </header>
+
+    <div class="card">
+        <form id="featureForm">
+            <div class="form-group">
+                <label for="featureInput">Property Feature</label>
+                <input type="text" id="featureInput" placeholder="e.g., Marble countertops, Wine cellar, Home theater" required>
+            </div>
+            <div class="form-group">
+                <label for="propertyClass">Property Class</label>
+                <select id="propertyClass">
+                    <option value="ultra-luxury">Ultra-Luxury ($5M+)</option>
+                    <option value="luxury">Luxury ($1M-$5M)</option>
+                    <option value="premium">Premium ($500K-$1M)</option>
+                    <option value="executive">Executive ($300K-$500K)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="featureType">Feature Category</label>
+                <select id="featureType">
+                    <option value="kitchen">Kitchen & Dining</option>
+                    <option value="bathroom">Bathroom & Spa</option>
+                    <option value="outdoor">Outdoor & Landscape</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="tech">Smart Home Technology</option>
+                    <option value="wellness">Wellness & Fitness</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity/Size (optional)</label>
+                <input type="text" id="quantity" placeholder="e.g., 6-burner, 3-car, 2000 bottles">
+            </div>
+            <button type="submit" class="btn">💎 Generate Luxury Description</button>
+        </form>
+    </div>
+
+    <div class="output-section" id="outputSection">
+        <h2 style="color:var(--accent)">Luxury Feature Description</h2>
+        <div class="output-box" id="outputBox"></div>
+        <button class="copy-btn" onclick="copyOutput()">📋 Copy to Clipboard</button>
+    </div>
+
+    <div class="upsell">
+        <h3>🚀 Unlock Premium Features</h3>
+        <p>Get unlimited feature highlights, video scripts, and luxury branding tools</p>
+        <p>Support the project with BNB:</p>
+        <div class="wallet">0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+        <p style="margin-top:.75rem;font-size:.8rem"><a href="https://jasper.ai" target="_blank" style="color:var(--accent)">Try Jasper AI →</a> (30% off with code LISTINGS)</p>
+    </div>
+
+    <div class="affiliate">
+        <p>Want more AI writing power? <a href="https://jasper.ai" target="_blank">Try Jasper →</a> The #1 AI writing tool for real estate professionals</p>
+    </div>
+
+    <footer>
+        Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate
+    </footer>
+</div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How does the luxury feature highlighter work?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Enter any property feature and select its category. The AI transforms basic feature descriptions into sophisticated, luxury-oriented copy that appeals to high-net-worth buyers."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What property classes does this tool support?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The tool supports all luxury tiers from executive homes ($300K+) to ultra-luxury estates ($5M+), adjusting the language and tone accordingly."
+            }
+        }
+    ]
+}
+</script>
+
+<script>
+const luxuryDescriptions = {
+    'kitchen': {
+        'default': [
+            "Chef-inspired kitchen featuring {feature}, designed for culinary excellence and sophisticated entertaining",
+            "The heart of this home showcases {feature}, where form meets function in perfect harmony"
+        ],
+        'marble': ["Calacatta marble surfaces elevate the culinary experience with timeless Italian elegance"],
+        'countertops': ["hand-selected stone countertops that command attention and inspire creativity"],
+        'subzero': ["Sub-Zero refrigeration maintains pristine freshness with museum-quality precision"],
+        'wolf': ["Wolf range transforms cooking into an art form with professional-grade performance"]
+    },
+    'bathroom': {
+        'default': [
+            "Spa-inspired sanctuary featuring {feature}, where relaxation meets refined elegance",
+            "Unwind in this private retreat showcasing {feature} — a testament to sophisticated living"
+        ],
+        'steam': ["steam shower transports you to a private wellness retreat within your own home"],
+        'soaking': ["deep soaking tub invites contemplation and restoration after demanding days"],
+        'heated': ["radiant heated floors embrace bare feet with consistent, luxurious warmth"]
+    },
+    'outdoor': {
+        'default': [
+            "Outdoor living reimagined with {feature}, seamlessly blending nature with refined comfort",
+            "This exceptional outdoor space features {feature}, extending your living environment in style"
+        ],
+        'pool': ["crystal-clear infinity pool creates a stunning visual connection to the horizon"],
+        'pizza': ["wood-fired pizza oven invites al fresco dining under the stars"],
+        'firepit': ["ambient firepit gathering space encourages connection and conversation"]
+    },
+    'entertainment': {
+        'default': [
+            "Cutting-edge entertainment hub featuring {feature}, where technology meets luxury living",
+            "This sophisticated space showcases {feature}, perfect for intimate gatherings or grand celebrations"
+        ],
+        'theater': ["private screening room delivers an immersive cinematic experience"],
+        'wine': ["temperature-controlled wine cellar houses your collection in style"],
+        'bar': ["wet bar crafted for the consummate entertainer"]
+    },
+    'tech': {
+        'default': [
+            "State-of-the-art smart home integration featuring {feature} for effortless modern living",
+            "Technology seamlessly orchestrates your environment with {feature}, setting new standards in luxury"
+        ],
+        'savant': ["Savant Pro automation unified control of lighting, climate, security and entertainment"],
+        'crestron': ["Crestron home automation delivers whisper-quiet sophistication at your command"]
+    },
+    'wellness': {
+        'default': [
+            "Private wellness sanctuary featuring {feature}, dedicated to mind, body and spirit",
+            "Escape to this thoughtfully designed space with {feature} — your personal retreat awaits"
+        ],
+        'gym': ["fully-equipped home gym with premium equipment for dedicated fitness routines"],
+        'yoga': ["dedicated yoga studio provides a serene space for mindful practice"],
+        'sauna': ["infrared sauna offers therapeutic rejuvenation within the comfort of home"]
+    }
+};
+
+function generateLuxuryDescription(feature, category, quantity) {
+    const catData = luxuryDescriptions[category] || luxuryDescriptions['kitchen'];
+    const featureLower = feature.toLowerCase();
+    
+    let desc = catData.default[Math.floor(Math.random() * catData.default.length)];
+    
+    for (const [key, values] of Object.entries(catData)) {
+        if (key !== 'default' && featureLower.includes(key)) {
+            desc = values[Math.floor(Math.random() * values.length)];
+            break;
+        }
+    }
+    
+    desc = desc.replace('{feature}', feature);
+    
+    if (quantity) {
+        desc += ' — ' + quantity;
+    }
+    
+    const classPrefixes = {
+        'ultra-luxury': 'An extraordinary',
+        'luxury': 'A magnificent',
+        'premium': 'A stunning',
+        'executive': 'An impressive'
+    };
+    
+    desc = (classPrefixes[document.getElementById('propertyClass').value] || 'A') + ' residence with ' + desc.charAt(0).toLowerCase() + desc.slice(1);
+    
+    return desc;
+}
+
+document.getElementById('featureForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const feature = document.getElementById('featureInput').value;
+    const category = document.getElementById('featureType').value;
+    const quantity = document.getElementById('quantity').value;
+    
+    const output = generateLuxuryDescription(feature, category, quantity);
+    document.getElementById('outputBox').textContent = output;
+    document.getElementById('outputSection').classList.add('active');
+    document.getElementById('outputSection').scrollIntoView({ behavior: 'smooth' });
+});
+
+function copyOutput() {
+    const text = document.getElementById('outputBox').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = '📋 Copy to Clipboard', 2000);
+    });
+}
+</script>
+</body>
+</html>

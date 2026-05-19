@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Testimonial Request Generator | How to Ask for Reviews</title>
+    <meta name="description" content="Generate professional testimonial request templates for real estate agents. Learn how and when to ask clients for reviews and testimonials.">
+    <h1>Testimonial Request Generator</h1>
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:#e0e0e0;min-height:100vh;padding:20px;line-height:1.6}
+        .container{max-width:800px;margin:0 auto}
+        h1{color:var(--accent);text-align:center;margin-bottom:10px;font-size:1.8rem}
+        .subtitle{text-align:center;color:#888;margin-bottom:30px}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:25px;margin-bottom:20px}
+        .form-group{margin-bottom:15px}
+        label{display:block;margin-bottom:5px;color:var(--accent);font-weight:600}
+        input,select,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:#0a0a0f;color:#e0e0e0;font-size:14px}
+        textarea{resize:vertical;min-height:80px}
+        button{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:8px;color:#fff;font-weight:700;font-size:16px;cursor:pointer;transition:transform 0.2s}
+        button:hover{transform:scale(1.02)}
+        .output{margin-top:20px;display:none}
+        .output.show{display:block}
+        .template-card{background:#0a0a0f;border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:15px}
+        .template-card .channel{color:var(--accent);font-size:12px;font-weight:600;text-transform:uppercase;margin-bottom:10px}
+        .template-card .template-text{font-size:14px;white-space:pre-wrap;line-height:1.8}
+        .template-card .copy-btn{display:inline-block;padding:8px 16px;background:var(--accent);color:#000;border-radius:6px;text-decoration:none;font-weight:600;font-size:12px;cursor:pointer;margin-top:12px}
+        .tips-section{background:rgba(0,212,255,0.1);border:1px solid var(--accent);border-radius:8px;padding:15px;margin-bottom:15px}
+        .tips-section h3{color:var(--accent);font-size:14px;margin-bottom:10px}
+        .tips-section ul{margin:0;padding-left:20px;font-size:13px}
+        .tips-section li{margin-bottom:5px}
+        .premium-upsell{background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(0,212,255,0.2));border:1px solid var(--accent2);border-radius:12px;padding:20px;margin-top:30px;text-align:center}
+        .premium-upsell h3{color:var(--accent);margin-bottom:10px}
+        .wallet{font-family:monospace;background:#000;padding:10px 15px;border-radius:6px;display:inline-block;margin:10px 0;font-size:13px;color:var(--accent)}
+        .cta-btn{display:inline-block;padding:12px 25px;background:var(--accent);color:#000;border-radius:6px;text-decoration:none;font-weight:700;margin-top:10px}
+        footer{text-align:center;margin-top:40px;padding:20px;color:#666;font-size:14px}
+        footer a{color:var(--accent);text-decoration:none}
+        @media(max-width:600px){.card{padding:15px}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Real Estate Testimonial Request Generator</h1>
+    <p class="subtitle">Get more 5-star reviews with perfect timing & messaging</p>
+    
+    <div class="card">
+        <div class="form-group">
+            <label>Client Type</label>
+            <select id="clientType">
+                <option value="buyer">Home Buyer</option>
+                <option value="seller">Home Seller</option>
+                <option value="investor">Real Estate Investor</option>
+                <option value="first-time">First-Time Homebuyer</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Channel</label>
+            <select id="channel">
+                <option value="email">Email</option>
+                <option value="text">Text Message</option>
+                <option value="phone">Phone Call Script</option>
+                <option value="video">Video Request</option>
+                <option value="linkedin">LinkedIn</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Agent Name</label>
+            <input type="text" id="agentName" placeholder="e.g., Sarah Johnson">
+        </div>
+        <button onclick="generateTemplates()">Generate Testimonial Requests</button>
+    </div>
+
+    <div class="tips-section">
+        <h3>💡 Pro Tips for Getting Testimonials</h3>
+        <ul>
+            <li><strong>Timing is everything:</strong> Ask right after closing when emotions are high</li>
+            <li><strong>Be specific:</strong> Ask them to mention specific things you helped with</li>
+            <li><strong>Make it easy:</strong> Provide direct links to review platforms</li>
+            <li><strong>Video beats text:</strong> Request a quick video testimonial if possible</li>
+            <li><strong>Follow up:</strong> If they don't respond in 3-5 days, send a gentle reminder</li>
+        </ul>
+    </div>
+
+    <div class="output" id="output">
+        <div class="card">
+            <h2 style="color:var(--accent);margin-bottom:15px">Your Testimonial Request Templates</h2>
+            <div id="templatesContainer"></div>
+        </div>
+    </div>
+
+    <div class="premium-upsell">
+        <h3>Automate Your Review Requests</h3>
+        <p>Use Jasper AI to personalize outreach at scale</p>
+        <div class="wallet">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+        <a href="https://jasper.ai" class="cta-btn" target="_blank">Try Jasper AI</a>
+    </div>
+</div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "When is the best time to ask for a testimonial from real estate clients?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The best time to ask for a testimonial is immediately after closing when the client is most excited and grateful. Catch them at the closing table, during the final walkthrough, or send a request within 24 hours."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I ask a client for a video testimonial?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Be specific but low-pressure. Ask them to record a quick 30-60 second video on their phone. Suggest they mention what you helped them accomplish and one specific thing that made you stand out. Make it casual and personal."
+            }
+        }
+    ]
+}
+</script>
+
+<script>
+const templates = {
+    email: {
+        buyer: `Subject: Quick favor 🙏 (It'll only take 2 minutes!)
+
+Hi {client_name},
+
+Congratulations again on your new home! 🎉
+
+I'm reaching out because referrals are how I grow my business, and honestly, your testimonial would mean so much.
+
+Would you be willing to share a few words about your experience working with me? 
+
+Specifically, I'd love to know:
+• What was the biggest challenge we solved together?
+• What surprised you most about the process?
+
+It's totally fine if you'd prefer a quick 30-second video on your phone — I can help with the rest.
+
+Here's a direct link to Google Reviews (takes 30 seconds):
+→ [Insert Google Review Link]
+
+Thank you so much! I genuinely appreciate your support.
+
+Warmly,
+{agent_name}`,
+        seller: `Subject: You're amazing — and I'd love your help! 🌟
+
+Hi {client_name},
+
+I still can't believe we sold your home for ${Math.floor(Math.random() * 100 + 300)}K in just ${Math.floor(Math.random() * 10 + 5)} days!
+
+Your support throughout this process truly meant a lot to me.
+
+If you have a moment, would you mind sharing your experience on Google? 
+
+Here's the link:
+→ [Insert Google Review Link]
+
+Your words help other families find the right agent. And that matters more than you know.
+
+Thank you! 🙏
+{agent_name}`
+    },
+    text: {
+        buyer: `Hey {client_name}! 👋 Just wanted to say congrats again on your new home! 
+
+Quick favor — would you be willing to leave me a quick review on Google? It seriously takes like 30 seconds:
+
+[Link]
+
+It really helps me grow and reach more first-time buyers like yourself. 
+
+I appreciate you! 🙏`,
+        seller: `Hi {client_name}! 🎉 We did it! 
+
+Thanks so much for trusting me with selling your home. 
+
+If you have 30 seconds, I'd really appreciate a quick Google review:
+[Link]
+
+Your support helps other sellers find the right agent! 💫`
+    },
+    phone: {
+        buyer: `Hi {client_name}, it's {agent_name}!
+
+I just wanted to call and say congratulations again on your new home.
+
+I'm calling because I've been so focused on making sure everything went smoothly that I realized I never asked — how was your overall experience working with me?
+
+[Wait for response]
+
+I'm so glad to hear that! 
+
+Listen, I don't want to take much of your time, but would you be willing to share a quick testimonial? You could even do it right now on your phone — just a sentence or two about your experience.
+
+It would really help me grow my business and help more families like yours.
+
+I'll send you the link right now. Would you prefer text or email?`
+    },
+    video: {
+        buyer: `Subject: Could you help me with a quick video? 📱
+
+Hi {client_name},
+
+Hope you're settling in beautifully at your new home!
+
+I have a favor to ask — would you be willing to record a quick 30-60 second video testimonial for me?
+
+Here's what I'm looking for:
+• Start by saying your first name and your city
+• Share what you were looking for and what we accomplished
+• Mention one thing that made our working together stand out
+• Keep it natural and conversational — no pressure to be perfect!
+
+You can record right on your phone and text it to me, or email it back.
+
+No script needed — just speak from the heart! 
+
+Thank you so much! 🙏
+{agent_name}`
+    },
+    linkedin: {
+        buyer: `Hi {client_name}!
+
+Congratulations on your new home! 🎉
+
+I've been so grateful to work with you through this process. Your referrals mean the world to me.
+
+If you ever have a moment, I'd really appreciate if you'd share your experience in a recommendation on LinkedIn. It seriously takes just 2 minutes:
+
+linkedin.com/me/[your-profile-link]
+
+Alternatively, a Google review would be amazing too:
+[Link]
+
+Thank you for being such a wonderful client!
+
+Best,
+{agent_name}`
+    }
+};
+
+const clientTypes = {
+    buyer: 'buyer',
+    seller: 'seller',
+    investor: 'buyer',
+    'first-time': 'buyer'
+};
+
+function generateTemplates(){
+    const clientType = document.getElementById('clientType').value;
+    const channel = document.getElementById('channel').value;
+    const agentName = document.getElementById('agentName').value || 'Your Name';
+    const container = document.getElementById('templatesContainer');
+    
+    const key = clientTypes[clientType] || 'buyer';
+    const template = templates[channel][key] || templates['email']['buyer'];
+    
+    const names = ['James', 'Emily', 'Michael', 'Sarah', 'David'];
+    const displayName = names[Math.floor(Math.random() * names.length)];
+    
+    const finalTemplate = template
+        .replace(/{client_name}/g, displayName)
+        .replace(/{agent_name}/g, agentName);
+    
+    container.innerHTML = `
+        <div class="template-card">
+            <span class="channel">📧 ${channel.charAt(0).toUpperCase() + channel.slice(1)} Request</span>
+            <p class="template-text">${finalTemplate}</p>
+            <span class="copy-btn" onclick="copyTemplate(this)">📋 Copy Template</span>
+        </div>
+    `;
+    
+    document.getElementById('output').classList.add('show');
+}
+
+function copyTemplate(el){
+    const text = el.previousElementSibling.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        el.textContent = '✅ Copied!';
+        setTimeout(() => { el.textContent = '📋 Copy Template'; }, 2000);
+    });
+}
+</script>
+
+<footer>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</footer>
+</body>
+</html>

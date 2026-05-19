@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Real Estate Video Script Generator | Property Tour Script Template</title>
+    <meta name="description" content="Generate professional real estate video scripts instantly. Create engaging property tour scripts for social media, websites, and virtual open houses.">
+    <link rel="canonical" href="https://listingsai.directory/tools/property-video-script-generator.html">
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed;--text:#e5e5e5;--muted:#888}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+        .container{max-width:800px;margin:0 auto;padding:2rem 1rem}
+        header{text-align:center;padding:2rem 0}
+        h1{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:.5rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .subtitle{color:var(--muted);font-size:.95rem}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
+        .form-group{margin-bottom:1.25rem}
+        label{display:block;margin-bottom:.4rem;font-weight:500;color:var(--accent)}
+        input,select,textarea{width:100%;padding:.75rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1rem;transition:border-color .3s}
+        input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+        textarea{resize:vertical;min-height:80px}
+        .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-size:1rem;transition:transform .2s,opacity .2s}
+        .btn:hover{transform:translateY(-2px);opacity:.9}
+        .output-section{margin-top:1.5rem;padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:12px;display:none}
+        .output-section.active{display:block}
+        .output-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem;margin-top:1rem;white-space:pre-wrap;font-size:.9rem;max-height:500px;overflow-y:auto}
+        .copy-btn{background:var(--accent);color:#000;padding:.5rem 1rem;border-radius:6px;border:none;cursor:pointer;font-weight:500;margin-top:.75rem}
+        .copy-btn:hover{opacity:.85}
+        .premium-badge{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:.25rem .75rem;border-radius:20px;font-size:.75rem;font-weight:600;margin-bottom:1rem}
+        .upsell{background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(124,58,237,.1));border:1px solid var(--accent);border-radius:10px;padding:1.25rem;margin-top:1.5rem;text-align:center}
+        .upsell h3{color:var(--accent);margin-bottom:.5rem;font-size:1rem}
+        .upsell p{font-size:.85rem;color:var(--muted);margin-bottom:.75rem}
+        .wallet{font-family:monospace;background:var(--bg);padding:.4rem .8rem;border-radius:6px;font-size:.8rem;color:var(--accent);word-break:break-all}
+        .affiliate{text-align:center;margin-top:1.5rem;padding:1rem;background:var(--card);border-radius:10px}
+        .affiliate a{color:var(--accent);text-decoration:none;font-weight:500}
+        .affiliate a:hover{text-decoration:underline}
+        footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);margin-top:2rem}
+        footer a{color:var(--accent);text-decoration:none}
+        footer a:hover{text-decoration:underline}
+        @media(max-width:600px){.container{padding:1rem}.card{padding:1rem}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <span class="premium-badge">🎬 Video Ready</span>
+        <h1>Property Video Script Generator</h1>
+        <p class="subtitle">Create compelling video scripts for property tours in seconds</p>
+    </header>
+
+    <div class="card">
+        <form id="scriptForm">
+            <div class="form-group">
+                <label for="propertyName">Property Name/Address</label>
+                <input type="text" id="propertyName" placeholder="e.g., 123 Ocean View Drive" required>
+            </div>
+            <div class="form-group">
+                <label for="videoType">Video Type</label>
+                <select id="videoType">
+                    <option value="tour">Property Tour</option>
+                    <option value="social">Social Media Reel</option>
+                    <option value="openhouse">Virtual Open House</option>
+                    <option value="showcase">Luxury Showcase</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="beds">Bedrooms</label>
+                <input type="number" id="beds" placeholder="3" min="0">
+            </div>
+            <div class="form-group">
+                <label for="baths">Bathrooms</label>
+                <input type="number" id="baths" placeholder="2" min="0" step="0.5">
+            </div>
+            <div class="form-group">
+                <label for="highlights">Key Highlights (comma separated)</label>
+                <textarea id="highlights" placeholder="e.g., Ocean views, chef's kitchen, infinity pool"></textarea>
+            </div>
+            <button type="submit" class="btn">🎬 Generate Script</button>
+        </form>
+    </div>
+
+    <div class="output-section" id="outputSection">
+        <h2 style="color:var(--accent)">Your Video Script</h2>
+        <div class="output-box" id="outputBox"></div>
+        <button class="copy-btn" onclick="copyOutput()">📋 Copy Script</button>
+    </div>
+
+    <div class="upsell">
+        <h3>🚀 Unlock Premium Features</h3>
+        <p>Get unlimited scripts, voiceover generation, and direct video creation</p>
+        <p>Support the project with BNB:</p>
+        <div class="wallet">0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+        <p style="margin-top:.75rem;font-size:.8rem"><a href="https://jasper.ai" target="_blank" style="color:var(--accent)">Try Jasper AI →</a> (30% off with code LISTINGS)</p>
+    </div>
+
+    <div class="affiliate">
+        <p>Want more AI writing power? <a href="https://jasper.ai" target="_blank">Try Jasper →</a> The #1 AI writing tool for real estate professionals</p>
+    </div>
+
+    <footer>
+        Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate
+    </footer>
+</div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do I use the property video script generator?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Enter your property details and select the type of video you need. The tool generates a complete script with scene directions, voiceover text, and visual notes that you can use for filming or with AI video tools."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What video types does this script generator support?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The tool generates scripts for property tours, social media reels (30-60 seconds), virtual open houses, and luxury property showcases. Each script is optimized for its intended platform and duration."
+            }
+        }
+    ]
+}
+</script>
+
+<script>
+const scriptTemplates = {
+    'tour': {
+        intro: "Welcome to {property}. I'm excited to show you this beautiful home that offers everything you're looking for.",
+        outro: "This home has been an absolute pleasure to show. I hope you can envision yourself living here. Let's talk about making this your new home!"
+    },
+    'social': {
+        intro: "POV: You just walked into your dream home 🏠",
+        outro: "Save this property and schedule a showing — link in bio! #RealEstate #DreamHome #PropertyTour"
+    },
+    'openhouse': {
+        intro: "Good [morning/afternoon], everyone! Welcome to today's virtual open house at {property}. I'm your host, [Your Name], and I'm thrilled to show you this incredible property.",
+        outro: "Thank you for joining today's open house. I'll be taking questions in the comments. Don't forget to schedule your in-person tour!"
+    },
+    'showcase': {
+        intro: "Presenting {property} — an extraordinary residence where luxury living reaches its pinnacle.",
+        outro: "This is more than a home; it's a lifestyle. Schedule your private viewing today."
+    }
+};
+
+function generateScript(data) {
+    const template = scriptTemplates[data.videoType];
+    const highlights = data.highlights ? data.highlights.split(',').map(h => h.trim()).filter(h => h) : [];
+    
+    let script = '';
+    
+    // INTRO
+    script += '=== INTRO (0:00-0:10) ===\n';
+    script += '🎥 Visuals: Drone shot circling the property, sunrise/sunset lighting\n';
+    script += '🎙️ Voiceover:\n';
+    script += '"' + template.intro.replace('{property}', data.propertyName) + '"\n\n';
+    
+    // LIVING SPACES
+    script += '=== LIVING AREAS (0:10-0:25) ===\n';
+    script += '🎥 Visuals: Wide shot of living room, slow pan across windows, details on architectural features\n';
+    script += '🎙️ Voiceover:\n';
+    script += '"As you enter, you\'re greeted by an expansive living space bathed in natural light. The open floor plan seamlessly connects the main living areas, creating the perfect flow for both everyday living and entertaining."\n\n';
+    
+    // KITCHEN
+    script += '=== KITCHEN (0:25-0:40) ===\n';
+    script += '🎥 Visuals: Countertop details, cabinet hardware, modern appliances, pendant lighting\n';
+    script += '🎙️ Voiceover:\n';
+    script += '"The chef\'s kitchen features [premium appliances], [countertops], and plenty of space for meal preparation. Whether you\'re hosting dinner parties or cooking for your family, this kitchen delivers."\n\n';
+    
+    // BEDROOMS
+    if (data.beds) {
+        script += `=== BEDROOMS (0:40-0:55) ===\n`;
+        script += '🎥 Visuals: Master bedroom with en-suite, closet space, secondary bedrooms\n';
+        script += '🎙️ Voiceover:\n';
+        script += `"This home offers ${data.beds} generously-sized bedrooms, each providing a private retreat. The primary suite features [details] and plenty of closet space."\n\n`;
+    }
+    
+    // HIGHLIGHTS
+    if (highlights.length > 0) {
+        script += '=== KEY HIGHLIGHTS (0:55-1:10) ===\n';
+        script += '🎥 Visuals: Feature shots of highlighted amenities\n';
+        script += '🎙️ Voiceover:\n';
+        script += '"Additional features include ' + highlights.slice(0, 3).join(', ') + '. These details truly set this property apart."\n\n';
+    }
+    
+    // OUTDOOR
+    script += '=== OUTDOOR SPACE (1:10-1:25) ===\n';
+    script += '🎥 Visuals: backyard/pool/patio shots, landscaping details\n';
+    script += '🎙️ Voiceover:\n';
+    script += '"Step outside to discover your private outdoor oasis. [Describe outdoor features based on property type.]"\n\n';
+    
+    // OUTRO
+    script += '=== OUTRO (1:25-1:30) ===\n';
+    script += '🎥 Visuals: Final drone shot, contact information overlay\n';
+    script += '🎙️ Voiceover:\n';
+    script += '"' + template.outro + '"\n\n';
+    
+    // CALL TO ACTION
+    script += '=== CALL TO ACTION ===\n';
+    script += '📱 For social: "Tap the link to schedule your private showing"\n';
+    script += '📞 Phone: [Your Number]\n';
+    script += '📧 Email: [Your Email]\n';
+    script += '🌐 Website: [Your Website]\n';
+    
+    return script;
+}
+
+document.getElementById('scriptForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const data = {
+        propertyName: document.getElementById('propertyName').value,
+        videoType: document.getElementById('videoType').value,
+        beds: document.getElementById('beds').value,
+        baths: document.getElementById('baths').value,
+        highlights: document.getElementById('highlights').value
+    };
+    
+    const output = generateScript(data);
+    document.getElementById('outputBox').textContent = output;
+    document.getElementById('outputSection').classList.add('active');
+    document.getElementById('outputSection').scrollIntoView({ behavior: 'smooth' });
+});
+
+function copyOutput() {
+    const text = document.getElementById('outputBox').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = '📋 Copy Script', 2000);
+    });
+}
+</script>
+</body>
+</html>

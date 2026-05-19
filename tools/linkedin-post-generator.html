@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate LinkedIn Post Generator | Professional Agent Posts</title>
+    <meta name="description" content="Generate professional LinkedIn posts for real estate agents. Create engaging thought leadership content, market insights, and business updates.">
+    <h1>Real Estate LinkedIn Post Generator</h1>
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:#e0e0e0;min-height:100vh;padding:20px;line-height:1.6}
+        .container{max-width:800px;margin:0 auto}
+        h1{color:var(--accent);text-align:center;margin-bottom:10px;font-size:1.8rem}
+        .subtitle{text-align:center;color:#888;margin-bottom:30px}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:25px;margin-bottom:20px}
+        .form-group{margin-bottom:15px}
+        label{display:block;margin-bottom:5px;color:var(--accent);font-weight:600}
+        input,select,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:#0a0a0f;color:#e0e0e0;font-size:14px}
+        textarea{resize:vertical;min-height:80px}
+        button{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:8px;color:#fff;font-weight:700;font-size:16px;cursor:pointer;transition:transform 0.2s}
+        button:hover{transform:scale(1.02)}
+        .output{margin-top:20px;display:none}
+        .output.show{display:block}
+        .post-card{background:#0a0a0f;border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:15px}
+        .post-card .category{color:var(--accent);font-size:12px;font-weight:600;text-transform:uppercase}
+        .post-card .post-text{font-size:14px;margin-top:12px;white-space:pre-wrap;line-height:1.8}
+        .post-card .hashtags{color:#888;font-size:12px;margin-top:12px}
+        .copy-btn{display:inline-block;padding:8px 16px;background:var(--accent);color:#000;border-radius:6px;text-decoration:none;font-weight:600;font-size:12px;cursor:pointer;margin-top:10px}
+        .premium-upsell{background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(0,212,255,0.2));border:1px solid var(--accent2);border-radius:12px;padding:20px;margin-top:30px;text-align:center}
+        .premium-upsell h3{color:var(--accent);margin-bottom:10px}
+        .wallet{font-family:monospace;background:#000;padding:10px 15px;border-radius:6px;display:inline-block;margin:10px 0;font-size:13px;color:var(--accent)}
+        .cta-btn{display:inline-block;padding:12px 25px;background:var(--accent);color:#000;border-radius:6px;text-decoration:none;font-weight:700;margin-top:10px}
+        footer{text-align:center;margin-top:40px;padding:20px;color:#666;font-size:14px}
+        footer a{color:var(--accent);text-decoration:none}
+        .emoji{font-size:18px;margin-right:8px}
+        @media(max-width:600px){.card{padding:15px}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Real Estate LinkedIn Post Generator</h1>
+    <p class="subtitle">Create professional, engagement-driving LinkedIn posts</p>
+    
+    <div class="card">
+        <div class="form-group">
+            <label>Post Type</label>
+            <select id="postType">
+                <option value="market-insight">Market Insight / Data Post</option>
+                <option value="thought-leadership">Thought Leadership</option>
+                <option value="client-success">Client Success Story</option>
+                <option value="educational">Educational / How-To</option>
+                <option value="personal">Personal Brand / Behind the Scenes</option>
+                <option value="announcement">Business Announcement</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Tone</label>
+            <select id="tone">
+                <option value="professional">Professional & Authoritative</option>
+                <option value="conversational">Conversational & Approachable</option>
+                <option value="inspirational">Inspirational & Motivating</option>
+                <option value="educational">Educational & Informative</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Your Name / Brokerage (optional)</label>
+            <input type="text" id="agentName" placeholder="e.g., Sarah, Agent at XYZ Realty">
+        </div>
+        <button onclick="generatePost()">Generate LinkedIn Post</button>
+    </div>
+
+    <div class="output" id="output">
+        <div class="card">
+            <h2 style="color:var(--accent);margin-bottom:15px">Your LinkedIn Post</h2>
+            <div id="postContainer"></div>
+        </div>
+    </div>
+
+    <div class="premium-upsell">
+        <h3>Get Unlimited AI-Powered Posts</h3>
+        <p>Use Jasper AI to generate engaging content consistently</p>
+        <div class="wallet">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+        <a href="https://jasper.ai" class="cta-btn" target="_blank">Try Jasper AI</a>
+    </div>
+</div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do real estate agents use LinkedIn effectively?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Real estate agents should post consistently on LinkedIn with market insights, client success stories, and thought leadership content. Focus on providing value rather than selling, and engage with comments to build relationships."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What makes a good LinkedIn post for real estate?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A good LinkedIn post for real estate has a compelling hook in the first line, provides actionable insights or value, includes relevant data or examples, and ends with a question or call-to-action to encourage engagement."
+            }
+        }
+    ]
+}
+</script>
+
+<script>
+const postTemplates = {
+    'market-insight': {
+        emoji: '📊',
+        category: 'Market Insight',
+        template: `{hook}
+
+Here's what the data shows for {location}:
+
+• {stat1}
+• {stat2}
+• {stat3}
+
+What does this mean for {buyers_sellers}?
+
+The takeaway: {takeaway}
+
+What's your experience been in this market? 👇`
+    },
+    'thought-leadership': {
+        emoji: '💡',
+        category: 'Thought Leadership',
+        template: `{controversial_take}
+
+I've been in real estate for {years} years, and here's what I've learned:
+
+{point1}
+{point2}
+{point3}
+
+The agents who thrive understand that {insight}.
+
+What's your take? I'd love to hear different perspectives in the comments.`
+    },
+    'client-success': {
+        emoji: '🎉',
+        category: 'Client Success',
+        template: `{celebration_moment}
+
+{client_name} came to me {context}.
+
+Together, we {challenge}.
+
+The result: {outcome}.
+
+This is why I love what I do. Real estate isn't just about transactions—it's about {meaningful_message}.
+
+To {client_name}: It was an honor working with you. 🙏
+
+Have a similar goal? Let's connect.`
+    },
+    'educational': {
+        emoji: '📝',
+        category: 'Educational',
+        template: `{question_hook}
+
+Here's a quick breakdown:
+
+{step1}
+{step2}
+{step3}
+
+The key insight most people miss: {insight}
+
+Save this post for later, and feel free to share it with someone who might benefit!
+
+What's your experience with this? 👇`
+    },
+    'personal': {
+        emoji: '🏠',
+        category: 'Personal Brand',
+        template: `A home isn't just a property—it's where {emotional_element}.
+
+Last week, I {story_context}.
+
+That moment reminded me why I became a real estate agent: {purpose}.
+
+Real estate is personal. And I treat every transaction that way.
+
+What does home mean to you? I'd love to hear your stories. 💭`
+    },
+    'announcement': {
+        emoji: '📣',
+        category: 'Announcement',
+        template: `{exciting_news}!
+
+{announcement_details}
+
+Why this matters: {significance}
+
+I couldn't be more {emotion} about this development.
+
+Want to learn more? Drop a comment below or DM me. Let's {cta}.
+
+Thank you to everyone who has been on this journey with me. {gratitude}`
+    }
+};
+
+const hooks = {
+    'market-insight': [
+        "The {location} housing market just did something unexpected...",
+        "I analyzed 6 months of data and found something surprising about {location} real estate.",
+        "Here's the truth about {location}'s housing market that most agents won't tell you."
+    ],
+    'thought-leadership': [
+        "Hot take: Most real estate advice is backwards.",
+        "The biggest mistake I see agents making in 2024 is...",
+        "I turned down a listing last week. Here's why."
+    ],
+    'client-success': [
+        "Another closing, another dream realized.",
+        "This transaction wasn't easy, but the result was worth every challenge.",
+        "Last week we closed on the most unique property I've ever represented."
+    ],
+    'educational': [
+        "If you're buying a home in 2024, read this first.",
+        "The #1 question I get from buyers: answered.",
+        "Most first-time buyers make this mistake. Don't be one of them."
+    ],
+    'personal': [
+        "Real estate taught me something unexpected this week.",
+        "I've been an agent for {years} years. Here's what keeps me going.",
+        "The moment I knew I chose the right career."
+    ],
+    'announcement': [
+        "Big news from my practice!",
+        "Excited to share something I've been working on.",
+        "Something new is happening and I couldn't be happier."
+    ]
+};
+
+function generatePost(){
+    const postType = document.getElementById('postType').value;
+    const tone = document.getElementById('tone').value;
+    const agentName = document.getElementById('agentName').value || 'Your Name';
+    const container = document.getElementById('postContainer');
+    
+    const template = postTemplates[postType];
+    const hookOptions = hooks[postType];
+    const selectedHook = hookOptions[Math.floor(Math.random() * hookOptions.length)];
+    
+    const locations = ['Austin', 'Miami', 'Denver', 'Phoenix', 'your city'];
+    const location = locations[Math.floor(Math.random() * locations.length)];
+    const years = Math.floor(Math.random() * 10) + 3;
+    
+    let post = template.template
+        .replace('{hook}', selectedHook.replace(/{location}/g, location).replace(/{years}/g, years))
+        .replace('{location}', location)
+        .replace('{years}', years)
+        .replace('{agentName}', agentName)
+        .replace('{buyers_sellers}', Math.random() > 0.5 ? 'buyers' : 'sellers')
+        .replace('{stat1}', `${Math.floor(Math.random() * 20 + 5)}% price increase YoY`)
+        .replace('{stat2}', `${Math.floor(Math.random() * 30 + 10)} homes sold last month`)
+        .replace('{stat3}', `Average days on market: ${Math.floor(Math.random() * 30 + 5)}`)
+        .replace('{takeaway}', 'Inventory remains tight, favoring sellers in most segments.')
+        .replace('{controversial_take}', 'Hot take: Your social media presence matters more than your CRM.')
+        .replace('{point1}', '• Consistency beats virality every time')
+        .replace('{point2}', '• Relationships are your most valuable asset')
+        .replace('{point3}', '• Education creates trust, trust creates referrals')
+        .replace('{insight}', 'the game is played off the platform, not on it')
+        .replace('{celebration_moment}', '🎉 CLOSING DAY!')
+        .replace('{client_name}', ['The Johnsons', 'Sarah M.', 'Mike & Lisa'][Math.floor(Math.random() * 3)])
+        .replace('{context}', 'with a tight timeline and specific requirements')
+        .replace('{challenge}', 'navigated a competitive offersituation and secured their dream home')
+        .replace('{outcome}', 'They closed 2 weeks ahead of schedule and $15K under ask')
+        .replace('{meaningful_message}', 'helping families write the next chapter of their lives')
+        .replace('{question_hook}', 'What do successful home buyers have in common? (Hint: It's not what you think)')
+        .replace('{step1}', '1️⃣ Get pre-approved BEFORE looking')
+        .replace('{step2}', '2️⃣ Define your non-negotiables vs nice-to-haves')
+        .replace('{step3}', '3️⃣ Think long-term: 5-10 year horizon')
+        .replace('{insight}', 'location matters less than your financial readiness')
+        .replace('{emotional_element}', 'memories are made, families grow, lives change')
+        .replace('{story_context}', 'helped a family find their forever home after 8 months of searching')
+        .replace('{purpose}', 'helping people find not just houses, but homes')
+        .replace('{exciting_news}', '📣 Big Announcement!')
+        .replace('{announcement_details}', 'I\'ve just joined the premier luxury division at [Brokerage Name]!')
+        .replace('{significance}', 'This means even better resources for my clients looking in the luxury market')
+        .replace('{emotion}', 'thrilled')
+        .replace('{cta}', 'chat about your real estate goals')
+        .replace('{gratitude}', 'Your support means everything.');
+    
+    const hashtags = `#RealEstate #${postType === 'market-insight' ? 'MarketUpdate' : postType === 'thought-leadership' ? 'Leadership' : 'RealEstateAgent'} #${location.replace(' ', '')}RealEstate #HomeBuying #HomeSelling`;
+    
+    container.innerHTML = `
+        <div class="post-card">
+            <span class="category">${template.emoji} ${template.category}</span>
+            <p class="post-text">${post}</p>
+            <p class="hashtags">${hashtags}</p>
+            <span class="copy-btn" onclick="copyPost(this)">📋 Copy Post</span>
+        </div>
+    `;
+    
+    document.getElementById('output').classList.add('show');
+}
+
+function copyPost(el){
+    const postText = el.previousElementSibling.innerText;
+    navigator.clipboard.writeText(postText).then(() => {
+        el.textContent = '✅ Copied!';
+        setTimeout(() => { el.textContent = '📋 Copy Post'; }, 2000);
+    });
+}
+</script>
+
+<footer>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</footer>
+</body>
+</html>

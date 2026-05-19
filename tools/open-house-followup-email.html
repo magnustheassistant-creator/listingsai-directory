@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Open House Follow-Up Email Template | Real Estate Lead Nurturing</title>
+    <meta name="description" content="Generate professional open house follow-up emails that convert visitors into leads. Free email templates for real estate agents to nurture buyer leads.">
+    <link rel="canonical" href="https://listingsai.directory/tools/open-house-followup-email.html">
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed;--text:#e5e5e5;--muted:#888}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+        .container{max-width:800px;margin:0 auto;padding:2rem 1rem}
+        header{text-align:center;padding:2rem 0}
+        h1{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:.5rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .subtitle{color:var(--muted);font-size:.95rem}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
+        .form-group{margin-bottom:1.25rem}
+        label{display:block;margin-bottom:.4rem;font-weight:500;color:var(--accent)}
+        input,select,textarea{width:100%;padding:.75rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1rem;transition:border-color .3s}
+        input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+        textarea{resize:vertical;min-height:80px}
+        .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-size:1rem;transition:transform .2s,opacity .2s}
+        .btn:hover{transform:translateY(-2px);opacity:.9}
+        .output-section{margin-top:1.5rem;padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:12px;display:none}
+        .output-section.active{display:block}
+        .output-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem;margin-top:1rem;white-space:pre-wrap;font-size:.9rem;max-height:500px;overflow-y:auto;line-height:1.8}
+        .copy-btn{background:var(--accent);color:#000;padding:.5rem 1rem;border-radius:6px;border:none;cursor:pointer;font-weight:500;margin-top:.75rem}
+        .copy-btn:hover{opacity:.85}
+        .premium-badge{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:.25rem .75rem;border-radius:20px;font-size:.75rem;font-weight:600;margin-bottom:1rem}
+        .upsell{background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(124,58,237,.1));border:1px solid var(--accent);border-radius:10px;padding:1.25rem;margin-top:1.5rem;text-align:center}
+        .upsell h3{color:var(--accent);margin-bottom:.5rem;font-size:1rem}
+        .upsell p{font-size:.85rem;color:var(--muted);margin-bottom:.75rem}
+        .wallet{font-family:monospace;background:var(--bg);padding:.4rem .8rem;border-radius:6px;font-size:.8rem;color:var(--accent);word-break:break-all}
+        .affiliate{text-align:center;margin-top:1.5rem;padding:1rem;background:var(--card);border-radius:10px}
+        .affiliate a{color:var(--accent);text-decoration:none;font-weight:500}
+        .affiliate a:hover{text-decoration:underline}
+        footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);margin-top:2rem}
+        footer a{color:var(--accent);text-decoration:none}
+        footer a:hover{text-decoration:underline}
+        @media(max-width:600px){.container{padding:1rem}.card{padding:1rem}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <span class="premium-badge">📧 Lead Nurturing</span>
+        <h1>Open House Follow-Up Email Generator</h1>
+        <p class="subtitle">Create professional follow-up emails that convert visitors into leads</p>
+    </header>
+
+    <div class="card">
+        <form id="emailForm">
+            <div class="form-group">
+                <label for="visitorName">Visitor Name</label>
+                <input type="text" id="visitorName" placeholder="e.g., Sarah" required>
+            </div>
+            <div class="form-group">
+                <label for="propertyAddress">Property Address</label>
+                <input type="text" id="propertyAddress" placeholder="e.g., 456 Oak Avenue, Pacific Heights" required>
+            </div>
+            <div class="form-group">
+                <label for="emailType">Email Type</label>
+                <select id="emailType">
+                    <option value="interested">Showed Interest (Hot Lead)</option>
+                    <option value="browsing">Just Browsing</option>
+                    <option value="first-time">First-Time Buyer</option>
+                    <option value="investor">Investor</option>
+                    <option value="return">Return Visitor</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="agentName">Your Name</label>
+                <input type="text" id="agentName" placeholder="e.g., Michael Thompson">
+            </div>
+            <div class="form-group">
+                <label for="agentPhone">Your Phone</label>
+                <input type="text" id="agentPhone" placeholder="e.g., (555) 123-4567">
+            </div>
+            <button type="submit" class="btn">📧 Generate Email</button>
+        </form>
+    </div>
+
+    <div class="output-section" id="outputSection">
+        <h2 style="color:var(--accent)">Follow-Up Email</h2>
+        <div class="output-box" id="outputBox"></div>
+        <button class="copy-btn" onclick="copyOutput()">📋 Copy Email</button>
+    </div>
+
+    <div class="upsell">
+        <h3>🚀 Unlock Premium Features</h3>
+        <p>Get unlimited emails, automated sequences, and CRM integration</p>
+        <p>Support the project with BNB:</p>
+        <div class="wallet">0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+        <p style="margin-top:.75rem;font-size:.8rem"><a href="https://manychat.com" target="_blank" style="color:var(--accent)">Try ManyChat →</a> Automate your follow-ups</p>
+    </div>
+
+    <div class="affiliate">
+        <p>Automate your follow-up messages with <a href="https://manychat.com" target="_blank">ManyChat →</a> (40% commission for affiliates)</p>
+    </div>
+
+    <footer>
+        Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate
+    </footer>
+</div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Why is open house follow-up important?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Studies show that 80% of open house visitors don't follow up on their own, and most buy within 90 days. A timely, personalized follow-up can capture a lead that might otherwise be lost."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How soon should I follow up after an open house?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The best time to follow up is within 24 hours of the open house while the property is still fresh in the visitor's mind. Automated tools like ManyChat can send emails or texts immediately."
+            }
+        }
+    ]
+}
+</script>
+
+<script>
+const emailTemplates = {
+    'interested': {
+        subject: 'Great to Meet You at {property}!',
+        body: `Hi {name},
+
+It was truly a pleasure meeting you at the open house at {property} yesterday.
+
+I could tell right away that you have a genuine interest in this home — and I completely understand why. The {feature} really does make it special.
+
+I'd love to schedule a private showing at your convenience so you can experience the property more intimately. We can also discuss the neighborhood, recent comparable sales, and what it would take to make this your new home.
+
+Are you available this week for a quick call or tour?
+
+Looking forward to hearing from you!
+
+Best regards,
+{agent}
+{phone}`
+    },
+    'browsing': {
+        subject: 'Enjoyed Meeting You at {property}',
+        body: `Hi {name},
+
+Thank you for stopping by the open house at {property} — it was great to meet you!
+
+I noticed you were taking a thoughtful look around. Even if this particular property isn't the perfect fit, I'd love to help you in your home search. The market has some wonderful options right now.
+
+Can I send you a few listings that match what you're looking for? Just let me know:
+
+• Minimum bedrooms/bathrooms
+• Price range
+• Must-have features
+• Preferred neighborhoods
+
+I'm here to help you find your dream home, whether it's this one or another property. What's most important to you in your next home?
+
+Warm regards,
+{agent}
+{phone}`
+    },
+    'first-time': {
+        subject: 'Welcome to the Home Buying Journey!',
+        body: `Hi {name},
+
+It was wonderful meeting a first-time homebuyer at {property}! Buying your first home is an exciting milestone, and I remember how overwhelming it can feel.
+
+The good news: you've got a great agent in your corner now (me!). I help first-time buyers navigate the process from pre-approval to closing, making sure you feel confident every step of the way.
+
+At {property}, I think you sensed the potential right away. That's a great sign. Let's talk about what it would take to make it happen:
+
+• Getting pre-approved (I can recommend trusted lenders)
+• Understanding closing costs
+• What to expect in today's market
+• Making a strong, winning offer
+
+Would you like to schedule a no-pressure consultation? I'd love to answer all your questions.
+
+Congratulations on starting this journey!
+
+Best,
+{agent}
+{phone}`
+    },
+    'investor': {
+        subject: 'Investment Opportunity Follow-Up',
+        body: `Hi {name},
+
+Good meeting you at {property}. Your investor mindset was evident — you were asking exactly the right questions.
+
+Based on what you're looking for, this property could be an excellent addition to your portfolio. Let me know if you'd like me to pull together a comparative market analysis, rental income projections, or cap rate analysis.
+
+Here's what I'd recommend:
+
+1. Private showing to assess the property in detail
+2. Review of recent comparable sales and current listings
+3. Discussion of potential rental income and expenses
+4. Investment timeline and financing options
+
+I work with several investors who appreciate the data-driven approach. What information would be most valuable to you?
+
+Best regards,
+{agent}
+{phone}`
+    },
+    'return': {
+        subject: 'Welcome Back! {property} Update',
+        body: `Hi {name},
+
+Welcome back! It was wonderful to see you return to {property}. Your continued interest says a lot.
+
+I wanted to give you a quick update: there has been significant interest in this property since the open house. If you're serious about making an offer, I'd recommend moving quickly.
+
+Here's what I can help you with:
+
+• Arrange a private viewing at your convenience
+• Provide a comparative market analysis
+• Connect you with trusted lenders for financing
+• Draft a competitive offer strategy
+
+I've helped many buyers navigate competitive situations and would love to put my experience to work for you.
+
+Let me know the best time to connect!
+
+Regards,
+{agent}
+{phone}`
+    }
+};
+
+const propertyFeatures = [
+    'open floor plan and abundant natural light',
+    'chef\'s kitchen and stunning outdoor space',
+    'prime location and quality construction',
+    'beautiful finishes and thoughtful layout',
+    'spacious rooms and excellent condition'
+];
+
+function generateEmail(data) {
+    const template = emailTemplates[data.emailType];
+    const feature = propertyFeatures[Math.floor(Math.random() * propertyFeatures.length)];
+    
+    let email = `Subject: ${template.subject.replace('{property}', data.property.split(',')[0])}\n\n`;
+    email += template.body
+        .replace(/{name}/g, data.visitorName)
+        .replace(/{property}/g, data.propertyAddress)
+        .replace(/{feature}/g, feature)
+        .replace(/{agent}/g, data.agentName)
+        .replace(/{phone}/g, data.agentPhone || 'Call or text anytime');
+    
+    return email;
+}
+
+document.getElementById('emailForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const data = {
+        visitorName: document.getElementById('visitorName').value,
+        property: document.getElementById('propertyAddress').value,
+        emailType: document.getElementById('emailType').value,
+        agentName: document.getElementById('agentName').value,
+        agentPhone: document.getElementById('agentPhone').value
+    };
+    
+    const output = generateEmail(data);
+    document.getElementById('outputBox').textContent = output;
+    document.getElementById('outputSection').classList.add('active');
+    document.getElementById('outputSection').scrollIntoView({ behavior: 'smooth' });
+});
+
+function copyOutput() {
+    const text = document.getElementById('outputBox').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = '📋 Copy Email', 2000);
+    });
+}
+</script>
+</body>
+</html>

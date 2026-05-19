@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Newsletter Builder | Email Template Generator</title>
+    <meta name="description" content="Create professional real estate newsletters in minutes. Build engaging email templates for market updates, new listings, and client updates.">
+    <h1>Real Estate Newsletter Builder</h1>
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:#e0e0e0;min-height:100vh;padding:20px;line-height:1.6}
+        .container{max-width:800px;margin:0 auto}
+        h1{color:var(--accent);text-align:center;margin-bottom:10px;font-size:1.8rem}
+        .subtitle{text-align:center;color:#888;margin-bottom:30px}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:25px;margin-bottom:20px}
+        .form-group{margin-bottom:15px}
+        label{display:block;margin-bottom:5px;color:var(--accent);font-weight:600}
+        input,select,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:#0a0a0f;color:#e0e0e0;font-size:14px}
+        textarea{resize:vertical;min-height:80px}
+        button{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:8px;color:#fff;font-weight:700;font-size:16px;cursor:pointer;transition:transform 0.2s}
+        button:hover{transform:scale(1.02)}
+        .output{margin-top:20px;display:none}
+        .output.show{display:block}
+        .newsletter-preview{background:#fff;color:#111;border-radius:8px;padding:30px;font-size:14px}
+        .newsletter-preview h2{color:#111;border-bottom:2px solid var(--accent);padding-bottom:10px}
+        .newsletter-preview .section{margin:20px 0;padding-bottom:15px;border-bottom:1px solid #ddd}
+        .newsletter-preview .listing-card{background:#f5f5f5;padding:15px;border-radius:8px;margin:10px 0}
+        .newsletter-preview .cta{background:var(--accent);color:#000;padding:12px 20px;border-radius:6px;text-align:center;font-weight:700;display:inline-block;margin-top:10px}
+        .newsletter-preview .footer{text-align:center;color:#666;font-size:12px;margin-top:20px}
+        .copy-btn{display:inline-block;padding:8px 16px;background:var(--accent);color:#000;border-radius:6px;text-decoration:none;font-weight:600;font-size:12px;cursor:pointer;margin-top:15px}
+        .premium-upsell{background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(0,212,255,0.2));border:1px solid var(--accent2);border-radius:12px;padding:20px;margin-top:30px;text-align:center}
+        .premium-upsell h3{color:var(--accent);margin-bottom:10px}
+        .wallet{font-family:monospace;background:#000;padding:10px 15px;border-radius:6px;display:inline-block;margin:10px 0;font-size:13px;color:var(--accent)}
+        .cta-btn{display:inline-block;padding:12px 25px;background:var(--accent);color:#000;border-radius:6px;text-decoration:none;font-weight:700;margin-top:10px}
+        footer{text-align:center;margin-top:40px;padding:20px;color:#666;font-size:14px}
+        footer a{color:var(--accent);text-decoration:none}
+        @media(max-width:600px){.card{padding:15px}.newsletter-preview{padding:15px}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Real Estate Newsletter Builder</h1>
+    <p class="subtitle">Create stunning email newsletters in minutes</p>
+    
+    <div class="card">
+        <div class="form-group">
+            <label>Newsletter Type</label>
+            <select id="newsletterType">
+                <option value="monthly-market">Monthly Market Update</option>
+                <option value="new-listings">New Listings Digest</option>
+                <option value="open-house">Open House Invitation</option>
+                <option value="seasonal">Seasonal Tips & Advice</option>
+                <option value="client-update">Client Success Stories</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Agent/Brokerage Name</label>
+            <input type="text" id="agentName" placeholder="e.g., Sarah Johnson, Premier Realty">
+        </div>
+        <div class="form-group">
+            <label>Market Area</label>
+            <input type="text" id="marketArea" placeholder="e.g., Greater Austin Area">
+        </div>
+        <div class="form-group">
+            <label>Contact Info</label>
+            <input type="text" id="contact" placeholder="e.g., sarah@realestate.com | (512) 555-0123">
+        </div>
+        <button onclick="generateNewsletter()">Build Newsletter</button>
+    </div>
+
+    <div class="output" id="output">
+        <div class="card">
+            <h2 style="color:var(--accent);margin-bottom:15px">Newsletter Preview</h2>
+            <div class="newsletter-preview" id="preview"></div>
+            <span class="copy-btn" onclick="copyNewsletter()">📋 Copy HTML</span>
+        </div>
+    </div>
+
+    <div class="premium-upsell">
+        <h3>Automate Your Email Marketing</h3>
+        <p>Use ManyChat to send beautiful newsletters automatically</p>
+        <div class="wallet">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+        <a href="https://manychat.com" class="cta-btn" target="_blank">Try ManyChat</a>
+    </div>
+</div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How often should real estate agents send newsletters?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most successful real estate agents send monthly newsletters to stay top-of-mind with past clients and prospects. Some send weekly market updates. Consistency matters more than frequency."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What should a real estate newsletter include?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A great real estate newsletter includes market updates, new listings, community news, helpful tips for buyers/sellers, client success stories, and a clear call-to-action. Keep it valuable, not salesy."
+            }
+        }
+    ]
+}
+</script>
+
+<script>
+const templates = {
+    'monthly-market': (agent, market, contact) => `
+        <h2>📊 ${market} Market Update | ${new Date().toLocaleString('default', { month: 'long', year: 'numeric' })}</h2>
+        <div class="section">
+            <h3>Market Highlights</h3>
+            <p>Hello friends!</p>
+            <p>Here's what's happening in the ${market} real estate market this month:</p>
+            <ul style="margin:15px 0">
+                <li>🏠 <strong>Active Listings:</strong> ${Math.floor(Math.random() * 200 + 100)} homes on the market</li>
+                <li>📈 <strong>Median Price:</strong> $${(Math.random() * 300 + 400).toFixed(0)}K</li>
+                <li>⏱️ <strong>Avg Days on Market:</strong> ${Math.floor(Math.random() * 30 + 10)} days</li>
+                <li>📉 <strong>Price Changes:</strong> ${Math.floor(Math.random() * 20 + 5)}% of listings saw price reductions</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>💡 Market Insights</h3>
+            <p>${['Inventory is slowly increasing, giving buyers more options.', 'Multiple offers are still common in the starter home segment.', 'Luxury market remains strong with international buyers returning.', 'First-time buyers are finding opportunities in suburban areas.'][Math.floor(Math.random() * 4)]}</p>
+        </div>
+        <div class="section">
+            <h3>🎯 What's Your Home Worth?</h3>
+            <p>Curious about your property's current value? Reply to this email and I'll send you a complimentary market analysis.</p>
+            <span class="cta">Get Your Free Market Report</span>
+        </div>
+        <div class="footer">
+            <p>${agent}</p>
+            <p>${contact}</p>
+            <p>You're receiving this because you opted in. <a href="#">Unsubscribe</a></p>
+        </div>
+    `,
+    'new-listings': (agent, market, contact) => `
+        <h2>🏠 New to the Market | ${market} Listings</h2>
+        <div class="section">
+            <p>Hi there!</p>
+            <p>Check out these exciting new listings just hit the market in ${market}:</p>
+        </div>
+        ${['<div class="listing-card"><strong>123 Oak Street</strong><br>3 bed | 2 bath | $425K<br>Beautiful更新的厨房, new landscaping</div>',
+           '<div class="listing-card"><strong>456 Maple Ave</strong><br>4 bed | 3 bath | $575K<br>Open floor plan, pool, great schools</div>',
+           '<div class="listing-card"><strong>789 Pine Road</strong><br>2 bed | 2 bath | $315K<br>Perfect for first-time buyers, move-in ready</div>'].join('')}
+        <div class="section">
+            <p>Interested in any of these? Let's schedule a viewing!</p>
+            <span class="cta">Schedule a Tour</span>
+        </div>
+        <div class="footer">
+            <p>${agent}</p>
+            <p>${contact}</p>
+        </div>
+    `,
+    'open-house': (agent, market, contact) => `
+        <h2>🏡 Open House This Weekend | ${market}</h2>
+        <div class="section">
+            <p>You're invited!</p>
+            <div class="listing-card">
+                <strong>Open House: 789 Pine Road</strong><br>
+                📅 Saturday & Sunday, 1PM - 4PM<br>
+                💰 $425,000 | 3 bed | 2 bath<br><br>
+                Stunning updated home in prime location. Don't miss this one!
+            </div>
+        </div>
+        <div class="section">
+            <p>RSVP below or just stop by — light refreshments will be served!</p>
+            <span class="cta">RSVP for Open House</span>
+        </div>
+        <div class="footer">
+            <p>${agent}</p>
+            <p>${contact}</p>
+        </div>
+    `,
+    'seasonal': (agent, market, contact) => `
+        <h2>🍂 Fall Real Estate Tips | ${new Date().getFullYear()}</h2>
+        <div class="section">
+            <h3>Tips for Fall Homebuyers</h3>
+            <p>Fall is a fantastic time to buy! Here's why:</p>
+            <ul style="margin:15px 0">
+                <li>🍁 Less competition from other buyers</li>
+                <li>💰 Potential for better deals as sellers are motivated</li>
+                <li>☀️ Comfortable weather for home tours</li>
+                <li>📦 Easier to see the home's heating and weatherization</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>Fall Maintenance Checklist</h3>
+            <p>For homeowners, don't forget:</p>
+            <ul>
+                <li>Clean gutters before leaves accumulate</li>
+                <li>Test your heating system before cold weather</li>
+                <li>Check windows and doors for drafts</li>
+                <li>Plant spring bulbs now for beautiful blooms later</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>${agent}</p>
+            <p>${contact}</p>
+        </div>
+    `,
+    'client-update': (agent, market, contact) => `
+        <h2>🎉 Client Success Stories | ${market}</h2>
+        <div class="section">
+            <p>These transactions made my month!</p>
+        </div>
+        <div class="listing-card">
+            <strong>The Martinez Family</strong><br>
+            After 6 months of searching, we found their dream home in Round Rock. 
+            They closed $20K under asking price withseller concessions!<br><br>
+            "${agent.split(',')[0]} made the entire process stress-free!" — The Martinezes
+        </div>
+        <div class="listing-card">
+            <strong>First-Time Buyer: Jennifer L.</strong><br>
+            Jennifer was nervous about buying her first home. 
+            With our step-by-step guidance, she's now a proud homeowner!<br><br>
+            "I couldn't have done this without ${agent.split(' ')[0]}'s expertise." — Jennifer
+        </div>
+        <div class="section">
+            <p>Ready to write your own success story? Let's connect!</p>
+            <span class="cta">Start Your Journey</span>
+        </div>
+        <div class="footer">
+            <p>${agent}</p>
+            <p>${contact}</p>
+        </div>
+    `
+};
+
+function generateNewsletter(){
+    const type = document.getElementById('newsletterType').value;
+    const agent = document.getElementById('agentName').value || 'Your Name, Real Estate Agent';
+    const market = document.getElementById('marketArea').value || 'Your Market Area';
+    const contact = document.getElementById('contact').value || 'email@domain.com';
+    
+    const template = templates[type];
+    const html = template(agent, market, contact);
+    
+    document.getElementById('preview').innerHTML = html;
+    document.getElementById('output').classList.add('show');
+}
+
+function copyNewsletter(){
+    const html = document.getElementById('preview').innerHTML;
+    navigator.clipboard.writeText(html).then(() => {
+        alert('Newsletter HTML copied to clipboard!');
+    });
+}
+</script>
+
+<footer>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</footer>
+</body>
+</html>

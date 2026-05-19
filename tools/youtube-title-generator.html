@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate YouTube Title Generator | SEO-Friendly Video Titles</title>
+    <meta name="description" content="Generate SEO-optimized YouTube titles for real estate videos. Get 10-clickable titles for property tours, market updates, and educational content.">
+    <h1>Real Estate YouTube Title Generator</h1>
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:#e0e0e0;min-height:100vh;padding:20px;line-height:1.6}
+        .container{max-width:800px;margin:0 auto}
+        h1{color:var(--accent);text-align:center;margin-bottom:10px;font-size:1.8rem}
+        .subtitle{text-align:center;color:#888;margin-bottom:30px}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:25px;margin-bottom:20px}
+        .form-group{margin-bottom:15px}
+        label{display:block;margin-bottom:5px;color:var(--accent);font-weight:600}
+        input,select,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:#0a0a0f;color:#e0e0e0;font-size:14px}
+        textarea{resize:vertical;min-height:80px}
+        button{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:8px;color:#fff;font-weight:700;font-size:16px;cursor:pointer;transition:transform 0.2s}
+        button:hover{transform:scale(1.02)}
+        .output{margin-top:20px;display:none}
+        .output.show{display:block}
+        .title-card{background:#0a0a0f;border:1px solid var(--border);border-radius:8px;padding:15px;margin-bottom:12px;cursor:pointer;transition:border-color 0.2s}
+        .title-card:hover{border-color:var(--accent)}
+        .title-card .number{color:var(--accent);font-weight:700;font-size:14px}
+        .title-card .title-text{font-size:15px;margin-top:8px}
+        .title-card .title-text:hover{color:var(--accent)}
+        .title-card .tips{color:#888;font-size:12px;margin-top:8px}
+        .copied{color:#4ade80;font-size:12px;margin-left:10px}
+        .premium-upsell{background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(0,212,255,0.2));border:1px solid var(--accent2);border-radius:12px;padding:20px;margin-top:30px;text-align:center}
+        .premium-upsell h3{color:var(--accent);margin-bottom:10px}
+        .wallet{font-family:monospace;background:#000;padding:10px 15px;border-radius:6px;display:inline-block;margin:10px 0;font-size:13px;color:var(--accent)}
+        .cta-btn{display:inline-block;padding:12px 25px;background:var(--accent);color:#000;border-radius:6px;text-decoration:none;font-weight:700;margin-top:10px}
+        footer{text-align:center;margin-top:40px;padding:20px;color:#666;font-size:14px}
+        footer a{color:var(--accent);text-decoration:none}
+        .badge{display:inline-block;padding:2px 6px;border-radius:4px;font-size:10px;margin-right:5px}
+        .badge.seo{background:#4ade8033;color:#4ade80}
+        .badge.listicle{background:#f59e0b33;color:#f59e0b}
+        .badge.question{background:#8b5cf633;color:#8b5cf6}
+        .badge.shocking{background:#ef444433;color:#ef4444}
+        @media(max-width:600px){.card{padding:15px}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Real Estate YouTube Title Generator</h1>
+    <p class="subtitle">Create click-worthy, SEO-optimized video titles</p>
+    
+    <div class="card">
+        <div class="form-group">
+            <label>Video Category</label>
+            <select id="category">
+                <option value="listing-tour">Property Listing Tour</option>
+                <option value="market-analysis">Market Analysis / Update</option>
+                <option value="buying-guide">Home Buying Guide</option>
+                <option value="selling-guide">Home Selling Guide</option>
+                <option value="investment">Real Estate Investment</option>
+                <option value="agent-vlog">Agent Vlog / Behind the Scenes</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Target Keyword (optional)</label>
+            <input type="text" id="keyword" placeholder="e.g., first-time homebuyer tips">
+        </div>
+        <div class="form-group">
+            <label>Property Location</label>
+            <input type="text" id="location" placeholder="e.g., Austin, TX">
+        </div>
+        <button onclick="generateTitles()">Generate YouTube Titles</button>
+    </div>
+
+    <div class="output" id="output">
+        <div class="card">
+            <h2 style="color:var(--accent);margin-bottom:15px">Click-Worthy Titles</h2>
+            <div id="titlesContainer"></div>
+        </div>
+    </div>
+
+    <div class="premium-upsell">
+        <h3>Get AI-Powered Script Writing</h3>
+        <p>Use Jasper AI to generate full video scripts from these titles</p>
+        <div class="wallet">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+        <a href="https://jasper.ai" class="cta-btn" target="_blank">Try Jasper AI</a>
+    </div>
+</div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What makes a good YouTube title for real estate?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A great YouTube title is specific, promises value, includes numbers when relevant, creates curiosity, and incorporates target keywords for SEO. Keep it under 60 characters for full display."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I optimize YouTube titles for real estate?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Include your target keyword at the beginning, use power words like 'ultimate', 'complete', or 'secret', add numbers for listicles, and create curiosity without clickbait. Include location for local SEO."
+            }
+        }
+    ]
+}
+</script>
+
+<script>
+const titleTemplates = {
+    'listing-tour': [
+        {badge:'shocking',text:"I Found a $500K Home That Looks Like a MILLION DOLLARS"},
+        {badge:'seo',text:"Complete Tour of This Stunning [Beds] Bed/[Baths] Bath Home in [Location]"},
+        {badge:'listicle',text:"TOP 5 Features That Make This Property UNIQUE"},
+        {badge:'question',text:"Would YOU Buy This House? Let's Tour It Together"},
+        {badge:'shocking',text:"This 'Fixer Upper' Just Became the Hottest Listing in [Location]"},
+        {badge:'seo',text:"Exclusive: Inside the Most Desired Property in [Location]"},
+        {badge:'listicle',text:"7 Things You MUST See Before Buying a Home Like This"},
+        {badge:'shocking',text:"Why Everyone Is Fighting Over This $X Listing"},
+        {badge:'question',text:"Can You Spot the Expensive vs Budget Features in This Home?"},
+        {badge:'seo',text:"NEW LISTING: Luxury Living at Its Finest - [Address] Tour"}
+    ],
+    'market-analysis': [
+        {badge:'seo',text:"[Location] Real Estate Market Report: What Buyers Need to Know"},
+        {badge:'shocking',text:"The REAL Truth About [Location] Housing Prices in 2024"},
+        {badge:'question',text:"Is a Housing Crash Coming to [Location]? Here's the Data"},
+        {badge:'listicle',text:"5 Market Predictions That Will SHOCK Homebuyers"},
+        {badge:'seo',text:"Monthly Market Update: [Location] Trends & Analysis"},
+        {badge:'shocking',text:"Interest Rates Just Changed Everything for Buyers"},
+        {badge:'question',text:"Should You Buy NOW or WAIT? Market Analysis"},
+        {badge:'listicle',text:"3 Neighborhoods in [Location] With the Best ROI"},
+        {badge:'seo',text:"2024 Housing Market Predictions for [Location]"},
+        {badge:'shocking',text:"Home Prices Dropped 10% - Here's What That Means"}
+    ],
+    'buying-guide': [
+        {badge:'seo',text:"Complete First-Time Homebuyer's Guide for [Location]"},
+        {badge:'listicle',text:"10 Mistakes Every New Homebuyer Makes (And How to Avoid Them)"},
+        {badge:'question',text:"What Lenders DON'T Tell You About Getting a Mortgage"},
+        {badge:'shocking',text:"The Hidden Costs of Buying a Home They Won't Tell You"},
+        {badge:'seo',text:"Step-by-Step: How to Buy Your First Home in [Location]"},
+        {badge:'listicle',text:"5 Things to Inspect Before Closing (Don't Skip These!)"},
+        {badge:'question',text:"How Much House Can You REALLY Afford?"},
+        {badge:'shocking',text:"Your Pre-Approval Letter Might Be WRONG"},
+        {badge:'seo',text:"Homebuying Timeline: What to Expect Week by Week"},
+        {badge:'listicle',text:"8 Questions to Ask Your Real Estate Agent Before Hiring"}
+    ],
+    'selling-guide': [
+        {badge:'seo',text:"How to Sell Your Home FAST in [Location]'s Market"},
+        {badge:'listicle',text:"7 Staging Secrets That Help Homes Sell for MORE"},
+        {badge:'shocking',text:"This Staging Trick Added $50K to the Sale Price"},
+        {badge:'question',text:"Should You Sell Before Buying? The Ultimate Dilemma"},
+        {badge:'seo',text:"Complete Home Selling Guide: From Listing to Closing"},
+        {badge:'listicle',text:"5 Upgrades That Give the Best Return When Selling"},
+        {badge:'shocking',text:"Homes That Don't Sell Are Making This Mistake"},
+        {badge:'question',text:"What's My Home Worth? How to Get an Accurate Valuation"},
+        {badge:'seo',text:"Preparing Your Home for Sale: The Ultimate Checklist"},
+        {badge:'shocking',text:"I Sold 100 Homes - My Top 3 Secrets to Fast Sales"}
+    ],
+    'investment': [
+        {badge:'seo',text:"Real Estate Investment Guide for Beginners in [Location]"},
+        {badge:'shocking',text:"I Made $100K in Real Estate in Just 12 Months"},
+        {badge:'listicle',text:"5 Best ROI Neighborhoods for Investors in [Location]"},
+        {badge:'question',text:"Should You Invest in Rental Properties NOW?"},
+        {badge:'seo',text:"Cash Flow Analysis: Is This Rental Property Worth It?"},
+        {badge:'shocking',text:"BRRRR Method Explained: How I Bought 4 Properties with Little Money"},
+        {badge:'listicle',text:"3 Types of Real Estate Investments and Which Is Best for You"},
+        {badge:'question',text:"Is Real Estate Better Than Stocks for Building Wealth?"},
+        {badge:'seo',text:"Analyzing Investment Properties: The Complete Formula"},
+        {badge:'shocking',text:"Wholesaling vs Flipping: Which Makes More Money?"}
+    ],
+    'agent-vlog': [
+        {badge:'question',text:"A Day in the Life of a Top Real Estate Agent"},
+        {badge:'shocking',text:"I Spent $50K Marketing and Made $X - Here's What Worked"},
+        {badge:'listicle',text:"5 Habits of Highly Successful Real Estate Agents"},
+        {badge:'seo',text:"How I Built My Real Estate Business from Zero"},
+        {badge:'question',text:"Is Being a Real Estate Agent Worth It? Honest Review"},
+        {badge:'shocking',text:"The Reality of Commission Cuts Nobody Talks About"},
+        {badge:'listicle',text:"Best Tools Every Agent Needs in 2024"},
+        {badge:'seo',text:"My Morning Routine as a Full-Time Agent"},
+        {badge:'shocking',text:"I Lost a $1M Commission Because of This Mistake"},
+        {badge:'question',text:"How Many Houses Do Agents Actually Sell? Real Numbers"}
+    ]
+};
+
+function generateTitles(){
+    const category = document.getElementById('category').value;
+    const keyword = document.getElementById('keyword').value || 'Real Estate';
+    const location = document.getElementById('location').value || '[Location]';
+    const container = document.getElementById('titlesContainer');
+    const titles = titleTemplates[category] || titleTemplates['listing-tour'];
+    
+    container.innerHTML = titles.map((t, i) => {
+        let title = t.text.replace(/\[Location\]/g, location).replace(/\[Keyword\]/g, keyword);
+        return `
+            <div class="title-card" onclick="copyTitle(this)">
+                <span class="badge ${t.badge}">${t.badge}</span>
+                <span class="number">#${i + 1}</span>
+                <p class="title-text">${title}</p>
+                <p class="tips">💡 Click to copy</p>
+            </div>
+        `;
+    }).join('');
+    
+    document.getElementById('output').classList.add('show');
+}
+
+function copyTitle(el){
+    const text = el.querySelector('.title-text').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        const tip = el.querySelector('.tips');
+        tip.innerHTML = '<span class="copied">✓ Copied!</span>';
+        setTimeout(() => { tip.innerHTML = '💡 Click to copy'; }, 2000);
+    });
+}
+</script>
+
+<footer>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</footer>
+</body>
+</html>

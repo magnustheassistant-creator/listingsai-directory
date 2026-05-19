@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Announcement Template | New Listing Social Media Generator</title>
+    <meta name="description" content="Generate compelling social media announcements for new real estate listings. Create engaging posts for Instagram, Facebook, TikTok and more.">
+    <h1>Property Announcement Templates</h1>
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:#e0e0e0;min-height:100vh;padding:20px;line-height:1.6}
+        .container{max-width:800px;margin:0 auto}
+        h1{color:var(--accent);text-align:center;margin-bottom:10px;font-size:1.8rem}
+        .subtitle{text-align:center;color:#888;margin-bottom:30px}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:25px;margin-bottom:20px}
+        .form-group{margin-bottom:15px}
+        label{display:block;margin-bottom:5px;color:var(--accent);font-weight:600}
+        input,select,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:#0a0a0f;color:#e0e0e0;font-size:14px}
+        textarea{resize:vertical;min-height:60px}
+        button{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:8px;color:#fff;font-weight:700;font-size:16px;cursor:pointer;transition:transform 0.2s}
+        button:hover{transform:scale(1.02)}
+        .output{margin-top:20px;display:none}
+        .output.show{display:block}
+        .platform-tabs{display:flex;gap:10px;margin-bottom:15px;flex-wrap:wrap}
+        .platform-tab{padding:8px 16px;border:1px solid var(--border);border-radius:6px;cursor:pointer;font-size:13px;transition:all 0.2s}
+        .platform-tab.active{background:var(--accent);color:#000;border-color:var(--accent)}
+        .platform-tab:hover{border-color:var(--accent)}
+        .announcement-card{background:#0a0a0f;border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:15px}
+        .announcement-card .platform{color:var(--accent);font-size:12px;font-weight:600;text-transform:uppercase;margin-bottom:10px}
+        .announcement-card .content{font-size:14px;white-space:pre-wrap;line-height:1.8}
+        .announcement-card .copy-btn{display:inline-block;padding:8px 16px;background:var(--accent);color:#000;border-radius:6px;text-decoration:none;font-weight:600;font-size:12px;cursor:pointer;margin-top:12px}
+        .property-preview{background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid var(--accent2);border-radius:8px;padding:15px;margin-bottom:15px}
+        .property-preview .price{color:var(--accent);font-size:20px;font-weight:700}
+        .property-preview .address{color:#fff;font-size:14px;margin-top:5px}
+        .property-preview .details{color:#888;font-size:12px;margin-top:5px}
+        .premium-upsell{background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(0,212,255,0.2));border:1px solid var(--accent2);border-radius:12px;padding:20px;margin-top:30px;text-align:center}
+        .premium-upsell h3{color:var(--accent);margin-bottom:10px}
+        .wallet{font-family:monospace;background:#000;padding:10px 15px;border-radius:6px;display:inline-block;margin:10px 0;font-size:13px;color:var(--accent)}
+        .cta-btn{display:inline-block;padding:12px 25px;background:var(--accent);color:#000;border-radius:6px;text-decoration:none;font-weight:700;margin-top:10px}
+        footer{text-align:center;margin-top:40px;padding:20px;color:#666;font-size:14px}
+        footer a{color:var(--accent);text-decoration:none}
+        .emoji-row{font-size:24px;margin-bottom:10px}
+        @media(max-width:600px){.card{padding:15px}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Property Announcement Templates</h1>
+    <p class="subtitle">Create viral-ready social media posts for new listings</p>
+    
+    <div class="card">
+        <div class="form-group">
+            <label>Property Price</label>
+            <input type="text" id="price" placeholder="e.g., $425,000">
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            <input type="text" id="address" placeholder="e.g., 123 Oak Street, Austin, TX">
+        </div>
+        <div class="form-group">
+            <label>Bedrooms / Bathrooms</label>
+            <input type="text" id="bedsBaths" placeholder="e.g., 3 bed | 2 bath">
+        </div>
+        <div class="form-group">
+            <label>Special Feature</label>
+            <input type="text" id="feature" placeholder="e.g., Pool, updated kitchen, view">
+        </div>
+        <button onclick="generateAnnouncements()">Generate Announcements</button>
+    </div>
+
+    <div class="output" id="output">
+        <div class="property-preview" id="propertyPreview"></div>
+        
+        <h3 style="color:var(--accent);margin-bottom:15px">Platform-Specific Announcements</h3>
+        <div class="platform-tabs">
+            <span class="platform-tab active" onclick="switchTab('instagram')">📸 Instagram</span>
+            <span class="platform-tab" onclick="switchTab('facebook')">👍 Facebook</span>
+            <span class="platform-tab" onclick="switchTab('tiktok')">🎵 TikTok</span>
+            <span class="platform-tab" onclick="switchTab('linkedin')">💼 LinkedIn</span>
+        </div>
+        
+        <div id="announcementsContainer"></div>
+    </div>
+
+    <div class="premium-upsell">
+        <h3>Create Stunning Listing Videos</h3>
+        <p>Use Jasper AI to write compelling property descriptions and scripts</p>
+        <div class="wallet">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+        <a href="https://jasper.ai" class="cta-btn" target="_blank">Try Jasper AI</a>
+    </div>
+</div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do you announce a new real estate listing on social media?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Announce new listings with compelling visuals, key property details, and a clear call-to-action. Use platform-specific formats and posting times. Instagram and TikTok work best with high-quality images or video tours."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What should a new listing announcement include?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A new listing announcement should include: high-quality photos/video, property address, price, bedroom/bathroom count, standout features, neighborhood highlights, and a call-to-action to schedule a showing or contact you."
+            }
+        }
+    ]
+}
+</script>
+
+<script>
+const announcements = {
+    instagram: (price, address, bedsBaths, feature) => `${Math.random() > 0.5 ? '🏠' : '✨'} NEW LISTING ALERT ${Math.random() > 0.5 ? '🏠' : '✨'}
+
+📍 ${address}
+
+💰 ${price}
+🛏️ ${bedsBaths}
+${feature ? '⭐ ' + feature : ''}
+
+This one won't last long! 👀
+
+DM me to schedule a showing or comment "INTERESTED" below! 🙌
+
+#NewListing #RealEstate #HomeForSale #${bedsBaths.split(' ')[0]}Bed #DreamHome`,
+
+    facebook: (price, address, bedsBaths, feature) => `🏠 JUST LISTED! 🏠
+
+Don't miss this incredible opportunity!
+
+📍 ${address}
+💵 ${price}
+🛏️ ${bedsBaths}
+${feature ? '✨ ' + feature : ''}
+
+This property is moving FAST! Contact me today to schedule a private showing before it's gone.
+
+👇 COMMENT "SEND INFO" for details!
+
+I'm here to help you find your dream home. Let's connect!`,
+
+    tiktok: (price, address, bedsBaths, feature) => `POV: You just found your dream home at ${price} 😍
+
+📍 ${address}
+${bedsBaths}
+${feature ? feature + ' BUT MAKE IT A MOVIE ' : ''}#POV #NewListing #RealEstate #HomeTour #DreamHome #PropertyTour`,
+
+    linkedin: (price, address, bedsBaths, feature) => `Excited to share a new listing in my portfolio!
+
+📍 ${address}
+💰 ${price}
+🛏️ ${bedsBaths}
+${feature ? '🎯 Key Feature: ' + feature : ''}
+
+This property represents excellent value in today's market. Whether you're a first-time buyer, investor, or looking to upgrade — this one deserves your attention.
+
+I've attached a full market analysis. Let's discuss how this property fits your real estate goals.
+
+Connect with me to schedule a viewing!`,
+
+    twitter: (price, address, bedsBaths, feature) => `🏠 NEW: ${address}
+
+${bedsBaths} | ${price}
+${feature ? '✨ ' + feature : ''}
+
+This won't last. DM me. 👇`
+};
+
+let currentTab = 'instagram';
+
+function generateAnnouncements(){
+    const price = document.getElementById('price').value || '$425,000';
+    const address = document.getElementById('address').value || '123 Oak Street, Austin, TX';
+    const bedsBaths = document.getElementById('bedsBaths').value || '3 bed | 2 bath';
+    const feature = document.getElementById('feature').value || '';
+    
+    document.getElementById('propertyPreview').innerHTML = `
+        <div class="price">${price}</div>
+        <div class="address">${address}</div>
+        <div class="details">${bedsBaths}${feature ? ' | ' + feature : ''}</div>
+    `;
+    
+    renderAnnouncement();
+    document.getElementById('output').classList.add('show');
+}
+
+function switchTab(tab){
+    document.querySelectorAll('.platform-tab').forEach(t => t.classList.remove('active'));
+    document.querySelector(`.platform-tab:nth-child(${['instagram','facebook','tiktok','linkedin'].indexOf(tab) + 1})`).classList.add('active');
+    currentTab = tab;
+    renderAnnouncement();
+}
+
+function renderAnnouncement(){
+    const price = document.getElementById('price').value || '$425,000';
+    const address = document.getElementById('address').value || '123 Oak Street, Austin, TX';
+    const bedsBaths = document.getElementById('bedsBaths').value || '3 bed | 2 bath';
+    const feature = document.getElementById('feature').value || '';
+    
+    const platformNames = {
+        instagram: '📸 Instagram Post',
+        facebook: '👍 Facebook Post',
+        tiktok: '🎵 TikTok Caption',
+        linkedin: '💼 LinkedIn Post'
+    };
+    
+    const content = announcements[currentTab](price, address, bedsBaths, feature);
+    
+    document.getElementById('announcementsContainer').innerHTML = `
+        <div class="announcement-card">
+            <span class="platform">${platformNames[currentTab]}</span>
+            <p class="content">${content}</p>
+            <span class="copy-btn" onclick="copyAnnouncement(this)">📋 Copy</span>
+        </div>
+    `;
+}
+
+function copyAnnouncement(el){
+    const text = el.previousElementSibling.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        el.textContent = '✅ Copied!';
+        setTimeout(() => { el.textContent = '📋 Copy'; }, 2000);
+    });
+}
+</script>
+
+<footer>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</footer>
+</body>
+</html>

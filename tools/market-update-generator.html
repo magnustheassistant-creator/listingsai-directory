@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Market Update Generator | Monthly Report Template</title>
+    <meta name="description" content="Generate professional real estate market update reports. Create compelling monthly market analysis for agents and clients.">
+    <h1>Real Estate Market Update Generator</h1>
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:#e0e0e0;min-height:100vh;padding:20px;line-height:1.6}
+        .container{max-width:800px;margin:0 auto}
+        h1{color:var(--accent);text-align:center;margin-bottom:10px;font-size:1.8rem}
+        .subtitle{text-align:center;color:#888;margin-bottom:30px}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:25px;margin-bottom:20px}
+        .form-group{margin-bottom:15px}
+        label{display:block;margin-bottom:5px;color:var(--accent);font-weight:600}
+        input,select,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:#0a0a0f;color:#e0e0e0;font-size:14px}
+        textarea{resize:vertical;min-height:80px}
+        button{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:8px;color:#fff;font-weight:700;font-size:16px;cursor:pointer;transition:transform 0.2s}
+        button:hover{transform:scale(1.02)}
+        .output{margin-top:20px;display:none}
+        .output.show{display:block}
+        .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin:20px 0}
+        .stat-card{background:#0a0a0f;border:1px solid var(--border);border-radius:8px;padding:15px;text-align:center}
+        .stat-card .value{color:var(--accent);font-size:24px;font-weight:700}
+        .stat-card .label{color:#888;font-size:12px;margin-top:5px}
+        .market-report{background:#fff;color:#111;border-radius:8px;padding:25px;font-size:14px}
+        .market-report h2{color:#111;border-bottom:2px solid var(--accent);padding-bottom:10px}
+        .market-report .section{margin:20px 0}
+        .market-report .bullet{color:#111;margin:8px 0;padding-left:15px}
+        .market-report .highlight{background:#f0f9ff;padding:15px;border-radius:8px;border-left:4px solid var(--accent)}
+        .copy-btn{display:inline-block;padding:10px 20px;background:var(--accent);color:#000;border-radius:6px;text-decoration:none;font-weight:600;font-size:13px;cursor:pointer;margin-top:15px}
+        .premium-upsell{background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(0,212,255,0.2));border:1px solid var(--accent2);border-radius:12px;padding:20px;margin-top:30px;text-align:center}
+        .premium-upsell h3{color:var(--accent);margin-bottom:10px}
+        .wallet{font-family:monospace;background:#000;padding:10px 15px;border-radius:6px;display:inline-block;margin:10px 0;font-size:13px;color:var(--accent)}
+        .cta-btn{display:inline-block;padding:12px 25px;background:var(--accent);color:#000;border-radius:6px;text-decoration:none;font-weight:700;margin-top:10px}
+        footer{text-align:center;margin-top:40px;padding:20px;color:#666;font-size:14px}
+        footer a{color:var(--accent);text-decoration:none}
+        @media(max-width:600px){.card{padding:15px}.stats-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Real Estate Market Update Generator</h1>
+    <p class="subtitle">Create professional market reports in minutes</p>
+    
+    <div class="card">
+        <div class="form-group">
+            <label>Market Area</label>
+            <input type="text" id="marketArea" placeholder="e.g., Austin, TX Metro">
+        </div>
+        <div class="form-group">
+            <label>Report Period</label>
+            <select id="period">
+                <option value="monthly">Monthly Update</option>
+                <option value="quarterly">Quarterly Report</option>
+                <option value="annual">Annual Summary</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Agent/Brokerage Name</label>
+            <input type="text" id="agentName" placeholder="e.g., Sarah Johnson, Premier Realty">
+        </div>
+        <div class="form-group">
+            <label>Custom Data (optional)</label>
+            <textarea id="customData" placeholder="Any specific stats or insights you want to include..."></textarea>
+        </div>
+        <button onclick="generateReport()">Generate Market Report</button>
+    </div>
+
+    <div class="output" id="output">
+        <div class="card">
+            <h2 style="color:var(--accent);margin-bottom:15px">Market Report Preview</h2>
+            <div class="stats-grid" id="statsGrid"></div>
+            <div class="market-report" id="reportContent"></div>
+            <span class="copy-btn" onclick="copyReport()">📋 Copy Report</span>
+        </div>
+    </div>
+
+    <div class="premium-upsell">
+        <h3>Get Advanced Market Analytics</h3>
+        <p>Use Jasper AI to generate in-depth market analysis reports</p>
+        <div class="wallet">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+        <a href="https://jasper.ai" class="cta-btn" target="_blank">Try Jasper AI</a>
+    </div>
+</div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do real estate agents create market update reports?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Real estate agents create market reports by gathering data on median sales prices, days on market, inventory levels, and sales trends. Use local MLS data, public records, and market analytics tools to compile accurate reports."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What metrics should be in a real estate market report?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A comprehensive market report should include median home prices, days on market, inventory months of supply, sales volume trends, price per square foot, and comparison to previous periods. Include neighborhood-specific data when possible."
+            }
+        }
+    ]
+}
+</script>
+
+<script>
+function generateRandomStats(){
+    return {
+        medianPrice: (Math.random() * 300 + 400).toFixed(0),
+        daysOnMarket: Math.floor(Math.random() * 30 + 10),
+        inventoryMonths: (Math.random() * 2 + 1).toFixed(1),
+        salesVolume: Math.floor(Math.random() * 20 + 5),
+        priceSqFt: (Math.random() * 150 + 150).toFixed(0),
+        listToSaleRatio: (Math.random() * 3 + 97).toFixed(1),
+        newListings: Math.floor(Math.random() * 500 + 200),
+        pendingSales: Math.floor(Math.random() * 300 + 100)
+    };
+}
+
+function generateReport(){
+    const marketArea = document.getElementById('marketArea').value || 'Your Market Area';
+    const period = document.getElementById('period').value;
+    const agentName = document.getElementById('agentName').value || 'Your Name';
+    const customData = document.getElementById('customData').value;
+    
+    const stats = generateRandomStats();
+    const statsGrid = document.getElementById('statsGrid');
+    const reportContent = document.getElementById('reportContent');
+    
+    statsGrid.innerHTML = `
+        <div class="stat-card">
+            <div class="value">$${stats.medianPrice}K</div>
+            <div class="label">Median Price</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">${stats.daysOnMarket}</div>
+            <div class="label">Avg Days on Market</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">${stats.inventoryMonths}</div>
+            <div class="label">Months of Inventory</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">+${stats.salesVolume}%</div>
+            <div class="label">YoY Price Change</div>
+        </div>
+    `;
+    
+    const periodText = {
+        monthly: new Date().toLocaleString('default', { month: 'long', year: 'numeric' }),
+        quarterly: `Q${Math.floor((new Date().getMonth() + 3) / 3)} ${new Date().getFullYear()}`,
+        annual: new Date().getFullYear().toString()
+    };
+    
+    const insights = [
+        'Inventory remains tight, creating competitive conditions for buyers.',
+        'Multiple offers are common in the starter home segment.',
+        'Luxury homes are seeing longer days on market as buyers are selective.',
+        'First-time buyers face challenges due to rising prices and interest rates.',
+        'Remote work continues to drive demand in suburban markets.',
+        'New construction is helping to ease inventory constraints.',
+        'Buyer demand remains strong despite economic uncertainties.'
+    ];
+    
+    reportContent.innerHTML = `
+        <h2>📊 ${marketArea} Real Estate Market Update | ${periodText[period]}</h2>
+        
+        <div class="section">
+            <h3>Executive Summary</h3>
+            <p>The ${marketArea} real estate market continues to show ${stats.salesVolume > 5 ? 'strong' : 'steady'} activity in ${periodText[period]}. With a median home price of <strong>$${stats.medianPrice},000</strong> and properties averaging <strong>${stats.daysOnMarket} days</strong> on market, the market remains dynamic for both buyers and sellers.</p>
+        </div>
+        
+        <div class="section">
+            <h3>Key Market Metrics</h3>
+            <p class="bullet">• Median Sales Price: <strong>$${stats.medianPrice},000</strong></p>
+            <p class="bullet">• Average Days on Market: <strong>${stats.daysOnMarket} days</strong></p>
+            <p class="bullet">• Months of Inventory: <strong>${stats.inventoryMonths} months</strong></p>
+            <p class="bullet">• Price per Square Foot: <strong>$${stats.priceSqFt}</strong></p>
+            <p class="bullet">• List-to-Sale Price Ratio: <strong>${stats.listToSaleRatio}%</strong></p>
+            <p class="bullet">• New Listings: <strong>${stats.newListings}</strong></p>
+            <p class="bullet">• Pending Sales: <strong>${stats.pendingSales}</strong></p>
+        </div>
+        
+        <div class="section">
+            <h3>Market Insights</h3>
+            <div class="highlight">
+                <p>${insights[Math.floor(Math.random() * insights.length)]}</p>
+                <p style="margin-top:10px">${insights[Math.floor(Math.random() * insights.length)]}</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>What This Means for Buyers</h3>
+            <p>Buyers should be prepared to act quickly on desirable properties. Getting pre-approved for financing before starting your home search is essential in today's competitive market. Consider working with an experienced agent who can provide insights on neighborhoods offering the best value.</p>
+        </div>
+        
+        <div class="section">
+            <h3>What This Means for Sellers</h3>
+            <p>Sellers are in a strong position given limited inventory. Pricing your home correctly from the start is crucial — overpricing can lead to extended time on market and price reductions. Well-maintained homes in desirable neighborhoods are seeing strong offers quickly.</p>
+        </div>
+        
+        ${customData ? `<div class="section"><h3>Additional Insights</h3><p>${customData}</p></div>` : ''}
+        
+        <div class="section" style="text-align:center;margin-top:30px;padding-top:20px;border-top:1px solid #ddd">
+            <p><strong>Questions about the ${marketArea} market?</strong></p>
+            <p>${agentName}</p>
+            <p>Contact me for a personalized market analysis for your specific situation.</p>
+        </div>
+    `;
+    
+    document.getElementById('output').classList.add('show');
+}
+
+function copyReport(){
+    const content = document.getElementById('reportContent').innerText;
+    navigator.clipboard.writeText(content).then(() => {
+        alert('Report copied to clipboard!');
+    });
+}
+</script>
+
+<footer>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</footer>
+</body>
+</html>

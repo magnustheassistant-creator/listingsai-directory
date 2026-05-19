@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Qualification Calculator | Real Estate Lead Scoring Tool</title>
+    <meta name="description" content="Calculate and score your real estate leads with our free lead qualification calculator. Determine buyer/seller readiness with proven criteria used by top agents.">
+    <link rel="canonical" href="https://listingsai.directory/tools/lead-qualification-calculator.html">
+    <style>
+        :root { --bg:#0a0a0f; --card:#111; --border:#222; --accent:#00d4ff; --accent2:#7c3aed; --text:#e0e0e0; --muted:#888; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; min-height:100vh; }
+        .container { max-width:800px; margin:0 auto; padding:20px; }
+        header { text-align:center; padding:40px 20px; border-bottom:1px solid var(--border); }
+        h1 { font-size:2rem; background:linear-gradient(135deg,var(--accent),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:10px; }
+        .subtitle { color:var(--muted); margin-bottom:20px; }
+        .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:30px; margin-bottom:20px; }
+        .form-group { margin-bottom:20px; }
+        label { display:block; margin-bottom:8px; font-weight:600; color:var(--accent); }
+        input, select, textarea { width:100%; padding:12px 16px; background:var(--bg); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:1rem; transition:border-color 0.3s; }
+        input:focus, select:focus, textarea:focus { outline:none; border-color:var(--accent); }
+        .range-group { display:flex; align-items:center; gap:15px; }
+        input[type="range"] { flex:1; height:6px; -webkit-appearance:none; background:var(--border); border-radius:3px; cursor:pointer; }
+        input[type="range"]::-webkit-slider-thumb { -webkit-appearance:none; width:20px; height:20px; background:var(--accent); border-radius:50%; cursor:pointer; }
+        .range-value { min-width:40px; text-align:center; font-weight:bold; color:var(--accent); }
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 28px; background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; border:none; border-radius:8px; font-size:1rem; font-weight:600; cursor:pointer; transition:transform 0.2s, opacity 0.2s; }
+        .btn:hover { transform:translateY(-2px); opacity:0.9; }
+        .btn-full { width:100%; justify-content:center; }
+        .result-section { display:none; margin-top:30px; }
+        .result-section.active { display:block; }
+        .score-display { text-align:center; padding:40px; background:linear-gradient(135deg,rgba(0,212,255,0.1),rgba(124,58,237,0.1)); border-radius:12px; border:1px solid var(--accent); }
+        .score-number { font-size:4rem; font-weight:bold; background:linear-gradient(135deg,var(--accent),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .score-label { font-size:1.2rem; color:var(--muted); margin-top:10px; }
+        .score-grade { display:inline-block; padding:8px 24px; border-radius:50px; font-size:1.1rem; font-weight:bold; margin-top:15px; }
+        .grade-hot { background:linear-gradient(135deg,#ff4444,#ff6b6b); color:#fff; }
+        .grade-warm { background:linear-gradient(135deg,#ff9f43,#ffc107); color:#000; }
+        .grade-cold { background:linear-gradient(135deg,#54a0ff,#2e86de); color:#fff; }
+        .breakdown { margin-top:30px; }
+        .breakdown h3 { margin-bottom:15px; color:var(--accent); }
+        .breakdown-item { display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--border); }
+        .breakdown-item:last-child { border-bottom:none; }
+        .premium-upsell { background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(0,212,255,0.15)); border:2px solid var(--accent2); border-radius:12px; padding:30px; margin-top:30px; text-align:center; }
+        .premium-upsell h3 { color:var(--accent2); margin-bottom:10px; }
+        .premium-upsell p { color:var(--muted); margin-bottom:15px; }
+        .wallet-address { font-family:monospace; background:var(--bg); padding:12px 20px; border-radius:8px; color:var(--accent); border:1px solid var(--border); display:inline-block; word-break:break-all; font-size:0.9rem; }
+        .affiliate-link { display:inline-block; margin-top:20px; padding:12px 24px; background:var(--accent); color:#000; text-decoration:none; border-radius:8px; font-weight:600; transition:transform 0.2s; }
+        .affiliate-link:hover { transform:translateY(-2px); }
+        .tips { margin-top:20px; padding:20px; background:rgba(0,212,255,0.05); border-radius:8px; border-left:3px solid var(--accent); }
+        .tips h4 { color:var(--accent); margin-bottom:10px; }
+        .tips ul { margin-left:20px; color:var(--muted); }
+        .tips li { margin-bottom:5px; }
+        footer { text-align:center; padding:40px 20px; border-top:1px solid var(--border); margin-top:60px; color:var(--muted); }
+        footer a { color:var(--accent); text-decoration:none; }
+        footer a:hover { text-decoration:underline; }
+        @media(max-width:600px) {
+            h1 { font-size:1.5rem; }
+            .card { padding:20px; }
+            .score-number { font-size:3rem; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a lead qualification calculator in real estate?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A lead qualification calculator helps real estate agents score and prioritize leads based on factors like budget, timeline, motivation, and readiness to transact. It uses a weighted scoring system to categorize leads as Hot, Warm, or Cold."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do you score real estate leads?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Real estate leads are scored based on multiple criteria: financial readiness (budget, pre-approval status), timeline (when they want to buy/sell), motivation level, property type preferences, and engagement history. Each factor is weighted and combined for a total score."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What score range indicates a hot lead?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A hot lead typically scores 75-100 points. These leads have confirmed financing, a concrete timeline within 0-3 months, high motivation, and have shown strong engagement with your services."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Lead Qualification Calculator</h1>
+            <p class="subtitle">Score and prioritize your real estate leads with proven criteria</p>
+        </div>
+    </header>
+    <main class="container">
+        <div class="card">
+            <form id="leadForm">
+                <div class="form-group">
+                    <label for="budget">Budget Range ($)</label>
+                    <select id="budget" name="budget">
+                        <option value="0">Select budget range</option>
+                        <option value="5">Under $200,000</option>
+                        <option value="10">$200,000 - $400,000</option>
+                        <option value="15">$400,000 - $600,000</option>
+                        <option value="20">$600,000 - $1M</option>
+                        <option value="25">Over $1M</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="timeline">Timeline to Buy/Sell</label>
+                    <select id="timeline" name="timeline">
+                        <option value="0">Select timeline</option>
+                        <option value="25">Immediate (0-30 days)</option>
+                        <option value="20">Short-term (1-3 months)</option>
+                        <option value="15">Medium-term (3-6 months)</option>
+                        <option value="10">Long-term (6-12 months)</option>
+                        <option value="5">Just browsing (12+ months)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="motivation">Motivation Level</label>
+                    <div class="range-group">
+                        <span>Low</span>
+                        <input type="range" id="motivation" name="motivation" min="1" max="10" value="5" oninput="document.getElementById('motivationVal').textContent=this.value">
+                        <span class="range-value" id="motivationVal">5</span>
+                        <span>High</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="preapproval">Pre-Approval Status</label>
+                    <select id="preapproval" name="preapproval">
+                        <option value="0">Select pre-approval status</option>
+                        <option value="20">Pre-approved (confirmed)</option>
+                        <option value="15">Pre-approved (pending)</option>
+                        <option value="10">Pre-qualified</option>
+                        <option value="5">Not pre-approved</option>
+                        <option value="0">Not applicable (seller)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="engagement">Engagement Level</label>
+                    <select id="engagement" name="engagement">
+                        <option value="0">Select engagement level</option>
+                        <option value="20">Attended showing/open house</option>
+                        <option value="15">Scheduled consultation</option>
+                        <option value="10">Responded to follow-up</option>
+                        <option value="5">Initial inquiry only</option>
+                        <option value="2">Cold lead (referral/ads)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="propertyType">Property Type Interest</label>
+                    <select id="propertyType" name="propertyType">
+                        <option value="0">Select property type</option>
+                        <option value="15">Single Family Home</option>
+                        <option value="12">Condo/Townhouse</option>
+                        <option value="10">Multi-family</option>
+                        <option value="8">Land/Lot</option>
+                        <option value="5">Commercial</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-full">Calculate Lead Score</button>
+            </form>
+        </div>
+        <div class="result-section" id="resultSection">
+            <div class="card">
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-label">Total Lead Score</div>
+                    <span class="score-grade" id="scoreGrade">-</span>
+                </div>
+                <div class="breakdown">
+                    <h3>Score Breakdown</h3>
+                    <div class="breakdown-item">
+                        <span>Budget Range</span>
+                        <span id="budgetScore">0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Timeline</span>
+                        <span id="timelineScore">0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Motivation (1-10)</span>
+                        <span id="motivationScore">0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Pre-Approval Status</span>
+                        <span id="preapprovalScore">0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Engagement Level</span>
+                        <span id="engagementScore">0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Property Type</span>
+                        <span id="propertyScore">0</span>
+                    </div>
+                </div>
+                <div class="tips">
+                    <h4>Next Steps</h4>
+                    <ul id="nextSteps"></ul>
+                </div>
+            </div>
+            <div class="premium-upsell">
+                <h3>Unlock Premium Lead Scoring</h3>
+                <p>Get advanced analytics, CRM integration, automated follow-ups, and AI-powered lead predictions with ManyChat.</p>
+                <div class="wallet-address">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+                <br>
+                <a href="https://manychat.com" target="_blank" class="affiliate-link">Try ManyChat Free →</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const budget = parseInt(document.getElementById('budget').value);
+            const timeline = parseInt(document.getElementById('timeline').value);
+            const motivation = parseInt(document.getElementById('motivation').value) * 2;
+            const preapproval = parseInt(document.getElementById('preapproval').value);
+            const engagement = parseInt(document.getElementById('engagement').value);
+            const property = parseInt(document.getElementById('propertyType').value);
+            const total = budget + timeline + motivation + preapproval + engagement + property;
+            const maxScore = 130;
+            const percentage = Math.round((total / maxScore) * 100);
+            document.getElementById('scoreNumber').textContent = percentage + '%';
+            document.getElementById('budgetScore').textContent = budget;
+            document.getElementById('timelineScore').textContent = timeline;
+            document.getElementById('motivationScore').textContent = motivation;
+            document.getElementById('preapprovalScore').textContent = preapproval;
+            document.getElementById('engagementScore').textContent = engagement;
+            document.getElementById('propertyScore').textContent = property;
+            const gradeEl = document.getElementById('scoreGrade');
+            const nextStepsEl = document.getElementById('nextSteps');
+            if (percentage >= 75) {
+                gradeEl.textContent = '🔥 Hot Lead';
+                gradeEl.className = 'score-grade grade-hot';
+                nextStepsEl.innerHTML = '<li>Contact immediately with personalized message</li><li>Schedule showing within 24-48 hours</li><li>Send comparable listings and market data</li><li>Prepare offer package</li>';
+            } else if (percentage >= 50) {
+                gradeEl.textContent = '☀️ Warm Lead';
+                gradeEl.className = 'score-grade grade-warm';
+                nextStepsEl.innerHTML = '<li>Nurture with weekly market updates</li><li>Share relevant property listings</li><li>Invite to upcoming open houses</li><li>Offer free home valuation</li>';
+            } else {
+                gradeEl.textContent = '❄️ Cold Lead';
+                gradeEl.className = 'score-grade grade-cold';
+                nextStepsEl.innerHTML = '<li>Add to email nurture sequence</li><li>Share valuable content (market reports, tips)</li><li>Connect on social media</li><li>Re-engage in 30-60 days</li>';
+            }
+            document.getElementById('resultSection').classList.add('active');
+            document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

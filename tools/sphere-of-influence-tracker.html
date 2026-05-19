@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sphere of Influence Tracker | Real Estate SOI Management Tool</title>
+    <meta name="description" content="Track and manage your sphere of influence contacts with this free real estate SOI tracker. Organize past clients, referrals, and leads effectively.">
+    <link rel="canonical" href="https://listingsai.directory/tools/sphere-of-influence-tracker.html">
+    <style>
+        :root { --bg:#0a0a0f; --card:#111; --border:#222; --accent:#00d4ff; --accent2:#7c3aed; --text:#e0e0e0; --muted:#888; --success:#22c55e; --warning:#f59e0b; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; min-height:100vh; }
+        .container { max-width:900px; margin:0 auto; padding:20px; }
+        header { text-align:center; padding:40px 20px; border-bottom:1px solid var(--border); }
+        h1 { font-size:2rem; background:linear-gradient(135deg,var(--accent),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:10px; }
+        .subtitle { color:var(--muted); margin-bottom:20px; }
+        .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:30px; margin-bottom:20px; }
+        .form-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:15px; }
+        .form-group { margin-bottom:15px; }
+        label { display:block; margin-bottom:8px; font-weight:600; color:var(--accent); font-size:0.9rem; }
+        input, select, textarea { width:100%; padding:12px 16px; background:var(--bg); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:1rem; transition:border-color 0.3s; }
+        input:focus, select:focus, textarea:focus { outline:none; border-color:var(--accent); }
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 28px; background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; border:none; border-radius:8px; font-size:1rem; font-weight:600; cursor:pointer; transition:transform 0.2s, opacity 0.2s; }
+        .btn:hover { transform:translateY(-2px); opacity:0.9; }
+        .btn-full { width:100%; justify-content:center; }
+        .btn-sm { padding:8px 16px; font-size:0.9rem; }
+        .btn-danger { background:linear-gradient(135deg,#ef4444,#dc2626); }
+        .btn-success { background:linear-gradient(135deg,var(--success),#16a34a); }
+        .stats-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:15px; margin-bottom:20px; }
+        .stat-card { background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:20px; text-align:center; }
+        .stat-number { font-size:2rem; font-weight:bold; color:var(--accent); }
+        .stat-label { font-size:0.85rem; color:var(--muted); margin-top:5px; }
+        table { width:100%; border-collapse:collapse; }
+        th, td { padding:12px 15px; text-align:left; border-bottom:1px solid var(--border); }
+        th { background:var(--bg); color:var(--accent); font-weight:600; font-size:0.9rem; }
+        tr:hover { background:rgba(0,212,255,0.05); }
+        .contact-name { font-weight:600; }
+        .contact-type { display:inline-block; padding:3px 10px; border-radius:50px; font-size:0.75rem; font-weight:600; }
+        .type-buyer { background:rgba(34,197,94,0.2); color:var(--success); }
+        .type-seller { background:rgba(0,212,255,0.2); color:var(--accent); }
+        .type-tenant { background:rgba(245,158,11,0.2); color:var(--warning); }
+        .type-other { background:rgba(124,58,237,0.2); color:var(--accent2); }
+        .status-dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:8px; }
+        .status-hot { background:var(--success); }
+        .status-warm { background:var(--warning); }
+        .status-cold { background:var(--muted); }
+        .actions { display:flex; gap:8px; }
+        .actions button { padding:6px 12px; border:none; border-radius:4px; cursor:pointer; font-size:0.85rem; }
+        .edit-btn { background:var(--accent2); color:#fff; }
+        .delete-btn { background:#ef4444; color:#fff; }
+        .premium-upsell { background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(0,212,255,0.15)); border:2px solid var(--accent2); border-radius:12px; padding:30px; margin-top:30px; text-align:center; }
+        .premium-upsell h3 { color:var(--accent2); margin-bottom:10px; }
+        .premium-upsell p { color:var(--muted); margin-bottom:15px; }
+        .wallet-address { font-family:monospace; background:var(--bg); padding:12px 20px; border-radius:8px; color:var(--accent); border:1px solid var(--border); display:inline-block; word-break:break-all; font-size:0.9rem; }
+        .affiliate-link { display:inline-block; margin-top:20px; padding:12px 24px; background:var(--accent); color:#000; text-decoration:none; border-radius:8px; font-weight:600; transition:transform 0.2s; }
+        .affiliate-link:hover { transform:translateY(-2px); }
+        footer { text-align:center; padding:40px 20px; border-top:1px solid var(--border); margin-top:60px; color:var(--muted); }
+        footer a { color:var(--accent); text-decoration:none; }
+        footer a:hover { text-decoration:underline; }
+        .empty-state { text-align:center; padding:40px; color:var(--muted); }
+        .empty-state p { margin-top:10px; }
+        .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; align-items:center; justify-content:center; }
+        .modal.active { display:flex; }
+        .modal-content { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:30px; max-width:500px; width:90%; max-height:90vh; overflow-y:auto; }
+        .modal-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+        .modal-header h3 { color:var(--accent); }
+        .close-modal { background:none; border:none; color:var(--muted); font-size:1.5rem; cursor:pointer; }
+        @media(max-width:600px) {
+            h1 { font-size:1.5rem; }
+            .card { padding:20px; }
+            table { font-size:0.85rem; }
+            th, td { padding:8px 10px; }
+            .actions { flex-direction:column; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a sphere of influence tracker in real estate?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A sphere of influence (SOI) tracker is a tool that helps real estate agents manage and nurture relationships with past clients, referrals, friends, family, and other contacts who could generate future business."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why is sphere of influence important for real estate agents?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Studies show that 70-80% of real estate business comes from past clients and referrals. Maintaining regular contact with your sphere of influence keeps you top-of-mind when people are ready to buy or sell."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should you contact your sphere of influence?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Real estate experts recommend contacting your SOI at least once every 30-45 days with valuable content, market updates, or personal check-ins. Key moments like holidays, birthdays, and market changes are perfect opportunities."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sphere of Influence Tracker</h1>
+            <p class="subtitle">Manage and nurture your most valuable real estate relationships</p>
+        </div>
+    </header>
+    <main class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="totalContacts">0</div>
+                <div class="stat-label">Total Contacts</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="hotLeads">0</div>
+                <div class="stat-label">Hot Leads</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="lastMonth">0</div>
+                <div class="stat-label">Contacted (30 days)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="needContact">0</div>
+                <div class="stat-label">Need Contact</div>
+            </div>
+        </div>
+        <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:10px;">
+                <h2 style="font-size:1.2rem; color:var(--accent);">Your Contacts</h2>
+                <button class="btn btn-sm" onclick="openModal()">+ Add Contact</button>
+            </div>
+            <div style="overflow-x:auto;">
+                <table id="contactsTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Last Contact</th>
+                            <th>Notes</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contactsBody"></tbody>
+                </table>
+            </div>
+            <div class="empty-state" id="emptyState" style="display:none;">
+                <p>No contacts yet. Start building your sphere of influence!</p>
+            </div>
+        </div>
+        <div class="premium-upsell">
+            <h3>Automate Your SOI Nurturing</h3>
+            <p>Get automated birthday wishes, holiday cards, market updates, and personalized follow-up sequences with ManyChat.</p>
+            <div class="wallet-address">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+            <br>
+            <a href="https://manychat.com" target="_blank" class="affiliate-link">Try ManyChat Free →</a>
+        </div>
+    </main>
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Add Contact</h3>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="contactForm">
+                <input type="hidden" id="contactId">
+                <div class="form-group">
+                    <label for="contactName">Name</label>
+                    <input type="text" id="contactName" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Email</label>
+                    <input type="email" id="contactEmail">
+                </div>
+                <div class="form-group">
+                    <label for="contactPhone">Phone</label>
+                    <input type="tel" id="contactPhone">
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="contactType">Type</label>
+                        <select id="contactType">
+                            <option value="buyer">Past Buyer</option>
+                            <option value="seller">Past Seller</option>
+                            <option value="tenant">Tenant</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactStatus">Status</label>
+                        <select id="contactStatus">
+                            <option value="hot">Hot</option>
+                            <option value="warm">Warm</option>
+                            <option value="cold">Cold</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastContact">Last Contact Date</label>
+                    <input type="date" id="lastContact">
+                </div>
+                <div class="form-group">
+                    <label for="contactNotes">Notes</label>
+                    <textarea id="contactNotes" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-full">Save Contact</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</p>
+        </div>
+    </footer>
+    <script>
+        let contacts = JSON.parse(localStorage.getItem('soiContacts')) || [];
+
+        function saveContacts() {
+            localStorage.setItem('soiContacts', JSON.stringify(contacts));
+        }
+
+        function renderContacts() {
+            const tbody = document.getElementById('contactsBody');
+            const emptyState = document.getElementById('emptyState');
+            const table = document.getElementById('contactsTable');
+
+            if (contacts.length === 0) {
+                emptyState.style.display = 'block';
+                table.style.display = 'none';
+            } else {
+                emptyState.style.display = 'none';
+                table.style.display = 'table';
+                tbody.innerHTML = contacts.map((c, i) => `
+                    <tr>
+                        <td><span class="contact-name">${c.name}</span><br><small style="color:var(--muted)">${c.email || ''}</small></td>
+                        <td><span class="contact-type type-${c.type}">${c.type.charAt(0).toUpperCase() + c.type.slice(1)}</span></td>
+                        <td><span class="status-dot status-${c.status}"></span>${c.status.charAt(0).toUpperCase() + c.status.slice(1)}</td>
+                        <td>${c.lastContact || 'Never'}</td>
+                        <td style="max-width:150px; overflow:hidden; text-overflow:ellipsis;">${c.notes || ''}</td>
+                        <td class="actions">
+                            <button class="edit-btn" onclick="editContact(${i})">Edit</button>
+                            <button class="delete-btn" onclick="deleteContact(${i})">Delete</button>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+            updateStats();
+        }
+
+        function updateStats() {
+            const thirtyDaysAgo = new Date();
+            thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+            document.getElementById('totalContacts').textContent = contacts.length;
+            document.getElementById('hotLeads').textContent = contacts.filter(c => c.status === 'hot').length;
+            document.getElementById('lastMonth').textContent = contacts.filter(c => c.lastContact && new Date(c.lastContact) >= thirtyDaysAgo).length;
+            document.getElementById('needContact').textContent = contacts.filter(c => !c.lastContact || new Date(c.lastContact) < thirtyDaysAgo).length;
+        }
+
+        function openModal(contact = null) {
+            document.getElementById('contactModal').classList.add('active');
+            document.getElementById('modalTitle').textContent = contact ? 'Edit Contact' : 'Add Contact';
+            if (contact) {
+                document.getElementById('contactId').value = contact._index;
+                document.getElementById('contactName').value = contact.name;
+                document.getElementById('contactEmail').value = contact.email || '';
+                document.getElementById('contactPhone').value = contact.phone || '';
+                document.getElementById('contactType').value = contact.type;
+                document.getElementById('contactStatus').value = contact.status;
+                document.getElementById('lastContact').value = contact.lastContact || '';
+                document.getElementById('contactNotes').value = contact.notes || '';
+            } else {
+                document.getElementById('contactForm').reset();
+                document.getElementById('contactId').value = '';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('contactModal').classList.remove('active');
+        }
+
+        function editContact(index) {
+            const contact = { ...contacts[index], _index: index };
+            openModal(contact);
+        }
+
+        function deleteContact(index) {
+            if (confirm('Delete this contact?')) {
+                contacts.splice(index, 1);
+                saveContacts();
+                renderContacts();
+            }
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const id = document.getElementById('contactId').value;
+            const contact = {
+                name: document.getElementById('contactName').value,
+                email: document.getElementById('contactEmail').value,
+                phone: document.getElementById('contactPhone').value,
+                type: document.getElementById('contactType').value,
+                status: document.getElementById('contactStatus').value,
+                lastContact: document.getElementById('lastContact').value,
+                notes: document.getElementById('contactNotes').value
+            };
+
+            if (id !== '') {
+                contacts[parseInt(id)] = contact;
+            } else {
+                contacts.push(contact);
+            }
+
+            saveContacts();
+            renderContacts();
+            closeModal();
+        });
+
+        renderContacts();
+    </script>
+</body>
+</html>

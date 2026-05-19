@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate FAQ Builder | Property FAQ Generator for Listings</title>
+    <meta name="description" content="Create comprehensive FAQ sections for real estate listings. Generate buyer and seller questions with professional answers for any property.">
+    <h1>Real Estate FAQ Builder</h1>
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:#e0e0e0;min-height:100vh;padding:20px;line-height:1.6}
+        .container{max-width:800px;margin:0 auto}
+        h1{color:var(--accent);text-align:center;margin-bottom:10px;font-size:1.8rem}
+        .subtitle{text-align:center;color:#888;margin-bottom:30px}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:25px;margin-bottom:20px}
+        .form-group{margin-bottom:15px}
+        label{display:block;margin-bottom:5px;color:var(--accent);font-weight:600}
+        input,select,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:#0a0a0f;color:#e0e0e0;font-size:14px}
+        textarea{resize:vertical;min-height:60px}
+        button{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:8px;color:#fff;font-weight:700;font-size:16px;cursor:pointer;transition:transform 0.2s}
+        button:hover{transform:scale(1.02)}
+        .output{margin-top:20px;display:none}
+        .output.show{display:block}
+        .faq-item{background:#0a0a0f;border:1px solid var(--border);border-radius:8px;padding:15px;margin-bottom:12px}
+        .faq-item .question{color:var(--accent);font-weight:600;margin-bottom:8px;font-size:15px}
+        .faq-item .answer{color:#ccc;font-size:14px;line-height:1.7}
+        .faq-section{margin-bottom:25px}
+        .faq-section h3{color:var(--accent2);margin-bottom:12px;font-size:16px;border-bottom:1px solid var(--border);padding-bottom:8px}
+        .copy-btn{display:inline-block;padding:8px 16px;background:var(--accent);color:#000;border-radius:6px;text-decoration:none;font-weight:600;font-size:12px;cursor:pointer;margin-top:15px}
+        .preview-mode{display:none}
+        .preview-mode.show{display:block}
+        .html-output{background:#0a0a0f;border:1px solid var(--border);border-radius:8px;padding:15px;margin-top:15px;font-size:12px;white-space:pre-wrap;max-height:300px;overflow:auto;font-family:monospace}
+        .premium-upsell{background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(0,212,255,0.2));border:1px solid var(--accent2);border-radius:12px;padding:20px;margin-top:30px;text-align:center}
+        .premium-upsell h3{color:var(--accent);margin-bottom:10px}
+        .wallet{font-family:monospace;background:#000;padding:10px 15px;border-radius:6px;display:inline-block;margin:10px 0;font-size:13px;color:var(--accent)}
+        .cta-btn{display:inline-block;padding:12px 25px;background:var(--accent);color:#000;border-radius:6px;text-decoration:none;font-weight:700;margin-top:10px}
+        footer{text-align:center;margin-top:40px;padding:20px;color:#666;font-size:14px}
+        footer a{color:var(--accent);text-decoration:none}
+        @media(max-width:600px){.card{padding:15px}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Real Estate FAQ Builder</h1>
+    <p class="subtitle">Generate comprehensive FAQ sections for listings</p>
+    
+    <div class="card">
+        <div class="form-group">
+            <label>FAQ Type</label>
+            <select id="faqType">
+                <option value="listing">Property Listing FAQ</option>
+                <option value="buyer">Home Buyer FAQ</option>
+                <option value="seller">Home Seller FAQ</option>
+                <option value="neighborhood">Neighborhood FAQ</option>
+                <option value="mortgage">Mortgage & Financing FAQ</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Property Type (optional)</label>
+            <input type="text" id="propertyType" placeholder="e.g., Single Family Home, Condo">
+        </div>
+        <div class="form-group">
+            <label>Location (optional)</label>
+            <input type="text" id="location" placeholder="e.g., Austin, TX">
+        </div>
+        <button onclick="generateFAQ()">Generate FAQ</button>
+    </div>
+
+    <div class="output" id="output">
+        <div class="card">
+            <h2 style="color:var(--accent);margin-bottom:15px">Your FAQ Section</h2>
+            <div id="faqContainer"></div>
+            <span class="copy-btn" onclick="toggleHTML()">📄 View HTML</span>
+            <div class="html-output" id="htmlOutput"></div>
+        </div>
+    </div>
+
+    <div class="premium-upsell">
+        <h3>Get AI-Powered Content Creation</h3>
+        <p>Use Jasper AI to generate detailed property descriptions and content</p>
+        <div class="wallet">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+        <a href="https://jasper.ai" class="cta-btn" target="_blank">Try Jasper AI</a>
+    </div>
+</div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is an FAQ section for real estate listings?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "An FAQ section for real estate listings answers common questions buyers and sellers have about a specific property, the home buying/selling process, financing, or the neighborhood. It provides valuable information that helps prospects make informed decisions."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I create an effective real estate FAQ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Create effective FAQs by anticipating common buyer/seller questions, providing honest and detailed answers, organizing by category, keeping answers concise but informative, and updating regularly as new questions arise."
+            }
+        }
+    ]
+}
+</script>
+
+<script>
+const faqData = {
+    listing: {
+        title: 'Frequently Asked Questions',
+        questions: [
+            {q: 'What is the asking price for this property?', a: 'The asking price is listed on the property details. For the most accurate and up-to-date pricing, please contact the listing agent directly.'},
+            {q: 'How many bedrooms and bathrooms does this home have?', a: 'Please refer to the property details section above for the exact bedroom and bathroom count.'},
+            {q: 'When was this property built?', a: 'Construction year information is available in the property details. If not listed, please inquire with the agent.'},
+            {q: 'What are the property taxes for this home?', a: 'Property taxes vary based on the assessed value and local tax rates. Contact the listing agent for current tax information.'},
+            {q: 'Is this home part of a homeowners association (HOA)?', a: 'HOA information, including fees and restrictions, is provided in the property details. If you have questions, please ask.'},
+            {q: 'What are the proximity requirements for schools?', a: 'School district information and ratings are available upon request. We recommend verifying with the local school district.'},
+            {q: 'Does this property have any known issues or disclosures?', a: 'All known material facts are disclosed as required by law. Request the seller\'s disclosure document from your agent.'},
+            {q: 'Are there any recent renovations or updates?', a: 'Information about recent updates and renovations is provided in the property listing. Ask your agent for more details.'}
+        ]
+    },
+    buyer: {
+        title: 'Home Buyer Questions',
+        questions: [
+            {q: 'How do I start the home buying process?', a: 'Start by getting pre-approved for a mortgage, then connect with a real estate agent who can help you search for homes that meet your criteria.'},
+            {q: 'How much money do I need for a down payment?', a: 'Down payment requirements vary by loan type. Conventional loans may require as little as 3-5%, while some programs offer 0% down. Your lender can advise based on your situation.'},
+            {q: 'What is earnest money and how does it work?', a: 'Earnest money is a deposit showing your serious intent to purchase. It\'s typically 1-3% of the purchase price and is applied to your closing costs or down payment.'},
+            {q: 'How long does it take to close on a home?', a: 'The typical closing process takes 30-45 days from accepted offer to closing day, though this can vary based on financing and inspection timelines.'},
+            {q: 'What is a home inspection and do I need one?', a: 'A home inspection evaluates the property\'s condition, identifying potential issues with structure, systems, and safety. It\'s highly recommended for all buyers.'},
+            {q: 'What happens during the appraisal process?', a: 'The lender orders an appraisal to verify the property\'s value. This protects both you and the lender by ensuring the home is worth the purchase price.'},
+            {q: 'Can I negotiate the price after inspection?', a: 'Yes, you can negotiate repairs, price reductions, or credits based on inspection findings. Your agent will guide you through this process.'},
+            {q: 'What costs should I expect at closing?', a: 'Closing costs typically include loan origination fees, appraisal, title insurance, escrow fees, and prepaid items like property taxes and homeowners insurance. Budget for 2-5% of the purchase price.'}
+        ]
+    },
+    seller: {
+        title: 'Home Seller Questions',
+        questions: [
+            {q: 'How do I determine the right listing price for my home?', a: 'Your agent will prepare a comparative market analysis (CMA) looking at recent sales of similar homes in your area to help you set the optimal price.'},
+            {q: 'Should I make repairs before listing?', a: 'Focus on minor cosmetic improvements and addressing major issues. Your agent can advise on which repairs provide the best return on investment.'},
+            {q: 'What is the difference between listing price and sale price?', a: 'The listing price is what you advertise; the sale price is the final negotiated amount. In competitive markets, these may be close or even above listing.'},
+            {q: 'How long does it typically take to sell a home?', a: 'Market conditions vary. In a balanced market, homes typically sell within 30-60 days. Your agent can provide local market insights.'},
+            {q: 'What is a seller\'s disclosure?', a: 'Sellers are required to disclose known material defects and issues with the property. This protects both parties and helps avoid post-sale disputes.'},
+            {q: 'Should I stage my home for sale?', a: 'Professional staging can help homes sell faster and for more money by highlighting the property\'s best features and helping buyers envision themselves living there.'},
+            {q: 'What are the tax implications of selling my home?', a: 'Capital gains exclusion may apply if you\'ve lived in the home as your primary residence for at least 2 of the last 5 years. Consult a tax professional for your situation.'},
+            {q: 'Can I sell and buy at the same time?', a: 'Yes, many sellers are also buyers. Your agent can help you strategize whether to buy first, sell first, or do both simultaneously based on your market.'}
+        ]
+    },
+    neighborhood: {
+        title: 'Neighborhood & Community FAQ',
+        questions: [
+            {q: 'What schools serve this area?', a: 'School district information, ratings, and enrollment details are available upon request. We recommend visiting school websites or scheduling directly with districts.'},
+            {q: 'What amenities are nearby?', a: 'Most neighborhoods offer parks, restaurants, shopping, and recreational facilities. Ask about specific amenities you\'re interested in.'},
+            {q: 'How is the commute from this location?', a: 'Commute times vary by destination. We recommend checking commute options during your typical work hours for accurate estimates.'},
+            {q: 'What is the neighborhood like for families?', a: 'Family-friendliness varies by community. Consider factors like parks, schools, community events, and overall safety when evaluating.'},
+            {q: 'Are there homeowner association fees?', a: 'HOA fees, if applicable, cover common area maintenance, amenities, and community services. Fee amounts and what's included vary by community.'},
+            {q: 'What is the crime rate in this area?', a: 'We can provide general safety information and recommend reviewing local police department statistics for detailed crime data.'},
+            {q: 'What future development is planned for the area?', a: 'Development plans vary by municipality. Check with local planning departments for information on upcoming projects and infrastructure improvements.'},
+            {q: 'How close is public transportation?', a: 'Public transit availability varies by location. We can provide information on nearby transit options and routes.'}
+        ]
+    },
+    mortgage: {
+        title: 'Mortgage & Financing FAQ',
+        questions: [
+            {q: 'What types of mortgages are available?', a: 'Common options include conventional loans, FHA loans (backed by HUD), VA loans (for veterans), USDA loans (for rural areas), and jumbo loans for high-value properties.'},
+            {q: 'What credit score do I need to buy a home?', a: 'Minimum scores vary by loan type. Conventional loans typically require 620+, FHA loans may accept 580+, and some programs accept lower scores with larger down payments.'},
+            {q: 'How does getting pre-approved differ from pre-qualified?', a: 'Pre-qualification is an estimate based on self-reported info; pre-approval is a verified assessment from a lender based on documented financials. Pre-approval carries more weight.'},
+            {q: 'What is private mortgage insurance (PMI)?', a: 'PMI is required when putting less than 20% down on a conventional loan. It protects the lender if you default and typically costs 0.5-1% of the loan annually.'},
+            {q: 'Should I lock my interest rate?', a: 'Rate locks guarantee your rate for a set period (usually 30-60 days). With rates rising, locking can provide certainty. Discuss timing with your lender.'},
+            {q: 'What is an escrow account?', a: 'An escrow account holds funds for property taxes and homeowners insurance, which are paid from your monthly mortgage payment. It provides predictability for these expenses.'},
+            {q: 'Can I pay extra on my mortgage?', a: 'Yes, most loans allow extra payments toward principal. This can significantly reduce total interest paid and shorten your loan term.'},
+            {q: 'What happens if interest rates drop after I lock?', a: 'Some lenders offer float-down options for a fee. Otherwise, a rate lock is binding. Discuss options with your lender before committing.'}
+        ]
+    }
+};
+
+function generateFAQ(){
+    const faqType = document.getElementById('faqType').value;
+    const propertyType = document.getElementById('propertyType').value || 'this property';
+    const location = document.getElementById('location').value || 'your area';
+    
+    const data = faqData[faqType];
+    const container = document.getElementById('faqContainer');
+    
+    container.innerHTML = `
+        <div class="faq-section">
+            <h3>${data.title}</h3>
+            ${data.questions.map((item, i) => `
+                <div class="faq-item">
+                    <p class="question">Q${i+1}: ${item.q}</p>
+                    <p class="answer">A: ${item.a}</p>
+                </div>
+            `).join('')}
+        </div>
+    `;
+    
+    generateHTML(data);
+    document.getElementById('output').classList.add('show');
+}
+
+function generateHTML(data){
+    const html = `<!-- FAQ Section -->
+<div class="faq-section">
+    <h3>${data.title}</h3>
+    ${data.questions.map((item, i) => `
+    <div class="faq-item">
+        <p class="question">Q${i+1}: ${item.q}</p>
+        <p class="answer">A: ${item.a}</p>
+    </div>
+    `).join('')}
+</div>
+
+<!-- FAQ Schema Markup -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        ${data.questions.map(item => `
+        {
+            "@type": "Question",
+            "name": "${item.q}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "${item.a}"
+            }
+        }`).join(',')}
+    ]
+}
+<\/script>`;
+    
+    document.getElementById('htmlOutput').textContent = html;
+}
+
+function toggleHTML(){
+    const output = document.getElementById('htmlOutput');
+    output.style.display = output.style.display === 'none' ? 'block' : 'none';
+}
+</script>
+
+<footer>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</footer>
+</body>
+</html>

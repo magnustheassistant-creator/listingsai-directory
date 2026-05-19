@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Website SEO Checklist | Free SEO Tool for Realtors</title>
+    <meta name="description" content="Use our free real estate website SEO checklist to optimize your realtor website for search engines. Covers on-page SEO, technical SEO, local SEO, and content strategy.">
+    <link rel="canonical" href="https://listingsai.directory/tools/real-estate-seo-checklist.html">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --card: #111;
+            --border: #222;
+            --accent: #00d4ff;
+            --accent2: #7c3aed;
+            --text: #e0e0e0;
+            --text-muted: #888;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        .affiliate-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+        .checklist-container {
+            padding: 30px 0;
+        }
+        .category {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .category-header {
+            padding: 15px 20px;
+            background: rgba(0,212,255,0.05);
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .category-header h2 {
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+        .category-header .toggle-icon {
+            color: var(--accent);
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        .category.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+        .category-items {
+            padding: 15px 20px;
+        }
+        .category.collapsed .category-items {
+            display: none;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--accent);
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .checklist-item label {
+            cursor: pointer;
+            flex: 1;
+        }
+        .checklist-item .item-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 2px;
+        }
+        .progress-bar {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .progress-track {
+            height: 12px;
+            background: var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            border-radius: 6px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(124,58,237,0.1));
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-section h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        .cta-section p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .cta-btn:hover {
+            transform: scale(1.05);
+        }
+        .premium-upsell {
+            background: var(--card);
+            border: 1px solid var(--accent2);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .premium-upsell h3 {
+            color: var(--accent2);
+            margin-bottom: 10px;
+        }
+        .wallet-address {
+            background: rgba(124,58,237,0.2);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-family: monospace;
+            color: var(--accent2);
+            margin: 15px 0;
+            word-break: break-all;
+        }
+        .faq-section {
+            margin: 40px 0;
+        }
+        .faq-section h2 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .faq-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .faq-item h3 {
+            color: var(--text);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+        }
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .category-header h2 { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Real Estate Website SEO Checklist</h1>
+            <p class="subtitle">Optimize your realtor website for search engines with this comprehensive checklist</p>
+            <span class="affiliate-badge">Powered by Surfer SEO</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="progress-bar">
+            <div class="progress-header">
+                <span>Your SEO Progress</span>
+                <span id="progress-text">0%</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="checklist-container">
+            <div class="category" id="cat-onpage">
+                <div class="category-header" onclick="toggleCategory('onpage')">
+                    <h2>On-Page SEO</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="category-items">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="op1" onchange="updateProgress()">
+                        <label for="op1">Title Tag Optimized
+                            <div class="item-desc">Include target keywords, city name, and "real estate agent" in page titles</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="op2" onchange="updateProgress()">
+                        <label for="op2">Meta Descriptions Written
+                            <div class="item-desc">Each page has unique, compelling meta descriptions (150-160 chars) with CTAs</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="op3" onchange="updateProgress()">
+                        <label for="op3">Header Tags Structure
+                            <div class="item-desc">Proper H1 (one per page), H2-H6 hierarchy with keywords</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="op4" onchange="updateProgress()">
+                        <label for="op4">Image Alt Text
+                            <div class="item-desc">All listing photos and images have descriptive alt text with keywords</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="op5" onchange="updateProgress()">
+                        <label for="op5">Internal Linking
+                            <div class="item-desc">Strategic internal links between related pages and blog posts</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="op6" onchange="updateProgress()">
+                        <label for="op6">URL Structure Clean
+                            <div class="item-desc">Short, descriptive URLs with keywords (e.g., /homes-for-sale-in-austin)</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="op7" onchange="updateProgress()">
+                        <label for="op7">Page Speed Optimized
+                            <div class="item-desc">Images compressed, browser caching enabled, minimal plugins</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category" id="cat-local">
+                <div class="category-header" onclick="toggleCategory('local')">
+                    <h2>Local SEO</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="category-items">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="ls1" onchange="updateProgress()">
+                        <label for="ls1">Google Business Profile Claimed
+                            <div class="item-desc">Claimed and verified your Google Business Profile listing</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="ls2" onchange="updateProgress()">
+                        <label for="ls2">NAP Consistency
+                            <div class="item-desc">Name, Address, Phone consistent across all directories and your website</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="ls3" onchange="updateProgress()">
+                        <label for="ls3">Local Keywords Targeted
+                            <div class="item-desc">Target neighborhood, city, and zip code keywords throughout site</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="ls4" onchange="updateProgress()">
+                        <label for="ls4">Location Pages Created
+                            <div class="item-desc">Dedicated pages for each service area with local content</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="ls5" onchange="updateProgress()">
+                        <label for="ls5">Reviews Strategy
+                            <div class="item-desc">System in place to generate and respond to Google reviews</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="ls6" onchange="updateProgress()">
+                        <label for="ls6">Local Citations Built
+                            <div class="item-desc">Listed on Yelp, Zillow, Realtor.com, and local directories</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category" id="cat-technical">
+                <div class="category-header" onclick="toggleCategory('technical')">
+                    <h2>Technical SEO</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="category-items">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="tech1" onchange="updateProgress()">
+                        <label for="tech1">SSL Certificate Installed
+                            <div class="item-desc">HTTPS enabled on entire website</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="tech2" onchange="updateProgress()">
+                        <label for="tech2">XML Sitemap Created
+                            <div class="item-desc">Sitemap submitted to Google Search Console</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="tech3" onchange="updateProgress()">
+                        <label for="tech3">robots.txt Configured
+                            <div class="item-desc">Proper crawl directives set for search engines</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="tech4" onchange="updateProgress()">
+                        <label for="tech4">Mobile Responsive
+                            <div class="item-desc">Website looks and works great on all devices</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="tech5" onchange="updateProgress()">
+                        <label for="tech5">Schema Markup Added
+                            <div class="item-desc">Real estate agent schema, local business schema, listing schema</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="tech6" onchange="updateProgress()">
+                        <label for="tech6">Core Web Vitals Passed
+                            <div class="item-desc">LCP, FID, and CLS all meet Google's thresholds</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category" id="cat-content">
+                <div class="category-header" onclick="toggleCategory('content')">
+                    <h2>Content Strategy</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="category-items">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="cs1" onchange="updateProgress()">
+                        <label for="cs1">Blog with Buyer/Seller Guides
+                            <div class="item-desc">Educational content targeting real estate search queries</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="cs2" onchange="updateProgress()">
+                        <label for="cs2">Market Update Posts
+                            <div class="item-desc">Regular market statistics and trends content</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="cs3" onchange="updateProgress()">
+                        <label for="cs3">Neighborhood Guides
+                            <div class="item-desc">Detailed content about local areas and amenities</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="cs4" onchange="updateProgress()">
+                        <label for="cs4">Video Content
+                            <div class="item-desc">Listing videos, neighborhood tours, and agent introduction</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="cs5" onchange="updateProgress()">
+                        <label for="cs5">FAQ Page
+                            <div class="item-desc">Common questions about buying, selling, and working with an agent</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="cs6" onchange="updateProgress()">
+                        <label for="cs6">Social Proof
+                            <div class="item-desc">Testimonials, case studies, and success stories published</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category" id="cat-offpage">
+                <div class="category-header" onclick="toggleCategory('offpage')">
+                    <h2>Off-Page SEO</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="category-items">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="off1" onchange="updateProgress()">
+                        <label for="off1">Social Media Active
+                            <div class="item-desc">Regular posts on LinkedIn, Instagram, Facebook with links back</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="off2" onchange="updateProgress()">
+                        <label for="off2">Link Building
+                            <div class="item-desc">Guest posts, local partnerships, and industry directories</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="off3" onchange="updateProgress()">
+                        <label for="off3">Brand Mentions
+                            <div class="item-desc">Consistent NAP across all platforms building brand signals</div>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="off4" onchange="updateProgress()">
+                        <label for="off4">Email List Building
+                            <div class="item-desc">Lead magnets and newsletter to drive repeat traffic</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Take Your SEO to the Next Level</h3>
+            <p>Use Surfer SEO to analyze your content and get data-driven recommendations for ranking higher on Google.</p>
+            <a href="https://surferseo.com" target="_blank" class="cta-btn">Try Surfer SEO Free</a>
+        </div>
+
+        <div class="premium-upsell">
+            <h3>Unlock Premium SEO Analysis</h3>
+            <p>Get advanced site audits, competitor analysis, and keyword research with our premium tools.</p>
+            <div class="wallet-address">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Send BNB for lifetime premium access</p>
+        </div>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How long does it take to see SEO results for real estate websites?</h3>
+                <p>Most real estate agents see initial improvements in 3-6 months with consistent effort. Technical fixes can show results faster within 2-4 weeks. Building domain authority through content and backlinks typically takes 6-12 months.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What's the most important SEO factor for realtors?</h3>
+                <p>Local SEO is crucial for real estate agents. Google Business Profile optimization, local citations, and location-based content typically drive the most qualified leads for realtors.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do I need to hire an SEO expert for my real estate website?</h3>
+                <p>You can handle basic SEO yourself using this checklist and tools like Surfer SEO. For comprehensive technical SEO, schema markup, and advanced content strategy, working with an SEO professional can accelerate your results.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How often should I update my real estate website SEO?</h3>
+                <p>Review your SEO quarterly and update content regularly. Add new blog posts 2-4 times monthly, update listing pages as inventory changes, and refresh market statistics monthly to stay relevant.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</p>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How long does it take to see SEO results for real estate websites?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most real estate agents see initial improvements in 3-6 months with consistent effort. Technical fixes can show results faster within 2-4 weeks. Building domain authority through content and backlinks typically takes 6-12 months."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the most important SEO factor for realtors?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Local SEO is crucial for real estate agents. Google Business Profile optimization, local citations, and location-based content typically drive the most qualified leads for realtors."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to hire an SEO expert for my real estate website?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can handle basic SEO yourself using this checklist and tools like Surfer SEO. For comprehensive technical SEO, schema markup, and advanced content strategy, working with an SEO professional can accelerate your results."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should I update my real estate website SEO?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Review your SEO quarterly and update content regularly. Add new blog posts 2-4 times monthly, update listing pages as inventory changes, and refresh market statistics monthly to stay relevant."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <script>
+        const totalItems = 25;
+        
+        function toggleCategory(id) {
+            const cat = document.getElementById('cat-' + id);
+            cat.classList.toggle('collapsed');
+        }
+        
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            const percent = Math.round((checked / totalItems) * 100);
+            
+            document.getElementById('progress-text').textContent = percent + '%';
+            document.getElementById('progress-fill').style.width = percent + '%';
+            
+            localStorage.setItem('seo-checklist', JSON.stringify(
+                Array.from(checkboxes).map(cb => cb.checked)
+            ));
+        }
+        
+        // Load saved state
+        window.addEventListener('DOMContentLoaded', () => {
+            const saved = localStorage.getItem('seo-checklist');
+            if (saved) {
+                const states = JSON.parse(saved);
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach((cb, i) => {
+                    if (states[i]) cb.checked = true;
+                });
+                updateProgress();
+            }
+        });
+    </script>
+</body>
+</html>

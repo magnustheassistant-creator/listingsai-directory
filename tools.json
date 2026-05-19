@@ -77,7 +77,7 @@
     "subcategory": "Sales Funnels",
     "description": "Build complete real estate sales funnels \u2014 lead capture, property showcases, consultation booking, and automated follow-up.",
     "price": "From $147/mo",
-    "affiliate_url": "https://clickfunnels.com",
+    "affiliate_url": "https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380",
     "affiliate_commission": "40%",
     "rating": 4.6,
     "website": "https://clickfunnels.com",
@@ -521,24 +521,6 @@
     ]
   },
   {
-    "name": "Klaviyo",
-    "category": "email",
-    "subcategory": "Email Marketing",
-    "description": "AI-powered email marketing platform. Excellent for real estate newsletters and automated drip campaigns.",
-    "price": "Free up to 250 contacts",
-    "affiliate_url": "https://klaviyo.com",
-    "affiliate_commission": "30%",
-    "rating": 4.7,
-    "website": "https://klaviyo.com",
-    "featured": true,
-    "for_realtors": [
-      "Email newsletters",
-      "Drip campaigns",
-      "Lead nurture",
-      "Automated follow-up"
-    ]
-  },
-  {
     "name": "Loom",
     "category": "video",
     "subcategory": "Async Video",
@@ -941,5 +923,789 @@
       "Nurture sequences"
     ],
     "image": ""
+  },
+  {
+    "name": "Lead Magnet Generator",
+    "category": "lead-generation",
+    "subcategory": "Lead Magnets",
+    "description": "Generate powerful lead magnets for real estate: checklists, cheat sheets, market reports, and more.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/lead-magnet-generator.html",
+    "featured": true,
+    "for_realtors": [
+      "Lead generation",
+      "List building",
+      "Content marketing"
+    ]
+  },
+  {
+    "name": "Open House Sign-in Generator",
+    "category": "lead-generation",
+    "subcategory": "Open House",
+    "description": "Create professional open house sign-in sheets with lead capture fields. Print-ready templates.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://www.canva.com",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/open-house-signin-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "Open house",
+      "Lead capture",
+      "Follow-up"
+    ]
+  },
+  {
+    "name": "Buyer Persona Generator",
+    "category": "lead-generation",
+    "subcategory": "Strategy",
+    "description": "Build detailed buyer personas for real estate. Know your ideal client's motivation, fears, and timeline.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.7,
+    "website": "https://listingsai.directory/tools/buyer-persona-generator.html",
+    "featured": true,
+    "for_realtors": [
+      "Lead targeting",
+      "Marketing strategy",
+      "CRM"
+    ]
+  },
+  {
+    "name": "Lead Nurture Sequence Planner",
+    "category": "email",
+    "subcategory": "Nurture",
+    "description": "Plan effective email nurture sequences for real estate leads. 5-7 email sequences that convert.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://manychat.com",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/lead-nurture-sequence-planner.html",
+    "featured": true,
+    "for_realtors": [
+      "Email marketing",
+      "Lead nurture",
+      "Automation"
+    ]
+  },
+  {
+    "name": "Cold Calling Script Generator",
+    "category": "lead-generation",
+    "subcategory": "Prospecting",
+    "description": "Generate professional cold calling scripts for real estate. Scripts that get appointments.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/cold-calling-script-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "Cold calling",
+      "Prospecting",
+      "FSBOs"
+    ]
+  },
+  {
+    "name": "Real Estate Landing Page Ideas",
+    "category": "marketing",
+    "subcategory": "Landing Pages",
+    "description": "Get landing page ideas and inspiration for real estate. High-converting page concepts.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380",
+    "rating": 4.4,
+    "website": "https://listingsai.directory/tools/real-estate-landing-page-ideas.html",
+    "featured": false,
+    "for_realtors": [
+      "Landing pages",
+      "Paid ads",
+      "Lead capture"
+    ]
+  },
+  {
+    "name": "FSBO Cold Email Generator",
+    "category": "email",
+    "subcategory": "Cold Email",
+    "description": "Generate professional cold emails for FSBO (For Sale By Owner) prospects.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/fsbo-cold-email-generator.html",
+    "featured": true,
+    "for_realtors": [
+      "FSBO",
+      "Cold email",
+      "Prospecting"
+    ]
+  },
+  {
+    "name": "Expired Listing Generator",
+    "category": "email",
+    "subcategory": "Re-engagement",
+    "description": "Generate re-engagement emails for expired listing owners. Win more listings.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/expired-listing-generator.html",
+    "featured": true,
+    "for_realtors": [
+      "Expired listings",
+      "Listing conversion",
+      "Cold email"
+    ]
+  },
+  {
+    "name": "Sphere of Influence Tracker",
+    "category": "crm",
+    "subcategory": "SOI",
+    "description": "Track your sphere of influence contacts and generate referral requests.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://manychat.com",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/sphere-of-influence-tracker.html",
+    "featured": false,
+    "for_realtors": [
+      "Sphere of influence",
+      "Referrals",
+      "CRM"
+    ]
+  },
+  {
+    "name": "Cold Email Sequence Generator",
+    "category": "email",
+    "subcategory": "Sequences",
+    "description": "Generate multi-step cold email sequences for real estate prospecting.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.7,
+    "website": "https://listingsai.directory/tools/cold-email-sequence-generator.html",
+    "featured": true,
+    "for_realtors": [
+      "Cold email",
+      "Sequences",
+      "Prospecting"
+    ]
+  },
+  {
+    "name": "Weekly Review Email Generator",
+    "category": "email",
+    "subcategory": "Client Update",
+    "description": "Generate weekly review and update emails for real estate clients.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://manychat.com",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/weekly-review-email-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "Client communication",
+      "Weekly updates",
+      "Nurture"
+    ]
+  },
+  {
+    "name": "Referral Request Email Generator",
+    "category": "email",
+    "subcategory": "Referrals",
+    "description": "Generate professional referral request emails that get results.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://manychat.com",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/referral-request-email-generator.html",
+    "featured": true,
+    "for_realtors": [
+      "Referrals",
+      "Client relationships",
+      "Email"
+    ]
+  },
+  {
+    "name": "Milestone Anniversary Tracker",
+    "category": "crm",
+    "subcategory": "Client Tracking",
+    "description": "Track client milestones and anniversaries for personalized outreach.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://manychat.com",
+    "rating": 4.4,
+    "website": "https://listingsai.directory/tools/milestone-anniversary-tracker.html",
+    "featured": false,
+    "for_realtors": [
+      "Client milestones",
+      "Referrals",
+      "CRM"
+    ]
+  },
+  {
+    "name": "Objection Handling Builder",
+    "category": "sales",
+    "subcategory": "Scripts",
+    "description": "Build responses to common real estate objections. Never be caught off guard.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.7,
+    "website": "https://listingsai.directory/tools/objection-handling-builder.html",
+    "featured": true,
+    "for_realtors": [
+      "Objection handling",
+      "Negotiation",
+      "Sales"
+    ]
+  },
+  {
+    "name": "Real Estate Newsletter Generator",
+    "category": "email",
+    "subcategory": "Newsletter",
+    "description": "Generate monthly newsletter content for real estate agents.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://manychat.com",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/real-estate-newsletter-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "Newsletters",
+      "Content marketing",
+      "Email"
+    ]
+  },
+  {
+    "name": "CRM Segment Generator",
+    "category": "crm",
+    "subcategory": "Segmentation",
+    "description": "Generate CRM contact segmentation strategies for real estate.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://manychat.com",
+    "rating": 4.4,
+    "website": "https://listingsai.directory/tools/crm-segment-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "CRM",
+      "Segmentation",
+      "Organization"
+    ]
+  },
+  {
+    "name": "Transaction Follow-up Sequence",
+    "category": "email",
+    "subcategory": "Transaction",
+    "description": "Plan the complete transaction follow-up timeline.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://manychat.com",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/transaction-followup-sequence.html",
+    "featured": false,
+    "for_realtors": [
+      "Transactions",
+      "Follow-up",
+      "Client management"
+    ]
+  },
+  {
+    "name": "Agent Bio Generator",
+    "category": "marketing",
+    "subcategory": "Branding",
+    "description": "Generate professional agent bio pages and descriptions.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/agent-bio-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "Agent branding",
+      "Bio",
+      "Profile"
+    ]
+  },
+  {
+    "name": "Investor Reply Generator",
+    "category": "email",
+    "subcategory": "Investors",
+    "description": "Generate professional responses to real estate investor inquiries.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/investor-reply-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "Investors",
+      "Wholesaling",
+      "Investment properties"
+    ]
+  },
+  {
+    "name": "Real Estate Goal Tracker",
+    "category": "productivity",
+    "subcategory": "Goals",
+    "description": "Track and manage your real estate business goals.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://notion.so",
+    "rating": 4.4,
+    "website": "https://listingsai.directory/tools/real-estate-goal-tracker.html",
+    "featured": false,
+    "for_realtors": [
+      "Goals",
+      "Productivity",
+      "Planning"
+    ]
+  },
+  {
+    "name": "Pipeline Review Template",
+    "category": "crm",
+    "subcategory": "Pipeline",
+    "description": "Generate weekly pipeline review templates for real estate agents.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://manychat.com",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/pipeline-review-template.html",
+    "featured": false,
+    "for_realtors": [
+      "Pipeline",
+      "Weekly review",
+      "Productivity"
+    ]
+  },
+  {
+    "name": "New Agent 90-Day Plan",
+    "category": "productivity",
+    "subcategory": "Onboarding",
+    "description": "Generate a complete 90-day action plan for new real estate agents.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.7,
+    "website": "https://listingsai.directory/tools/new-agent-90day-plan.html",
+    "featured": true,
+    "for_realtors": [
+      "New agents",
+      "Onboarding",
+      "Action plans"
+    ]
+  },
+  {
+    "name": "Real Estate Math Calculator",
+    "category": "investment",
+    "subcategory": "Calculators",
+    "description": "Calculate commission, ROI, cap rate, and cash-on-cash return.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/real-estate-math-calculator.html",
+    "featured": false,
+    "for_realtors": [
+      "Investment analysis",
+      "Math",
+      "Calculators"
+    ]
+  },
+  {
+    "name": "Closing Gift Suggestion Generator",
+    "category": "productivity",
+    "subcategory": "Client Gifts",
+    "description": "Generate personalized closing gift ideas for real estate clients.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://affiliate-program.amazon.com",
+    "rating": 4.3,
+    "website": "https://listingsai.directory/tools/closing-gift-suggestion-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "Closing gifts",
+      "Client relationships",
+      "Referrals"
+    ]
+  },
+  {
+    "name": "Content Calendar Generator",
+    "category": "marketing",
+    "subcategory": "Content",
+    "description": "Generate a 30-day content calendar for real estate social media.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/content-calendar-generator.html",
+    "featured": true,
+    "for_realtors": [
+      "Social media",
+      "Content planning",
+      "Marketing"
+    ]
+  },
+  {
+    "name": "TikTok Real Estate Hooks",
+    "category": "social-media",
+    "subcategory": "TikTok",
+    "description": "Generate viral TikTok hook ideas for real estate content.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/tiktok-real-estate-hooks.html",
+    "featured": false,
+    "for_realtors": [
+      "TikTok",
+      "Social media",
+      "Video content"
+    ]
+  },
+  {
+    "name": "YouTube Title Generator",
+    "category": "social-media",
+    "subcategory": "YouTube",
+    "description": "Generate SEO-optimized YouTube title ideas for real estate.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/youtube-title-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "YouTube",
+      "Video SEO",
+      "Content"
+    ]
+  },
+  {
+    "name": "LinkedIn Post Generator",
+    "category": "social-media",
+    "subcategory": "LinkedIn",
+    "description": "Generate professional LinkedIn posts for real estate agents.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/linkedin-post-generator.html",
+    "featured": true,
+    "for_realtors": [
+      "LinkedIn",
+      "Professional networking",
+      "Social media"
+    ]
+  },
+  {
+    "name": "Newsletter Builder",
+    "category": "email",
+    "subcategory": "Newsletter",
+    "description": "Build email newsletter templates for real estate agents.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://manychat.com",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/newsletter-builder.html",
+    "featured": false,
+    "for_realtors": [
+      "Newsletters",
+      "Email marketing",
+      "Content"
+    ]
+  },
+  {
+    "name": "Testimonial Request Generator",
+    "category": "marketing",
+    "subcategory": "Reviews",
+    "description": "Generate templates for asking clients for testimonials and reviews.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/testimonial-request-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "Testimonials",
+      "Reviews",
+      "Social proof"
+    ]
+  },
+  {
+    "name": "Market Update Generator",
+    "category": "marketing",
+    "subcategory": "Market Reports",
+    "description": "Generate monthly real estate market update templates.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/market-update-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "Market updates",
+      "Content marketing",
+      "Client value"
+    ]
+  },
+  {
+    "name": "Blog Topic Generator",
+    "category": "marketing",
+    "subcategory": "Blog",
+    "description": "Generate SEO blog topic ideas for real estate websites.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/blog-topic-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "Blogging",
+      "SEO",
+      "Content marketing"
+    ]
+  },
+  {
+    "name": "Property Announcement Template",
+    "category": "social-media",
+    "subcategory": "Listings",
+    "description": "Generate new listing social media announcements.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/property-announcement-template.html",
+    "featured": false,
+    "for_realtors": [
+      "Social media",
+      "New listings",
+      "Marketing"
+    ]
+  },
+  {
+    "name": "Real Estate FAQ Builder",
+    "category": "marketing",
+    "subcategory": "FAQ",
+    "description": "Build FAQ sections for real estate listings with schema markup.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/real-estate-faq-builder.html",
+    "featured": false,
+    "for_realtors": [
+      "Listings",
+      "SEO",
+      "FAQ"
+    ]
+  },
+  {
+    "name": "Real Estate SEO Checklist",
+    "category": "marketing",
+    "subcategory": "SEO",
+    "description": "Comprehensive SEO audit checklist for real estate agent websites.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://surferseo.com",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/real-estate-seo-checklist.html",
+    "featured": true,
+    "for_realtors": [
+      "SEO",
+      "Website",
+      "Digital marketing"
+    ]
+  },
+  {
+    "name": "Transaction Timeline Generator",
+    "category": "productivity",
+    "subcategory": "Transactions",
+    "description": "Generate complete real estate transaction timeline templates.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://notion.so",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/transaction-timeline-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "Transactions",
+      "Organization",
+      "Productivity"
+    ]
+  },
+  {
+    "name": "Listing Presentation Builder",
+    "category": "sales",
+    "subcategory": "Presentations",
+    "description": "Create professional listing presentation templates and frameworks.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://www.canva.com",
+    "rating": 4.7,
+    "website": "https://listingsai.directory/tools/listing-presentation-builder.html",
+    "featured": true,
+    "for_realtors": [
+      "Listing presentations",
+      "Sales",
+      "Canva"
+    ]
+  },
+  {
+    "name": "Agent Daily Routine Planner",
+    "category": "productivity",
+    "subcategory": "Routine",
+    "description": "Generate daily routine schedules for real estate agents.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://notion.so",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/agent-daily-routine-planner.html",
+    "featured": false,
+    "for_realtors": [
+      "Productivity",
+      "Daily routine",
+      "Time management"
+    ]
+  },
+  {
+    "name": "Sunday Reset Email Generator",
+    "category": "email",
+    "subcategory": "Weekly",
+    "description": "Generate Sunday reset emails for real estate agents to send to clients.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://manychat.com",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/sunday-reset-email-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "Sunday emails",
+      "Weekly touchpoints",
+      "Client nurture"
+    ]
+  },
+  {
+    "name": "Virtual Staging Prompt Generator",
+    "category": "listings",
+    "subcategory": "Virtual Staging",
+    "description": "Generate AI prompts for virtual staging real estate photos.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://pictory.ai",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/virtual-staging-prompt-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "Virtual staging",
+      "Listings",
+      "AI tools"
+    ]
+  },
+  {
+    "name": "CMA Report Generator",
+    "category": "listings",
+    "subcategory": "CMA",
+    "description": "Generate comparative market analysis reports for listings.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.7,
+    "website": "https://listingsai.directory/tools/cma-report-generator.html",
+    "featured": true,
+    "for_realtors": [
+      "CMA",
+      "Listings",
+      "Market analysis"
+    ]
+  },
+  {
+    "name": "Property Video Script Generator",
+    "category": "listings",
+    "subcategory": "Video",
+    "description": "Generate video scripts for real estate property tours.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/property-video-script-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "Video",
+      "Listings",
+      "Tours"
+    ]
+  },
+  {
+    "name": "Instagram Caption Generator",
+    "category": "social-media",
+    "subcategory": "Instagram",
+    "description": "Generate engaging Instagram captions for real estate.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/instagram-caption-generator.html",
+    "featured": true,
+    "for_realtors": [
+      "Instagram",
+      "Social media",
+      "Content"
+    ]
+  },
+  {
+    "name": "Real Estate Ad Copy Generator",
+    "category": "marketing",
+    "subcategory": "Ads",
+    "description": "Generate Facebook and Google ad copy for real estate.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/real-estate-ad-copy-generator.html",
+    "featured": false,
+    "for_realtors": [
+      "Facebook ads",
+      "Google ads",
+      "Paid marketing"
+    ]
+  },
+  {
+    "name": "Neighborhood Description Writer",
+    "category": "listings",
+    "subcategory": "Descriptions",
+    "description": "Write compelling neighborhood descriptions for listings.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/neighborhood-description-writer.html",
+    "featured": false,
+    "for_realtors": [
+      "Listings",
+      "Neighborhoods",
+      "Descriptions"
+    ]
+  },
+  {
+    "name": "Listing Bullet Point Optimizer",
+    "category": "listings",
+    "subcategory": "SEO",
+    "description": "Optimize listing bullet points for maximum buyer engagement.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/listing-bullet-point-optimizer.html",
+    "featured": false,
+    "for_realtors": [
+      "Listings",
+      "SEO",
+      "Property features"
+    ]
+  },
+  {
+    "name": "Open House Follow-up Email",
+    "category": "email",
+    "subcategory": "Follow-up",
+    "description": "Generate professional open house follow-up email sequences.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://manychat.com",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/open-house-followup-email.html",
+    "featured": true,
+    "for_realtors": [
+      "Open house",
+      "Follow-up",
+      "Lead nurture"
+    ]
+  },
+  {
+    "name": "Property Feature Highlighter",
+    "category": "listings",
+    "subcategory": "Luxury",
+    "description": "Generate luxury property feature descriptions that sell.",
+    "price": "Free / $9 premium",
+    "affiliate_url": "https://jasper.ai",
+    "rating": 4.5,
+    "website": "https://listingsai.directory/tools/property-feature-highlighter.html",
+    "featured": false,
+    "for_realtors": [
+      "Luxury listings",
+      "Descriptions",
+      "Features"
+    ]
+  },
+  {
+    "name": "Lead Qualification Calculator",
+    "category": "lead-generation",
+    "subcategory": "Lead Scoring",
+    "description": "Calculate and score real estate leads by budget, timeline, financing, and investment experience. Interactive quiz with personalization.",
+    "price": "Free / $14 premium",
+    "affiliate_url": "https://manychat.com",
+    "rating": 4.6,
+    "website": "https://listingsai.directory/tools/lead-qualification-calculator.html",
+    "featured": true,
+    "for_realtors": [
+      "Lead qualification",
+      "Lead scoring",
+      "CRM"
+    ]
   }
 ]

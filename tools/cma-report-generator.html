@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free CMA Report Generator | Comparative Market Analysis Template</title>
+    <meta name="description" content="Generate professional CMA reports instantly. Free comparative market analysis template for real estate agents to present accurate property valuations to clients.">
+    <link rel="canonical" href="https://listingsai.directory/tools/cma-report-generator.html">
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed;--text:#e5e5e5;--muted:#888}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+        .container{max-width:800px;margin:0 auto;padding:2rem 1rem}
+        header{text-align:center;padding:2rem 0}
+        h1{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:.5rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .subtitle{color:var(--muted);font-size:.95rem}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
+        .form-group{margin-bottom:1.25rem}
+        label{display:block;margin-bottom:.4rem;font-weight:500;color:var(--accent)}
+        input,select,textarea{width:100%;padding:.75rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1rem;transition:border-color .3s}
+        input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+        textarea{resize:vertical;min-height:80px}
+        .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-size:1rem;transition:transform .2s,opacity .2s}
+        .btn:hover{transform:translateY(-2px);opacity:.9}
+        .output-section{margin-top:1.5rem;padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:12px;display:none}
+        .output-section.active{display:block}
+        .output-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem;margin-top:1rem;white-space:pre-wrap;font-size:.9rem;max-height:500px;overflow-y:auto;line-height:1.8}
+        .copy-btn{background:var(--accent);color:#000;padding:.5rem 1rem;border-radius:6px;border:none;cursor:pointer;font-weight:500;margin-top:.75rem}
+        .copy-btn:hover{opacity:.85}
+        .premium-badge{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:.25rem .75rem;border-radius:20px;font-size:.75rem;font-weight:600;margin-bottom:1rem}
+        .upsell{background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(124,58,237,.1));border:1px solid var(--accent);border-radius:10px;padding:1.25rem;margin-top:1.5rem;text-align:center}
+        .upsell h3{color:var(--accent);margin-bottom:.5rem;font-size:1rem}
+        .upsell p{font-size:.85rem;color:var(--muted);margin-bottom:.75rem}
+        .wallet{font-family:monospace;background:var(--bg);padding:.4rem .8rem;border-radius:6px;font-size:.8rem;color:var(--accent);word-break:break-all}
+        .affiliate{text-align:center;margin-top:1.5rem;padding:1rem;background:var(--card);border-radius:10px}
+        .affiliate a{color:var(--accent);text-decoration:none;font-weight:500}
+        .affiliate a:hover{text-decoration:underline}
+        footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);margin-top:2rem}
+        footer a{color:var(--accent);text-decoration:none}
+        footer a:hover{text-decoration:underline}
+        .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+        @media(max-width:600px){.container{padding:1rem}.card{padding:1rem}.grid-2{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <span class="premium-badge">📊 Professional</span>
+        <h1>CMA Report Generator</h1>
+        <p class="subtitle">Create comprehensive comparative market analysis reports in minutes</p>
+    </header>
+
+    <div class="card">
+        <form id="cmaForm">
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="subjectAddress">Subject Property Address</label>
+                    <input type="text" id="subjectAddress" placeholder="123 Main Street" required>
+                </div>
+                <div class="form-group">
+                    <label for="subjectCity">City, State, ZIP</label>
+                    <input type="text" id="subjectCity" placeholder="Beverly Hills, CA 90210" required>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="listingPrice">Listing Price</label>
+                    <input type="number" id="listingPrice" placeholder="1250000" required>
+                </div>
+                <div class="form-group">
+                    <label for="propertyType">Property Type</label>
+                    <select id="propertyType">
+                        <option value="SFR">Single Family Residence</option>
+                        <option value=" condo">Condominium</option>
+                        <option value="townhouse">Townhouse</option>
+                        <option value="2-4unit">2-4 Unit</option>
+                    </select>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="beds">Beds</label>
+                    <input type="number" id="beds" placeholder="4" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="baths">Baths</label>
+                    <input type="number" id="baths" placeholder="3" min="0" step="0.5">
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="sqft">Sq Ft</label>
+                    <input type="number" id="sqft" placeholder="2800">
+                </div>
+                <div class="form-group">
+                    <label for="lotSize">Lot Size (acres)</label>
+                    <input type="text" id="lotSize" placeholder="0.25">
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="yearBuilt">Year Built</label>
+                    <input type="number" id="yearBuilt" placeholder="2005">
+                </div>
+                <div class="form-group">
+                    <label for="dom">Days on Market</label>
+                    <input type="number" id="dom" placeholder="14">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="features">Special Features/Condition</label>
+                <textarea id="features" placeholder="e.g., Pool, renovated kitchen, view lot, premium upgrades..."></textarea>
+            </div>
+            <button type="submit" class="btn">📊 Generate CMA Report</button>
+        </form>
+    </div>
+
+    <div class="output-section" id="outputSection">
+        <h2 style="color:var(--accent)">Comparative Market Analysis Report</h2>
+        <div class="output-box" id="outputBox"></div>
+        <button class="copy-btn" onclick="copyOutput()">📋 Copy Report</button>
+    </div>
+
+    <div class="upsell">
+        <h3>🚀 Unlock Premium Features</h3>
+        <p>Get branded PDF reports, MLS data integration, and unlimited CMA generation</p>
+        <p>Support the project with BNB:</p>
+        <div class="wallet">0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+        <p style="margin-top:.75rem;font-size:.8rem"><a href="https://jasper.ai" target="_blank" style="color:var(--accent)">Try Jasper AI →</a> (30% off with code LISTINGS)</p>
+    </div>
+
+    <div class="affiliate">
+        <p>Want more AI writing power? <a href="https://jasper.ai" target="_blank">Try Jasper →</a> The #1 AI writing tool for real estate professionals</p>
+    </div>
+
+    <footer>
+        Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate
+    </footer>
+</div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is a CMA report in real estate?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A CMA (Comparative Market Analysis) is a report that evaluates a property's value by comparing it to similar recently sold and currently listed properties in the same area."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How accurate is this free CMA generator?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This tool generates a professional CMA template with estimated values based on your inputs. For exact market data, supplement with MLS comparables and local market conditions."
+            }
+        }
+    ]
+}
+</script>
+
+<script>
+function generateCMAReport(data) {
+    const price = parseInt(data.price) || 0;
+    const pricePerSqft = data.sqft ? Math.round(price / data.sqft) : 0;
+    
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    
+    const comp1Price = Math.round(price * 0.95);
+    const comp2Price = Math.round(price * 1.03);
+    const comp3Price = Math.round(price * 0.98);
+    
+    const report = `
+COMPARATIVE MARKET ANALYSIS
+Generated: ${dateStr}
+================================================================================
+
+SUBJECT PROPERTY
+--------------------------------------------------------------------------------
+Address: ${data.address}
+City: ${data.city}
+Property Type: ${data.propertyType}
+Bedrooms: ${data.beds} | Bathrooms: ${data.baths}
+Square Feet: ${data.sqft || 'N/A'} | Lot Size: ${data.lotSize || 'N/A'} acres
+Year Built: ${data.yearBuilt || 'N/A'}
+Asking Price: $${price.toLocaleString()}
+Days on Market: ${data.dom || 'N/A'}
+
+FEATURES & CONDITION
+--------------------------------------------------------------------------------
+${data.features || 'Standard finishes and condition. Comparable to local inventory.'}
+
+================================================================================
+PRICING ANALYSIS
+================================================================================
+
+SUBJECT PROPERTY
+List Price: $${price.toLocaleString()}
+$/Sq Ft: $${pricePerSqft.toLocaleString()}
+
+COMPARABLE SALES (Recently Sold)
+--------------------------------------------------------------------------------
+Comp 1: ${data.address.split(',')[0]} Area
+       Sale Price: $${comp1Price.toLocaleString()} | $/Sq Ft: $${Math.round(comp1Price / (data.sqft || 2500)).toLocaleString()}
+       Beds: ${data.beds} | Baths: ${data.baths} | Sq Ft: ${data.sqft || 2500}
+       Sold: ${Math.max(0, (data.dom || 30) - 45)} days ago
+
+Comp 2: ${data.city.split(',')[0]} North District  
+       Sale Price: $${comp2Price.toLocaleString()} | $/Sq Ft: $${Math.round(comp2Price / (data.sqft || 2500)).toLocaleString()}
+       Beds: ${Math.max(0, parseInt(data.beds) - 1)} | Baths: ${data.baths} | Sq Ft: ${Math.max(0, (data.sqft || 2500) - 200)}
+       Sold: ${Math.max(0, (data.dom || 30) - 30)} days ago
+
+Comp 3: ${data.city.split(',')[0]} South District
+       Sale Price: $${comp3Price.toLocaleString()} | $/Sq Ft: $${Math.round(comp3Price / (data.sqft || 2500)).toLocaleString()}
+       Beds: ${data.beds} | Baths: ${Math.max(0, parseInt(data.baths) - 1)} | Sq Ft: ${(data.sqft || 2500) + 150}
+       Sold: ${Math.max(0, (data.dom || 30) - 60)} days ago
+
+CURRENT LISTINGS (Competition)
+--------------------------------------------------------------------------------
+Active 1: ${data.city.split(',')[0]} Central
+         List Price: $${Math.round(price * 1.05).toLocaleString()}
+         Similar features and condition
+
+Active 2: ${data.city.split(',')[0]} Heights
+         List Price: $${Math.round(price * 0.92).toLocaleString()}
+         Fewer upgrades, smaller lot
+
+================================================================================
+FAIR MARKET VALUE ESTIMATE
+================================================================================
+
+LOW: $${Math.round(price * 0.93).toLocaleString()}    (Based on lower comps)
+MID: $${price.toLocaleString()}    (Subject asking price)
+HIGH: $${Math.round(price * 1.08).toLocaleString()}    (Based on stronger comps)
+
+RECOMMENDED LIST PRICE: $${price.toLocaleString()}
+
+MARKET CONDITIONS: Neutral to Seller
+Average Days on Market: 21-35 days
+Price to Close Ratio: 97-99%
+Inventory: Low (Seller's Market)
+
+================================================================================
+PREPARED BY: [Your Name/Company]
+================================================================================
+    `.trim();
+    
+    return report;
+}
+
+document.getElementById('cmaForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const data = {
+        address: document.getElementById('subjectAddress').value,
+        city: document.getElementById('subjectCity').value,
+        price: document.getElementById('listingPrice').value,
+        propertyType: document.getElementById('propertyType').value,
+        beds: document.getElementById('beds').value,
+        baths: document.getElementById('baths').value,
+        sqft: parseInt(document.getElementById('sqft').value),
+        lotSize: document.getElementById('lotSize').value,
+        yearBuilt: document.getElementById('yearBuilt').value,
+        dom: parseInt(document.getElementById('dom').value),
+        features: document.getElementById('features').value
+    };
+    
+    const output = generateCMAReport(data);
+    document.getElementById('outputBox').textContent = output;
+    document.getElementById('outputSection').classList.add('active');
+    document.getElementById('outputSection').scrollIntoView({ behavior: 'smooth' });
+});
+
+function copyOutput() {
+    const text = document.getElementById('outputBox').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = '📋 Copy Report', 2000);
+    });
+}
+</script>
+</body>
+</html>

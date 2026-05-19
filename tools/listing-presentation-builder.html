@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Listing Presentation Builder | Free Template</title>
+    <meta name="description" content="Create stunning listing presentations for real estate agents. Enter property details and get a professional presentation outline ready for Canva.">
+    <link rel="canonical" href="https://listingsai.directory/tools/listing-presentation-builder.html">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --card: #111;
+            --border: #222;
+            --accent: #00d4ff;
+            --accent2: #7c3aed;
+            --text: #e0e0e0;
+            --text-muted: #888;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+        .affiliate-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+        .form-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .form-group { margin-bottom: 15px; }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--text);
+            font-weight: 500;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .form-group textarea { min-height: 80px; resize: vertical; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .btn {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .btn:hover { opacity: 0.9; }
+        .presentation-output {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            display: none;
+        }
+        .presentation-output.active { display: block; }
+        .slide {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        .slide-number {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .slide h3 { color: var(--accent); margin-bottom: 10px; font-size: 1.2rem; }
+        .slide p, .slide ul { color: var(--text-muted); margin-bottom: 8px; }
+        .slide ul { padding-left: 20px; }
+        .slide ul li { margin-bottom: 5px; }
+        .slide-placeholder {
+            background: rgba(0,212,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .copy-btn {
+            background: var(--accent2);
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        .copy-btn:hover { opacity: 0.8; }
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(124,58,237,0.1));
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-section h3 { color: var(--accent); margin-bottom: 10px; }
+        .cta-section p { color: var(--text-muted); margin-bottom: 15px; }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .premium-upsell {
+            background: var(--card);
+            border: 1px solid var(--accent2);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .premium-upsell h3 { color: var(--accent2); margin-bottom: 10px; }
+        .wallet-address {
+            background: rgba(124,58,237,0.2);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-family: monospace;
+            color: var(--accent2);
+            margin: 15px 0;
+            word-break: break-all;
+        }
+        .faq-section { margin: 40px 0; }
+        .faq-section h2 { color: var(--accent); margin-bottom: 20px; text-align: center; }
+        .faq-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .faq-item h3 { color: var(--text); font-size: 1rem; margin-bottom: 8px; }
+        .faq-item p { color: var(--text-muted); font-size: 0.95rem; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+        }
+        footer a { color: var(--accent); text-decoration: none; }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .form-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Listing Presentation Builder</h1>
+            <p class="subtitle">Create a professional listing presentation in minutes</p>
+            <span class="affiliate-badge">Design with Canva</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="form-section">
+            <h2 style="margin-bottom: 20px; color: var(--accent);">Property Information</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="propertyAddress">Property Address</label>
+                    <input type="text" id="propertyAddress" placeholder="123 Oak Street, Austin, TX 78701">
+                </div>
+                <div class="form-group">
+                    <label for="listingPrice">Listing Price</label>
+                    <input type="text" id="listingPrice" placeholder="$425,000">
+                </div>
+                <div class="form-group">
+                    <label for="beds">Bedrooms</label>
+                    <input type="number" id="beds" placeholder="4">
+                </div>
+                <div class="form-group">
+                    <label for="baths">Bathrooms</label>
+                    <input type="number" id="baths" step="0.5" placeholder="3">
+                </div>
+                <div class="form-group">
+                    <label for="sqft">Square Feet</label>
+                    <input type="number" id="sqft" placeholder="2,450">
+                </div>
+                <div class="form-group">
+                    <label for="yearBuilt">Year Built</label>
+                    <input type="number" id="yearBuilt" placeholder="2018">
+                </div>
+                <div class="form-group">
+                    <label for="lotSize">Lot Size</label>
+                    <input type="text" id="lotSize" placeholder="0.28 acres">
+                </div>
+                <div class="form-group">
+                    <label for="agentName">Your Name</label>
+                    <input type="text" id="agentName" placeholder="Jane Smith">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="highlights">Key Property Highlights (one per line)</label>
+                <textarea id="highlights" placeholder="Completely renovated kitchen&#10;Private backyard oasis&#10;Walk to downtown&#10;Top-rated schools"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="marketData">Market Analysis Notes</label>
+                <textarea id="marketData" placeholder="Days on market: 14&#10;Price per sqft: $173&#10;Similar homes sold: 8 in last 90 days"></textarea>
+            </div>
+            <button class="btn" onclick="buildPresentation()">Build Presentation</button>
+        </div>
+
+        <div class="presentation-output" id="presentationOutput">
+            <h2 style="margin-bottom: 20px; color: var(--accent); text-align: center;">Your Listing Presentation</h2>
+            <div id="slidesContainer"></div>
+            <button class="copy-btn" onclick="copyAllSlides()" style="width: 100%; margin-top: 15px;">Copy All Slides Text</button>
+        </div>
+
+        <div class="cta-section">
+            <h3>Design Your Presentation in Canva</h3>
+            <p>Take this outline to Canva and create a stunning visual presentation. Use their real estate templates for professional results.</p>
+            <a href="https://www.canva.com" target="_blank" class="cta-btn">Open Canva</a>
+        </div>
+
+        <div class="premium-upsell">
+            <h3>Unlock Premium Presentation Templates</h3>
+            <p>Get access to 50+ pre-designed listing presentation templates with custom animations and branding.</p>
+            <div class="wallet-address">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Send BNB for lifetime premium access</p>
+        </div>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What should be included in a listing presentation?</h3>
+                <p>A strong listing presentation includes: your introduction and value proposition, property details and highlights, market analysis and pricing strategy, marketing plan, comparable sold data, your experience and testimonials, and next steps.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I price a property competitively?</h3>
+                <p>Use CMA (Comparative Market Analysis) looking at recently sold similar properties, current active listings, and expired listings. Consider price per square foot, days on market trends, and the property's specific features and condition.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What's the best way to present market data?</h3>
+                <p>Use visuals like charts and graphs in your presentation. Show 6-month trends, absorption rate, and compare your market to regional trends. Data-backed pricing recommendations build trust with sellers.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How many slides should a listing presentation have?</h3>
+                <p>Keep it focused with 10-15 slides. Cover the essentials without overwhelming clients. Leave detailed handouts for take-home material. Respect their time while demonstrating your professionalism.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</p>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What should be included in a listing presentation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A strong listing presentation includes: your introduction and value proposition, property details and highlights, market analysis and pricing strategy, marketing plan, comparable sold data, your experience and testimonials, and next steps."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I price a property competitively?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use CMA (Comparative Market Analysis) looking at recently sold similar properties, current active listings, and expired listings. Consider price per square foot, days on market trends, and the property's specific features and condition."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the best way to present market data?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use visuals like charts and graphs in your presentation. Show 6-month trends, absorption rate, and compare your market to regional trends. Data-backed pricing recommendations build trust with sellers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many slides should a listing presentation have?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Keep it focused with 10-15 slides. Cover the essentials without overwhelming clients. Leave detailed handouts for take-home material. Respect their time while demonstrating your professionalism."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <script>
+        let allSlidesText = '';
+
+        function buildPresentation() {
+            const address = document.getElementById('propertyAddress').value || 'Property Address';
+            const price = document.getElementById('listingPrice').value || 'TBD';
+            const beds = document.getElementById('beds').value || '—';
+            const baths = document.getElementById('baths').value || '—';
+            const sqft = document.getElementById('sqft').value || '—';
+            const year = document.getElementById('yearBuilt').value || '—';
+            const lot = document.getElementById('lotSize').value || '—';
+            const agent = document.getElementById('agentName').value || 'Your Agent';
+            const highlights = document.getElementById('highlights').value.split('\n').filter(h => h.trim());
+            const marketData = document.getElementById('marketData').value;
+
+            const slides = [
+                {
+                    title: 'Welcome & Introduction',
+                    content: `Hi, I'm ${agent}. Thank you for considering me to represent you in selling your property. I'm committed to providing you with exceptional service and achieving the best possible outcome.`,
+                    note: 'Add your photo and headshot here'
+                },
+                {
+                    title: 'The Property',
+                    content: `${address}`,
+                    details: [
+                        `Price: ${price}`,
+                        `${beds} Bedrooms | ${baths} Bathrooms`,
+                        `${sqft.toLocaleString()} sq ft`,
+                        `Built: ${year} | Lot: ${lot}`
+                    ],
+                    note: 'Insert hero property photo here'
+                },
+                {
+                    title: 'Property Highlights',
+                    content: highlights.length ? highlights.join('\n') : 'Feature 1\nFeature 2\nFeature 3',
+                    note: 'Add photos showcasing each highlight'
+                },
+                {
+                    title: 'Market Analysis',
+                    content: marketData || 'Comparable properties analysis\nPrice per square foot trends\nDays on market comparison',
+                    note: 'Insert CMA charts and graphs'
+                },
+                {
+                    title: 'Pricing Strategy',
+                    content: `Based on current market conditions and comparable sales, I recommend listing at ${price}. This pricing strategy is designed to maximize your return while ensuring timely sale.`,
+                    note: 'Include pricing justification'
+                },
+                {
+                    title: 'My Marketing Plan',
+                    content: `Professional Photography & Videography\nVirtual Tours & 3D Walkthrough\nMLS Listing with Professional Description\nSocial Media Campaign (Instagram, Facebook, LinkedIn)\nEmail Marketing to Qualified Buyers\nOpen Houses & Private Showings\nNetwork with 500+ Agent Partners`,
+                    note: 'Add marketing timeline'
+                },
+                {
+                    title: 'What Sets Me Apart',
+                    content: `Local Market Expertise\n24/7 Communication\nProven Negotiation Skills\nFull-Service Representation\nClosing Coordination Included`,
+                    note: 'Add your unique selling propositions'
+                },
+                {
+                    title: 'Client Testimonials',
+                    content: `"The entire process was seamless. [Agent] kept us informed every step of the way and sold our home 10% above asking!" - Past Client`,
+                    note: 'Add 2-3 testimonials with photos'
+                },
+                {
+                    title: 'Commission & Services',
+                    content: `Full-Service Listing Includes:\nProfessional Photography\nMarket Analysis & Pricing\nMLS Listing\nMarketing Materials\nOpen Houses\nNegotiation Representation\nClosing Coordination`,
+                    note: 'Clearly state your commission structure'
+                },
+                {
+                    title: 'Next Steps',
+                    content: `1. Review and sign listing agreement
+2. Schedule property photography
+3. Finalize listing description and price
+4. Launch marketing campaign
+5. Weekly progress updates
+6. Review offers and negotiate`,
+                    note: 'Provide clear timeline and expectations'
+                }
+            ];
+
+            allSlidesText = slides.map((slide, i) => 
+                `SLIDE ${i + 1}: ${slide.title}\n${slide.content}\n\nDesign Note: ${slide.note}`
+            ).join('\n\n---\n\n');
+
+            let html = '';
+            slides.forEach((slide, i) => {
+                html += `
+                <div class="slide">
+                    <span class="slide-number">Slide ${i + 1}</span>
+                    <h3>${slide.title}</h3>
+                    <p>${slide.content.replace(/\n/g, '<br>')}</p>
+                    ${slide.details ? `<ul>${slide.details.map(d => `<li>${d}</li>`).join('')}</ul>` : ''}
+                    <div class="slide-placeholder"><strong>Design:</strong> ${slide.note}</div>
+                </div>`;
+            });
+
+            document.getElementById('slidesContainer').innerHTML = html;
+            document.getElementById('presentationOutput').classList.add('active');
+        }
+
+        function copyAllSlides() {
+            navigator.clipboard.writeText(allSlidesText).then(() => {
+                alert('Presentation copied to clipboard! Paste into Canva or your presentation tool.');
+            });
+        }
+    </script>
+</body>
+</html>

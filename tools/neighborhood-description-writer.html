@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Neighborhood Description Writer | Area Profile Generator</title>
+    <meta name="description" content="Write compelling neighborhood descriptions for real estate listings. Generate area profiles highlighting schools, amenities, and lifestyle for property descriptions.">
+    <link rel="canonical" href="https://listingsai.directory/tools/neighborhood-description-writer.html">
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed;--text:#e5e5e5;--muted:#888}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+        .container{max-width:800px;margin:0 auto;padding:2rem 1rem}
+        header{text-align:center;padding:2rem 0}
+        h1{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:.5rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .subtitle{color:var(--muted);font-size:.95rem}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
+        .form-group{margin-bottom:1.25rem}
+        label{display:block;margin-bottom:.4rem;font-weight:500;color:var(--accent)}
+        input,select,textarea{width:100%;padding:.75rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1rem;transition:border-color .3s}
+        input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+        textarea{resize:vertical;min-height:80px}
+        .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-size:1rem;transition:transform .2s,opacity .2s}
+        .btn:hover{transform:translateY(-2px);opacity:.9}
+        .output-section{margin-top:1.5rem;padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:12px;display:none}
+        .output-section.active{display:block}
+        .output-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem;margin-top:1rem;white-space:pre-wrap;font-size:.95rem;max-height:400px;overflow-y:auto}
+        .copy-btn{background:var(--accent);color:#000;padding:.5rem 1rem;border-radius:6px;border:none;cursor:pointer;font-weight:500;margin-top:.75rem}
+        .copy-btn:hover{opacity:.85}
+        .premium-badge{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:.25rem .75rem;border-radius:20px;font-size:.75rem;font-weight:600;margin-bottom:1rem}
+        .upsell{background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(124,58,237,.1));border:1px solid var(--accent);border-radius:10px;padding:1.25rem;margin-top:1.5rem;text-align:center}
+        .upsell h3{color:var(--accent);margin-bottom:.5rem;font-size:1rem}
+        .upsell p{font-size:.85rem;color:var(--muted);margin-bottom:.75rem}
+        .wallet{font-family:monospace;background:var(--bg);padding:.4rem .8rem;border-radius:6px;font-size:.8rem;color:var(--accent);word-break:break-all}
+        .affiliate{text-align:center;margin-top:1.5rem;padding:1rem;background:var(--card);border-radius:10px}
+        .affiliate a{color:var(--accent);text-decoration:none;font-weight:500}
+        .affiliate a:hover{text-decoration:underline}
+        footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);margin-top:2rem}
+        footer a{color:var(--accent);text-decoration:none}
+        footer a:hover{text-decoration:underline}
+        @media(max-width:600px){.container{padding:1rem}.card{padding:1rem}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <span class="premium-badge">🏘️ Location, Location</span>
+        <h1>Neighborhood Description Writer</h1>
+        <p class="subtitle">Create compelling area descriptions that sell the lifestyle</p>
+    </header>
+
+    <div class="card">
+        <form id="neighborhoodForm">
+            <div class="form-group">
+                <label for="areaName">Area/Neighborhood Name</label>
+                <input type="text" id="areaName" placeholder="e.g., Willow Creek Estates, Downtown District" required>
+            </div>
+            <div class="form-group">
+                <label for="areaType">Area Type</label>
+                <select id="areaType">
+                    <option value="suburban">Family Suburban</option>
+                    <option value="urban">Urban/City Center</option>
+                    <option value="coastal">Coastal/Waterfront</option>
+                    <option value="rural">Rural/Countryside</option>
+                    <option value="historic">Historic District</option>
+                    <option value="golf">Golf Course Community</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="schools">School Information</label>
+                <textarea id="schools" placeholder="e.g., Top-rated elementary, acclaimed high school district, near community college..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="amenities">Nearby Amenities</label>
+                <textarea id="amenities" placeholder="e.g., Shopping centers, restaurants, parks, hiking trails, golf courses..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="commute">Commute Info (optional)</label>
+                <input type="text" id="commute" placeholder="e.g., 15 min to downtown, 30 min to airport">
+            </div>
+            <button type="submit" class="btn">✍️ Generate Description</button>
+        </form>
+    </div>
+
+    <div class="output-section" id="outputSection">
+        <h2 style="color:var(--accent)">Neighborhood Description</h2>
+        <div class="output-box" id="outputBox"></div>
+        <button class="copy-btn" onclick="copyOutput()">📋 Copy Description</button>
+    </div>
+
+    <div class="upsell">
+        <h3>🚀 Unlock Premium Features</h3>
+        <p>Get unlimited descriptions, area reports, and school district guides</p>
+        <p>Support the project with BNB:</p>
+        <div class="wallet">0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+        <p style="margin-top:.75rem;font-size:.8rem"><a href="https://jasper.ai" target="_blank" style="color:var(--accent)">Try Jasper AI →</a> (30% off with code LISTINGS)</p>
+    </div>
+
+    <div class="affiliate">
+        <p>Want more AI writing power? <a href="https://jasper.ai" target="_blank">Try Jasper →</a> The #1 AI writing tool for real estate professionals</p>
+    </div>
+
+    <footer>
+        Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate
+    </footer>
+</div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Why are neighborhood descriptions important in real estate?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Buyers don't just purchase homes — they buy into lifestyles. Compelling neighborhood descriptions highlight the community, amenities, and unique character of an area, helping buyers visualize their daily life in the location."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What should a good neighborhood description include?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A strong neighborhood description should include nearby schools, shopping, dining, parks and recreation, commute times, and the overall character or vibe of the community. It should paint a picture of the lifestyle available."
+            }
+        }
+    ]
+}
+</script>
+
+<script>
+const areaTemplates = {
+    'suburban': {
+        intro: "Welcome to {area}, a thriving suburban community that perfectly balances family living with modern conveniences.",
+        highlights: [
+            "Tree-lined streets and well-maintained parks create a picturesque setting for daily life",
+            "Top-rated schools make this especially attractive to families seeking quality education",
+            "Local shops, cafes, and restaurants are just minutes away, adding convenience to charm"
+        ]
+    },
+    'urban': {
+        intro: "Experience the energy of {area}, where urban sophistication meets comfortable living in the heart of the city.",
+        highlights: [
+            "Walkable streets put dining, entertainment, and cultural venues at your doorstep",
+            "Public transit and bike lanes make commuting a breeze without the need for a car",
+            "Trendy boutiques, rooftop bars, and acclaimed restaurants define the local scene"
+        ]
+    },
+    'coastal': {
+        intro: "Discover coastal living at its finest in {area}, where stunning ocean views meet laid-back luxury.",
+        highlights: [
+            "Miles of pristine beaches invite morning walks, sunset strolls, and weekend relaxation",
+            "Fresh seafood restaurants and waterfront entertainment define the local cuisine scene",
+            "Marine activities abound — boating, fishing, kayaking, and sailing are everyday pursuits"
+        ]
+    },
+    'rural': {
+        intro: "Embrace peaceful country living in {area}, where wide-open spaces and natural beauty create a serene retreat.",
+        highlights: [
+            "Rolling hills, farmland, and forests provide stunning views and outdoor recreation",
+            "Fresh, locally-grown produce and farmers markets support a farm-to-table lifestyle",
+            "Tight-knit community events bring neighbors together in the true spirit of hospitality"
+        ]
+    },
+    'historic': {
+        intro: "Step into timeless elegance in {area}, a historic district where architectural beauty meets modern comfort.",
+        highlights: [
+            "Stately homes and tree-shaded streets showcase decades of architectural heritage",
+            "Walking tours reveal fascinating history and preserved landmarks at every corner",
+            "Boutique shopping, antique stores, and cozy cafes line the charming main street"
+        ]
+    },
+    'golf': {
+        intro: "Live the resort lifestyle in {area}, where world-class golf meets sophisticated community living.",
+        highlights: [
+            "Championship golf courses offer pristine fairways and challenging play for all skill levels",
+            "Clubhouse amenities include fine dining, social events, and resort-style pools and fitness",
+            "The manicured landscapes and tranquil settings create an atmosphere of refined relaxation"
+        ]
+    }
+};
+
+function generateNeighborhoodDescription(data) {
+    const template = areaTemplates[data.areaType];
+    const schools = data.schools;
+    const amenities = data.amenities;
+    const commute = data.commute;
+    
+    let description = template.intro.replace('{area}', data.areaName);
+    description += '\n\n';
+    
+    template.highlights.forEach(point => {
+        description += '• ' + point + '\n';
+    });
+    
+    description += '\n';
+    
+    if (schools) {
+        description += '<strong>LOCATED NEAR EXCELLENT SCHOOLS</strong>\n';
+        description += schools + '\n\n';
+    }
+    
+    if (amenities) {
+        description += '<strong>AMENITIES & ATTRACTIONS</strong>\n';
+        const amenityList = amenities.split(',').map(a => a.trim()).filter(a => a);
+        amenityList.forEach(a => {
+            description += '• ' + a + '\n';
+        });
+        description += '\n';
+    }
+    
+    if (commute) {
+        description += '<strong>CONVENIENT COMMUTE</strong>\n';
+        description += commute + ' — perfect for professionals commuting to the city or airport.\n\n';
+    }
+    
+    description = description.replace(/\n\n\n/g, '\n\n');
+    
+    return description.trim();
+}
+
+document.getElementById('neighborhoodForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const data = {
+        areaName: document.getElementById('areaName').value,
+        areaType: document.getElementById('areaType').value,
+        schools: document.getElementById('schools').value,
+        amenities: document.getElementById('amenities').value,
+        commute: document.getElementById('commute').value
+    };
+    
+    const output = generateNeighborhoodDescription(data);
+    document.getElementById('outputBox').innerHTML = output;
+    document.getElementById('outputSection').classList.add('active');
+    document.getElementById('outputSection').scrollIntoView({ behavior: 'smooth' });
+});
+
+function copyOutput() {
+    const text = document.getElementById('outputBox').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = '📋 Copy Description', 2000);
+    });
+}
+</script>
+</body>
+</html>

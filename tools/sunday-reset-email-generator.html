@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Sunday Reset Email Generator | Free Email Template</title>
+    <meta name="description" content="Generate a professional Sunday reset email for your real estate database. Stay top of mind with clients using this free email template generator.">
+    <link rel="canonical" href="https://listingsai.directory/tools/sunday-reset-email-generator.html">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --card: #111;
+            --border: #222;
+            --accent: #00d4ff;
+            --accent2: #7c3aed;
+            --text: #e0e0e0;
+            --text-muted: #888;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        h1 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+        .affiliate-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+        .form-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .form-group { margin-bottom: 15px; }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--text);
+            font-weight: 500;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .form-group textarea { min-height: 80px; resize: vertical; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .btn {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .btn:hover { opacity: 0.9; }
+        .preview-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            display: none;
+        }
+        .preview-section.active { display: block; }
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .preview-header h2 { color: var(--accent); }
+        .copy-btn {
+            background: var(--accent2);
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .email-preview {
+            background: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 30px;
+            font-family: Georgia, serif;
+        }
+        .email-preview .subject {
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .email-preview .greeting {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        .email-preview .content {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .email-preview .content p { margin-bottom: 15px; }
+        .email-preview .signature {
+            font-style: italic;
+            color: #666;
+        }
+        .email-preview .disclaimer {
+            font-size: 0.75rem;
+            color: #999;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(124,58,237,0.1));
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-section h3 { color: var(--accent); margin-bottom: 10px; }
+        .cta-section p { color: var(--text-muted); margin-bottom: 15px; }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .premium-upsell {
+            background: var(--card);
+            border: 1px solid var(--accent2);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .premium-upsell h3 { color: var(--accent2); margin-bottom: 10px; }
+        .wallet-address {
+            background: rgba(124,58,237,0.2);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-family: monospace;
+            color: var(--accent2);
+            margin: 15px 0;
+            word-break: break-all;
+        }
+        .faq-section { margin: 40px 0; }
+        .faq-section h2 { color: var(--accent); margin-bottom: 20px; text-align: center; }
+        .faq-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .faq-item h3 { color: var(--text); font-size: 1rem; margin-bottom: 8px; }
+        .faq-item p { color: var(--text-muted); font-size: 0.95rem; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+        }
+        footer a { color: var(--accent); text-decoration: none; }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .form-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sunday Reset Email Generator</h1>
+            <p class="subtitle">Create engaging Sunday emails to stay top of mind with your database</p>
+            <span class="affiliate-badge">Powered by ManyChat</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="form-section">
+            <h2 style="margin-bottom: 20px; color: var(--accent);">Email Details</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="agentName">Your Name</label>
+                    <input type="text" id="agentName" placeholder="Jane Smith">
+                </div>
+                <div class="form-group">
+                    <label for="market">Market/City</label>
+                    <input type="text" id="market" placeholder="Austin, TX">
+                </div>
+                <div class="form-group">
+                    <label for="license">License Number</label>
+                    <input type="text" id="license" placeholder="TX-123456">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" placeholder="jane@realestate.com">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="(512) 555-0123">
+            </div>
+            <div class="form-group">
+                <label for="templateStyle">Email Style</label>
+                <select id="templateStyle">
+                    <option value="friendly">Friendly & Personal</option>
+                    <option value="professional">Professional & Market Update</option>
+                    <option value="motivational">Motivational & Inspiring</option>
+                    <option value="tips">Helpful Tips Focus</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="customMessage">Custom Message (optional)</label>
+                <textarea id="customMessage" placeholder="Add a personal touch or specific topic you want to mention..."></textarea>
+            </div>
+            <button class="btn" onclick="generateEmail()">Generate Email</button>
+        </div>
+
+        <div class="preview-section" id="previewSection">
+            <div class="preview-header">
+                <h2>Your Sunday Reset Email</h2>
+                <button class="copy-btn" onclick="copyEmail()">Copy Email</button>
+            </div>
+            <div class="email-preview" id="emailPreview"></div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Automate Your Sunday Emails</h3>
+            <p>Use ManyChat to schedule and automate your Sunday emails, plus follow-up sequences, SMS, and more.</p>
+            <a href="https://manychat.com" target="_blank" class="cta-btn">Try ManyChat Free</a>
+        </div>
+
+        <div class="premium-upsell">
+            <h3>Unlock Premium Email Templates</h3>
+            <p>Get access to 100+ proven email templates for every stage of the real estate funnel.</p>
+            <div class="wallet-address">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Send BNB for lifetime premium access</p>
+        </div>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Why are Sunday emails effective for real estate agents?</h3>
+                <p>Sunday is when people are relaxed, planning their week, and thinking about life decisions. A well-crafted Sunday email reaches them in a reflective mindset, making them more receptive to real estate content and more likely to remember you when they need an agent.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How often should I email my database?</h3>
+                <p>Weekly Sunday emails are ideal for staying top of mind without being annoying. Supplement with monthly market updates and triggered emails based on behavior (visited a listing page, filled out a form, etc.).</p>
+            </div>
+            <div class="faq-item">
+                <h3>What should I include in my Sunday reset email?</h3>
+                <p>Keep it valuable and personal: market insights, helpful tips, a brief personal note, and a soft call-to-action. Don't make it all about selling — provide genuine value first. End with an invitation to connect or reach out.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I grow my email list as a real estate agent?</h3>
+                <p>Offer lead magnets like market reports, home buyer guides, or neighborhood guides. Use landing pages, social media, and in-person networking to collect emails. Always get permission and provide clear value for subscribing.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</p>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why are Sunday emails effective for real estate agents?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sunday is when people are relaxed, planning their week, and thinking about life decisions. A well-crafted Sunday email reaches them in a reflective mindset, making them more receptive to real estate content and more likely to remember you when they need an agent."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should I email my database?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Weekly Sunday emails are ideal for staying top of mind without being annoying. Supplement with monthly market updates and triggered emails based on behavior (visited a listing page, filled out a form, etc.)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What should I include in my Sunday reset email?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Keep it valuable and personal: market insights, helpful tips, a brief personal note, and a soft call-to-action. Don't make it all about selling — provide genuine value first. End with an invitation to connect or reach out."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I grow my email list as a real estate agent?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Offer lead magnets like market reports, home buyer guides, or neighborhood guides. Use landing pages, social media, and in-person networking to collect emails. Always get permission and provide clear value for subscribing."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <script>
+        const templates = {
+            friendly: {
+                subject: 'Happy Sunday! 🌅 A Quick Reset for Your Week Ahead',
+                greeting: 'Hey there, friend!',
+                content: (agent, market, custom) => `
+                    <p>I hope you're having a relaxing Sunday! As we head into a new week, I wanted to reach out with a few quick thoughts:</p>
+                    <p><strong>Market Update:</strong> ${market} continues to be a dynamic market. If you or anyone you know is thinking about buying or selling, now is a great time to start the conversation.</p>
+                    <p><strong>Quick Tip:</strong> Before you jump into your week, take 15 minutes to declutter one small area of your home. It does wonders for mental clarity!</p>
+                    ${custom ? `<p><strong>A Note From Me:</strong> ${custom}</p>` : ''}
+                    <p>I'm always here if you need anything related to real estate — whether it's advice, a recommendation, or just a conversation about the market.</p>
+                    <p>Have an amazing week ahead!</p>
+                `
+            },
+            professional: {
+                subject: `Your ${new Date().toLocaleDateString('en-US', { month: 'long' })} Market Briefing`,
+                greeting: 'Hello,',
+                content: (agent, market, custom) => `
+                    <p>As we wrap up another week, here's your quick market update for ${market}:</p>
+                    <p><strong>Key Trends:</strong> Inventory remains tight, and we're seeing steady buyer demand. Properties in good condition continue to sell quickly.</p>
+                    <p><strong>If You're Buying:</strong> Getting pre-approved is crucial. Reach out and I can connect you with trusted lenders.</p>
+                    <p><strong>If You're Selling:</strong> Homes are getting multiple offers. Let's discuss your goals and I'll prepare a personalized strategy.</p>
+                    ${custom ? `<p><strong>Featured:</strong> ${custom}</p>` : ''}
+                    <p>Don't hesitate to reach out with any real estate questions. I'm here to help!</p>
+                `
+            },
+            motivational: {
+                subject: 'This Week\'s Permission Slip 🎁',
+                greeting: 'Hi there,',
+                content: (agent, market, custom) => `
+                    <p>Happy Sunday! Here's your permission slip for the week:</p>
+                    <p><strong>Permission to:</strong></p>
+                    <p>✨ Dream a little bigger about your living situation — whether that's your first home, a bigger space, an empty nest upgrade, or an investment property.</p>
+                    <p>✨ Ask questions you've been putting off. No real estate question is too small.</p>
+                    <p>✨ Take action on something you've been considering. Life's too short to wait on the things that matter.</p>
+                    ${custom ? `<p><strong>My Challenge to You:</strong> ${custom}</p>` : ''}
+                    <p>As your local real estate expert in ${market}, I'm here to make your real estate journey smooth and successful.</p>
+                    <p>Let's connect soon!</p>
+                `
+            },
+            tips: {
+                subject: `5 Things Homeowners in ${new Date().toLocaleDateString('en-US', { month: 'long' })} Should Know`,
+                greeting: 'Hi,',
+                content: (agent, market, custom) => `
+                    <p>Happy Sunday! Here are 5 things that could save you money or make your life easier:</p>
+                    <p><strong>1. Spring Maintenance Check:</strong> Clean gutters, inspect your AC unit, and check for water heater issues before they become problems.</p>
+                    <p><strong>2. Refinance Alert:</strong> With rates still favorable, if you haven't refinanced in the last 2 years, it might be worth a conversation with your lender.</p>
+                    <p><strong>3. Home Value Update:</strong> Your home's value may have changed significantly. I can send you a free comparative market analysis anytime.</p>
+                    <p><strong>4. Energy Efficiency:</strong> Simple fixes like weatherstripping can save hundreds on energy bills.</p>
+                    <p><strong>5. Market Timing:</strong> Spring buying season is heating up. If you're considering selling, let's chat about your timeline.</p>
+                    ${custom ? `<p><strong>Bonus Tip:</strong> ${custom}</p>` : ''}
+                    <p>Questions? Just hit reply — I love hearing from you!</p>
+                `
+            }
+        };
+
+        function generateEmail() {
+            const agentName = document.getElementById('agentName').value || 'Your Agent';
+            const market = document.getElementById('market').value || 'Your Area';
+            const license = document.getElementById('license').value || '';
+            const email = document.getElementById('email').value || '';
+            const phone = document.getElementById('phone').value || '';
+            const style = document.getElementById('templateStyle').value;
+            const custom = document.getElementById('customMessage').value;
+
+            const template = templates[style];
+            const subject = template.subject;
+            const greeting = template.greeting;
+            const content = template.content(agentName, market, custom);
+
+            const fullEmail = `
+                <div class="subject">Subject: ${subject}</div>
+                <div class="greeting">${greeting}</div>
+                <div class="content">
+                    ${content}
+                </div>
+                <div class="signature">
+                    <p>Warm regards,</p>
+                    <p><strong>${agentName}</strong></p>
+                    <p>Real Estate Professional</p>
+                    ${phone ? `<p>📞 ${phone}</p>` : ''}
+                    ${email ? `<p>✉️ ${email}</p>` : ''}
+                </div>
+                <div class="disclaimer">
+                    This email was sent by ${agentName}, a licensed real estate professional${license ? ` (License #${license})` : ''}. 
+                    If you wish to unsubscribe, please reply with "unsubscribe."
+                </div>
+            `;
+
+            document.getElementById('emailPreview').innerHTML = fullEmail;
+            document.getElementById('previewSection').classList.add('active');
+        }
+
+        function copyEmail() {
+            const preview = document.getElementById('emailPreview');
+            const text = preview.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Email copied to clipboard! Paste into your email client.');
+            });
+        }
+    </script>
+</body>
+</html>

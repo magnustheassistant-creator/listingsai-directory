@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI Virtual Staging Prompt Generator | Real Estate Photography Tool</title>
+    <meta name="description" content="Generate professional AI prompts for virtual home staging. Transform empty properties into beautifully furnished spaces with expert prompts for Pictory and other AI tools.">
+    <link rel="canonical" href="https://listingsai.directory/tools/virtual-staging-prompt-generator.html">
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed;--text:#e5e5e5;--muted:#888}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+        .container{max-width:800px;margin:0 auto;padding:2rem 1rem}
+        header{text-align:center;padding:2rem 0}
+        h1{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:.5rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .subtitle{color:var(--muted);font-size:.95rem}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
+        .form-group{margin-bottom:1.25rem}
+        label{display:block;margin-bottom:.4rem;font-weight:500;color:var(--accent)}
+        input,select,textarea{width:100%;padding:.75rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1rem;transition:border-color .3s}
+        input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+        textarea{resize:vertical;min-height:100px}
+        .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-size:1rem;transition:transform .2s,opacity .2s}
+        .btn:hover{transform:translateY(-2px);opacity:.9}
+        .output-section{margin-top:1.5rem;padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:12px;display:none}
+        .output-section.active{display:block}
+        .output-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem;margin-top:1rem;white-space:pre-wrap;font-size:.95rem;max-height:400px;overflow-y:auto}
+        .copy-btn{background:var(--accent);color:#000;padding:.5rem 1rem;border-radius:6px;border:none;cursor:pointer;font-weight:500;margin-top:.75rem}
+        .copy-btn:hover{opacity:.85}
+        .premium-badge{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:.25rem .75rem;border-radius:20px;font-size:.75rem;font-weight:600;margin-bottom:1rem}
+        .upsell{background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(124,58,237,.1));border:1px solid var(--accent);border-radius:10px;padding:1.25rem;margin-top:1.5rem;text-align:center}
+        .upsell h3{color:var(--accent);margin-bottom:.5rem;font-size:1rem}
+        .upsell p{font-size:.85rem;color:var(--muted);margin-bottom:.75rem}
+        .wallet{font-family:monospace;background:var(--bg);padding:.4rem .8rem;border-radius:6px;font-size:.8rem;color:var(--accent);word-break:break-all}
+        .affiliate{text-align:center;margin-top:1.5rem;padding:1rem;background:var(--card);border-radius:10px}
+        .affiliate a{color:var(--accent);text-decoration:none;font-weight:500}
+        .affiliate a:hover{text-decoration:underline}
+        footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);margin-top:2rem}
+        footer a{color:var(--accent);text-decoration:none}
+        footer a:hover{text-decoration:underline}
+        @media(max-width:600px){.container{padding:1rem}.card{padding:1rem}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <span class="premium-badge">🎨 Visual Magic</span>
+        <h1>AI Virtual Staging Prompt Generator</h1>
+        <p class="subtitle">Create stunning AI prompts for beautifully staged property images</p>
+    </header>
+
+    <div class="card">
+        <form id="stagingForm">
+            <div class="form-group">
+                <label for="roomType">Room Type</label>
+                <select id="roomType" required>
+                    <option value="">Select room type...</option>
+                    <option value="living">Living Room</option>
+                    <option value="bedroom">Master Bedroom</option>
+                    <option value="dining">Dining Room</option>
+                    <option value="kitchen">Kitchen</option>
+                    <option value="office">Home Office</option>
+                    <option value="bathroom">Bathroom</option>
+                    <option value="basement">Basement</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="style">Design Style</label>
+                <select id="style">
+                    <option value="modern">Modern & Minimalist</option>
+                    <option value="contemporary">Contemporary</option>
+                    <option value="traditional">Traditional Warm</option>
+                    <option value="scandinavian">Scandinavian</option>
+                    <option value="industrial">Industrial Chic</option>
+                    <option value="coastal">Coastal & Airy</option>
+                    <option value="luxury">Luxury & Sophisticated</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mood">Desired Mood</label>
+                <select id="mood">
+                    <option value="warm">Warm & Inviting</option>
+                    <option value="bright">Bright & Airy</option>
+                    <option value="cozy">Cozy & Intimate</option>
+                    <option value="elegant">Elegant & Refined</option>
+                    <option value="fresh">Fresh & Modern</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="colors">Color Preferences (optional)</label>
+                <input type="text" id="colors" placeholder="e.g., earth tones, blue accents, neutral palette">
+            </div>
+            <button type="submit" class="btn">✨ Generate Staging Prompt</button>
+        </form>
+    </div>
+
+    <div class="output-section" id="outputSection">
+        <h2 style="color:var(--accent)">Your AI Staging Prompt</h2>
+        <div class="output-box" id="outputBox"></div>
+        <button class="copy-btn" onclick="copyOutput()">📋 Copy Prompt</button>
+        <p style="margin-top:1rem;font-size:.85rem;color:var(--muted)">Use this prompt with Pictory, Midjourney, DALL-E, or any AI image generator</p>
+    </div>
+
+    <div class="upsell">
+        <h3>🚀 Unlock Premium Features</h3>
+        <p>Get unlimited prompts, batch generation, and direct Pictory integration</p>
+        <p>Support the project with BNB:</p>
+        <div class="wallet">0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+        <p style="margin-top:.75rem;font-size:.8rem"><a href="https://pictory.ai" target="_blank" style="color:var(--accent)">Try Pictory AI →</a> Video creation for real estate</p>
+    </div>
+
+    <div class="affiliate">
+        <p>Create stunning property videos with <a href="https://pictory.ai" target="_blank">Pictory →</a> AI-powered video creation for real estate</p>
+    </div>
+
+    <footer>
+        Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate
+    </footer>
+</div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do I use the AI virtual staging prompt generator?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Simply select your room type, design style, and mood. The tool generates a detailed AI prompt that you can copy and paste into Pictory, Midjourney, DALL-E, or any AI image generator to create beautifully staged room images."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What AI tools work with these staging prompts?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "These prompts are compatible with Pictory, Midjourney, DALL-E 2/3, Stable Diffusion, and other AI image generators. Each prompt is optimized for realistic interior staging results."
+            }
+        }
+    ]
+}
+</script>
+
+<script>
+const roomPhrases = {
+    'living': ['Open-concept living room', 'Bright and airy living space', 'Sophisticated living area'],
+    'bedroom': ['Serene master bedroom', 'Luxurious primary suite', 'Cozy yet elegant bedroom'],
+    'dining': ['Elegant dining room', 'Sophisticated entertaining space', 'Intimate dining area'],
+    'kitchen': ['Modern chef kitchen', 'Gourmet kitchen space', 'Contemporary kitchen'],
+    'office': ['Productive home office', 'Executive study', 'Modern workspace'],
+    'bathroom': ['Spa-like bathroom', 'Luxurious master bath', 'Modern retreat'],
+    'basement': ['Finished basement space', 'Versatile lower level', 'Cozy entertainment area']
+};
+
+const styleModifiers = {
+    'modern': 'modern minimalist furniture, clean lines, neutral colors, sleek design, natural light',
+    'contemporary': 'contemporary furniture, neutral palette with bold accents, open space, artistic touches',
+    'traditional': 'traditional furniture, warm wood tones, classic details, cozy textiles, timeless elegance',
+    'scandinavian': 'Scandinavian design, light wood furniture, white and gray palette, cozy textiles, functional beauty',
+    'industrial': 'industrial chic, exposed brick, metal accents, vintage furniture, urban loft aesthetic',
+    'coastal': 'coastal design, light and airy, blue and white accents, natural textures, beach-inspired',
+    'luxury': 'luxury furnishings, high-end finishes, designer pieces, rich textures, sophisticated palette'
+};
+
+const moodModifiers = {
+    'warm': 'warm ambient lighting, cozy atmosphere, inviting feel',
+    'bright': 'abundant natural light, fresh and clean, uplifting atmosphere',
+    'cozy': 'intimate lighting, soft textures, comfortable and welcoming',
+    'elegant': 'refined details, sophisticated touches, polished appearance',
+    'fresh': 'clean lines, new furnishings, contemporary feel'
+};
+
+function generateStagingPrompt(room, style, mood, colors) {
+    const roomPhrase = roomPhrases[room][Math.floor(Math.random() * roomPhrases[room].length)];
+    const styleMod = styleModifiers[style];
+    const moodMod = moodModifiers[mood];
+    
+    let prompt = `Professional interior design photograph of ${roomPhrase}, `;
+    prompt += `${styleMod}, `;
+    prompt += `${moodMod}`;
+    
+    if (colors) {
+        prompt += `, color scheme featuring ${colors}`;
+    }
+    
+    prompt += '. High-end real estate photography, photorealistic rendering, 8K quality, interior design magazine style, soft shadows, perfect lighting, empty room converted to furnished space';
+    
+    return prompt;
+}
+
+document.getElementById('stagingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const room = document.getElementById('roomType').value;
+    const style = document.getElementById('style').value;
+    const mood = document.getElementById('mood').value;
+    const colors = document.getElementById('colors').value;
+    
+    const output = generateStagingPrompt(room, style, mood, colors);
+    document.getElementById('outputBox').textContent = output;
+    document.getElementById('outputSection').classList.add('active');
+    document.getElementById('outputSection').scrollIntoView({ behavior: 'smooth' });
+});
+
+function copyOutput() {
+    const text = document.getElementById('outputBox').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = '📋 Copy Prompt', 2000);
+    });
+}
+</script>
+</body>
+</html>

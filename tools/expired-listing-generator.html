@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expired Listing Email Generator | Real Estate Script Templates</title>
+    <meta name="description" content="Generate effective expired listing email templates instantly. Free real estate scripts for reaching out to homeowners whose listings didn't sell.">
+    <link rel="canonical" href="https://listingsai.directory/tools/expired-listing-generator.html">
+    <style>
+        :root { --bg:#0a0a0f; --card:#111; --border:#222; --accent:#00d4ff; --accent2:#7c3aed; --text:#e0e0e0; --muted:#888; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; min-height:100vh; }
+        .container { max-width:800px; margin:0 auto; padding:20px; }
+        header { text-align:center; padding:40px 20px; border-bottom:1px solid var(--border); }
+        h1 { font-size:2rem; background:linear-gradient(135deg,var(--accent),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:10px; }
+        .subtitle { color:var(--muted); margin-bottom:20px; }
+        .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:30px; margin-bottom:20px; }
+        .form-group { margin-bottom:20px; }
+        label { display:block; margin-bottom:8px; font-weight:600; color:var(--accent); }
+        input, select, textarea { width:100%; padding:12px 16px; background:var(--bg); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:1rem; transition:border-color 0.3s; }
+        input:focus, select:focus, textarea:focus { outline:none; border-color:var(--accent); }
+        textarea { min-height:120px; resize:vertical; }
+        .btn { display:inline-flex; align-items:center; gap:8px; padding:14px 28px; background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; border:none; border-radius:8px; font-size:1rem; font-weight:600; cursor:pointer; transition:transform 0.2s, opacity 0.2s; }
+        .btn:hover { transform:translateY(-2px); opacity:0.9; }
+        .btn-full { width:100%; justify-content:center; }
+        .result-section { display:none; margin-top:30px; }
+        .result-section.active { display:block; }
+        .email-output { background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:20px; margin-bottom:20px; }
+        .email-output h4 { color:var(--accent); margin-bottom:10px; font-size:1.1rem; }
+        .email-output p { white-space:pre-wrap; line-height:1.8; }
+        .copy-btn { padding:10px 20px; background:var(--accent2); color:#fff; border:none; border-radius:6px; cursor:pointer; font-weight:600; transition:transform 0.2s; }
+        .copy-btn:hover { transform:translateY(-2px); }
+        .premium-upsell { background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(0,212,255,0.15)); border:2px solid var(--accent2); border-radius:12px; padding:30px; margin-top:30px; text-align:center; }
+        .premium-upsell h3 { color:var(--accent2); margin-bottom:10px; }
+        .premium-upsell p { color:var(--muted); margin-bottom:15px; }
+        .wallet-address { font-family:monospace; background:var(--bg); padding:12px 20px; border-radius:8px; color:var(--accent); border:1px solid var(--border); display:inline-block; word-break:break-all; font-size:0.9rem; }
+        .affiliate-link { display:inline-block; margin-top:20px; padding:12px 24px; background:var(--accent); color:#000; text-decoration:none; border-radius:8px; font-weight:600; transition:transform 0.2s; }
+        .affiliate-link:hover { transform:translateY(-2px); }
+        .variation-tabs { display:flex; gap:10px; margin-bottom:15px; flex-wrap:wrap; }
+        .tab-btn { padding:10px 20px; background:var(--bg); border:1px solid var(--border); color:var(--text); border-radius:6px; cursor:pointer; transition:all 0.2s; }
+        .tab-btn.active { background:var(--accent); color:#000; border-color:var(--accent); }
+        footer { text-align:center; padding:40px 20px; border-top:1px solid var(--border); margin-top:60px; color:var(--muted); }
+        footer a { color:var(--accent); text-decoration:none; }
+        footer a:hover { text-decoration:underline; }
+        @media(max-width:600px) {
+            h1 { font-size:1.5rem; }
+            .card { padding:20px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is an expired listing email generator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "An expired listing email generator creates personalized email templates for reaching out to homeowners whose properties were listed but didn't sell before the listing expired. These leads are often motivated and ready to try a new approach."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why are expired listings valuable leads?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Expired listings are valuable because these homeowners have already demonstrated motivation to sell, they have equity in their home, and they're often frustrated with the previous outcome. They're actively seeking solutions and more receptive to working with a new agent."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What should you say in an expired listing email?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Effective expired listing emails acknowledge their frustration, avoid criticizing the previous agent, focus on what you do differently, offer concrete data or insights, and include a low-pressure call-to-action. The goal is to start a conversation, not close a deal immediately."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Expired Listing Email Generator</h1>
+            <p class="subtitle">Generate personalized email templates for expired listing leads</p>
+        </div>
+    </header>
+    <main class="container">
+        <div class="card">
+            <form id="emailForm">
+                <div class="form-group">
+                    <label for="ownerName">Homeowner's Name</label>
+                    <input type="text" id="ownerName" placeholder="Jane Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="propertyAddress">Property Address</label>
+                    <input type="text" id="propertyAddress" placeholder="456 Oak Ave, City, State" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastPrice">Last Listing Price</label>
+                    <input type="text" id="lastPrice" placeholder="$525,000">
+                </div>
+                <div class="form-group">
+                    <label for="daysOnMarket">Days on Market</label>
+                    <input type="text" id="daysOnMarket" placeholder="90">
+                </div>
+                <div class="form-group">
+                    <label for="agentName">Your Name</label>
+                    <input type="text" id="agentName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailType">Email Template Type</label>
+                    <select id="emailType">
+                        <option value="empathy">Empathy & Understanding</option>
+                        <option value="data">Data-Driven Approach</option>
+                        <option value="differentiator">What Makes Me Different</option>
+                        <option value="offer">Free Home Valuation Offer</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-full">Generate Email Template</button>
+            </form>
+        </div>
+        <div class="result-section" id="resultSection">
+            <div class="card">
+                <div class="variation-tabs">
+                    <button class="tab-btn active" onclick="showVariation(0, this)">Version A</button>
+                    <button class="tab-btn" onclick="showVariation(1, this)">Version B</button>
+                    <button class="tab-btn" onclick="showVariation(2, this)">Version C</button>
+                </div>
+                <div class="email-output">
+                    <h4>Subject: Your home on <span id="subjStreet"></span></h4>
+                    <p id="emailBody"></p>
+                </div>
+                <button class="copy-btn" onclick="copyEmail()">📋 Copy to Clipboard</button>
+            </div>
+            <div class="premium-upsell">
+                <h3>Unlock AI-Powered Email Sequences</h3>
+                <p>Get unlimited email templates, automated follow-up sequences, and CRM integration with Jasper AI.</p>
+                <div class="wallet-address">BNB: 0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+                <br>
+                <a href="https://jasper.ai" target="_blank" class="affiliate-link">Try Jasper AI Free →</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate</p>
+        </div>
+    </footer>
+    <script>
+        const emailTemplates = {
+            empathy: [
+                `Hi [Owner Name],
+
+I know this is a frustrating time. You made the decision to sell your home, invested time and energy into the process, and unfortunately, the listing expired without a successful sale. That's disappointing, and I don't blame you for feeling that way.
+
+I also know that you're probably still wanting to sell. The question is: what's the next step?
+
+Here's what I do differently: I take the time to understand exactly who your home appeals to, then I create a targeted marketing strategy to reach those specific buyers — not just any buyer, but the RIGHT buyer.
+
+I'd love to learn more about your situation and see if there's a way I can help. Would you be open to a brief conversation?
+
+Warm regards,
+[Agent Name]
+[Phone]`,
+                `Dear [Owner Name],
+
+I saw that your listing on [Address] recently expired, and I wanted to reach out personally.
+
+I imagine this experience has been stressful. You've likely dealt with countless showings, interruptions to your daily life, and questions from friends and family. And now, you're back at square one.
+
+That's not where you need to stay. Many homeowners in your situation find that a fresh start — with a different strategy and approach — makes all the difference.
+
+I'm not here to criticize what happened. I'm here to offer a new path forward. Would you be willing to explore what that looks like?
+
+Best,
+[Agent Name]`,
+                `Hi [Owner Name],
+
+I know your listing expired, and I also know that doesn't reflect on you or your home — it often reflects on the strategy, not the property itself.
+
+Homes like yours deserve a fair chance at finding the right buyer. That requires understanding the current market dynamics, pricing correctly from the start, and marketing effectively.
+
+I'd like to offer a completely free consultation to discuss what a successful sale could look like for you. No obligations, no pressure — just an honest conversation about your goals.
+
+Is that something you'd be open to?
+
+Regards,
+[Agent Name]`
+            ],
+            data: [
+                `Hi [Owner Name],
+
+I noticed your home at [Address] was listed at [Price] for [Days] days without selling. I want to share some observations that might help.
+
+The reality of today's market is that [X]% of homes that don't sell in the first 30 days eventually sell for less than their original asking price. This often happens because the initial pricing strategy didn't match market conditions.
+
+I've analyzed your neighborhood and here's what I found:
+• Average days on market: [X] days
+• Sale-to-list price ratio: [X]%
+• Active competitors: [X] homes
+
+These aren't meant to discourage you — they're meant to help you understand what it takes to succeed. I'm confident we can position your home to sell faster and for more.
+
+Let's talk strategy.
+
+Best regards,
+[Agent Name]`,
+                `Dear [Owner Name],
+
+Your listing expired after [Days] days on market. Rather than seeing this as a setback, let's understand what happened so we can create a better outcome.
+
+Market data shows that homes in your price range typically:
+• Sell fastest when priced within 5% of current market value
+• Attract more serious buyers with professional-quality photos and virtual tours
+• Close faster with an experienced agent handling negotiations
+
+I'm happy to provide a no-obligation market analysis comparing your home to what's actually selling now.
+
+Would you take 15 minutes to review this data with me?
+
+Warm regards,
+[Agent Name]`,
+                `Hi [Owner Name],
+
+I work with sellers in your neighborhood regularly, and I noticed your property at [Address] came on and off the market.
+
+The most common reason homes don't sell isn't the home itself — it's timing and positioning. The right buyer needs to see the home at the right time, with the right information.
+
+I've helped [X] sellers in this area this year alone. I'd love to share what's working now and how we can apply it to your situation.
+
+Are you still hoping to sell? If so, let's discuss a path forward.
+
+Best,
+[Agent Name]`
+            ],
+            differentiator: [
+                `Hi [Owner Name],
+
+You've been through the home-selling process once, and it didn't work out. Now you're probably wondering: what makes the next time different?
+
+Here's what I do that others might not:
+
+1. I don't just list — I actively prospect for qualified buyers in my network
+2. I use professional staging consultation to maximize appeal
+3. I implement a 90-day marketing sprint with weekly progress reports
+4. My listings typically sell 15% faster than area average
+
+This isn't magic — it's a proven system that works. Your home deserves a agent who's fully invested in the outcome, not just the listing.
+
+Would you be open to learning more?
+
+[Agent Name]
+[Phone]`,
+                `Dear [Owner Name],
+
+I want to be direct with you: the reason most homes don't sell isn't lack of interest — it's lack of proper execution.
+
+Here's my approach:
+• Pre-listing home prep consultation (what to fix, what to highlight)
+• Professional photography and videography at no cost to you
+• Staging recommendations and coordination
+• Direct marketing to my buyer database before going public
+• Open houses with proven attendance strategies
+• Weekly status updates so you're never in the dark
+
+If you're frustrated with how your last listing went, I understand. But I'd love to show you what a different experience looks like.
+
+Let's chat?
+
+Regards,
+[Agent Name]`,
+                `Hi [Owner Name],
+
+I'm going to be honest with you: if your last agent did what most agents do, they listed your home, waited for the phone to ring, and then told you the market was tough when it didn't sell.
+
+That's not how I work.
+
+I actively market every listing to both online audiences AND my personal network of pre-qualified buyers. I don't just put a sign in the yard and hope. I make things happen.
+
+If you're ready to work with someone who's serious about getting results, I'd love to earn your business.
+
+Are you open to a conversation about your goals?
+
+Best,
+[Agent Name]`
+            ],
+            offer: [
+                `Hi [Owner Name],
+
+I wanted to reach out because I specialize in homes in the [Address] area, and I believe I can help you sell your property.
+
+Before we talk about anything else, I'd like to offer you something valuable: a free, comprehensive home valuation report. This includes:
+• Current market value based on recent sales
+• A breakdown of what buyers are paying in your area
+• Recommendations for maximizing your sale price
+
+This report alone has helped many sellers understand exactly what their home is worth in today's market — no strings attached.
+
+Would you like me to prepare this for you?
+
+[Agent Name]
+[Phone]`,
+                `Dear [Owner Name],
+
+Your home at [Address] deserves another chance at a successful sale. To give you the best information possible, I'd like to offer you a complimentary Comparative Market Analysis (CMA).
+
+This report will show you:
+• What similar homes have sold for in the past 90 days
+• What buyers are currently looking for
+• How to position your home to sell faster
+
+I've prepared this report for several homes in your neighborhood and the feedback has been extremely positive. Sellers find it incredibly helpful for making informed decisions.
+
+Shall I send this over?
+
+Best regards,
+[Agent Name]`,
+                `Hi [Owner Name],
+
+I know you're probably tired of hearing from agents who just want your listing. I'm different.
+
+Here's what I'm offering — completely free, with no obligation: a detailed analysis of your home's current market value, complete with data on recent sales, current competition, and buyer demand in your area.
+
+This isn't a sales pitch. It's real information that will help you make the best decision for your situation — whether you end up working with me or someone else.
+
+Would you like to see what the data shows?
+
+Warmly,
+[Agent Name]`
+            ]
+        };
+
+        let currentVariation = 0;
+
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            generateEmail();
+        });
+
+        function generateEmail() {
+            const ownerName = document.getElementById('ownerName').value || '[Owner Name]';
+            const address = document.getElementById('propertyAddress').value || '[Address]';
+            const price = document.getElementById('lastPrice').value || '[Price]';
+            const days = document.getElementById('daysOnMarket').value || '[Days]';
+            const agentName = document.getElementById('agentName').value || '[Agent Name]';
+            const emailType = document.getElementById('emailType').value;
+
+            const templates = emailTemplates[emailType];
+            currentVariation = 0;
+
+            document.getElementById('subjStreet').textContent = address.split(',')[0];
+            document.getElementById('emailBody').textContent = templates[0]
+                .replace(/\[Owner Name\]/g, ownerName)
+                .replace(/\[Address\]/g, address)
+                .replace(/\[Price\]/g, price)
+                .replace(/\[Days\]/g, days)
+                .replace(/\[Agent Name\]/g, agentName)
+                .replace(/\[Phone\]/g, '(555) 123-4567')
+                .replace(/\[X\]/g, '12');
+
+            document.querySelectorAll('.tab-btn').forEach((btn, i) => btn.classList.toggle('active', i === 0));
+            document.getElementById('resultSection').classList.add('active');
+        }
+
+        function showVariation(index, btn) {
+            const ownerName = document.getElementById('ownerName').value || '[Owner Name]';
+            const address = document.getElementById('propertyAddress').value || '[Address]';
+            const price = document.getElementById('lastPrice').value || '[Price]';
+            const days = document.getElementById('daysOnMarket').value || '[Days]';
+            const agentName = document.getElementById('agentName').value || '[Agent Name]';
+            const emailType = document.getElementById('emailType').value;
+
+            const templates = emailTemplates[emailType];
+            document.getElementById('emailBody').textContent = templates[index]
+                .replace(/\[Owner Name\]/g, ownerName)
+                .replace(/\[Address\]/g, address)
+                .replace(/\[Price\]/g, price)
+                .replace(/\[Days\]/g, days)
+                .replace(/\[Agent Name\]/g, agentName)
+                .replace(/\[Phone\]/g, '(555) 123-4567')
+                .replace(/\[X\]/g, '12');
+
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentVariation = index;
+        }
+
+        function copyEmail() {
+            const subject = document.getElementById('subjStreet').textContent;
+            const body = document.getElementById('emailBody').textContent;
+            navigator.clipboard.writeText(`Subject: Your home on ${subject}\n\n${body}`);
+            document.querySelector('.copy-btn').textContent = '✅ Copied!';
+            setTimeout(() => document.querySelector('.copy-btn').textContent = '📋 Copy to Clipboard', 2000);
+        }
+    </script>
+</body>
+</html>

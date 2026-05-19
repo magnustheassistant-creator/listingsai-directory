@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Real Estate Facebook Ad Copy Generator | High-Converting Ads</title>
+    <meta name="description" content="Generate high-converting Facebook ad copy for real estate. Create compelling ads that generate leads and drive property interest instantly.">
+    <link rel="canonical" href="https://listingsai.directory/tools/real-estate-ad-copy-generator.html">
+    <style>
+        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed;--text:#e5e5e5;--muted:#888}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+        .container{max-width:800px;margin:0 auto;padding:2rem 1rem}
+        header{text-align:center;padding:2rem 0}
+        h1{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:.5rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .subtitle{color:var(--muted);font-size:.95rem}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
+        .form-group{margin-bottom:1.25rem}
+        label{display:block;margin-bottom:.4rem;font-weight:500;color:var(--accent)}
+        input,select,textarea{width:100%;padding:.75rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1rem;transition:border-color .3s}
+        input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+        textarea{resize:vertical;min-height:80px}
+        .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-size:1rem;transition:transform .2s,opacity .2s}
+        .btn:hover{transform:translateY(-2px);opacity:.9}
+        .output-section{margin-top:1.5rem;padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:12px;display:none}
+        .output-section.active{display:block}
+        .output-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem;margin-top:1rem;white-space:pre-wrap;font-size:.9rem;max-height:500px;overflow-y:auto}
+        .output-item{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+        .output-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+        .copy-btn{background:var(--accent);color:#000;padding:.5rem 1rem;border-radius:6px;border:none;cursor:pointer;font-weight:500;margin-top:.75rem}
+        .copy-btn:hover{opacity:.85}
+        .premium-badge{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:.25rem .75rem;border-radius:20px;font-size:.75rem;font-weight:600;margin-bottom:1rem}
+        .upsell{background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(124,58,237,.1));border:1px solid var(--accent);border-radius:10px;padding:1.25rem;margin-top:1.5rem;text-align:center}
+        .upsell h3{color:var(--accent);margin-bottom:.5rem;font-size:1rem}
+        .upsell p{font-size:.85rem;color:var(--muted);margin-bottom:.75rem}
+        .wallet{font-family:monospace;background:var(--bg);padding:.4rem .8rem;border-radius:6px;font-size:.8rem;color:var(--accent);word-break:break-all}
+        .affiliate{text-align:center;margin-top:1.5rem;padding:1rem;background:var(--card);border-radius:10px}
+        .affiliate a{color:var(--accent);text-decoration:none;font-weight:500}
+        .affiliate a:hover{text-decoration:underline}
+        footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);margin-top:2rem}
+        footer a{color:var(--accent);text-decoration:none}
+        footer a:hover{text-decoration:underline}
+        @media(max-width:600px){.container{padding:1rem}.card{padding:1rem}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <span class="premium-badge">📢 High-Converting</span>
+        <h1>Real Estate Facebook Ad Copy Generator</h1>
+        <p class="subtitle">Create ads that generate leads and drive property interest</p>
+    </header>
+
+    <div class="card">
+        <form id="adForm">
+            <div class="form-group">
+                <label for="adObjective">Ad Objective</label>
+                <select id="adObjective">
+                    <option value="lead">Lead Generation</option>
+                    <option value="openhouse">Open House Sign-Ups</option>
+                    <option value="showing">Schedule Showing</option>
+                    <option value="valuation">Free Home Valuation</option>
+                    <option value="buyer">Buyer Leads</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="propertyDetails">Property Details (optional)</label>
+                <textarea id="propertyDetails" placeholder="e.g., 4BR/3BA, 2,800 sqft, pool, great schools, $725K"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="targetAudience">Target Audience</label>
+                <select id="targetAudience">
+                    <option value="firsttime">First-Time Homebuyers</option>
+                    <option value="moveup">Move-Up Buyers</option>
+                    <option value="luxury">Luxury Buyers ($1M+)</option>
+                    <option value="investor">Real Estate Investors</option>
+                    <option value="relocation">Relocation Buyers</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="offer">Lead Magnet/Offer</label>
+                <input type="text" id="offer" placeholder="e.g., Free home buyers guide, No-obligation consultation">
+            </div>
+            <button type="submit" class="btn">📢 Generate Ad Copy</button>
+        </form>
+    </div>
+
+    <div class="output-section" id="outputSection">
+        <h2 style="color:var(--accent)">Your Facebook Ad Copy</h2>
+        <div class="output-box" id="outputBox"></div>
+        <button class="copy-btn" onclick="copyOutput()">📋 Copy Ad Copy</button>
+    </div>
+
+    <div class="upsell">
+        <h3>🚀 Unlock Premium Features</h3>
+        <p>Get unlimited ad copy, A/B variations, and campaign ideas</p>
+        <p>Support the project with BNB:</p>
+        <div class="wallet">0x85516247b108C62B516D50f2336D46e28684e0A1</div>
+        <p style="margin-top:.75rem;font-size:.8rem"><a href="https://jasper.ai" target="_blank" style="color:var(--accent)">Try Jasper AI →</a> (30% off with code LISTINGS)</p>
+    </div>
+
+    <div class="affiliate">
+        <p>Want more AI writing power? <a href="https://jasper.ai" target="_blank">Try Jasper →</a> The #1 AI writing tool for real estate professionals</p>
+    </div>
+
+    <footer>
+        Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate
+    </footer>
+</div>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How does the Facebook ad copy generator work?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Select your ad objective and target audience, add any property details or offers. The tool generates multiple high-converting ad copy variations optimized for Facebook engagement and lead generation."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What makes real estate Facebook ads effective?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Effective real estate ads use compelling headlines, clear value propositions, emotional triggers, and strong calls-to-action. They speak directly to the target audience's desires and pain points."
+            }
+        }
+    ]
+}
+</script>
+
+<script>
+const adTemplates = {
+    'lead': [
+        {
+            headline: 'Your Dream Home Awaits — Find It Before Someone Else Does',
+            primary: 'Stop searching and start living. Get exclusive access to properties before they hit the market.',
+            cta: 'Get My Home Search Started'
+        },
+        {
+            headline: 'Ready to Make a Move? Let Us Help You Find Your Perfect Home',
+            primary: 'Free, personalized home search with no pressure. Join thousands of happy homeowners.',
+            cta: 'Start My Free Home Search'
+        },
+        {
+            headline: 'The Market Is Moving Fast — Don\'t Miss Out',
+            primary: 'Get real-time alerts on new listings that match your criteria. Be first in line.',
+            cta: 'Set Up Property Alerts'
+        }
+    ],
+    'openhouse': [
+        {
+            headline: 'This Sunday: Open House You Can\'t Afford to Miss',
+            primary: 'Stunning [beds] bed, [baths] bath in prime location. Light refreshments served.',
+            cta: 'RSVP for the Open House'
+        },
+        {
+            headline: 'Step Inside This Beautiful Open House This Weekend',
+            primary: 'Chat with us live or in-person. Cookies and coffee provided! ☕',
+            cta: 'Save My Spot'
+        }
+    ],
+    'showing': [
+        {
+            headline: 'See This Property Before It\'s Gone',
+            primary: 'Schedule your private showing today. Flexible times available.',
+            cta: 'Book My Showing'
+        },
+        {
+            headline: 'Your Private Tour Awaits',
+            primary: 'Experience every detail in person. No obligation, just opportunity.',
+            cta: 'Request a Showing'
+        }
+    ],
+    'valuation': [
+        {
+            headline: 'Curious What Your Home Is Worth? Find Out in 60 Seconds',
+            primary: 'Get a free, no-obligation home valuation. See how your equity stacks up.',
+            cta: 'Get My Free Valuation'
+        },
+        {
+            headline: 'Is Now the Right Time to Sell? Let\'s Find Out Together',
+            primary: 'Free market analysis with real data. No guesswork, just facts.',
+            cta: 'Request My Home Value Report'
+        }
+    ],
+    'buyer': [
+        {
+            headline: 'First-Time Buyer? Let Us Guide You Home',
+            primary: 'Buying your first home doesn\'t have to be scary. We\'ve helped hundreds of first-timers become homeowners.',
+            cta: 'Get First-Time Buyer Guide'
+        },
+        {
+            headline: 'Move-Up Ready? Let\'s Find Your Next Chapter',
+            primary: 'More space, better schools, or a change of scenery. Tell us what you need.',
+            cta: 'Start Your Move-Up Search'
+        }
+    ]
+};
+
+const audienceModifiers = {
+    'firsttime': 'First-Time Homebuyers',
+    'moveup': 'Move-Up Buyers',
+    'luxury': 'Luxury Home Buyers',
+    'investor': 'Real Estate Investors',
+    'relocation': 'Relocating Families'
+};
+
+function generateAdCopy(data) {
+    const templates = adTemplates[data.adObjective];
+    const offer = data.offer || 'Free consultation';
+    const property = data.propertyDetails || '[Property details]';
+    
+    let output = '';
+    
+    templates.forEach((ad, idx) => {
+        let headline = ad.headline;
+        let primary = ad.primary.replace('[beds]', '4').replace('[baths]', '3');
+        
+        if (property !== '[Property details]') {
+            primary = property + '. ' + primary;
+        }
+        
+        output += `<div class="output-item">
+<strong>AD ${idx + 1}</strong>
+
+<strong>Headline:</strong>
+${headline}
+
+<strong>Primary Text:</strong>
+${primary}
+
+<strong>Call to Action Button:</strong>
+${ad.cta}
+
+<strong>CTA Link Description:</strong>
+${offer}
+
+---
+</div>`;
+    });
+    
+    // Add optimization tips
+    output += `
+
+<strong>📋 OPTIMIZATION TIPS:</strong>
+
+• Use high-quality images or video thumbnails
+• Test different headlines (A/B testing)
+• Keep primary text under 125 characters for best engagement
+• Use retargeting for people who've visited your website
+• Add social proof (client testimonials, years of experience)
+• Include urgency: "Only 3 spots left" or "Price reduced"`;
+    
+    return output;
+}
+
+document.getElementById('adForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const data = {
+        adObjective: document.getElementById('adObjective').value,
+        propertyDetails: document.getElementById('propertyDetails').value,
+        targetAudience: document.getElementById('targetAudience').value,
+        offer: document.getElementById('offer').value
+    };
+    
+    const output = generateAdCopy(data);
+    document.getElementById('outputBox').innerHTML = output;
+    document.getElementById('outputSection').classList.add('active');
+    document.getElementById('outputSection').scrollIntoView({ behavior: 'smooth' });
+});
+
+function copyOutput() {
+    const text = document.getElementById('outputBox').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = '📋 Copy Ad Copy', 2000);
+    });
+}
+</script>
+</body>
+</html>
