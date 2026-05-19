@@ -3,214 +3,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free AI Virtual Staging Prompt Generator | Real Estate Photography Tool</title>
-    <meta name="description" content="Generate professional AI prompts for virtual home staging. Transform empty properties into beautifully furnished spaces with expert prompts for Pictory and other AI tools.">
+    <title>Virtual Staging Prompt Generator — Free AI Staging Prompts for Real Estate</title>
+    <meta name="description" content="Generate professional AI prompts for virtual home staging. Transform empty properties into beautifully staged listings with our free virtual staging prompt tool for real estate agents.">
     <link rel="canonical" href="https://listingsai.directory/tools/virtual-staging-prompt-generator.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is virtual staging in real estate?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Virtual staging uses AI to add furniture, decor, and lifestyle elements to photos of empty properties. Unlike traditional staging, it costs nothing and can be done in minutes — helping buyers visualize a property's potential without clutter or cost."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I write AI prompts for virtual staging?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Effective virtual staging prompts describe: the room type, desired furniture style (modern, minimalist, luxury), color palette, lighting mood, and specific items to include or exclude. The more specific your prompt, the better the AI output will match your listing goals."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What rooms benefit most from virtual staging?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Living rooms, master bedrooms, kitchens, and dining areas benefit most from virtual staging. These high-impact spaces help buyers emotionally connect with the property. bathrooms and outdoor spaces also stage well for luxury listings."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is virtual staging allowed in all MLS listings?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most MLS boards require disclosure when a photo is virtually staged — some require the word 'Virtually Staged' to appear directly on the image. Always check your local MLS rules before publishing. Our tool includes a disclosure reminder in every generated prompt."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What AI tools work best for virtual staging?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Midjourney, DALL-E 3, and Stable Diffusion all produce excellent virtual staging results. Midjourney is preferred for photorealistic furniture integration. Use our generated prompts directly in any of these tools — they're optimized for realistic, natural-looking results."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
-        :root{--bg:#0a0a0f;--card:#111;--border:#222;--accent:#00d4ff;--accent2:#7c3aed;--text:#e5e5e5;--muted:#888}
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
-        .container{max-width:800px;margin:0 auto;padding:2rem 1rem}
-        header{text-align:center;padding:2rem 0}
-        h1{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:.5rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-        .subtitle{color:var(--muted);font-size:.95rem}
-        .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
-        .form-group{margin-bottom:1.25rem}
-        label{display:block;margin-bottom:.4rem;font-weight:500;color:var(--accent)}
-        input,select,textarea{width:100%;padding:.75rem 1rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1rem;transition:border-color .3s}
-        input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
-        textarea{resize:vertical;min-height:100px}
-        .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-size:1rem;transition:transform .2s,opacity .2s}
-        .btn:hover{transform:translateY(-2px);opacity:.9}
-        .output-section{margin-top:1.5rem;padding:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:12px;display:none}
-        .output-section.active{display:block}
-        .output-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem;margin-top:1rem;white-space:pre-wrap;font-size:.95rem;max-height:400px;overflow-y:auto}
-        .copy-btn{background:var(--accent);color:#000;padding:.5rem 1rem;border-radius:6px;border:none;cursor:pointer;font-weight:500;margin-top:.75rem}
-        .copy-btn:hover{opacity:.85}
-        .premium-badge{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:.25rem .75rem;border-radius:20px;font-size:.75rem;font-weight:600;margin-bottom:1rem}
-        .upsell{background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(124,58,237,.1));border:1px solid var(--accent);border-radius:10px;padding:1.25rem;margin-top:1.5rem;text-align:center}
-        .upsell h3{color:var(--accent);margin-bottom:.5rem;font-size:1rem}
-        .upsell p{font-size:.85rem;color:var(--muted);margin-bottom:.75rem}
-        .wallet{font-family:monospace;background:var(--bg);padding:.4rem .8rem;border-radius:6px;font-size:.8rem;color:var(--accent);word-break:break-all}
-        .affiliate{text-align:center;margin-top:1.5rem;padding:1rem;background:var(--card);border-radius:10px}
-        .affiliate a{color:var(--accent);text-decoration:none;font-weight:500}
-        .affiliate a:hover{text-decoration:underline}
-        footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);margin-top:2rem}
-        footer a{color:var(--accent);text-decoration:none}
-        footer a:hover{text-decoration:underline}
-        @media(max-width:600px){.container{padding:1rem}.card{padding:1rem}}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0d1117; color: #e6edf3; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        header { text-align: center; margin-bottom: 40px; }
+        h1 { font-size: 2.5rem; color: #58a6ff; margin-bottom: 10px; }
+        .subtitle { color: #8b949e; font-size: 1.1rem; }
+        .promo-banner { background: linear-gradient(135deg, #1a1f35, #0d2137); border: 1px solid #58a6ff33; border-radius: 12px; padding: 20px; margin-bottom: 30px; text-align: center; }
+        .promo-banner span { color: #f0b429; font-weight: 700; }
+        .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 30px; margin-bottom: 30px; }
+        .form-group { margin-bottom: 25px; }
+        label { display: block; margin-bottom: 8px; color: #e6edf3; font-weight: 500; }
+        input[type="text"], select, textarea {
+            width: 100%; padding: 12px 16px; background: #0d1117; border: 1px solid #30363d;
+            border-radius: 8px; color: #e6edf3; font-size: 1rem; font-family: inherit;
+        }
+        textarea { resize: vertical; min-height: 120px; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: #58a6ff; }
+        .btn-group { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+        .btn { padding: 14px 28px; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; font-family: inherit; }
+        .btn-primary { background: #238636; color: #fff; }
+        .btn-primary:hover { background: #2ea043; }
+        .btn-secondary { background: #30363d; color: #e6edf3; }
+        .btn-secondary:hover { background: #484f58; }
+        .result-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 30px; display: none; }
+        .result-card.visible { display: block; }
+        .result-card h3 { color: #58a6ff; margin-bottom: 15px; }
+        .prompt-box { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 20px; margin-bottom: 15px; position: relative; }
+        .prompt-box pre { white-space: pre-wrap; word-break: break-word; font-size: 0.95rem; color: #c9d1d9; line-height: 1.7; }
+        .prompt-box .room-tag { display: inline-block; background: #1f6feb33; color: #79b8ff; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 12px; }
+        .copy-btn { margin-top: 15px; }
+        .disclosure-note { background: #2d1f0f; border: 1px solid #f0b42955; border-radius: 8px; padding: 15px; margin-top: 20px; font-size: 0.85rem; color: #f0b429; }
+        .affiliate-banner { background: linear-gradient(135deg, #1a1f35, #0d2137); border: 1px solid #58a6ff33; border-radius: 12px; padding: 25px; margin-bottom: 30px; text-align: center; }
+        .affiliate-banner h3 { color: #58a6ff; margin-bottom: 10px; }
+        .affiliate-banner p { color: #8b949e; margin-bottom: 15px; }
+        .affiliate-btn { display: inline-block; background: #58a6ff; color: #0d1117; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; }
+        .affiliate-btn:hover { background: #79b8ff; }
+        .premium-upsell { background: #161b22; border: 1px solid #f0b429; border-radius: 12px; padding: 25px; margin-top: 30px; text-align: center; }
+        .premium-upsell h3 { color: #f0b429; margin-bottom: 10px; }
+        .premium-upsell p { color: #8b949e; margin-bottom: 15px; }
+        .crypto-note { font-size: 0.85rem; color: #8b949e; margin-top: 8px; }
+        .crypto-wallet { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 10px 16px; font-family: monospace; color: #79b8ff; display: inline-block; margin-top: 8px; font-size: 0.9rem; }
+        .footer-note { text-align: center; margin-top: 40px; color: #484f58; font-size: 0.85rem; }
+        .footer-note a { color: #58a6ff; text-decoration: none; }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .container { padding: 20px 15px; }
+            .btn-group { flex-direction: column; }
+            .btn { width: 100%; }
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <header>
-        <span class="premium-badge">🎨 Visual Magic</span>
-        <h1>AI Virtual Staging Prompt Generator</h1>
-        <p class="subtitle">Create stunning AI prompts for beautifully staged property images</p>
+        <h1>Virtual Staging Prompt Generator</h1>
+        <p class="subtitle">AI-powered prompts to transform empty rooms into beautifully staged listings</p>
     </header>
 
+    <div class="promo-banner">
+        Generate unlimited staging prompts — <span>Premium Plan $9/mo</span> — BNB accepted
+    </div>
+
     <div class="card">
-        <form id="stagingForm">
-            <div class="form-group">
-                <label for="roomType">Room Type</label>
-                <select id="roomType" required>
-                    <option value="">Select room type...</option>
-                    <option value="living">Living Room</option>
-                    <option value="bedroom">Master Bedroom</option>
-                    <option value="dining">Dining Room</option>
-                    <option value="kitchen">Kitchen</option>
-                    <option value="office">Home Office</option>
-                    <option value="bathroom">Bathroom</option>
-                    <option value="basement">Basement</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="style">Design Style</label>
-                <select id="style">
-                    <option value="modern">Modern & Minimalist</option>
-                    <option value="contemporary">Contemporary</option>
-                    <option value="traditional">Traditional Warm</option>
-                    <option value="scandinavian">Scandinavian</option>
-                    <option value="industrial">Industrial Chic</option>
-                    <option value="coastal">Coastal & Airy</option>
-                    <option value="luxury">Luxury & Sophisticated</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="mood">Desired Mood</label>
-                <select id="mood">
-                    <option value="warm">Warm & Inviting</option>
-                    <option value="bright">Bright & Airy</option>
-                    <option value="cozy">Cozy & Intimate</option>
-                    <option value="elegant">Elegant & Refined</option>
-                    <option value="fresh">Fresh & Modern</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="colors">Color Preferences (optional)</label>
-                <input type="text" id="colors" placeholder="e.g., earth tones, blue accents, neutral palette">
-            </div>
-            <button type="submit" class="btn">✨ Generate Staging Prompt</button>
-        </form>
+        <div class="form-group">
+            <label for="roomType">Room Type</label>
+            <select id="roomType">
+                <option value="living-room">Living Room</option>
+                <option value="master-bedroom">Master Bedroom</option>
+                <option value="kitchen">Kitchen</option>
+                <option value="dining-room">Dining Room</option>
+                <option value="guest-bedroom">Guest Bedroom</option>
+                <option value="home-office">Home Office</option>
+                <option value="bathroom">Bathroom</option>
+                <option value="outdoor-patio">Outdoor Patio</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="style">Furniture Style</label>
+            <select id="style">
+                <option value="modern-luxury">Modern Luxury</option>
+                <option value="coastal-minimalist">Coastal Minimalist</option>
+                <option value="contemporary-neutral">Contemporary Neutral</option>
+                <option value="mid-century-modern">Mid-Century Modern</option>
+                <option value="farmhouse-rustic">Farmhouse Rustic</option>
+                <option value="scandinavian">Scandinavian</option>
+                <option value="industrial-chic">Industrial Chic</option>
+                <option value="transitional-classic">Transitional Classic</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="colorPalette">Color Palette</label>
+            <select id="colorPalette">
+                <option value="warm-neutral">Warm Neutral (beige, cream, soft brown)</option>
+                <option value="cool-gray">Cool Gray (charcoal, silver, blue-gray)</option>
+                <option value="earth-tones">Earth Tones (terracotta, olive, warm sand)</option>
+                <option value="bold-accent">Bold Accent (jewel tones, dramatic contrast)</option>
+                <option value="all-white">All White / Minimalist White</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="propertyType">Property Type</label>
+            <select id="propertyType">
+                <option value="luxury-home">Luxury Home ($1M+)</option>
+                <option value="family-home">Family Home ($400K-$1M)</option>
+                <option value="starter-home">Starter Home (under $400K)</option>
+                <option value="condo">Condo / Apartment</option>
+                <option value="vacation-rental">Vacation Rental / AirBnb</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="features">Special Features to Highlight (optional)</label>
+            <textarea id="features" placeholder="e.g., high ceilings, bay windows, fireplace, hardwood floors, natural light..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="additionalInstructions">Additional Instructions (optional)</label>
+            <textarea id="additionalInstructions" placeholder="e.g., 'Include a reading nook by the window', 'Make it feel like a high-end resort', 'Add plants and books for warmth'..."></textarea>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-primary" onclick="generatePrompt()">Generate Prompt</button>
+            <button class="btn btn-secondary" onclick="clearForm()">Clear</button>
+        </div>
     </div>
 
-    <div class="output-section" id="outputSection">
-        <h2 style="color:var(--accent)">Your AI Staging Prompt</h2>
-        <div class="output-box" id="outputBox"></div>
-        <button class="copy-btn" onclick="copyOutput()">📋 Copy Prompt</button>
-        <p style="margin-top:1rem;font-size:.85rem;color:var(--muted)">Use this prompt with Pictory, Midjourney, DALL-E, or any AI image generator</p>
+    <div class="result-card" id="resultCard">
+        <h3>Your Virtual Staging Prompt</h3>
+        <div class="prompt-box">
+            <span class="room-tag" id="roomTag"></span>
+            <pre id="promptOutput"></pre>
+        </div>
+        <button class="btn btn-primary copy-btn" onclick="copyPrompt()">Copy Prompt</button>
+        <div class="disclosure-note">
+            <strong>MLS Disclosure Reminder:</strong> When using virtually staged images on MLS or public listings, add "Virtually Staged" text on the image per NAR guidelines and your local MLS rules.
+        </div>
+        <div style="margin-top: 20px;">
+            <h4 style="color: #58a6ff; margin-bottom: 10px;">Style Variations</h4>
+            <div id="styleVariations"></div>
+        </div>
     </div>
 
-    <div class="upsell">
-        <h3>🚀 Unlock Premium Features</h3>
-        <p>Get unlimited prompts, batch generation, and direct Pictory integration</p>
-        <p>Support the project with BNB:</p>
-        <div class="wallet">0x85516247b108C62B516D50f2336D46e28684e0A1</div>
-        <p style="margin-top:.75rem;font-size:.8rem"><a href="https://pictory.ai" target="_blank" style="color:var(--accent)">Try Pictory AI →</a> Video creation for real estate</p>
+    <div class="affiliate-banner">
+        <h3>Want to Stage Photos Automatically?</h3>
+        <p>Our top pick for AI virtual staging software — trusted by 50,000+ agents</p>
+        <a href="https://listingsai.directory/#affiliate" class="affiliate-btn">Try AI Staging Tools →</a>
     </div>
 
-    <div class="affiliate">
-        <p>Create stunning property videos with <a href="https://pictory.ai" target="_blank">Pictory →</a> AI-powered video creation for real estate</p>
+    <div class="premium-upsell">
+        <h3>🚀 Unlimited Staging Prompts — Premium</h3>
+        <p>Generate unlimited prompts, save your favorites, batch export for clients</p>
+        <p style="color: #f0b429; font-size: 1.2rem; font-weight: 700;">$9/month or $79/year</p>
+        <p class="crypto-note">Crypto payments accepted — BNB to:</p>
+        <div class="crypto-wallet">0x85516247b108C62B516D50f2336D46e28684e0A1</div>
     </div>
 
-    <footer>
-        Built with ❤️ by <a href="https://listingsai.directory">ListingsAI</a> — Browse 50+ AI tools for real estate
-    </footer>
+    <div class="footer-note">
+        <p>Built by <a href="https://listingsai.directory">ListingsAI</a> — Free AI tools for real estate agents</p>
+        <p style="margin-top: 8px;"><a href="https://listingsai.directory/tools">Browse 50+ Free AI Tools →</a></p>
+    </div>
 </div>
 
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "How do I use the AI virtual staging prompt generator?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Simply select your room type, design style, and mood. The tool generates a detailed AI prompt that you can copy and paste into Pictory, Midjourney, DALL-E, or any AI image generator to create beautifully staged room images."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "What AI tools work with these staging prompts?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "These prompts are compatible with Pictory, Midjourney, DALL-E 2/3, Stable Diffusion, and other AI image generators. Each prompt is optimized for realistic interior staging results."
-            }
-        }
-    ]
-}
-</script>
-
 <script>
-const roomPhrases = {
-    'living': ['Open-concept living room', 'Bright and airy living space', 'Sophisticated living area'],
-    'bedroom': ['Serene master bedroom', 'Luxurious primary suite', 'Cozy yet elegant bedroom'],
-    'dining': ['Elegant dining room', 'Sophisticated entertaining space', 'Intimate dining area'],
-    'kitchen': ['Modern chef kitchen', 'Gourmet kitchen space', 'Contemporary kitchen'],
-    'office': ['Productive home office', 'Executive study', 'Modern workspace'],
-    'bathroom': ['Spa-like bathroom', 'Luxurious master bath', 'Modern retreat'],
-    'basement': ['Finished basement space', 'Versatile lower level', 'Cozy entertainment area']
-};
+    const prompts = {
+        "modern-luxury": "Photorealistic image of an empty {room} professionally staged with contemporary luxury furniture. {style_desc}. {color_desc}. {features}. Natural light from large windows, soft ambient lighting, {property_context}. No people, clean camera angle straight on, professional real estate photography style. High resolution, 8K quality.",
+        "coastal-minimalist": "Photorealistic image of an empty {room} virtually staged in coastal minimalist style. Light airy furniture, natural textures (linen, rattan, oak), {color_desc}. {features}. Abundant natural light, white curtains, coastal atmosphere, {property_context}. No people, bright and airy feel, professional listing photo quality.",
+        "contemporary-neutral": "Photorealistic image of an empty {room} staged with contemporary neutral furniture. Clean lines, neutral upholstery in grays and taupes, {color_desc}. {features}. Soft natural light, {property_context}. No people, warm and inviting atmosphere, professional real estate photography.",
+        "mid-century-modern": "Photorealistic image of an empty {room} staged with mid-century modern furniture. Tapered wood legs, geometric shapes, bold accent colors against neutral backgrounds, {color_desc}. {features}. {property_context}. No people, authentic period-inspired styling, professional photo quality.",
+        "farmhouse-rustic": "Photorealistic image of an empty {room} staged in farmhouse rustic style. Weathered wood dining table, linen cushionings, vintage accessories, {color_desc}. {features}. {property_context}. Natural light, rustic charm, no people, authentic country warmth, professional listing quality.",
+        "scandinavian": "Photorealistic image of an empty {room} staged in Scandinavian style. Light oak furniture, cozy textiles, plants, minimal design, {color_desc}. {features}. Bright natural light, clean and cozy atmosphere, {property_context}. No people, hygge feeling, professional photography.",
+        "industrial-chic": "Photorealistic image of an empty {room} staged with industrial chic furniture. Metal accents, exposed bulb lighting, leather sofas, reclaimed wood pieces, {color_desc}. {features}. {property_context}. No people, urban sophisticated atmosphere, professional listing photo quality.",
+        "transitional-classic": "Photorealistic image of an empty {room} staged with transitional classic furniture. Timeless silhouettes, tailored upholstery, elegant accessories, {color_desc}. {features}. {property_context}. Warm lighting, sophisticated feel, no people, professional real estate photography."
+    };
 
-const styleModifiers = {
-    'modern': 'modern minimalist furniture, clean lines, neutral colors, sleek design, natural light',
-    'contemporary': 'contemporary furniture, neutral palette with bold accents, open space, artistic touches',
-    'traditional': 'traditional furniture, warm wood tones, classic details, cozy textiles, timeless elegance',
-    'scandinavian': 'Scandinavian design, light wood furniture, white and gray palette, cozy textiles, functional beauty',
-    'industrial': 'industrial chic, exposed brick, metal accents, vintage furniture, urban loft aesthetic',
-    'coastal': 'coastal design, light and airy, blue and white accents, natural textures, beach-inspired',
-    'luxury': 'luxury furnishings, high-end finishes, designer pieces, rich textures, sophisticated palette'
-};
+    const styleDescriptions = {
+        "modern-luxury": "Sleek contemporary furniture, polished surfaces, statement lighting, premium materials including marble and brass",
+        "coastal-minimalist": "Light and airy furniture, natural textures, blue and white accents, beach-inspired aesthetic",
+        "contemporary-neutral": "Clean-lined furniture, neutral color scheme, modern comfort, understated elegance",
+        "mid-century-modern": "Iconic mid-century pieces, warm wood tones, bold accent colors, retro-modern blend",
+        "farmhouse-rustic": "Rustic farmhouse furniture, vintage finds, natural materials, cozy country warmth",
+        "scandinavian": "Simple Scandinavian design, functional beauty, cozy textiles, greenery, light woods",
+        "industrial-chic": "Urban industrial elements, metal and wood mix, edgy yet sophisticated, loft aesthetic",
+        "transitional-classic": "Classic furniture silhouettes updated with modern upholstery, refined elegance, timeless appeal"
+    };
 
-const moodModifiers = {
-    'warm': 'warm ambient lighting, cozy atmosphere, inviting feel',
-    'bright': 'abundant natural light, fresh and clean, uplifting atmosphere',
-    'cozy': 'intimate lighting, soft textures, comfortable and welcoming',
-    'elegant': 'refined details, sophisticated touches, polished appearance',
-    'fresh': 'clean lines, new furnishings, contemporary feel'
-};
+    const colorDescriptions = {
+        "warm-neutral": "warm earth tones including beige, cream, soft brown, and terracotta accents",
+        "cool-gray": "cool gray palette with charcoal, silver, and blue-gray undertones",
+        "earth-tones": "rich earth tones including olive green, warm sand, rust, and natural wood",
+        "bold-accent": "neutral base with bold jewel-tone accents in emerald, sapphire, or amethyst",
+        "all-white": "all-white minimalist palette with subtle texture variations and metallic accents"
+    };
 
-function generateStagingPrompt(room, style, mood, colors) {
-    const roomPhrase = roomPhrases[room][Math.floor(Math.random() * roomPhrases[room].length)];
-    const styleMod = styleModifiers[style];
-    const moodMod = moodModifiers[mood];
-    
-    let prompt = `Professional interior design photograph of ${roomPhrase}, `;
-    prompt += `${styleMod}, `;
-    prompt += `${moodMod}`;
-    
-    if (colors) {
-        prompt += `, color scheme featuring ${colors}`;
+    const propertyContext = {
+        "luxury-home": "luxury estate setting, high-end finishes visible, premium neighborhood aesthetic",
+        "family-home": "family-friendly atmosphere, comfortable and welcoming, suburban setting",
+        "starter-home": "charming starter home feel, approachable and inviting, great value presentation",
+        "condo": "urban condo setting, space-efficient furniture arrangement, city view context",
+        "vacation-rental": "vacation rental / AirBnb style, hotel-quality furnishings, guest-ready presentation"
+    };
+
+    const roomLabels = {
+        "living-room": "Living Room",
+        "master-bedroom": "Master Bedroom",
+        "kitchen": "Kitchen",
+        "dining-room": "Dining Room",
+        "guest-bedroom": "Guest Bedroom",
+        "home-office": "Home Office",
+        "bathroom": "Bathroom",
+        "outdoor-patio": "Outdoor Patio"
+    };
+
+    function generatePrompt() {
+        const room = document.getElementById('roomType').value;
+        const style = document.getElementById('style').value;
+        const color = document.getElementById('colorPalette').value;
+        const property = document.getElementById('propertyType').value;
+        const features = document.getElementById('features').value.trim();
+        const additional = document.getElementById('additionalInstructions').value.trim();
+
+        let prompt = prompts[style]
+            .replace('{room}', roomLabels[room])
+            .replace('{style_desc}', styleDescriptions[style])
+            .replace('{color_desc}', colorDescriptions[color])
+            .replace('{property_context}', propertyContext[property]);
+
+        if (features) {
+            prompt += `. Key features to showcase: ${features}.`;
+        }
+
+        if (additional) {
+            prompt += ` Style requirements: ${additional}.`;
+        }
+
+        prompt += " Virtually staged image — for real estate listing use.";
+
+        document.getElementById('roomTag').textContent = roomLabels[room] + ' · ' + style.replace('-', ' ').replace(/\w/g, l => l.toUpperCase());
+        document.getElementById('promptOutput').textContent = prompt;
+
+        // Generate style variations
+        const variations = document.getElementById('styleVariations');
+        const styleKeys = Object.keys(prompts).filter(k => k !== style).slice(0, 3);
+        let varHTML = '';
+        styleKeys.forEach(k => {
+            let v = prompts[k]
+                .replace('{room}', roomLabels[room])
+                .replace('{style_desc}', styleDescriptions[k])
+                .replace('{color_desc}', colorDescriptions[color])
+                .replace('{property_context}', propertyContext[property]);
+            if (features) v += `. Key features to showcase: ${features}.`;
+            v += " Virtually staged image — for real estate listing use.";
+            varHTML += `<div style="background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:12px;margin-bottom:10px;"><div style="font-size:0.8rem;color:#8b949e;margin-bottom:5px;">${k.replace('-',' ').replace(/\w/g, l => l.toUpperCase())}</div><pre style="font-size:0.85rem;color:#c9d1d9;white-space:pre-wrap;margin:0;">${v}</pre></div>`;
+        });
+        variations.innerHTML = varHTML;
+
+        document.getElementById('resultCard').classList.add('visible');
+        document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
-    
-    prompt += '. High-end real estate photography, photorealistic rendering, 8K quality, interior design magazine style, soft shadows, perfect lighting, empty room converted to furnished space';
-    
-    return prompt;
-}
 
-document.getElementById('stagingForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const room = document.getElementById('roomType').value;
-    const style = document.getElementById('style').value;
-    const mood = document.getElementById('mood').value;
-    const colors = document.getElementById('colors').value;
-    
-    const output = generateStagingPrompt(room, style, mood, colors);
-    document.getElementById('outputBox').textContent = output;
-    document.getElementById('outputSection').classList.add('active');
-    document.getElementById('outputSection').scrollIntoView({ behavior: 'smooth' });
-});
+    function copyPrompt() {
+        const text = document.getElementById('promptOutput').textContent;
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.querySelector('.copy-btn');
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy Prompt', 2000);
+        });
+    }
 
-function copyOutput() {
-    const text = document.getElementById('outputBox').textContent;
-    navigator.clipboard.writeText(text).then(() => {
-        const btn = document.querySelector('.copy-btn');
-        btn.textContent = '✅ Copied!';
-        setTimeout(() => btn.textContent = '📋 Copy Prompt', 2000);
-    });
-}
+    function clearForm() {
+        document.getElementById('features').value = '';
+        document.getElementById('additionalInstructions').value = '';
+        document.getElementById('resultCard').classList.remove('visible');
+    }
 </script>
 </body>
 </html>
