@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tools for Real Estate Agents — Free Directory | ListingsAI</title>
-    <meta name="description" content="Browse 50+ free AI tools for real estate agents. Generate listing descriptions, lead quizzes, ROI calculators, email sequences, and more. No signup required.">
+    <title>Free AI Tools for Real Estate Agents | ListingsAI</title>
+    <meta name="description" content="50+ free AI-powered tools for real estate agents. Generate listing descriptions, lead quizzes, CMA reports, email sequences, and more. No signup required.">
     <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Free AI Tools for Real Estate Agents">
+    <meta property="og:description" content="50+ free browser-based AI tools for real estate professionals. No signup. No cost.">
+    <meta property="og:type" content="website">
     <link rel="canonical" href="https://listingsai.directory/tools/">
     <link rel="stylesheet" href="../styles.css">
     <style>
@@ -14,15 +17,17 @@
         .header { text-align: center; margin-bottom: 40px; }
         .header h1 { font-size: 2.5em; background: linear-gradient(90deg, #00d4ff, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
         .header p { color: #888; }
-        .back-link { color: #00d4ff; text-decoration: none; margin-bottom: 20px; display: inline-block; }
+        .back-link { color: #00d4ff; text-decoration: none; margin-bottom: 20px; display: inline-block; font-size: 0.9em; }
         .back-link:hover { text-decoration: underline; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding-bottom: 60px; }
         .tool-card { background: #111; border: 1px solid #222; border-radius: 16px; padding: 24px; transition: all 0.3s; }
-        .tool-card:hover { border-color: #00d4ff; transform: translateY(-2px); }
-        .tool-card h3 { color: #fff; margin-bottom: 8px; }
-        .tool-card p { color: #888; font-size: 0.9em; margin-bottom: 15px; }
-        .tool-link { display: inline-block; padding: 8px 16px; background: #00d4ff; color: #000; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.85em; }
+        .tool-card:hover { border-color: #00d4ff; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,212,255,0.08); }
+        .tool-card h3 { color: #fff; font-size: 1.1em; margin-bottom: 6px; }
+        .tool-card .cat { display: inline-block; padding: 2px 10px; background: #1a1a2e; color: #00d4ff; border-radius: 10px; font-size: 0.7em; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tool-card p { color: #888; font-size: 0.88em; margin-bottom: 16px; line-height: 1.5; }
+        .tool-link { display: inline-block; padding: 8px 18px; background: #00d4ff; color: #000; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.85em; }
         .tool-link:hover { background: #00b8df; }
+        .count { color: #666; font-size: 0.85em; margin-top: 30px; text-align: center; }
     </style>
 </head>
 <body>
@@ -30,31 +35,119 @@
         <a href="../" class="back-link">← Back to ListingsAI</a>
         <div class="header">
             <h1>Free AI Tools for Real Estate</h1>
-            <p>50+ free browser-based tools. No signup. No cost. Just results.</p>
+            <p>50+ free browser-based tools. No signup. No cost.</p>
         </div>
-        <div class="grid" id="toolsGrid">
-            <!-- Tools loaded dynamically from parent index -->
-            <p style="color:#888">Loading tools...</p>
-        </div>
+        <div class="grid" id="toolsGrid"></div>
+        <p class="count" id="count"></p>
     </div>
     <script>
-        fetch('../tools.json')
-            .then(r => r.json())
-            .then(tools => {
-                const grid = document.getElementById('toolsGrid');
-                // Filter to only tools that have corresponding HTML files in /tools/
-                const toolNames = [/* populated by server include */];
-                grid.innerHTML = tools.slice(0, 60).map(t => `
-                    <div class="tool-card">
-                        <h3>${t.name}</h3>
-                        <p>${t.description ? t.description.substring(0,100) : ''}</p>
-                        <a href="../tools/${t.name.toLowerCase().replace(/\s+/g,'-')}-generator.html" class="tool-link">Use Free →</a>
-                    </div>
-                `).join('');
-            })
-            .catch(() => {
-                document.getElementById('toolsGrid').innerHTML = '<p style="color:#ef4444">Failed to load tools. Please try again.</p>';
-            });
+        const toolNames = [
+            "agent-bio-generator","agent-daily-routine-planner","blog-topic-generator",
+            "buyer-persona-generator","closing-gift-suggestion-generator","cma-report-generator",
+            "cold-calling-script-generator","cold-email-sequence-generator","content-calendar-generator",
+            "crm-segment-generator","expired-listing-generator","fsbo-cold-email-generator",
+            "instagram-caption-generator","investor-reply-generator","lead-magnet-generator",
+            "lead-nurture-sequence-planner","lead-qualification-calculator","lead-quiz",
+            "linkedin-post-generator","listing-bullet-point-optimizer","listing-description-generator",
+            "listing-presentation-builder","market-update-generator","milestone-anniversary-tracker",
+            "neighborhood-description-writer","new-agent-90day-plan","newsletter-builder",
+            "objection-handling-builder","open-house-followup-email","open-house-signin-generator",
+            "pipeline-review-template","property-announcement-template","property-feature-highlighter",
+            "property-video-script-generator","real-estate-ad-copy-generator","real-estate-business-plan-generator",
+            "real-estate-faq-builder","real-estate-goal-tracker","real-estate-landing-page-ideas",
+            "real-estate-math-calculator","real-estate-newsletter-generator","real-estate-seo-checklist",
+            "referral-request-email-generator","roi-calculator","sphere-of-influence-tracker",
+            "sunday-reset-email-generator","testimonial-request-generator","tiktok-real-estate-hooks",
+            "transaction-followup-sequence","transaction-timeline-generator","virtual-staging-prompt-generator",
+            "weekly-review-email-generator","youtube-title-generator"
+        ];
+
+        const toolLabels = {
+            "agent-bio-generator":"Agent Bio Generator","agent-daily-routine-planner":"Agent Daily Routine Planner",
+            "blog-topic-generator":"Blog Topic Generator","buyer-persona-generator":"Buyer Persona Generator",
+            "closing-gift-suggestion-generator":"Closing Gift Suggestion Generator","cma-report-generator":"CMA Report Generator",
+            "cold-calling-script-generator":"Cold Calling Script Generator","cold-email-sequence-generator":"Cold Email Sequence Generator",
+            "content-calendar-generator":"Content Calendar Generator","crm-segment-generator":"CRM Segment Generator",
+            "expired-listing-generator":"Expired Listing Generator","fsbo-cold-email-generator":"FSBO Cold Email Generator",
+            "instagram-caption-generator":"Instagram Caption Generator","investor-reply-generator":"Investor Reply Generator",
+            "lead-magnet-generator":"Lead Magnet Generator","lead-nurture-sequence-planner":"Lead Nurture Sequence Planner",
+            "lead-qualification-calculator":"Lead Qualification Calculator","lead-quiz":"Lead Quiz",
+            "linkedin-post-generator":"LinkedIn Post Generator","listing-bullet-point-optimizer":"Listing Bullet Point Optimizer",
+            "listing-description-generator":"Listing Description Generator","listing-presentation-builder":"Listing Presentation Builder",
+            "market-update-generator":"Market Update Generator","milestone-anniversary-tracker":"Milestone Anniversary Tracker",
+            "neighborhood-description-writer":"Neighborhood Description Writer","new-agent-90day-plan":"New Agent 90-Day Plan",
+            "newsletter-builder":"Newsletter Builder","objection-handling-builder":"Objection Handling Builder",
+            "open-house-followup-email":"Open House Follow-up Email","open-house-signin-generator":"Open House Sign-in Generator",
+            "pipeline-review-template":"Pipeline Review Template","property-announcement-template":"Property Announcement Template",
+            "property-feature-highlighter":"Property Feature Highlighter","property-video-script-generator":"Property Video Script Generator",
+            "real-estate-ad-copy-generator":"Real Estate Ad Copy Generator","real-estate-business-plan-generator":"Real Estate Business Plan Generator",
+            "real-estate-faq-builder":"Real Estate FAQ Builder","real-estate-goal-tracker":"Real Estate Goal Tracker",
+            "real-estate-landing-page-ideas":"Real Estate Landing Page Ideas","real-estate-math-calculator":"Real Estate Math Calculator",
+            "real-estate-newsletter-generator":"Real Estate Newsletter Generator","real-estate-seo-checklist":"Real Estate SEO Checklist",
+            "referral-request-email-generator":"Referral Request Email Generator","roi-calculator":"ROI Calculator",
+            "sphere-of-influence-tracker":"Sphere of Influence Tracker","sunday-reset-email-generator":"Sunday Reset Email Generator",
+            "testimonial-request-generator":"Testimonial Request Generator","tiktok-real-estate-hooks":"TikTok Real Estate Hooks",
+            "transaction-followup-sequence":"Transaction Follow-up Sequence","transaction-timeline-generator":"Transaction Timeline Generator",
+            "virtual-staging-prompt-generator":"Virtual Staging Prompt Generator","weekly-review-email-generator":"Weekly Review Email Generator",
+            "youtube-title-generator":"YouTube Title Generator"
+        };
+
+        const categories = {
+            "agent-bio-generator":"Productivity","agent-daily-routine-planner":"Productivity",
+            "blog-topic-generator":"Content","buyer-persona-generator":"Lead Generation",
+            "closing-gift-suggestion-generator":"CRM","cma-report-generator":"Listings",
+            "cold-calling-script-generator":"Scripts","cold-email-sequence-generator":"Email Marketing",
+            "content-calendar-generator":"Content","crm-segment-generator":"CRM",
+            "expired-listing-generator":"Listings","fsbo-cold-email-generator":"Email Marketing",
+            "instagram-caption-generator":"Social Media","investor-reply-generator":"Lead Generation",
+            "lead-magnet-generator":"Lead Generation","lead-nurture-sequence-planner":"Email Marketing",
+            "lead-qualification-calculator":"Lead Generation","lead-quiz":"Lead Generation",
+            "linkedin-post-generator":"Social Media","listing-bullet-point-optimizer":"Listings",
+            "listing-description-generator":"Listings","listing-presentation-builder":"Listings",
+            "market-update-generator":"Listings","milestone-anniversary-tracker":"CRM",
+            "neighborhood-description-writer":"Listings","new-agent-90day-plan":"Productivity",
+            "newsletter-builder":"Email Marketing","objection-handling-builder":"Scripts",
+            "open-house-followup-email":"Email Marketing","open-house-signin-generator":"Productivity",
+            "pipeline-review-template":"CRM","property-announcement-template":"Listings",
+            "property-feature-highlighter":"Listings","property-video-script-generator":"Video",
+            "real-estate-ad-copy-generator":"Marketing","real-estate-business-plan-generator":"Productivity",
+            "real-estate-faq-builder":"Listings","real-estate-goal-tracker":"Productivity",
+            "real-estate-landing-page-ideas":"Marketing","real-estate-math-calculator":"Calculators",
+            "real-estate-newsletter-generator":"Email Marketing","real-estate-seo-checklist":"SEO",
+            "referral-request-email-generator":"Email Marketing","roi-calculator":"Calculators",
+            "sphere-of-influence-tracker":"CRM","sunday-reset-email-generator":"Email Marketing",
+            "testimonial-request-generator":"Marketing","tiktok-real-estate-hooks":"Social Media",
+            "transaction-followup-sequence":"CRM","transaction-timeline-generator":"CRM",
+            "virtual-staging-prompt-generator":"Video","weekly-review-email-generator":"Email Marketing",
+            "youtube-title-generator":"Video"
+        };
+
+        const descriptions = {
+            "lead-quiz":"Interactive lead qualification quiz — 10 questions to identify buyer/seller readiness and urgency.",
+            "listing-description-generator":"Generate professional listing descriptions from property details. Enter address, beds, baths, features.",
+            "roi-calculator":"Calculate investment property ROI, cap rate, cash-on-cash return, and monthly cash flow instantly.",
+            "cold-email-sequence-generator":"Build 5-email nurture sequences for FSBOs, expired listings, and sphere leads.",
+            "cma-report-generator":"Generate comparative market analysis reports with comps, pricing recommendations, market trends.",
+            "buyer-persona-generator":"Create detailed buyer personas based on price range, location, timeline, and motivations.",
+            "blog-topic-generator":"Get 10 viral blog post topics per seed keyword, optimized for real estate agent audiences.",
+            "instagram-caption-generator":"Generate engaging Instagram captions with CTAs, hashtags, and hooks in seconds."
+        };
+
+        const grid = document.getElementById('toolsGrid');
+        toolNames.forEach(name => {
+            const label = toolLabels[name] || name;
+            const cat = categories[name] || 'Tool';
+            const desc = descriptions[name] || `Free AI-powered ${label.toLowerCase()} — no signup required.`;
+            const url = `https://listingsai.directory/tools/${name}.html`;
+            grid.innerHTML += `
+                <div class="tool-card">
+                    <span class="cat">${cat}</span>
+                    <h3>${label}</h3>
+                    <p>${desc}</p>
+                    <a href="${url}" class="tool-link">Use Free →</a>
+                </div>`;
+        });
+        document.getElementById('count').textContent = `${toolNames.length} tools — all free, no signup`;
     </script>
 </body>
 </html>
