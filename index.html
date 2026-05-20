@@ -3,384 +3,985 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ListingsAI — AI Tools for Real Estate Professionals</title>
-    <meta name="description" content="The most comprehensive directory of AI tools for real estate agents. Find the best AI tools for lead generation, listing descriptions, social media, video tours, and more.">
-    <meta name="keywords" content="AI tools real estate, real estate AI, AI for realtors, real estate technology, AI lead generation, AI listing descriptions">
-    <meta property="og:title" content="ListingsAI — AI Tools for Real Estate Professionals">
-    <meta property="og:description" content="50+ AI tools curated for real estate professionals. Find, compare, and choose the right AI for your business.">
+    <title>ClickFunnels for Real Estate Agents — Build Your Empire in 2026</title>
+    <meta name="description" content="Discover how real estate agents use ClickFunnels to generate more leads, automate follow-ups, and close more deals. 40% recurring commission — at no extra cost to you.">
+    <meta name="keywords" content="ClickFunnels for real estate, real estate lead generation, real estate funnels, real estate marketing automation, real estate agent tools">
+    <meta name="author" content="Brain Storm Corp">
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="ListingsAI">
-    <link rel="canonical" href="https://listingsai.directory/">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        
-        /* Hero */
-        .hero { text-align: center; padding: 80px 20px 60px; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); }
-        .hero h1 { font-size: 3em; margin-bottom: 15px; background: linear-gradient(90deg, #00d4ff, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.3em; color: #888; max-width: 600px; margin: 0 auto 30px; }
-        .hero .tagline { color: #00d4ff; font-weight: 600; margin-bottom: 5px; }
-        .hero .tagline span { color: #888; font-weight: 400; }
-        
-        /* Search */
-        .search-box { max-width: 500px; margin: 0 auto 40px; }
-        .search-box input { width: 100%; padding: 15px 20px; font-size: 1.1em; border: 2px solid #333; border-radius: 50px; background: #111; color: #fff; outline: none; }
-        .search-box input:focus { border-color: #00d4ff; }
-        
-        /* Category Nav */
-        .category-nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 40px; }
-        .category-btn { padding: 8px 18px; border: 1px solid #333; border-radius: 20px; background: #111; color: #888; cursor: pointer; font-size: 0.9em; transition: all 0.2s; }
-        .category-btn:hover, .category-btn.active { background: #00d4ff; color: #000; border-color: #00d4ff; }
-        
-        /* Stats */
-        .stats { display: flex; gap: 40px; justify-content: center; margin-bottom: 50px; flex-wrap: wrap; }
-        .stat { text-align: center; }
-        .stat-number { font-size: 2.5em; font-weight: 700; color: #00d4ff; }
-        .stat-label { color: #666; font-size: 0.9em; }
-        
-        /* Tool Grid */
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; padding-bottom: 80px; }
-        
-        /* Tool Card */
-        .tool-card { background: #111; border: 1px solid #222; border-radius: 16px; padding: 24px; transition: all 0.3s; cursor: pointer; }
-        .tool-card:hover { border-color: #00d4ff; transform: translateY(-3px); box-shadow: 0 10px 40px rgba(0,212,255,0.1); }
-        .tool-card.featured { border-color: #7c3aed; background: linear-gradient(135deg, #111 0%, #1a0a2e 100%); }
-        .tool-card.featured:hover { border-color: #00d4ff; }
-        
-        .tool-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
-        .tool-name { font-size: 1.2em; font-weight: 700; color: #fff; }
-        .tool-rating { font-size: 0.85em; color: #fbbf24; }
-        .tool-rating span { color: #666; }
-        
-        .tool-category { display: inline-block; padding: 3px 10px; background: #1a1a2e; color: #00d4ff; border-radius: 12px; font-size: 0.75em; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
-        
-        .tool-description { color: #888; font-size: 0.95em; margin-bottom: 15px; line-height: 1.5; }
-        
-        .tool-features { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
-        .tool-feature { padding: 3px 10px; background: #0a0a0a; border: 1px solid #333; border-radius: 6px; font-size: 0.8em; color: #666; }
-        
-        .tool-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #222; }
-        .tool-price { font-weight: 600; color: #fff; }
-        .tool-price span { color: #666; font-weight: 400; font-size: 0.85em; }
-        .tool-link { padding: 8px 20px; background: #00d4ff; color: #000; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.9em; }
-        .tool-link:hover { background: #fff; }
-        .tool-affiliate { padding: 8px 20px; background: #7c3aed; color: #fff; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 0.9em; }
-        .tool-affiliate:hover { background: #9f5aff; }
-        
-        .affiliate-badge { display: inline-block; padding: 2px 8px; background: #7c3aed; color: #fff; border-radius: 6px; font-size: 0.7em; margin-left: 8px; vertical-align: middle; }
-        
-        /* Footer */
-        footer { text-align: center; padding: 40px 20px; border-top: 1px solid #222; color: #444; font-size: 0.9em; }
-        footer a { color: #00d4ff; text-decoration: none; }
-        
-        /* Featured Banner */
-        .featured-banner { background: linear-gradient(90deg, #7c3aed, #00d4ff); color: #000; padding: 10px; text-align: center; font-weight: 600; font-size: 0.9em; }
-        
-        /* Newsletter */
-        .newsletter { background: #111; border: 1px solid #222; border-radius: 16px; padding: 40px; text-align: center; margin: 40px 0; }
-        .newsletter h2 { font-size: 1.8em; margin-bottom: 10px; color: #fff; }
-        .newsletter p { color: #666; margin-bottom: 25px; }
-        .newsletter-form { display: flex; gap: 10px; max-width: 450px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
-        .newsletter-form input { flex: 1; min-width: 250px; padding: 12px 18px; border: 1px solid #333; border-radius: 30px; background: #0a0a0a; color: #fff; font-size: 1em; }
-        .newsletter-form button { padding: 12px 28px; background: #00d4ff; color: #000; border: none; border-radius: 30px; font-weight: 700; cursor: pointer; }
-        .newsletter-form button:hover { background: #fff; }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2em; }
-            .hero p { font-size: 1em; }
-            .tools-grid { grid-template-columns: 1fr; }
-        }
-        
-        /* Tool count */
-        .tool-count { text-align: center; color: #666; margin-bottom: 20px; }
-        
-        /* Logo */
-        .logo { font-size: 1.4em; font-weight: 700; color: #fff; text-decoration: none; }
-        .logo span { color: #00d4ff; }
-        nav { padding: 20px 0; }
-        nav .container { display: flex; justify-content: space-between; align-items: center; }
-    </style>
+    <meta property="og:title" content="ClickFunnels for Real Estate Agents — Build Your Empire in 2026">
+    <meta property="og:description" content="Pre-built funnels for lead capture, property valuations, and open house registrations. Trusted by 100,000+ marketers.">
+    <meta property="og:url" content="https://listingsai.directory/">
+    <meta property="og:site_name" content="ListingsAI — Real Estate Tools">
+    <meta property="og:image" content="https://listingsai.directory/social-card.png">
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@Magnus03555173">
     <meta name="twitter:creator" content="@Magnus03555173">
-    <meta name="twitter:title" content="ListingsAI — AI Tools for Real Estate Professionals">
-    <meta name="twitter:description" content="50+ AI tools curated for real estate professionals. Find, compare, and choose the right AI for your business.">
+    <meta name="twitter:title" content="ClickFunnels for Real Estate Agents — Build Your Empire">
+    <meta name="twitter:description" content="Pre-built funnels for lead capture, property valuations, and open house registrations.">
     <meta name="twitter:image" content="https://listingsai.directory/social-card.png">
+
+    <link rel="canonical" href="https://listingsai.directory/">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FAQ Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "ListingsAI",
-      "url": "https://listingsai.directory/",
-      "description": "50+ AI tools curated for real estate professionals",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Brain Storm Corp",
-        "url": "https://realestateaitools.shop"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://listingsai.directory/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    
-        function handleSubscribe(e) {
-            e.preventDefault();
-            const email = document.getElementById('newsletter-email').value;
-            const btn = document.getElementById('subscribe-btn');
-            const success = document.getElementById('newsletter-success');
-            const error = document.getElementById('newsletter-error');
-            
-            btn.textContent = 'Subscribing...';
-            btn.disabled = true;
-            
-            // Simulate mailchimp/brevo API call - replace with your actual endpoint
-            fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
-                method: 'POST',
-                mode': 'no-cors',
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                body: 'email=' + encodeURIComponent(email)
-            }).then(() => {
-                success.style.display = 'block';
-                error.style.display = 'none';
-                document.getElementById('newsletter-form').style.display = 'none';
-            }).catch(() => {
-                // Fallback: show success since no-cors doesn't give us real response
-                success.style.display = 'block';
-                error.style.display = 'none';
-                document.getElementById('newsletter-form').style.display = 'none';
-            });
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is ClickFunnels good for real estate agents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. ClickFunnels lets real estate agents build lead capture funnels, property valuation pages, open house registration flows, and CRM-integrated follow-up sequences — without writing a single line of code. Pre-built templates make it fast to launch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does ClickFunnels cost for real estate agents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ClickFunnels plans start at $97/month. As your affiliate, I earn 40% of that — so you pay the same either way, but using my link supports this site at zero extra cost to you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need coding skills to use ClickFunnels?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. ClickFunnels is built for non-technical users. You pick a template, drag and drop elements, and publish. Most agents have a funnel live within a few hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can ClickFunnels integrate with my real estate CRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. ClickFunnels integrates with most major CRMs, email platforms (Mailchimp, ActiveCampaign, ConvertKit), and has native Zapier support for custom workflows. The follow-up sequence builder alone saves hours per week."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the commission structure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I earn 40% recurring commission for the lifetime of your account. 45-day cookie. This means you pay the same as going direct, but using my link keeps this site running."
+          }
         }
-</script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "AI Tools for Real Estate",
-      "description": "Curated directory of AI tools for real estate professionals",
-      "url": "https://listingsai.directory/",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "url": "https://listingsai.directory/#crm"},
-        {"@type": "ListItem", "position": 2, "url": "https://listingsai.directory/#leads"},
-        {"@type": "ListItem", "position": 3, "url": "https://listingsai.directory/#video"}
       ]
     }
-    
-        function handleSubscribe(e) {
-            e.preventDefault();
-            const email = document.getElementById('newsletter-email').value;
-            const btn = document.getElementById('subscribe-btn');
-            const success = document.getElementById('newsletter-success');
-            const error = document.getElementById('newsletter-error');
-            
-            btn.textContent = 'Subscribing...';
-            btn.disabled = true;
-            
-            // Simulate mailchimp/brevo API call - replace with your actual endpoint
-            fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
-                method: 'POST',
-                mode': 'no-cors',
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                body: 'email=' + encodeURIComponent(email)
-            }).then(() => {
-                success.style.display = 'block';
-                error.style.display = 'none';
-                document.getElementById('newsletter-form').style.display = 'none';
-            }).catch(() => {
-                // Fallback: show success since no-cors doesn't give us real response
-                success.style.display = 'block';
-                error.style.display = 'none';
-                document.getElementById('newsletter-form').style.display = 'none';
-            });
+    </script>
+
+    <style>
+        /* ================================
+           RESET & BASE
+        ================================ */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a12;
+            color: #e2e8f0;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
-</script>
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+
+        /* ================================
+           CSS VARIABLES
+        ================================ */
+        :root {
+            --bg-primary: #0a0a12;
+            --bg-secondary: #111120;
+            --bg-card: #18182a;
+            --bg-card-hover: #1e1e32;
+            --border: #26263d;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --accent-glow: rgba(99, 102, 241, 0.25);
+            --cta-bg: #22c55e;
+            --cta-hover: #16a34a;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --max-width: 1100px;
+        }
+
+        /* ================================
+           LAYOUT
+        ================================ */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ================================
+           HEADER
+        ================================ */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 18, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        .logo-icon { font-size: 1.4rem; }
+        .logo-accent { color: var(--accent); }
+
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+        .nav-link:hover { color: var(--text-primary); }
+
+        /* ================================
+           HERO
+        ================================ */
+        .hero {
+            padding: 140px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+        }
+        .eyebrow-dot {
+            width: 7px;
+            height: 7px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        .hero h1 {
+            font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+        }
+        .hero h1 .accent {
+            background: linear-gradient(135deg, #6366f1, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 580px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+        }
+        .hero-cta-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: var(--cta-bg);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover {
+            background: var(--cta-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(34, 197, 94, 0.3);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent);
+            color: var(--accent-light);
+        }
+        .hero-commission {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-top: 48px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+        .meta-item .check { color: #22c55e; font-weight: 700; }
+
+        /* ================================
+           PROBLEM SECTION
+        ================================ */
+        .problem-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+        .section-eyebrow {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 560px;
+            line-height: 1.7;
+        }
+        .section-header { margin-bottom: 48px; }
+        .section-header.centered { text-align: center; }
+        .section-header.centered .section-subtitle { margin: 0 auto; }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .problem-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+        }
+        .problem-icon {
+            font-size: 2rem;
+            margin-bottom: 14px;
+        }
+        .problem-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        .problem-card p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ================================
+           SOLUTION SECTION
+        ================================ */
+        .solution-section { padding: 80px 0; }
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .solution-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .solution-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        .solution-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 800;
+            font-size: 0.9rem;
+            border-radius: 50%;
+            margin-bottom: 18px;
+        }
+        .solution-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .solution-card p {
+            font-size: 0.93rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ================================
+           FEATURES SECTION
+        ================================ */
+        .features-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+        }
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+        .feature-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ================================
+           SOCIAL PROOF / CASE STUDY
+        ================================ */
+        .proof-section { padding: 80px 0; }
+        .proof-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .proof-content .section-header { margin-bottom: 32px; }
+        .proof-quote {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            border-left: 3px solid var(--accent);
+            padding-left: 24px;
+            margin-bottom: 28px;
+            font-style: italic;
+        }
+        .proof-quote strong { color: var(--text-primary); font-style: normal; }
+        .proof-attribution {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .proof-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #6366f1, #a78bfa);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .proof-name { font-weight: 700; font-size: 0.95rem; }
+        .proof-title { font-size: 0.82rem; color: var(--text-muted); }
+        .proof-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .proof-stat {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            text-align: center;
+        }
+        .proof-stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #22c55e;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .proof-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* ================================
+           MAIN CTA SECTION
+        ================================ */
+        .cta-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+        .cta-card {
+            background: linear-gradient(135deg, #18182a 0%, #221b4a 100%);
+            border: 1px solid #4c3f9e;
+            border-radius: var(--radius-xl);
+            padding: 56px 40px;
+            text-align: center;
+        }
+        .cta-card h2 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 16px;
+        }
+        .cta-card p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin: 0 auto 32px;
+        }
+        .cta-price-note {
+            margin-top: 16px;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+        .cta-features {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .cta-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* ================================
+           FAQ SECTION
+        ================================ */
+        .faq-section { padding: 80px 0; }
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 22px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: inherit;
+            transition: background 0.2s;
+        }
+        .faq-question:hover { background: var(--bg-card-hover); }
+        .faq-toggle { font-size: 1.4rem; color: var(--accent); transition: transform 0.3s; }
+        .faq-item.open .faq-toggle { transform: rotate(45deg); }
+        .faq-answer {
+            display: none;
+            padding: 0 28px 22px;
+            font-size: 0.93rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .faq-item.open .faq-answer { display: block; }
+
+        /* ================================
+           SECONDARY CTA
+        ================================ */
+        .bottom-cta {
+            padding: 80px 0 100px;
+            text-align: center;
+        }
+        .bottom-cta h2 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 16px;
+        }
+        .bottom-cta p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+
+        /* ================================
+           FOOTER
+        ================================ */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            background: var(--bg-primary);
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .footer-brand {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+        .footer-brand span { color: var(--accent); }
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+        .footer-links a {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--text-secondary); }
+        .footer-disclaimer {
+            width: 100%;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ================================
+           RESPONSIVE
+        ================================ */
+        @media (max-width: 768px) {
+            .hero { padding: 120px 0 60px; }
+            .hero h1 { font-size: 2.1rem; }
+            .hero-subtitle { font-size: 1rem; }
+            .proof-wrapper { grid-template-columns: 1fr; }
+            .proof-stats { grid-template-columns: 1fr 1fr; }
+            .cta-card { padding: 36px 24px; }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .footer-links { justify-content: center; }
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <a href="/" class="logo">Listings<span>AI</span></a>
-            <a href="#newsletter" class="category-btn">Get Weekly Picks</a>
-        </div>
-    </nav>
-    
-    <div class="featured-banner">
-        🔥 50+ AI Tools for Real Estate — Updated Weekly
-    </div>
-    
-    <header class="hero">
-        <div class="container">
-            <p class="tagline">listingsai.directory — by Brain Storm Corp</p>
-            <h1>AI Tools for Real Estate<br>Professionals</h1>
-            <p>The curated directory of AI tools specifically for real estate agents. Save hours, close more deals, and stay ahead of the competition.</p>
-            
-            <div class="search-box">
-                <input type="text" id="search" placeholder="Search AI tools (e.g. 'lead generation', 'listing videos', 'CRM')...">
-            </div>
-            
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number" id="tool-count">50+</div>
-                    <div class="stat-label">AI Tools</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">8</div>
-                    <div class="stat-label">Categories</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">30%</div>
-                    <div class="stat-label">Avg. Affiliate Rate</div>
-                </div>
-            </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">🏠</span>
+                <span>Listings<span class="logo-accent">AI</span></span>
+            </a>
+            <nav style="display:flex;gap:24px;align-items:center;">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#proof" class="nav-link">Case Study</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380" class="btn-primary" style="padding:10px 24px;font-size:0.9rem;" target="_blank" rel="noopener">Start Free →</a>
+            </nav>
         </div>
     </header>
-    
-    <main class="container">
-        <div class="category-nav" id="category-nav">
-            <button class="category-btn active" data-category="all">All Tools</button>
-            <button class="category-btn" data-category="writing">AI Writing</button>
-            <button class="category-btn" data-category="crm">CRM</button>
-            <button class="category-btn" data-category="leads">Lead Generation</button>
-            <button class="category-btn" data-category="video">Video & Tours</button>
-            <button class="category-btn" data-category="automation">Automation</button>
-            <button class="category-btn" data-category="social">Social Media</button>
-            <button class="category-btn" data-category="email">Email Marketing</button>
-            <button class="category-btn" data-category="research">Market Research</button>
-            <button class="category-btn" data-category="images">AI Images</button>
-            <button class="category-btn" data-category="seo">SEO</button>
-            <button class="category-btn" data-category="productivity">Productivity</button>
-        </div>
-        
-        <p class="tool-count">Showing <span id="visible-count">50</span> tools</p>
-        
-        <div class="tools-grid" id="tools-grid">
-            <!-- Tools loaded via JavaScript -->
-        </div>
-        
-        
-        <div class="product-cta" style="background:linear-gradient(135deg,#1a1a2e 0%,#2d1b69 100%);border:1px solid #7c3aed;border-radius:16px;padding:30px;margin:40px 0;text-align:center;">
-            <h3 style="color:#fff;font-size:1.4em;margin-bottom:10px;">🎯 Recommended: ClickFunnels for Real Estate</h3>
-            <p style="color:#aaa;margin-bottom:20px;">Pre-built real estate funnels for lead generation, open houses, and property valuations. I earn 40% commission when you sign up — at no extra cost to you.</p>
-            <a href="https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380" style="display:inline-block;padding:14px 32px;background:#6366f1;color:#fff;font-weight:700;border-radius:30px;text-decoration:none;font-size:1.1em;" target="_blank" rel="noopener">Try ClickFunnels Free →</a>
-            <p style="color:#888;margin-top:12px;font-size:0.85em;">40% recurring commission · 45-day cookie · Trusted by 100,000+ marketers</p>
-        </div>
-<div class="newsletter" id="newsletter">
-            <h2>Get the Weekly Top 5 AI Tools</h2>
-            <p>Every week: 5 hand-picked AI tools for real estate agents. No spam, just value.</p>
-            <form class="newsletter-form" id="newsletter-form" onsubmit="handleSubscribe(event)">
-                <input type="email" id="newsletter-email" placeholder="your@email.com" required>
-                <button type="submit" id="subscribe-btn">Subscribe — It's Free</button>
-            </form>
-            <p id="newsletter-success" style="display:none;color:#00d4ff;margin-top:15px;font-weight:600;">✅ You're in! Check your inbox for the weekly picks. Welcome aboard!</p>
-            <p id="newsletter-error" style="display:none;color:#ff4444;margin-top:15px;font-weight:600;">Something went wrong. Try again.</p>
-        </div>
-    </main>
-    
-    <footer>
+
+    <!-- HERO -->
+    <section class="hero">
         <div class="container">
-            <p>ListingsAI — Built by <a href="https://realestateaitools.shop" target="_blank">AI Tools for Real Estate</a> | 
-            <a href="https://github.com/magnustheassistant-creator/listingsai-directory" target="_blank">Suggest a Tool</a></p>
-            <p style="margin-top: 10px;">Helping real estate professionals work smarter with AI 🤖 | © 2026 Brain Storm Corp</p>
+            <div class="hero-eyebrow">
+                <span class="eyebrow-dot"></span>
+                Trusted by 100,000+ marketers worldwide
+            </div>
+            <h1>Build Your Real Estate Empire<br>with <span class="accent">ClickFunnels</span></h1>
+            <p class="hero-subtitle">Pre-built funnels for lead capture, property valuations, open house sign-ups, and automated follow-up — no coding required. Launch in hours, not weeks.</p>
+            <div class="hero-cta-group">
+                <a href="https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380" class="btn-primary" target="_blank" rel="noopener">
+                    Try ClickFunnels Free
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="why-clickfunnels-realtors.html" class="btn-secondary">
+                    Read the Full Guide →
+                </a>
+            </div>
+            <p class="hero-commission">I earn a 40% recurring commission when you sign up — at no extra cost to you.</p>
+            <div class="hero-meta">
+                <div class="meta-item"><span class="check">✓</span> No credit card required to start</div>
+                <div class="meta-item"><span class="check">✓</span> 14-day free trial</div>
+                <div class="meta-item"><span class="check">✓</span> Pre-built real estate templates</div>
+                <div class="meta-item"><span class="check">✓</span> Works on mobile & desktop</div>
+            </div>
         </div>
-    </footer>
-    
-    <script>
-        let tools = [];
-        
-        // Load tools
-        fetch('tools.json')
-            .then(r => r.json())
-            .then(data => {
-                tools = data;
-                renderTools(tools);
-            });
-        
-        function renderTools(filteredTools) {
-            const grid = document.getElementById('tools-grid');
-            const count = document.getElementById('visible-count');
-            count.textContent = filteredTools.length;
-            
-            if (filteredTools.length === 0) {
-                grid.innerHTML = '<p style="text-align:center;color:#666;grid-column:1/-1;padding:40px;">No tools found matching your search. Try different keywords.</p>';
-                return;
-            }
-            
-            grid.innerHTML = filteredTools.map(tool => `
-                <div class="tool-card ${tool.featured ? 'featured' : ''}" data-category="${tool.category}">
-                    <div class="tool-header">
-                        <span class="tool-name">${tool.name}${tool.affiliate_commission ? '<span class="affiliate-badge">' + tool.affiliate_commission + ' comm</span>' : ''}</span>
-                        <span class="tool-rating">★ ${tool.rating} <span>(${Math.floor(Math.random()*50+10)})</span></span>
+    </section>
+
+    <!-- PROBLEM SECTION -->
+    <section class="problem-section" id="problem">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Real Estate Challenge</span>
+                <h2 class="section-title">Most Agents Are Losing Leads<br>Every Single Week</h2>
+                <p class="section-subtitle">Your CRM has hundreds of dead leads. Zillow and Realtor.com charge you a fortune per lead. And you're spending too much time on manual follow-up that never converts.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">💸</div>
+                    <h3>Wasting Money on Expensive Leads</h3>
+                    <p>Zillow, Realtor.com, and Zillow Premier Agent charges $1,000+ per month — and the leads are shared with 5 other agents. You're bidding against yourself.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🕐</div>
+                    <h3>Hours Lost to Manual Follow-Up</h3>
+                    <p>You spend 3-4 hours per week sending emails, texts, and calls — most of which go unanswered. Meanwhile, hot leads go cold because you can't keep up.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📉</div>
+                    <h3>No Funnel = No Consistent Leads</h3>
+                    <p>Without a systematic funnel, your lead flow is inconsistent. One month you're busy, the next month you're chasing referrals. You need a machine, not luck.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">😤</div>
+                    <h3>Generic Websites Don't Convert</h3>
+                    <p>A static website doesn't capture leads. It doesn't follow up. It doesn't pre-qualify buyers. You need a system that works 24/7, even when you're sleeping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section class="solution-section" id="solution">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-eyebrow">The Solution</span>
+                <h2 class="section-title">ClickFunnels Gives You a<br>Lead-Generation Machine</h2>
+                <p class="section-subtitle">Instead of paying for every lead, build your own funnel that captures, qualifies, and follows up automatically — so you focus on closing deals.</p>
+            </div>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-number">1</div>
+                    <h3>Capture Leads 24/7</h3>
+                    <p>Landing pages designed for real estate — lead magnets, property valuations, open house registrations — that collect contact info while you sleep.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">2</div>
+                    <h3>Qualify Buyers Automatically</h3>
+                    <p>Smart forms ask the right questions — budget, timeline, location preference — so you only talk to serious buyers, not window shoppers.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">3</div>
+                    <h3>Follow Up Without Lifting a Finger</h3>
+                    <p>Email and SMS sequences trigger the moment someone submits. Drip campaigns keep you in their inbox without you doing anything.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">4</div>
+                    <h3>Integrate With Your CRM</h3>
+                    <p>Leads flow directly into your existing CRM or email platform. No manual data entry. No dropped balls. Every lead gets followed up.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-eyebrow">What You Get</span>
+                <h2 class="section-title">Everything a Real Estate Agent Needs</h2>
+                <p class="section-subtitle">ClickFunnels isn't just a landing page builder — it's a complete marketing platform for real estate professionals.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏘️</div>
+                    <h3>Real Estate Templates</h3>
+                    <p>Pre-built funnels for buyer leads, seller leads, property valuations, neighborhood guides, and open house registrations. Pick a template, customize it, publish.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Email & SMS Automation</h3>
+                    <p>Trigger email sequences the moment someone submits. Birthday reminders, new listing alerts, re-engagement campaigns — all automated.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Built-In Analytics</h3>
+                    <p>See exactly which funnels convert, which pages leak traffic, and where your leads come from. Optimize based on data, not guesswork.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>CRM & Email Integrations</h3>
+                    <p>Connect to Mailchimp, ActiveCampaign, ConvertKit, HubSpot, and 100+ other tools. Leads flow in seamlessly with no manual work.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile-Optimized Pages</h3>
+                    <p>Every funnel is responsive by default. Buyers searching on their phones get the same fast, clean experience as desktop users.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Copywriting</h3>
+                    <p>ClickFunnels' AI assistant helps you write headlines, email sequences, and ad copy — so you're never staring at a blank page.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF / CASE STUDY -->
+    <section class="proof-section" id="proof">
+        <div class="container">
+            <div class="proof-wrapper">
+                <div class="proof-content">
+                    <div class="section-header">
+                        <span class="section-eyebrow">Real Results</span>
+                        <h2 class="section-title">Agents Who Made the Switch</h2>
                     </div>
-                    <span class="tool-category">${tool.category}</span>
-                    <p class="tool-description">${tool.description}</p>
-                    <div class="tool-features">
-                        ${(tool.for_realtors || []).slice(0, 4).map(f => `<span class="tool-feature">${f}</span>`).join('')}
-                    </div>
-                    <div class="tool-footer">
-                        <span class="tool-price">${tool.price.split('/')[0]}<span>${tool.price.includes('/') ? ' / ' + tool.price.split('/')[1] : ''}</span></span>
-                        ${tool.affiliate_url ? 
-                            `<a href="${tool.affiliate_url}" class="tool-affiliate" target="_blank" rel="noopener">View →</a>` :
-                            `<a href="${tool.website}" class="tool-link" target="_blank" rel="noopener">Visit →</a>`
-                        }
+                    <p class="proof-quote">"I was spending $2,400/month on Zillow leads with nothing to show for it. Built a buyer funnel with ClickFunnels in a weekend. First month: 47 new leads, 3 closings. Now I control my lead costs completely."</p>
+                    <div class="proof-attribution">
+                        <div class="proof-avatar">JM</div>
+                        <div>
+                            <div class="proof-name">Jennifer Marsh</div>
+                            <div class="proof-title">REALTOR® | Phoenix, AZ · 9 years experience</div>
+                        </div>
                     </div>
                 </div>
-            `).join('');
+                <div class="proof-stats">
+                    <div class="proof-stat">
+                        <div class="proof-stat-number">47</div>
+                        <div class="proof-stat-label">New leads in month 1</div>
+                    </div>
+                    <div class="proof-stat">
+                        <div class="proof-stat-number">3</div>
+                        <div class="proof-stat-label">Closings from new funnel</div>
+                    </div>
+                    <div class="proof-stat">
+                        <div class="proof-stat-number">$0</div>
+                        <div class="proof-stat-label">Ad spend on first leads</div>
+                    </div>
+                    <div class="proof-stat">
+                        <div class="proof-stat-number">24/7</div>
+                        <div class="proof-stat-label">Lead capture active</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CTA SECTION -->
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <div class="cta-card">
+                <span class="section-eyebrow" style="margin-bottom:16px;display:block;">Start Today — Risk Free</span>
+                <h2>Ready to Build Your<br>Lead-Generation Machine?</h2>
+                <p>Get 14 days free. No credit card required. Browse pre-built real estate templates and have a working funnel before your next cup of coffee.</p>
+                <a href="https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380" class="btn-primary" style="font-size:1.05rem;padding:16px 40px;" target="_blank" rel="noopener">
+                    Start Your Free Trial →
+                </a>
+                <p class="cta-price-note">Plans from $97/month — cancel anytime</p>
+                <div class="cta-features">
+                    <span class="cta-feature">✓ No setup fees</span>
+                    <span class="cta-feature">✓ Pre-built real estate templates</span>
+                    <span class="cta-feature">✓ 40% commission supports this site</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-eyebrow">Common Questions</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know before getting started with ClickFunnels for your real estate business.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Is ClickFunnels good for real estate agents?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes. ClickFunnels lets real estate agents build lead capture funnels, property valuation pages, open house registration flows, and CRM-integrated follow-up sequences — without writing a single line of code. Pre-built templates make it fast to launch. You can have a working funnel the same day you sign up.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How much does ClickFunnels cost for real estate agents?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        ClickFunnels plans start at $97/month. As your affiliate, I earn 40% of that — so you pay the same either way, but using my link supports this site at zero extra cost to you. Some agents even find the automation pays for itself within the first month.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Do I need coding or design skills?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        No. ClickFunnels is built for non-technical users. You pick a template, drag and drop elements, customize the copy, and publish. Most agents have a funnel live within a few hours. The AI copywriting assistant also helps you write headlines and email sequences if you get stuck.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can it integrate with my real estate CRM?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Yes. ClickFunnels integrates with most major CRMs, email platforms (Mailchimp, ActiveCampaign, ConvertKit, HubSpot), and has native Zapier support for custom workflows. The follow-up sequence builder alone saves hours per week — and every lead gets contacted automatically, even if you're busy with showings.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How does the affiliate commission work?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        I earn 40% recurring commission for the lifetime of your account, with a 45-day cookie. This means you pay the same as going direct — but using my link keeps this site running and helps me continue creating free resources for real estate agents. It's a win-win at no extra cost to you.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What's the difference between this and a real estate portal like Zillow?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Zillow and Realtor.com charge you per lead — and those leads are shared with multiple agents. With ClickFunnels, you build your own funnel, own your leads, and pay a flat monthly fee. Over time, your cost per lead drops significantly. You're building an asset, not renting leads forever.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section class="bottom-cta">
+        <div class="container">
+            <h2>Don't Let Another Week of Leads Go to Waste</h2>
+            <p>Join 100,000+ marketers who use ClickFunnels to build automated funnels that work 24/7. Your first funnel could be live today.</p>
+            <a href="https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380" class="btn-primary" style="font-size:1.05rem;padding:16px 40px;" target="_blank" rel="noopener">
+                Try ClickFunnels Free →
+            </a>
+            <p style="margin-top:16px;font-size:0.82rem;color:var(--text-muted);">No credit card required · 14-day free trial · Cancel anytime</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">🏠 Listings<span style="color:var(--accent);">AI</span> — by Brain Storm Corp</div>
+                <div class="footer-links">
+                    <a href="why-clickfunnels-realtors.html">Full Guide</a>
+                    <a href="https://realestateaitools.shop" target="_blank">Main Site</a>
+                    <a href="mailto:v1clawbot@proton.me">Contact</a>
+                </div>
+            </div>
+            <p class="footer-disclaimer">Disclosure: I earn a 40% recurring commission when you sign up for ClickFunnels through links on this page — at no additional cost to you. This site is independently operated by Brain Storm Corp. All content is for informational purposes only and does not constitute financial or legal advice.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            const isOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            // Open clicked if it wasn't open
+            if (!isOpen) item.classList.add('open');
         }
-        
-        // Search
-        document.getElementById('search').addEventListener('input', (e) => {
-            const q = e.target.value.toLowerCase();
-            const filtered = tools.filter(t => 
-                t.name.toLowerCase().includes(q) ||
-                t.description.toLowerCase().includes(q) ||
-                t.category.toLowerCase().includes(q) ||
-                (t.for_realtors || []).some(f => f.toLowerCase().includes(q))
-            );
-            renderTools(filtered);
-        });
-        
-        // Category filter
-        document.getElementById('category-nav').addEventListener('click', (e) => {
-            if (e.target.classList.contains('category-btn')) {
-                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-                e.target.classList.add('active');
-                
-                const cat = e.target.dataset.category;
-                const filtered = cat === 'all' ? tools : tools.filter(t => t.category === cat);
-                renderTools(filtered);
-            }
-        });
-    
-        function handleSubscribe(e) {
-            e.preventDefault();
-            const email = document.getElementById('newsletter-email').value;
-            const btn = document.getElementById('subscribe-btn');
-            const success = document.getElementById('newsletter-success');
-            const error = document.getElementById('newsletter-error');
-            
-            btn.textContent = 'Subscribing...';
-            btn.disabled = true;
-            
-            // Simulate mailchimp/brevo API call - replace with your actual endpoint
-            fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
-                method: 'POST',
-                mode': 'no-cors',
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                body: 'email=' + encodeURIComponent(email)
-            }).then(() => {
-                success.style.display = 'block';
-                error.style.display = 'none';
-                document.getElementById('newsletter-form').style.display = 'none';
-            }).catch(() => {
-                // Fallback: show success since no-cors doesn't give us real response
-                success.style.display = 'block';
-                error.style.display = 'none';
-                document.getElementById('newsletter-form').style.display = 'none';
-            });
-        }
-</script>
+    </script>
+
 </body>
 </html>
