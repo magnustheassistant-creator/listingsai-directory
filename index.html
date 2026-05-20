@@ -436,6 +436,87 @@
         }
 
         /* ================================
+           LATEST ARTICLES SECTION
+        ================================ */
+        .articles-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .article-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: border-color 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .article-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+        .article-card-banner {
+            height: 160px;
+            background: linear-gradient(135deg, #18182a 0%, #2d1f6e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        .article-card-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .article-card-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            padding: 3px 10px;
+            border-radius: 100px;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+        .article-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        .article-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        .article-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--accent-light);
+            transition: gap 0.2s;
+        }
+        .article-card-link:hover {
+            gap: 10px;
+            color: var(--accent-light);
+        }
+
+        /* ================================
            SOCIAL PROOF / CASE STUDY
         ================================ */
         .proof-section { padding: 80px 0; }
@@ -673,6 +754,7 @@
                 <span>Listings<span class="logo-accent">AI</span></span>
             </a>
             <nav style="display:flex;gap:24px;align-items:center;">
+                <a href="#articles" class="nav-link">Articles</a>
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#proof" class="nav-link">Case Study</a>
                 <a href="#faq" class="nav-link">FAQ</a>
@@ -814,6 +896,50 @@
                     <h3>AI-Powered Copywriting</h3>
                     <p>ClickFunnels' AI assistant helps you write headlines, email sequences, and ad copy — so you're never staring at a blank page.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LATEST ARTICLES -->
+    <section class="articles-section" id="articles">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-eyebrow">Free Tools & Guides</span>
+                <h2 class="section-title">Newest from the Blog</h2>
+                <p class="section-subtitle">Practical real estate calculators and guides — all free, all designed to help you close more deals.</p>
+            </div>
+            <div class="articles-grid">
+
+                <a href="tools/roi-calculator.html" class="article-card">
+                    <div class="article-card-banner">📊</div>
+                    <div class="article-card-body">
+                        <span class="article-card-tag">Free Tool</span>
+                        <h3>Real Estate ROI Calculator</h3>
+                        <p>Calculate cash-on-cash return, cap rate, NOI, and annualized yield before you sign. Know if a deal actually works before you commit.</p>
+                        <span class="article-card-link">Try the Calculator →</span>
+                    </div>
+                </a>
+
+                <a href="tools/roi-calculator-article.html" class="article-card">
+                    <div class="article-card-banner">📖</div>
+                    <div class="article-card-body">
+                        <span class="article-card-tag">Guide</span>
+                        <h3>Real Estate ROI Calculator: How to Know If a Deal Is Actually Worth It</h3>
+                        <p>Step-by-step walkthrough of 5 ROI formulas used by pro investors. Includes real deal analysis, case study, and common mistakes to avoid.</p>
+                        <span class="article-card-link">Read the Guide →</span>
+                    </div>
+                </a>
+
+                <a href="why-clickfunnels-realtors.html" class="article-card">
+                    <div class="article-card-banner">🏆</div>
+                    <div class="article-card-body">
+                        <span class="article-card-tag">Affiliate Guide</span>
+                        <h3>ClickFunnels for Real Estate Agents — Complete 2026 Guide</h3>
+                        <p>Why top agents are switching to funnels, how the 40% recurring commission works, and a step-by-step setup walkthrough.</p>
+                        <span class="article-card-link">Read the Full Guide →</span>
+                    </div>
+                </a>
+
             </div>
         </div>
     </section>
