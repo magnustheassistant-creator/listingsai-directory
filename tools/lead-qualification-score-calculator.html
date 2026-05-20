@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Qualification Score Calculator — Free Real Estate Tool</title>
+    <meta name="description" content="Score your real estate leads in 30 seconds. Enter 6 data points and get a hot/warm/cold score with exactly what to do next. Free tool by ListingsAI.">
+    <meta property="og:title" content="Lead Qualification Score Calculator — Free RE Tool">
+    <meta property="og:description" content="Score your real estate leads in 30 seconds. Get a hot/warm/cold score with actionable next steps.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://listingsai.directory/tools/lead-qualification-score-calculator.html">
+    <style>
+        :root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff; --hot: #f85149; --warm: #d29922; --cold: #3fb950; --purple: #a371f7; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; min-height: 100vh; padding: 20px; line-height: 1.6; }
+        .container { max-width: 760px; margin: 0 auto; }
+        header { text-align: center; padding: 40px 0 30px; }
+        .tag { display: inline-block; background: rgba(88,166,255,0.15); color: var(--accent); font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.5px; margin-bottom: 16px; }
+        h1 { font-size: clamp(24px, 5vw, 36px); font-weight: 700; margin-bottom: 12px; line-height: 1.2; }
+        .subtitle { color: var(--muted); font-size: 16px; max-width: 500px; margin: 0 auto; }
+        .calc-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin: 30px 0; }
+        .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 600px) { .input-grid { grid-template-columns: 1fr; } }
+        .field { display: flex; flex-direction: column; gap: 6px; }
+        label { font-size: 13px; font-weight: 500; color: var(--muted); }
+        input[type="number"], select { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; color: var(--text); font-size: 15px; width: 100%; outline: none; transition: border-color 0.2s; }
+        input:focus, select:focus { border-color: var(--accent); }
+        .calc-btn { width: 100%; padding: 14px; background: var(--accent); color: #fff; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; cursor: pointer; margin-top: 24px; transition: opacity 0.2s; }
+        .calc-btn:hover { opacity: 0.9; }
+        .result-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin: 24px 0; display: none; }
+        .result-card.show { display: block; }
+        .score-display { text-align: center; padding: 20px; border-radius: 12px; margin-bottom: 24px; }
+        .score-display.hot { background: rgba(248,81,73,0.1); border: 1px solid rgba(248,81,73,0.3); }
+        .score-display.warm { background: rgba(210,153,34,0.1); border: 1px solid rgba(210,153,34,0.3); }
+        .score-display.cold { background: rgba(63,185,80,0.1); border: 1px solid rgba(63,185,80,0.3); }
+        .score-number { font-size: 64px; font-weight: 800; line-height: 1; }
+        .score-display.hot .score-number { color: var(--hot); }
+        .score-display.warm .score-number { color: var(--warm); }
+        .score-display.cold .score-number { color: var(--cold); }
+        .score-label { font-size: 20px; font-weight: 600; margin-top: 8px; }
+        .score-display.hot .score-label { color: var(--hot); }
+        .score-display.warm .score-label { color: var(--warm); }
+        .score-display.cold .score-label { color: var(--cold); }
+        .action-box { background: var(--bg); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+        .action-box h3 { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--accent); }
+        .action-box p { font-size: 14px; color: var(--muted); }
+        .action-box ol { margin: 8px 0 0 20px; font-size: 14px; color: var(--muted); }
+        .action-box li { margin-bottom: 4px; }
+        .funnel-cta { background: linear-gradient(135deg, rgba(163,113,247,0.15), rgba(88,166,255,0.15)); border: 1px solid var(--purple); border-radius: 12px; padding: 24px; text-align: center; margin: 24px 0; }
+        .funnel-cta h3 { color: var(--purple); font-size: 16px; margin-bottom: 8px; }
+        .funnel-cta p { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+        .funnel-btn { display: inline-block; background: var(--purple); color: #fff; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; }
+        .funnel-btn:hover { opacity: 0.9; }
+        .reset-btn { background: none; border: 1px solid var(--border); color: var(--muted); padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 14px; margin-top: 12px; }
+        .reset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        footer { text-align: center; padding: 40px 0; color: var(--muted); font-size: 13px; }
+        footer a { color: var(--accent); text-decoration: none; }
+        .range-hint { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <span class="tag">FREE TOOL</span>
+        <h1>Lead Qualification Score Calculator</h1>
+        <p class="subtitle">Score any lead from 0–100 in 30 seconds. Get a hot/warm/cold rating plus exactly what to do next.</p>
+    </header>
+
+    <div class="calc-card">
+        <div class="input-grid">
+            <div class="field">
+                <label>Budget ($)</label>
+                <input type="number" id="budget" placeholder="350000">
+                <span class="range-hint">Pre-approved or expressed range</span>
+            </div>
+            <div class="field">
+                <label>Timeline (months)</label>
+                <select id="timeline">
+                    <option value="0">Select timeline</option>
+                    <option value="3">Within 1–3 months</option>
+                    <option value="6">3–6 months</option>
+                    <option value="12">6–12 months</option>
+                    <option value="24">12+ months</option>
+                    <option value="-5">Just browsing / No timeline</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Financing</label>
+                <select id="financing">
+                    <option value="0">Select financing</option>
+                    <option value="15">Pre-approved + Proof of Funds</option>
+                    <option value="10">Pre-approved Only</option>
+                    <option value="5">Pre-qualification Letter</option>
+                    <option value="-5">Cash buyer</option>
+                    <option value="-10">Unknown / Need to discuss</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Motivation Level</label>
+                <select id="motivation">
+                    <option value="0">Select motivation</option>
+                    <option value="20">Actively touring homes</option>
+                    <option value="15">Has an agent, touring soon</option>
+                    <option value="10">Working with an agent</option>
+                    <option value="5">Just started looking</option>
+                    <option value="-10">"Getting a feel for the market"</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Lead Source</label>
+                <select id="lead_source">
+                    <option value="0">Select lead source</option>
+                    <option value="15">Referral from past client</option>
+                    <option value="10">Referral from agent/partner</option>
+                    <option value="8">Zillow/Realtor.com inquiry</option>
+                    <option value="5">Open house sign-in</option>
+                    <option value="3">Social media / Website</option>
+                    <option value="-5">Random cold outreach</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Has Agent Already?</label>
+                <select id="has_agent">
+                    <option value="0">Select status</option>
+                    <option value="20">No agent — working with me</option>
+                    <option value="15">Interviewing agents</option>
+                    <option value="0">Has an agent — undecided</option>
+                    <option value="-15">Committed to another agent</option>
+                </select>
+            </div>
+        </div>
+        <button class="calc-btn" onclick="calculateScore()">Score My Lead</button>
+    </div>
+
+    <div class="result-card" id="result">
+        <div class="score-display" id="scoreDisplay">
+            <div class="score-number" id="scoreNum">—</div>
+            <div class="score-label" id="scoreLabel">—</div>
+        </div>
+
+        <div class="action-box" id="actionBox">
+            <h3 id="actionTitle"></h3>
+            <p id="actionText"></p>
+            <ol id="actionList"></ol>
+        </div>
+
+        <div class="funnel-cta">
+            <h3>Stop Losing Hot Leads to Slow Follow-Up</h3>
+            <p>Most agents score leads manually — then lose them to whoever follows up fastest. Capture every hot lead with an automated funnel that responds in under 60 seconds.</p>
+            <a href="[REDACTED]" class="funnel-btn">Build Your Lead Funnel →</a>
+        </div>
+
+        <button class="reset-btn" onclick="resetCalc()">Score Another Lead</button>
+    </div>
+
+    <footer>
+        <p>Part of the <a href="/">ListingsAI free tool suite</a> for real estate professionals</p>
+    </footer>
+</div>
+
+<script>
+function calculateScore() {
+    let score = 0;
+    score += parseFloat(document.getElementById('budget').value) || 0;
+    score += parseFloat(document.getElementById('timeline').value) || 0;
+    score += parseFloat(document.getElementById('financing').value) || 0;
+    score += parseFloat(document.getElementById('motivation').value) || 0;
+    score += parseFloat(document.getElementById('lead_source').value) || 0;
+    score += parseFloat(document.getElementById('has_agent').value) || 0;
+
+    const display = document.getElementById('scoreDisplay');
+    const numEl = document.getElementById('scoreNum');
+    const labelEl = document.getElementById('scoreLabel');
+    const titleEl = document.getElementById('actionTitle');
+    const textEl = document.getElementById('actionText');
+    const listEl = document.getElementById('actionList');
+
+    display.className = 'score-display';
+
+    let label, actionTitle, actionText, actionSteps;
+
+    if (score >= 50) {
+        label = 'HOT LEAD';
+        display.classList.add('hot');
+        numEl.textContent = Math.min(score, 100) + '/100';
+        labelEl.textContent = label;
+        actionTitle = 'PRIORITIZE — Call Today';
+        actionText = 'This lead is ready to move. Here\'s your exact action plan:';
+        actionSteps = [
+            'Call within 60 minutes (if daytime) or send a personal voice note now',
+            'Text: "Just scored your lead — I have something to show you tomorrow"',
+            'Confirm a showing or consultation within 24 hours',
+            'Send a direct text with 3 property links matching their budget',
+            'Follow up every single day until they commit or give a hard no'
+        ];
+    } else if (score >= 25) {
+        label = 'WARM LEAD';
+        display.classList.add('warm');
+        numEl.textContent = score + '/100';
+        labelEl.textContent = label;
+        actionTitle = 'NURTURE — Weekly Touch Points';
+        actionText = 'This lead needs warming. Build value with consistent, high-value outreach:';
+        actionSteps = [
+            'Send a personalized market update (not a generic newsletter)',
+            'Follow up 3x/week via text with relevant new listings',
+            'Add them to a 12-email nurture sequence',
+            'Invite to an open house this weekend',
+            'Share a client success story that matches their situation'
+        ];
+    } else {
+        label = 'COLD LEAD';
+        display.classList.add('cold');
+        numEl.textContent = score + '/100';
+        labelEl.textContent = label;
+        actionTitle = 'LONG-TERM FUNNEL — Drip Campaign';
+        actionText = 'Don\'t spend hours on this one. Automate the nurture and focus on hot leads:';
+        actionSteps = [
+            'Add to a monthly newsletter drip',
+            'Share one relevant blog article per month',
+            'Re-engage with a market update every 90 days',
+            'If no response in 6 months, one final "thinking of you" text',
+            'Move to annual re-activation campaign'
+        ];
+    }
+
+    titleEl.textContent = actionTitle;
+    textEl.textContent = actionText;
+    listEl.innerHTML = actionSteps.map(s => '<li>' + s + '</li>').join('');
+
+    document.getElementById('result').classList.add('show');
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function resetCalc() {
+    document.querySelectorAll('input, select').forEach(function(el) {
+        if (el.tagName === 'SELECT') el.selectedIndex = 0;
+        else el.value = '';
+    });
+    document.getElementById('result').classList.remove('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
