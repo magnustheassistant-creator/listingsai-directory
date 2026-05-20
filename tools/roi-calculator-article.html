@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate ROI Calculator: How to Know If a Deal Is Actually Worth It (2026)</title>
+    <meta name="description" content="Use this free real estate ROI calculator to evaluate any investment property. Learn what cash-on-cash return, annualized yield, and net profit mean for your next deal — and how to scale your portfolio faster with ClickFunnels.">
+    <meta name="keywords" content="real estate ROI calculator, investment property return, cash on cash return real estate, real estate investor calculator, how to calculate ROI on rental property">
+    <meta name="author" content="ListingsAI">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Real Estate ROI Calculator: How to Know If a Deal Is Actually Worth It (2026)">
+    <meta property="og:description" content="Free tool + complete guide. Calculate real estate ROI in seconds and learn what the numbers mean for your next investment.">
+    <meta property="og:url" content="https://listingsai.directory/tools/roi-calculator.html">
+    <meta property="og:site_name" content="ListingsAI — Real Estate Tools">
+    <meta property="og:image" content="https://listingsai.directory/social-card.png">
+    <meta property="article:published_time" content="2026-05-20">
+    <meta property="article:author" content="ListingsAI">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Magnus03555173">
+    <meta name="twitter:title" content="Real Estate ROI Calculator: Know If a Deal Is Worth It (2026)">
+    <meta name="twitter:description" content="Free tool + complete guide. Calculate real estate ROI and learn what the numbers mean for your next deal.">
+
+    <link rel="canonical" href="https://listingsai.directory/tools/roi-calculator.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a12;
+            color: #e2e8f0;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: #818cf8; text-decoration: none; }
+        a:hover { color: #a5b4fc; text-decoration: underline; }
+        img { max-width: 100%; display: block; }
+
+        :root {
+            --bg-primary: #0a0a12;
+            --bg-secondary: #111120;
+            --bg-card: #18182a;
+            --border: #26263d;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --green: #22c55e;
+            --max-width: 760px;
+        }
+
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(10,10,18,0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        .logo { display: flex; align-items: center; gap: 8px; font-size: 1.05rem; font-weight: 700; }
+        .logo-accent { color: var(--accent); }
+        .back-link { font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+        .back-link:hover { color: var(--text-secondary); text-decoration: none; }
+
+        /* Article Header */
+        .article-header { padding: 120px 0 48px; text-align: center; }
+        .article-eyebrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .article-title {
+            font-size: clamp(1.9rem, 5vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+        }
+        .article-title .accent {
+            background: linear-gradient(135deg, #6366f1, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+        .article-meta span { display: flex; align-items: center; gap: 6px; }
+
+        /* Tool CTA Card */
+        .tool-card {
+            background: linear-gradient(135deg, #18182a 0%, #1a1040 100%);
+            border: 1px solid #4c3f9e;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+        .tool-card .emoji { font-size: 3rem; margin-bottom: 16px; }
+        .tool-card h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+        .tool-card p { color: var(--text-secondary); margin-bottom: 24px; line-height: 1.6; }
+        .btn-tool {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: var(--green);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 10px;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-tool:hover {
+            background: #16a34a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(34,197,94,0.3);
+            text-decoration: none;
+            color: #fff;
+        }
+        .tool-card .sub {
+            margin-top: 14px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 40px;
+        }
+        .toc-title {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 14px;
+        }
+        .toc ol {
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .toc ol li { font-size: 0.92rem; }
+        .toc ol li a { color: var(--text-secondary); }
+        .toc ol li a:hover { color: var(--accent-light); }
+
+        /* Article Body */
+        .article-body { padding-bottom: 80px; }
+        .prose { font-size: 1.02rem; color: var(--text-secondary); }
+        .prose p { margin-bottom: 24px; }
+        .prose h2 {
+            font-size: 1.55rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin: 48px 0 18px;
+            color: var(--text-primary);
+        }
+        .prose h3 {
+            font-size: 1.18rem;
+            font-weight: 700;
+            margin: 32px 0 14px;
+            color: var(--text-primary);
+        }
+        .prose ul, .prose ol { margin: 0 0 22px 22px; }
+        .prose li { margin-bottom: 9px; }
+        .prose strong { color: var(--text-primary); font-weight: 600; }
+        .prose blockquote {
+            border-left: 3px solid var(--accent);
+            padding: 16px 24px;
+            margin: 32px 0;
+            background: var(--bg-card);
+            border-radius: 0 12px 12px 0;
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 1.05rem;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,92,246,0.08));
+            border: 1px solid #4c3f9e;
+            border-radius: 14px;
+            padding: 28px;
+            margin: 36px 0;
+        }
+        .highlight-box h3 { margin-top: 0; font-size: 1.1rem; margin-bottom: 10px; }
+        .highlight-box p { margin-bottom: 0; }
+
+        /* Inline CTA */
+        .inline-cta {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .inline-cta p { margin-bottom: 14px; font-size: 0.95rem; }
+        .inline-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 26px;
+            background: var(--green);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .inline-cta a:hover { background: #16a34a; text-decoration: none; color: #fff; }
+
+        /* Case Study Box */
+        .case-study {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 40px 0;
+        }
+        .case-study .tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--green);
+            background: rgba(34,197,94,0.12);
+            padding: 4px 12px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+        .case-study h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 14px; }
+        .case-study .quote {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            border-left: 3px solid var(--green);
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .case-study .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+        .case-study .stat { text-align: center; background: var(--bg-primary); border-radius: 10px; padding: 18px; }
+        .case-study .stat .num { font-size: 1.6rem; font-weight: 800; color: var(--green); }
+        .case-study .stat .lbl { font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; }
+
+        /* Affiliate Banner */
+        .affiliate-banner {
+            background: linear-gradient(135deg, #0f1a0f 0%, #0a2010 100%);
+            border: 1px solid #1a5c1a;
+            border-radius: 14px;
+            padding: 28px;
+            margin: 48px 0;
+            text-align: center;
+        }
+        .affiliate-banner h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .affiliate-banner p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 18px; }
+        .affiliate-banner a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 24px;
+            background: var(--green);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .affiliate-banner a:hover { background: #16a34a; text-decoration: none; color: #fff; }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .footer-brand { font-weight: 700; font-size: 0.9rem; }
+        .footer-brand span { color: var(--accent); }
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 0.82rem; color: var(--text-muted); }
+        .footer-links a:hover { color: var(--text-secondary); text-decoration: none; }
+        .footer-disclaimer {
+            width: 100%;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 700px) {
+            .tool-card { padding: 28px 20px; }
+            .case-study .stats { grid-template-columns: 1fr; }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .footer-links { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="/" class="logo">🏠 Listings<span class="logo-accent">AI</span></a>
+            <a href="/" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Home
+            </a>
+        </div>
+    </header>
+
+    <!-- ARTICLE HEADER -->
+    <section class="article-header">
+        <div class="container">
+            <div class="article-eyebrow">Real Estate Investing</div>
+            <h1 class="article-title">Real Estate ROI Calculator:<br><span class="accent">How to Know If a Deal Is Actually Worth It</span></h1>
+            <div class="article-meta">
+                <span>📅 May 20, 2026</span>
+                <span>⏱️ 10 min read</span>
+                <span>🧮 Free tool included</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOOL CTA -->
+    <div class="container">
+        <div class="tool-card">
+            <div class="emoji">📊</div>
+            <h2>Calculate Your Property's ROI in 30 Seconds</h2>
+            <p>Enter purchase price, rental income, and expenses — get cash-on-cash return, annualized yield, and full profit breakdown instantly.</p>
+            <a href="roi-calculator.html" class="btn-tool">
+                Open Free ROI Calculator →
+            </a>
+            <p class="sub">No signup. No email required. Works on mobile.</p>
+        </div>
+    </div>
+
+    <!-- ARTICLE BODY -->
+    <article class="article-body">
+        <div class="container">
+
+            <div class="prose">
+
+                <p>You find a property. The numbers look good on paper. The rent covers the mortgage. But is it actually a good deal?</p>
+
+                <p>Most real estate investors make decisions based on incomplete math. They look at one metric — maybe the cap rate, or just the monthly cash flow — and call it done. That's how you end up in a property that's technically "breaking even" but bleeding money in ways you didn't account for.</p>
+
+                <p>This guide teaches you how to properly evaluate a real estate investment, using a full ROI calculation that accounts for cash flow, equity, appreciation, and selling costs. And at the end, there's a free calculator that does the math for you in 30 seconds.</p>
+
+                <h2>Why Most Investors Don't Calculate ROI Correctly</h2>
+
+                <p>Here's the mistake I see constantly: an investor sees a property that rents for $2,500/month and costs $2,000/month in mortgage, taxes, insurance, and maintenance. They think — "I'm making $500/month." That's technically true. But it's not ROI.</p>
+
+                <p>ROI means Return on Investment — it tells you how efficiently your money is working. If you put $70,000 into that property and make $6,000/year ($500/month × 12), that's an 8.5% cash-on-cash return. Not bad. But if the same $70,000 in a different deal makes $14,000/year, you're leaving money on the table.</p>
+
+                <p>Without calculating true ROI, you can't compare deals. You can't know if your portfolio is performing. And you can't make evidence-based decisions about when to hold, sell, or refi.</p>
+
+                <h2>The Four Numbers That Determine Your Real Estate ROI</h2>
+
+                <p>A complete ROI calculation includes four components:</p>
+
+                <ol>
+                    <li><strong>Cash Flow</strong> — Monthly rent minus all expenses. This is your net operating income before financing.</li>
+                    <li><strong>Equity Build</strong> — Principal paydown on your mortgage each month. Every payment you make builds ownership.</li>
+                    <li><strong>Appreciation</strong> — The property's value increasing over time. Even at a conservative 2-3% annually, this compounds significantly.</li>
+                    <li><strong>Tax Benefits</strong> — Depreciation deductions, mortgage interest write-offs, and 1031 exchange deferrals.</li>
+                </ol>
+
+                <p>Most investors only look at cash flow. That's why they miss the full picture.</p>
+
+                <div class="highlight-box">
+                    <h3>The Simple Formula: Total Return = Cash Flow + Equity + Appreciation</h3>
+                    <p>Your actual ROI is the sum of all four components divided by your total cash invested. Anything less than this is an incomplete analysis.</p>
+                </div>
+
+                <h2>Key Metrics Every Real Estate Investor Must Know</h2>
+
+                <h3>Cash-on-Cash Return</h3>
+                <p>This is the most commonly used metric for rental properties. It's simply your annual cash flow divided by your total cash invested (down payment + renovation costs + closing costs).</p>
+
+                <p><strong>Example:</strong> You invest $80,000 cash. Your property nets $8,000/year after all expenses. Cash-on-cash return = 10%.</p>
+                <p>A "good" cash-on-cash return depends on your market and goals, but generally:</p>
+                <ul>
+                    <li><strong>0–4%</strong> — Below average. Consider negotiating better terms or passing.</li>
+                    <li><strong>5–8%</strong> — Acceptable for most markets. Solid but not exceptional.</li>
+                    <li><strong>8–12%</strong> — Strong return. This is where good investors target.</li>
+                    <li><strong>12%+</strong> — Excellent. Usually requires creative financing or off-market deals.</li>
+                </ul>
+
+                <h3>Annualized Return (CAGR)</h3>
+                <p>This is the compound annual growth rate — it accounts for appreciation and equity build over time, not just cash flow. Use this when comparing a property you'd hold for multiple years.</p>
+
+                <p>A property that appreciates 3%/year and builds equity through mortgage paydown might return 15-18% annually over a 5-year hold — even if the cash-on-cash is only 8%.</p>
+
+                <h3>Net Profit</h3>
+                <p>Your total profit when you sell: rental income minus expenses minus selling costs (typically 8-10% of sale price for agent fees and closing costs), plus equity and appreciation.</p>
+
+                <h2>How to Use the ROI Calculator</h2>
+
+                <p>The calculator above handles all of this automatically. But here's what each input means:</p>
+
+                <ul>
+                    <li><strong>Purchase Price</strong> — What you paid or plan to pay. Include the full price, not just the loan amount.</li>
+                    <li><strong>Renovation Costs</strong> — Any repair or improvement costs not covered by the loan. These add to your total cash invested.</li>
+                    <li><strong>Down Payment %</strong> — The portion of the purchase price you're paying upfront. Higher down payment = lower monthly mortgage but more cash invested.</li>
+                    <li><strong>Monthly Rent</strong> — Gross rental income. Use market rate if you haven't rented it yet.</li>
+                    <li><strong>Monthly Expenses</strong> — Everything: mortgage payment, property taxes, insurance, HOA, maintenance reserve, vacancy allowance, property management if applicable.</li>
+                    <li><strong>Holding Period</strong> — How long you plan to hold before selling. This affects annualized return calculations.</li>
+                    <li><strong>Expected Sale Price</strong> — Conservative estimate of what you'll sell for. Use purchase price × 1.03 if you're unsure (3% annual appreciation is historically conservative).</li>
+                </ul>
+
+                <div class="case-study">
+                    <div class="tag">Real Example</div>
+                    <h3>How One Investor Evaluated a Phoenix Duplex</h3>
+                    <p class="quote">"I found a duplex for $380,000. Planned $20,000 in renovations. $2,800/month gross rent. Monthly expenses around $2,100 (PITI + maintenance + vacancy). Used the calculator — 9.4% cash-on-cash first year, 18.2% annualized over 5 years with 3% appreciation assumed. The equity build and appreciation were doing more for me than the cash flow."</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="num">9.4%</div>
+                            <div class="lbl">Cash-on-Cash (Year 1)</div>
+                        </div>
+                        <div class="stat">
+                            <div class="num">18.2%</div>
+                            <div class="lbl">Annualized (5yr)</div>
+                        </div>
+                        <div class="stat">
+                            <div class="num">$67,400</div>
+                            <div class="lbl">Net Profit (5yr)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>The Hidden Costs Many Investors Forget</h2>
+
+                <p>When running your numbers, make sure you include:</p>
+
+                <ul>
+                    <li><strong>Vacancy allowance</strong> — Budget 5-8% of rent for months the property sits empty between tenants.</li>
+                    <li><strong>Maintenance reserve</strong> — A general rule: 1% of the property value per year. For a $350,000 home, that's $3,500/year.</li>
+                    <li><strong>Property management</strong> — If you're not self-managing, budget 8-10% of rent.</li>
+                    <li><strong>Capital expenditure (CapEx)</strong> — Big repairs: roof, HVAC, water heater. Budget $200-400/month for older properties.</li>
+                    <li><strong>Closing costs (buy side)</strong> — Typically 2-3% of purchase price in lender fees and title.</li>
+                    <li><strong>Closing costs (sell side)</strong> — Typically 6-8% in agent fees + 2% in closing costs = 8-10% total.</li>
+                </ul>
+
+                <h2>How to Increase Your ROI After You Buy</h2>
+
+                <p>Every $100 you add to monthly rent increases your cash-on-cash return by roughly the same as adding $12,000 to your property value (using the 1% rule). So even small rent increases compound over time.</p>
+
+                <ol>
+                    <li><strong>Raise rent smartly</strong> — Annual increases of 3-5% keep pace with inflation and market rates. Don't be afraid to push rents — if the market supports it, capture it.</li>
+                    <li><strong>Add income streams</strong> — Laundry, parking, pet rent, storage units. Every $50-100/month adds up.</li>
+                    <li><strong>Refinance strategically</strong> — If rates drop and you can cut your payment by $200/month without extending your term dramatically, do it.</li>
+                    <li><strong>Renovate for value</strong> — Kitchen and bathroom updates typically return 70-80% of cost in increased value.</li>
+                    <li><strong>Shorten your hold period</strong> — The faster you can improve and sell, the faster you can deploy capital into the next deal.</li>
+                </ol>
+
+                <div class="affiliate-banner">
+                    <h3>Want to Build a System for Finding Better Deals?</h3>
+                    <p>Top real estate investors use ClickFunnels to build lead capture funnels, automate deal analysis, and scale their pipeline without spending hours on manual outreach. Pre-built real estate funnels included with every account.</p>
+                    <a href="https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380" target="_blank" rel="noopener">
+                        Build Your Real Estate Funnel Free →
+                    </a>
+                </div>
+
+                <h2>The Bigger Picture: Why ROI Calculations Alone Aren't Enough</h2>
+
+                <p>Let me be direct: a great ROI calculator is just one tool. The investors who consistently win are the ones who have systems — not just spreadsheets.</p>
+
+                <p>That means having a pipeline of leads coming in every week. Having a funnel that captures motivated sellers before your competitors do. Having follow-up sequences that keep deals alive even when you're busy showing properties to other clients.</p>
+
+                <p>That's why many serious real estate investors are now building their own sales funnels with ClickFunnels. A funnel doesn't replace your analytical skills — it amplifies them. While the calculator tells you if a deal is good, a funnel brings you more deals to run the numbers on.</p>
+
+                <blockquote>
+                    "I used to spend $1,500/month on lead generation platforms and pray. Now I have a funnel that generates 40+ investor leads per month at a fraction of that cost — and I own the list."
+                </blockquote>
+
+                <h2>Quick Reference: What "Good" ROI Looks Like in 2026</h2>
+
+                <p>Market conditions change. Here's what to expect in current market conditions:</p>
+
+                <ul>
+                    <li><strong>Cash-on-cash return:</strong> 6-10% is a solid target for most US markets. Higher in lower-cost markets, lower in coastal metros.</li>
+                    <li><strong>Total ROI (5-year hold):</strong> 50-100% is achievable on well-chosen properties with moderate appreciation.</li>
+                    <li><strong>Annualized return:</strong> 10-15% is a reasonable expectation for a balanced (cash flow + appreciation) scenario.</li>
+                </ul>
+
+                <p>These are general guidelines — your specific numbers depend on your local market, financing terms, and the deals you find.</p>
+
+                <h2>Start Calculating Before You Sign Anything</h2>
+
+                <p>The investors I know who consistently make money have one habit in common: they never analyze a deal without running the full numbers first.</p>
+
+                <p>Use the free ROI calculator above. Bookmark it. Share it with your investing partners. Make it part of every offer process.</p>
+
+                <p>And if you're serious about scaling — if you want to stop relying on Expired Listings and Zillow leads and build your own lead pipeline — look into building a real estate funnel with ClickFunnels. It's the highest-ROI marketing move most agents and investors haven't made yet.</p>
+
+                <div class="inline-cta">
+                    <p>Run the numbers on your next deal before you sign anything.</p>
+                    <a href="roi-calculator.html" class="btn-tool">
+                        Open Free ROI Calculator →
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">🏠 Listings<span style="color:var(--accent);">AI</span> — by Brain Storm Corp</div>
+                <div class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/why-clickfunnels-realtors.html">ClickFunnels Guide</a>
+                    <a href="https://realestateaitools.shop" target="_blank">Main Site</a>
+                </div>
+            </div>
+            <p class="footer-disclaimer">Disclosure: This site earns a 40% commission when you sign up for ClickFunnels through links on this page, at no additional cost to you. The free ROI calculator is for informational purposes only — consult a financial advisor before making investment decisions.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
