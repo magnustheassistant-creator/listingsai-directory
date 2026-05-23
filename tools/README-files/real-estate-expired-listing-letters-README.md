@@ -20,7 +20,7 @@ Generate proven expired listing letters that get responses. 6 letter types: re-i
 
 ## Affiliate
 
-Jasper AI (30% commission) — https://jasper.ai
+Jasper AI (30% commission) — https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380
 
 ## Author
 

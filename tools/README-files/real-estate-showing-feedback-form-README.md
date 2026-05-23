@@ -38,4 +38,4 @@ Generates professional showing feedback forms that help agents collect actionabl
 
 ## Affiliate Partner
 
-This tool pairs well with [ManyChat](https://www.manychat.com) for automating follow-up messages and feedback collection via SMS and email. ManyChat offers a 30% commission on referred users.
+This tool pairs well with [ManyChat](https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380) for automating follow-up messages and feedback collection via SMS and email. ManyChat offers a 30% commission on referred users.

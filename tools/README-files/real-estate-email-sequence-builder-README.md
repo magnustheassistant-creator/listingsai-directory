@@ -24,7 +24,7 @@ Build complete, automated email sequences for any real estate campaign in minute
 
 ## Affiliate
 
-ManyChat (30% commission) — https://manychat.com — for email + SMS automation
+ManyChat (30% commission) — https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380 — for email + SMS automation
 
 ## Author
 
