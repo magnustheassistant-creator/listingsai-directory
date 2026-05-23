@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Real Estate Business Plan Generator — AI Builder | ListingsAI</title>
+    <meta name="description" content="Build a complete real estate agent business plan in minutes. Includes market analysis, financial projections, lead generation strategy, and goal tracking. Free AI-powered builder.">
+    <meta name="keywords" content="free real estate business plan, real estate agent business plan template, real estate business plan generator, real estate marketing plan, real estate agent goals">
+    <link rel="canonical" href="https://listingsai.directory/tools/real-estate-business-plan-generator.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a12;
+            color: #e2e8f0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+        a { color: #818cf8; text-decoration: none; }
+        a:hover { color: #a5b4fc; text-decoration: underline; }
+        img { max-width: 100%; display: block; }
+
+        :root {
+            --bg-primary: #0a0a12;
+            --bg-secondary: #111120;
+            --bg-card: #18182a;
+            --bg-card-hover: #1e1e32;
+            --border: #26263d;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --green: #22c55e;
+            --green-light: #4ade80;
+            --red: #ef4444;
+            --yellow: #eab308;
+            --amber: #f59e0b;
+            --amber-light: #fbbf24;
+            --max-width: 900px;
+        }
+
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10, 10, 18, 0.9); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .logo { display: flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 700; }
+        .logo-accent { color: var(--accent); }
+        .back-link { font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+        .back-link:hover { color: var(--text-secondary); text-decoration: none; }
+
+        .tool-header { padding: 120px 0 40px; text-align: center; }
+        .tool-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            padding: 5px 14px; border-radius: 100px;
+            font-size: 0.75rem; font-weight: 600;
+            color: var(--green); text-transform: uppercase;
+            letter-spacing: 0.08em; margin-bottom: 20px;
+        }
+        .tool-badge .dot {
+            width: 6px; height: 6px; background: var(--green);
+            border-radius: 50%; animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        .tool-header h1 {
+            font-size: clamp(1.9rem, 5vw, 2.8rem);
+            font-weight: 800; letter-spacing: -0.03em;
+            margin-bottom: 14px; line-height: 1.15;
+        }
+        .tool-header h1 .accent {
+            background: linear-gradient(135deg, #6366f1, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tool-header p {
+            font-size: 1.05rem; color: var(--text-secondary);
+            max-width: 540px; margin: 0 auto; line-height: 1.7;
+        }
+
+        .tool-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-bottom: 60px; }
+
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+        .card-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 20px; }
+
+        .form-group { margin-bottom: 18px; }
+        .form-group:last-child { margin-bottom: 0; }
+        .form-label { display: block; font-size: 0.88rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 8px; }
+        .form-label .hint { font-weight: 400; color: var(--text-muted); font-size: 0.8rem; }
+
+        select, input[type="text"], textarea {
+            width: 100%; padding: 12px 14px;
+            background: var(--bg-primary); border: 1px solid var(--border);
+            border-radius: 10px; font-size: 1rem; font-weight: 600;
+            color: var(--text-primary); font-family: 'Inter', sans-serif;
+            outline: none; transition: border-color 0.2s;
+        }
+        select { appearance: none; cursor: pointer; transition: border-color 0.2s; color: var(--text-primary);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 14px center; }
+        input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+        input::placeholder, textarea::placeholder { color: var(--text-muted); font-weight: 400; }
+        textarea { resize: vertical; min-height: 80px; font-family: 'Inter', sans-serif; }
+
+        .btn-generate {
+            width: 100%; padding: 14px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border: none; border-radius: 10px;
+            font-size: 1rem; font-weight: 700; color: #fff;
+            cursor: pointer; font-family: 'Inter', sans-serif;
+            transition: transform 0.2s, box-shadow 0.2s; margin-top: 8px;
+        }
+        .btn-generate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .plan-output {
+            background: var(--bg-primary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px;
+            font-size: 0.82rem; line-height: 1.7;
+            color: var(--text-secondary);
+            max-height: 650px; overflow-y: auto;
+            display: none;
+        }
+        .plan-output.active { display: block; }
+        .plan-output .plan-section { margin-bottom: 20px; }
+        .plan-output .plan-section-title {
+            font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.12em; color: var(--accent);
+            margin-bottom: 10px; padding-bottom: 6px;
+            border-bottom: 1px solid var(--border);
+        }
+        .plan-output .plan-line { margin-bottom: 6px; }
+        .plan-output .plan-metric {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; padding: 6px 12px;
+            margin: 4px 4px 4px 0; font-size: 0.8rem;
+        }
+        .plan-output .metric-label { color: var(--text-muted); }
+        .plan-output .metric-value { color: var(--green-light); font-weight: 700; }
+        .plan-output .goal-row {
+            display: flex; align-items: center; gap: 8px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; padding: 8px 12px; margin-bottom: 6px;
+        }
+        .plan-output .goal-check { color: var(--green); font-size: 1rem; }
+        .plan-output .goal-text { color: var(--text-secondary); flex: 1; }
+        .plan-output .goal-target { color: var(--amber); font-size: 0.8rem; }
+
+        .action-btns { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; display: none; }
+        .action-btns.active { display: flex; }
+        .action-btn {
+            padding: 10px 20px; background: var(--bg-secondary);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-secondary); font-size: 0.88rem;
+            font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+        }
+        .action-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+
+        .affiliate-cta {
+            background: linear-gradient(135deg, #18182a 0%, #1a1040 100%);
+            border: 1px solid #4c3f9e; border-radius: 16px;
+            padding: 28px; text-align: center; margin-top: 24px;
+        }
+        .affiliate-cta .emoji { font-size: 2rem; margin-bottom: 12px; }
+        .affiliate-cta h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+        .affiliate-cta p { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.6; }
+        .btn-affiliate {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 28px; background: var(--green);
+            color: #fff; font-weight: 700; font-size: 0.95rem;
+            border-radius: 10px; transition: background 0.2s, transform 0.2s;
+        }
+        .btn-affiliate:hover { background: #16a34a; transform: translateY(-1px); text-decoration: none; color: #fff; }
+
+        .tips-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px; margin-top: 24px;
+        }
+        .tips-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 16px; }
+        .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .tip-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+        .tip-card h4 { font-size: 0.88rem; color: var(--amber); margin-bottom: 6px; }
+        .tip-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+
+        .crypto-tip {
+            background: linear-gradient(135deg, #1a1200, #2a1a00);
+            border: 1px solid #f7931a44; border-radius: 12px;
+            padding: 16px; text-align: center; margin-top: 16px;
+        }
+        .crypto-tip span { font-size: 0.82rem; color: var(--text-muted); }
+        .crypto-tip strong { color: #f7931a; }
+
+        .footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+        .footer-brand { font-weight: 700; font-size: 0.9rem; margin-bottom: 12px; }
+        .footer-brand span { color: var(--accent); }
+        .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .footer-links a { font-size: 0.8rem; color: var(--text-muted); }
+        .footer-links a:hover { color: var(--text-secondary); text-decoration: none; }
+        .footer-disclaimer { font-size: 0.72rem; color: var(--text-muted); margin-top: 16px; }
+
+        @media (max-width: 700px) {
+            .tool-wrapper { grid-template-columns: 1fr; }
+            .tips-grid { grid-template-columns: 1fr; }
+            .tool-header { padding: 110px 0 30px; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why do real estate agents need a business plan?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A business plan gives your real estate business direction and prevents you from drifting without purpose. Studies show agents with written business plans earn 30-40% more than those without one. It forces you to set specific goals, identify your target market, calculate required lead volume, and build a sustainable business model instead of relying on luck or referrals alone."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What should a real estate agent business plan include?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A complete real estate agent business plan should include: mission statement, target market (geo, demographic, price range), competitive analysis, yearly revenue goals, monthly lead generation targets, marketing budget and strategy, operational costs, team structure (assistant, transaction coordinator), and monthly/quarterly action milestones. Keep it to 3-5 pages so it stays actionable."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many leads does a real estate agent need to close one deal?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Industry average is 8-12 leads to close one transaction. For new agents, expect 15-20 leads per closed deal. Your conversion rate depends on lead quality (sphere of influence converts best at 25-30%, online leads convert at 3-8%), follow-up consistency, and your niche expertise. Track your own numbers monthly and adjust lead generation spend accordingly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a realistic first-year goal for a new real estate agent?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A realistic first-year goal for a new agent is 4-6 transactions, generating $8,000-$15,000 net income after expenses. This assumes you have limited sphere of influence, are building your database, and learning the market. By year 3, target 12-15 transactions and $50,000+ net. Set quarterly milestones to stay on track and adjust as you learn your market."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much should a real estate agent budget for marketing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Allocate 10-15% of your projected gross commission income to marketing. New agents should budget $500-$1,000/month; experienced agents $1,500-$3,000/month. Priority spend: sphere of influence maintenance (farm mailings, personal touches), online lead generation (Zillow, Realtor.com, Facebook ads), and personal brand (website, business cards, signage). Track ROI per channel and cut what doesn't produce."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo"><span class="logo-accent">Listings</span>AI</div>
+                <a href="https://listingsai.directory/" class="back-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+                    All Tools
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="tool-header">
+        <div class="container">
+            <div class="tool-badge"><span class="dot"></span>Free Tool</div>
+            <h1>Real Estate <span class="accent">Business Plan Generator</span></h1>
+            <p>Build a complete, professional real estate agent business plan in minutes. Set revenue goals, map your target market, project income, and create actionable monthly milestones.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="tool-wrapper">
+            <div class="card">
+                <div class="card-title">Your Business Profile</div>
+
+                <div class="form-group">
+                    <label class="form-label">Agent / Brokerage Name</label>
+                    <input type="text" id="agentName" placeholder="Sarah Johnson — Luxury Realty Group">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Years in Business</label>
+                    <select id="yearsInBusiness">
+                        <option value="new">New Agent (0–1 year)</option>
+                        <option value="developing">Developing (1–3 years)</option>
+                        <option value="established">Established (3–10 years)</option>
+                        <option value="veteran">Veteran (10+ years)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Market Area</label>
+                    <input type="text" id="marketArea" placeholder="Austin, TX — Austin Metro">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Average Home Price in Your Market</label>
+                    <select id="avgPrice">
+                        <option value="$200K–$350K">$200K – $350K</option>
+                        <option value="$350K–$500K" selected>$350K – $500K</option>
+                        <option value="$500K–$750K">$500K – $750K</option>
+                        <option value="$750K–$1M">$750K – $1M</option>
+                        <option value="$1M+">$1M+ Luxury</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Target Gross Commission Income (Annual)</label>
+                    <input type="text" id="targetIncome" placeholder="$120,000">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Primary Target Market</label>
+                    <select id="targetMarket">
+                        <option value="first-time">First-Time Home Buyers</option>
+                        <option value="move-up">Move-Up Buyers / Sellers</option>
+                        <option value="luxury">Luxury / High-End</option>
+                        <option value="investors">Real Estate Investors</option>
+                        <option value="relocation">Corporate Relocation</option>
+                        <option value="fsbo">FSBO Sellers</option>
+                        <option value="expired">Expired Listing Owners</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Commission Split (% to agent)</label>
+                    <input type="text" id="commissionSplit" placeholder="70%">
+                </div>
+                <button class="btn-generate" onclick="generatePlan()">Generate Business Plan →</button>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Your Business Plan</div>
+                <div class="plan-output" id="planOutput"></div>
+                <div class="action-btns" id="actionBtns">
+                    <button class="action-btn" onclick="copyPlan()">📋 Copy to Clipboard</button>
+                    <button class="action-btn" onclick="downloadPlan()">📄 Download</button>
+                </div>
+                <div class="affiliate-cta">
+                    <div class="emoji">🚀</div>
+                    <h3>Build Your Real Estate Business Online</h3>
+                    <p>ClickFunnels helps agents build websites, landing pages, and CRM systems that convert leads into clients. Used by top producers to automate their business and grow faster.</p>
+                    <a href="https://www.clickfunnels.com" class="btn-affiliate" target="_blank" rel="noopener">Try ClickFunnels Free →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <div class="tips-title">Business Planning Tips for Real Estate Agents</div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>🎯 Track Every Number</h4>
+                    <p>Log your lead sources, conversion rates, and close ratios monthly. What gets measured gets improved. If Zillow leads convert at 3% but sphere leads convert at 25%, shift your budget to sphere.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>📅 Review Quarterly</h4>
+                    <p>Set a calendar reminder every quarter to review your plan vs actual results. Are you on pace? If not, identify what's blocking you and adjust — either your goals or your strategy.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>👥 Build Your Sphere First</h4>
+                    <p>Sphere of influence is your highest-converting lead source. Focus your first 2 years on building that database (past clients, friends, family, neighbors, local businesses). Aim for 200+ contacts you touch monthly.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>💰 Save for Slow Months</h4>
+                    <p>Real estate income is lumpy. Save 30% of every commission check during busy months so you can survive Jan-Feb and July-August. Build a 6-month emergency fund before anything else.</p>
+                </div>
+            </div>
+            <div class="crypto-tip">
+                <span>💰 <strong>BNB</strong> donations welcome: <strong>0x4f1E2D8F6e5B3C9A7D0b2E1f4C8A9B6d5E3F1A0</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand"><span>ListingsAI</span> — Free Real Estate Tools</div>
+            <div class="footer-links">
+                <a href="https://listingsai.directory/">All Tools</a>
+                <a href="https://listingsai.directory/about.html">About</a>
+                <a href="https://listingsai.directory/privacy.html">Privacy</a>
+            </div>
+            <div class="footer-disclaimer">Free real estate tools for agents and investors. Business decisions should be made with professional advice where needed.</div>
+        </div>
+    </footer>
+
+    <script>
+    function generatePlan() {
+        const agent = document.getElementById('agentName').value || 'Agent Name';
+        const years = document.getElementById('yearsInBusiness').value;
+        const market = document.getElementById('marketArea').value || 'Austin, TX Metro';
+        const avgPrice = document.getElementById('avgPrice').value;
+        const targetIncome = document.getElementById('targetIncome').value || '$100,000';
+        const targetMarket = document.getElementById('targetMarket').value;
+        const split = parseInt(document.getElementById('commissionSplit').value) || 70;
+
+        // Calculate required transactions
+        let priceValue;
+        if (avgPrice.includes('$200')) priceValue = 275000;
+        else if (avgPrice.includes('$350')) priceValue = 425000;
+        else if (avgPrice.includes('$500')) priceValue = 625000;
+        else if (avgPrice.includes('$750')) priceValue = 875000;
+        else priceValue = 1500000;
+
+        const avgCommission = priceValue * 0.03 * (split / 100);
+        const yearlyGoal = parseInt(targetIncome.replace(/[^0-9]/g, '')) || 100000;
+        const requiredDeals = Math.ceil(yearlyGoal / avgCommission);
+        const monthlyLeads = Math.ceil((requiredDeals * 10) / 12);
+
+        // Average home price range display
+        const priceDisplay = avgPrice.replace('$', '').replace('K', 'K').replace('–', ' – ');
+
+        // Years in business display
+        const yearsDisplay = {
+            'new': 'New Agent (Year 1)',
+            'developing': 'Developing Agent (Years 1–3)',
+            'established': 'Established Agent (Years 3–10)',
+            'veteran': 'Veteran Agent (10+ Years)'
+        }[years];
+
+        // Target market display
+        const marketDisplay = {
+            'first-time': 'First-Time Home Buyers',
+            'move-up': 'Move-Up Buyers & Sellers',
+            'luxury': 'Luxury & High-End Buyers',
+            'investors': 'Real Estate Investors',
+            'relocation': 'Corporate Relocation Clients',
+            'fsbo': 'For Sale By Owner Sellers',
+            'expired': 'Expired Listing Owners'
+        }[targetMarket];
+
+        const yearLabels = ['Q1', 'Q2', 'Q3', 'Q4'];
+        const quarters = ['Jan–Mar', 'Apr–Jun', 'Jul–Sep', 'Oct–Dec'];
+
+        let html = '<div class="plan-output-inner">';
+
+        html += `<div style="text-align: center; margin-bottom: 24px;">
+            <div style="font-size: 1.1rem; font-weight: 800; color: var(--text-primary); letter-spacing: 0.03em;">${agent.toUpperCase()}</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">${yearsDisplay} · ${market}</div>
+        </div>`;
+
+        html += `<div class="plan-section">
+            <div class="plan-section-title">💼 ANNUAL GOALS</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+                <div class="plan-metric"><span class="metric-label">Target Income:</span> <span class="metric-value">${targetIncome}</span></div>
+                <div class="plan-metric"><span class="metric-label">Required Deals:</span> <span class="metric-value">${requiredDeals} closings</span></div>
+                <div class="plan-metric"><span class="metric-label">Avg Commission:</span> <span class="metric-value">$${Math.round(avgCommission).toLocaleString()}/deal</span></div>
+                <div class="plan-metric"><span class="metric-label">Avg Home Price:</span> <span class="metric-value">${priceDisplay}</span></div>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <div class="plan-metric"><span class="metric-label">Monthly Leads Needed:</span> <span class="metric-value">${monthlyLeads}</span></div>
+                <div class="plan-metric"><span class="metric-label">Target Market:</span> <span class="metric-value">${marketDisplay}</span></div>
+                <div class="plan-metric"><span class="metric-label">Commission Split:</span> <span class="metric-value">${split}%</span></div>
+            </div>
+        </div>`;
+
+        html += `<div class="plan-section">
+            <div class="plan-section-title">📊 QUARTERLY REVENUE PROJECTION</div>
+            <div style="margin-bottom: 8px;">`;
+        yearLabels.forEach((q, i) => {
+            const qDeals = i < 2 ? Math.ceil(requiredDeals / 4) : Math.floor(requiredDeals / 4);
+            const qRevenue = qDeals * avgCommission;
+            const qIncome = qRevenue * 0.65; // rough after expenses
+            html += `<div class="goal-row">
+                <span class="goal-check">📍</span>
+                <span class="goal-text">${q} (${quarters[i]}): Target ${qDeals} closings → ~$${Math.round(qIncome).toLocaleString()} net</span>
+            </div>`;
+        });
+        html += `</div></div>`;
+
+        html += `<div class="plan-section">
+            <div class="plan-section-title">🎯 QUARTERLY ACTION MILESTONES</div>`;
+
+        const milestones = [
+            { q: 'Q1', tasks: ['Finalize target market niche and geo-farm area', 'Build sphere database to 100+ contacts', 'Set up CRM and lead follow-up system', 'Attend 2 networking events per month', 'Generate first 30 leads', 'Close first 1–2 deals'] },
+            { q: 'Q2', tasks: ['Expand sphere to 200+ contacts', 'Implement monthly farm mailing', 'Launch Zillow/online lead gen ($500/mo budget)', 'Review Q1 conversion rates — cut low-performing channels', 'Aim for 2–3 closings', 'Ask for 3 client referrals'] },
+            { q: 'Q3', tasks: ['Evaluate online vs SOI lead ROI', 'Increase marketing budget if profitable', 'Launch email newsletter to sphere', 'Implement listing presentation system', 'Target 3–4 closings', 'Build past client review funnel'] },
+            { q: 'Q4', tasks: ['Review annual progress vs goals', 'Plan next year strategy and budget', 'Launch holiday client appreciation campaign', 'Set up next year lead generation targets', 'Target 3–4 closings', 'Secure 5+ reviews/testimonials for next year'] }
+        ];
+
+        milestones.forEach(m => {
+            html += `<div style="margin-bottom: 12px;">
+                <div style="font-weight: 700; color: var(--accent-light); font-size: 0.8rem; margin-bottom: 6px;">${m.q}</div>`;
+            m.tasks.forEach(t => {
+                html += `<div class="goal-row">
+                    <span class="goal-check">☐</span>
+                    <span class="goal-text">${t}</span>
+                </div>`;
+            });
+            html += `</div>`;
+        });
+
+        html += `<div class="plan-section">
+            <div class="plan-section-title">💰 MARKETING BUDGET BREAKDOWN</div>
+            <div style="margin-bottom: 8px;">`;
+        const budgetBase = Math.round(avgCommission * 0.1);
+        const budgetItems = [
+            { name: 'Online Lead Gen (Zillow, Realtor, etc.)', pct: 40, amount: Math.round(budgetBase * 0.4) },
+            { name: 'Sphere of Influence (mailings, gifts)', pct: 25, amount: Math.round(budgetBase * 0.25) },
+            { name: 'Social Media / Content Marketing', pct: 15, amount: Math.round(budgetBase * 0.15) },
+            { name: 'Signage / Print Materials', pct: 10, amount: Math.round(budgetBase * 0.1) },
+            { name: 'Networking Events / Associations', pct: 10, amount: Math.round(budgetBase * 0.1) }
+        ];
+        budgetItems.forEach(b => {
+            html += `<div class="goal-row" style="background: transparent; border: none; padding: 4px 0;">
+                <span class="goal-text" style="flex: 2;">${b.name}</span>
+                <span class="goal-text" style="color: var(--text-muted);">${b.pct}%</span>
+                <span class="goal-target">$${b.amount.toLocaleString()}/yr</span>
+            </div>`;
+        });
+        html += `</div></div>`;
+
+        html += `<div class="plan-section">
+            <div class="plan-section-title">🏆 KEY SUCCESS METRICS</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">`;
+        const metrics = [
+            { label: 'Lead-to-Showing Rate', target: '15–20%' },
+            { label: 'Showing-to-Contract Rate', target: '20–25%' },
+            { label: 'Annual Lead Volume', target: `${monthlyLeads * 12}+` },
+            { label: 'Sphere Contact Frequency', target: '12x/year' },
+            { label: 'Client Retention / Repeat', target: '30%+' },
+            { label: 'Referral Rate', target: '25%+ of closings' }
+        ];
+        metrics.forEach(m => {
+            html += `<div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 10px;">
+                <div style="font-size: 0.75rem; color: var(--text-muted);">${m.label}</div>
+                <div style="font-weight: 700; color: var(--green-light); font-size: 0.9rem;">${m.target}</div>
+            </div>`;
+        });
+        html += `</div></div>`;
+
+        html += `<div class="plan-section">
+            <div class="plan-section-title">📋 MISSION STATEMENT</div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; font-size: 0.88rem; color: var(--text-secondary); font-style: italic; line-height: 1.8;">
+                To help ${marketDisplay.toLowerCase()} in ${market} achieve their real estate goals through expert guidance, personalized service, and deep market knowledge — while building lasting relationships that extend far beyond any single transaction.
+            </div>
+        </div>`;
+
+        html += '</div>';
+
+        document.getElementById('planOutput').innerHTML = html;
+        document.getElementById('planOutput').classList.add('active');
+        document.getElementById('actionBtns').classList.add('active');
+    }
+
+    function copyPlan() {
+        const text = document.getElementById('planOutput').innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            alert('Business plan copied to clipboard!');
+        });
+    }
+
+    function downloadPlan() {
+        const text = document.getElementById('planOutput').innerText;
+        const blob = new Blob([text], { type: 'text/plain' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'real-estate-business-plan.txt';
+        a.click();
+    }
+    </script>
+</body>
+</html>
