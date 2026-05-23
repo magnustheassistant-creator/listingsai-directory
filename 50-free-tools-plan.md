@@ -1,12 +1,7 @@
 # 50 Free Real Estate AI Tools Plan
-Last updated: 2026-05-23T08:00:00.000000
+Last updated: 2026-05-23T18:00:00.000000
 
-## Status: 20 main tools deployed / 60+ remaining in archived
-
-## New Tools Under Construction
-- real-estate-buyer-lead-intake-form (DONE — build + README)
-- real-estate-commission-split-calculator (DONE — README fixed)
-- (all in-progress items now complete)
+## Status: 21 main tools deployed / 60+ remaining in archived
 
 ## Priority New Tools (from keyword research)
 1. [x] real-estate-door-knocking-scripts - "best door knocking scripts for real estate agents" - ClickFunnels affiliate
@@ -21,7 +16,11 @@ Last updated: 2026-05-23T08:00:00.000000
 10. [x] real-estate-objection-handler-scripts - "real estate objection handling scripts" - ClickFunnels affiliate
 11. [x] real-estate-buyer-lead-intake-form - "buyer lead intake form" - ClickFunnels affiliate
 12. [x] real-estate-open-house-sign-in-sheet - "real estate open house sign in sheet" - ClickFunnels affiliate
-13. [ ] real-estate-buyer-questionnaire-form - "real estate buyer questionnaire form" - ClickFunnels affiliate
+13. [x] real-estate-buyer-questionnaire-form - "real estate buyer questionnaire form" - ClickFunnels affiliate
+14. [x] real-estate-fsbo-response-letter-generator - "fsbo response letter" - ClickFunnels affiliate
+
+## New Tools Under Construction
+- (all in-progress items now complete)
 
 ## Keywords to target
 - "best door knocking scripts for real estate agents" (door knocking)
@@ -39,8 +38,14 @@ Last updated: 2026-05-23T08:00:00.000000
 - "real estate showing feedback form" (showings)
 - "best fsbo email templates" (FSBO)
 - "real estate follow-up email sequence" (follow-up)
+- "fsbo response letter" (FSBO response)
+- "how to write a fsbo rejection letter" (FSBO)
 
 ## Affiliate Partners
-- ClickFunnels: 40% commission
-- Jasper: 30% commission
-- ManyChat: 30% commission
+- ClickFunnels: 40% commission (ACTIVE — 45-day cookie)
+
+## Dead Affiliates (do not reference)
+- Jasper: Rejected May 21 — new domain not accepted
+- ManyChat: Rejected May 21 — new domain not accepted
+- Klaviyo: Rejected May 21 — new domain not accepted
+- Gumroad: Killed May 21 — Ka decided product not good enough
