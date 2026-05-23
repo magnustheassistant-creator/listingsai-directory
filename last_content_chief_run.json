@@ -1,11 +1,35 @@
 {
-  "last_run": "2026-05-21T10:00:10.331029+00:00",
+  "last_run": "2026-05-21T10:40:00.000000+00:00",
   "tools_built": [
     "real-estate-door-knocking-scripts",
     "listing-description-generator"
   ],
-  "commits": [
-    "f1d3433"
+  "commits": [],
+  "status": "success",
+  "youtube_uploads": [
+    {
+      "title": "Lead Qualification Calculator \u2014 Free Real Estate Tool Review",
+      "video_id": "BOIGsb-r2LA",
+      "url": "https://www.youtube.com/watch?v=BOIGsb-r2LA",
+      "uploaded_at": "2026-05-21T10:35:00+00:00",
+      "duration_seconds": 90,
+      "source": "brain-storm-corp/youtube/videos/video-02-lead-qualification-calculator/video-02-lead-qualification-calculator.mp4"
+    },
+    {
+      "title": "Real Estate ROI Calculator \u2014 Free Investment Property Analysis Tool",
+      "video_id": "sZuw2sHiacw",
+      "url": "https://www.youtube.com/watch?v=sZuw2sHiacw",
+      "uploaded_at": "2026-05-21T10:40:00+00:00",
+      "duration_seconds": 143,
+      "source": "/tmp/roi-calculator-final.mp4"
+    }
   ],
-  "status": "success"
+  "tts_generated": [
+    "hook.mp3",
+    "tool-intro.mp3",
+    "demo.mp3",
+    "roi-explained.mp3",
+    "cta.mp3",
+    "roi-calculator-full.mp3"
+  ]
 }

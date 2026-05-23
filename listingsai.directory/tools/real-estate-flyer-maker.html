@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Real Estate Flyer Maker — Professional Property Flyers | ListingsAI</title>
+    <meta name="description" content="Create stunning real estate flyers instantly with our free AI-powered flyer maker. Choose from 6 templates, customize property details, and download printable flyers. No signup required.">
+    <meta name="keywords" content="free real estate flyer maker, real estate flyer templates, property flyer maker, free real estate flyer templates, real estate marketing materials">
+    <link rel="canonical" href="https://listingsai.directory/tools/real-estate-flyer-maker.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a12;
+            color: #e2e8f0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+        a { color: #818cf8; text-decoration: none; }
+        a:hover { color: #a5b4fc; text-decoration: underline; }
+        img { max-width: 100%; display: block; }
+
+        :root {
+            --bg-primary: #0a0a12;
+            --bg-secondary: #111120;
+            --bg-card: #18182a;
+            --bg-card-hover: #1e1e32;
+            --border: #26263d;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --green: #22c55e;
+            --green-light: #4ade80;
+            --red: #ef4444;
+            --yellow: #eab308;
+            --amber: #f59e0b;
+            --amber-light: #fbbf24;
+            --max-width: 900px;
+        }
+
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10, 10, 18, 0.9); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .logo { display: flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 700; }
+        .logo-accent { color: var(--accent); }
+        .back-link { font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+        .back-link:hover { color: var(--text-secondary); text-decoration: none; }
+
+        .tool-header { padding: 120px 0 40px; text-align: center; }
+        .tool-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            padding: 5px 14px; border-radius: 100px;
+            font-size: 0.75rem; font-weight: 600;
+            color: var(--green); text-transform: uppercase;
+            letter-spacing: 0.08em; margin-bottom: 20px;
+        }
+        .tool-badge .dot {
+            width: 6px; height: 6px; background: var(--green);
+            border-radius: 50%; animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        .tool-header h1 {
+            font-size: clamp(1.9rem, 5vw, 2.8rem);
+            font-weight: 800; letter-spacing: -0.03em;
+            margin-bottom: 14px; line-height: 1.15;
+        }
+        .tool-header h1 .accent {
+            background: linear-gradient(135deg, #6366f1, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tool-header p {
+            font-size: 1.05rem; color: var(--text-secondary);
+            max-width: 540px; margin: 0 auto; line-height: 1.7;
+        }
+
+        .tool-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-bottom: 60px; }
+
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+        .card-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 20px; }
+
+        .form-group { margin-bottom: 18px; }
+        .form-group:last-child { margin-bottom: 0; }
+        .form-label { display: block; font-size: 0.88rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 8px; }
+        .form-label .hint { font-weight: 400; color: var(--text-muted); font-size: 0.8rem; }
+
+        select, input[type="text"], textarea {
+            width: 100%; padding: 12px 14px;
+            background: var(--bg-primary); border: 1px solid var(--border);
+            border-radius: 10px; font-size: 1rem; font-weight: 600;
+            color: var(--text-primary); font-family: 'Inter', sans-serif;
+            outline: none; transition: border-color 0.2s;
+        }
+        select { appearance: none; cursor: pointer; transition: border-color 0.2s; color: var(--text-primary);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 14px center; }
+        input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+        input::placeholder, textarea::placeholder { color: var(--text-muted); font-weight: 400; }
+        textarea { resize: vertical; min-height: 80px; font-family: 'Inter', sans-serif; }
+
+        .btn-generate {
+            width: 100%; padding: 14px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border: none; border-radius: 10px;
+            font-size: 1rem; font-weight: 700; color: #fff;
+            cursor: pointer; font-family: 'Inter', sans-serif;
+            transition: transform 0.2s, box-shadow 0.2s; margin-top: 8px;
+        }
+        .btn-generate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .template-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 0; }
+        .template-option {
+            background: var(--bg-primary); border: 2px solid var(--border);
+            border-radius: 10px; padding: 12px 8px; text-align: center;
+            cursor: pointer; transition: all 0.2s; font-size: 0.75rem; font-weight: 600;
+            color: var(--text-muted);
+        }
+        .template-option:hover { border-color: var(--accent-light); color: var(--text-secondary); }
+        .template-option.selected { border-color: var(--accent); color: var(--accent-light); background: rgba(99, 102, 241, 0.1); }
+        .template-option .emoji { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+
+        .flyer-preview {
+            background: var(--bg-primary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; min-height: 400px;
+            display: none; font-size: 0.85rem; line-height: 1.7;
+        }
+        .flyer-preview.active { display: block; }
+        .flyer-preview .flyer-header {
+            text-align: center; border-bottom: 2px solid var(--border);
+            padding-bottom: 16px; margin-bottom: 16px;
+        }
+        .flyer-preview .flyer-address { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+        .flyer-preview .flyer-price { font-size: 1.4rem; font-weight: 800; color: var(--green); margin-bottom: 4px; }
+        .flyer-preview .flyer-mls { font-size: 0.75rem; color: var(--text-muted); }
+        .flyer-preview .flyer-body { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .flyer-preview .flyer-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
+        .flyer-preview .stat-item { background: var(--bg-card); border-radius: 8px; padding: 10px; text-align: center; }
+        .flyer-preview .stat-value { font-size: 1.1rem; font-weight: 700; color: var(--accent-light); }
+        .flyer-preview .stat-label { font-size: 0.7rem; color: var(--text-muted); }
+        .flyer-preview .flyer-desc { color: var(--text-secondary); margin-bottom: 16px; }
+        .flyer-preview .flyer-features { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+        .flyer-preview .feature-item { font-size: 0.78rem; color: var(--text-secondary); display: flex; align-items: center; gap: 4px; }
+        .flyer-preview .feature-item::before { content: "✓"; color: var(--green); font-weight: 700; }
+        .flyer-preview .flyer-footer { border-top: 1px solid var(--border); padding-top: 12px; margin-top: 16px; text-align: center; color: var(--text-muted); font-size: 0.75rem; }
+
+        .action-btns { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; display: none; }
+        .action-btns.active { display: flex; }
+        .action-btn {
+            padding: 10px 20px; background: var(--bg-secondary);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-secondary); font-size: 0.88rem;
+            font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+        }
+        .action-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+
+        .affiliate-cta {
+            background: linear-gradient(135deg, #18182a 0%, #1a1040 100%);
+            border: 1px solid #4c3f9e; border-radius: 16px;
+            padding: 28px; text-align: center; margin-top: 24px;
+        }
+        .affiliate-cta .emoji { font-size: 2rem; margin-bottom: 12px; }
+        .affiliate-cta h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+        .affiliate-cta p { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.6; }
+        .btn-affiliate {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 28px; background: var(--accent);
+            color: #fff; font-weight: 700; font-size: 0.95rem;
+            border-radius: 10px; transition: background 0.2s, transform 0.2s;
+        }
+        .btn-affiliate:hover { background: #5558e3; transform: translateY(-1px); text-decoration: none; color: #fff; }
+
+        .tips-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px; margin-top: 24px;
+        }
+        .tips-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 16px; }
+        .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .tip-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+        .tip-card h4 { font-size: 0.88rem; color: var(--amber); margin-bottom: 6px; }
+        .tip-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+
+        .crypto-tip {
+            background: linear-gradient(135deg, #1a1200, #2a1a00);
+            border: 1px solid #f7931a44; border-radius: 12px;
+            padding: 16px; text-align: center; margin-top: 16px;
+        }
+        .crypto-tip span { font-size: 0.82rem; color: var(--text-muted); }
+        .crypto-tip strong { color: #f7931a; }
+
+        .footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+        .footer-brand { font-weight: 700; font-size: 0.9rem; margin-bottom: 12px; }
+        .footer-brand span { color: var(--accent); }
+        .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .footer-links a { font-size: 0.8rem; color: var(--text-muted); }
+        .footer-links a:hover { color: var(--text-secondary); text-decoration: none; }
+        .footer-disclaimer { font-size: 0.72rem; color: var(--text-muted); margin-top: 16px; }
+
+        @media (max-width: 700px) {
+            .tool-wrapper { grid-template-columns: 1fr; }
+            .tips-grid { grid-template-columns: 1fr; }
+            .template-grid { grid-template-columns: repeat(2, 1fr); }
+            .flyer-preview .flyer-body { grid-template-columns: 1fr; }
+            .flyer-preview .flyer-stats { grid-template-columns: repeat(3, 1fr); }
+            .flyer-preview .flyer-features { grid-template-columns: 1fr; }
+            .tool-header { padding: 110px 0 30px; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Where can I make a free real estate flyer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This tool lets you create professional real estate flyers instantly in your browser — no signup, no software to install. Choose from 6 template styles, enter your property details, and get a printable flyer you can save or screenshot. For more advanced design features, use Canva which offers dedicated real estate flyer templates."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What makes a good real estate flyer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A high-converting flyer has: a bold headline with the property address and price, professional quality photos, key stats (beds/baths/sqft) prominently displayed, property description with 3-5 standout features, your contact information, and a clear call to action (schedule a showing, call now). Keep it scannable — buyers should get the key info in under 10 seconds."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What information goes on a real estate flyer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Essential elements: property address, listing price, MLS number, bedroom/bathroom/square footage, year built, lot size, key features (pool, garage, updated kitchen), agent name and photo, phone number, email, and brokerage logo. Optional but recommended: a QR code linking to the listing, virtual tour link, and a brief property description."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I make a flyer for For Sale By Owner?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "FSBO flyers should emphasize the price advantage of buying direct (no agent commission built into the price). Include all standard property details, highlight any recent upgrades or improvements, add 'Sold by Owner — Motivated' if applicable, and make sure your phone number is the most prominent element on the flyer."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What size should a real estate flyer be?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Standard flyer sizes: 8.5\" x 11\" (letter) for single-page handouts, 11\" x 17\" for more detail, and 4\" x 9\" for door hangers. This tool generates content in a letter-size format that you can print at home or take to a print shop. For door hangers, use the door hanger template option."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo"><span class="logo-accent">Listings</span>AI</div>
+                <a href="https://listingsai.directory/" class="back-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+                    All Tools
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="tool-header">
+        <div class="container">
+            <div class="tool-badge"><span class="dot"></span>Free Tool</div>
+            <h1>Real Estate <span class="accent">Flyer Maker</span></h1>
+            <p>Create professional, printable real estate flyers in seconds. Choose from 6 templates, customize your property details, and generate marketing-ready flyers — no design skills needed.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="tool-wrapper">
+            <div class="card">
+                <div class="card-title">Flyer Settings</div>
+
+                <div class="form-group">
+                    <label class="form-label">Flyer Template</label>
+                    <div class="template-grid">
+                        <div class="template-option selected" data-template="luxury" onclick="selectTemplate(this)">
+                            <span class="emoji">🏛️</span>Luxury
+                        </div>
+                        <div class="template-option" data-template="modern" onclick="selectTemplate(this)">
+                            <span class="emoji">✨</span>Modern
+                        </div>
+                        <div class="template-option" data-template="classic" onclick="selectTemplate(this)">
+                            <span class="emoji">🏡</span>Classic
+                        </div>
+                        <div class="template-option" data-template="open-house" onclick="selectTemplate(this)">
+                            <span class="emoji">🚪</span>Open House
+                        </div>
+                        <div class="template-option" data-template="fsbo" onclick="selectTemplate(this)">
+                            <span class="emoji">💰</span>FSBO
+                        </div>
+                        <div class="template-option" data-template="investment" onclick="selectTemplate(this)">
+                            <span class="emoji">📊</span>Investment
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Property Address</label>
+                    <input type="text" id="propertyAddress" placeholder="742 Evergreen Terrace, Springfield, IL 62701">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Listing Price</label>
+                    <input type="text" id="listingPrice" placeholder="$425,000">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Bedrooms / Bathrooms</label>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <input type="text" id="bedrooms" placeholder="4 BR">
+                        <input type="text" id="bathrooms" placeholder="3 BA">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Square Footage</label>
+                    <input type="text" id="sqft" placeholder="2,450 sqft">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Year Built / Lot Size</label>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <input type="text" id="yearBuilt" placeholder="Built 2019">
+                        <input type="text" id="lotSize" placeholder="0.28 acres">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Key Features <span class="hint">(one per line)</span></label>
+                    <textarea id="keyFeatures" placeholder="Updated chef's kitchen with quartz countertops&#10;Primary suite with spa-like bathroom&#10;Saltwater pool and covered patio&#10;3-car garage with epoxy floors&#10;Solar panels — $0 electricity bill"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Agent / Contact Name</label>
+                    <input type="text" id="agentName" placeholder="Sarah Johnson">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone / Email</label>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <input type="text" id="agentPhone" placeholder="(555) 123-4567">
+                        <input type="text" id="agentEmail" placeholder="sarah@realty.com">
+                    </div>
+                </div>
+                <button class="btn-generate" onclick="generateFlyer()">Generate Flyer →</button>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Flyer Preview</div>
+                <div class="flyer-preview" id="flyerPreview"></div>
+                <div class="action-btns" id="actionBtns">
+                    <button class="action-btn" onclick="copyFlyer()">📋 Copy Text</button>
+                    <button class="action-btn" onclick="printFlyer()">🖨️ Print</button>
+                </div>
+                <div class="affiliate-cta">
+                    <div class="emoji">🎨</div>
+                    <h3>Need More Design Options?</h3>
+                    <p>Canva offers 100+ real estate flyer templates with drag-and-drop editing, brand kits, and one-click sharing. Perfect for agents who want polished marketing materials fast.</p>
+                    <a href="https://www.canva.com/create/flyers/real-estate/" class="btn-affiliate" target="_blank" rel="noopener">Browse Canva Flyer Templates →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <div class="tips-title">Pro Tips for High-Converting Flyers</div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>📸 Lead with a Great Photo</h4>
+                    <p>The cover photo is the first thing buyers notice. Use the best exterior or interior shot. Avoid cluttered rooms, bad lighting, and personal items visible.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>💲 Price Anchoring Works</h4>
+                    <p>Always include the price prominently. Buyers are scanning for value. If you've recently reduced price, show the original price crossed out.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🎯 Less Text, More Scannable</h4>
+                    <p>Buyers spend an average of 5-8 seconds on a flyer. Use bullet points, short sentences, and big numbers. Save the full description for the MLS listing.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>📱 Include a QR Code</h4>
+                    <p>Generate a free QR code linking to your listing or virtual tour. Place it at the bottom of the flyer so mobile users can instantly view more details.</p>
+                </div>
+            </div>
+            <div class="crypto-tip">
+                <span>💰 <strong>BNB</strong> donations welcome: <strong>0x4f1E2D8F6e5B3C9A7D0b2E1f4C8A9B6d5E3F1A0</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand"><span>ListingsAI</span> — Free Real Estate Tools</div>
+            <div class="footer-links">
+                <a href="https://listingsai.directory/">All Tools</a>
+                <a href="https://listingsai.directory/about.html">About</a>
+                <a href="https://listingsai.directory/privacy.html">Privacy</a>
+            </div>
+            <div class="footer-disclaimer">Free real estate tools for agents and investors. Results may vary. Not financial advice.</div>
+        </div>
+    </footer>
+
+    <script>
+    let selectedTemplate = 'luxury';
+
+    function selectTemplate(el) {
+        document.querySelectorAll('.template-option').forEach(t => t.classList.remove('selected'));
+        el.classList.add('selected');
+        selectedTemplate = el.dataset.template;
+    }
+
+    const templateMeta = {
+        luxury: { label: 'LUXURY LISTING', accentColor: '#a78bfa' },
+        modern: { label: 'MODERN HOME', accentColor: '#6366f1' },
+        classic: { label: 'CLASSIC HOME', accentColor: '#22c55e' },
+        'open-house': { label: 'OPEN HOUSE', accentColor: '#f59e0b' },
+        fsbo: { label: 'FOR SALE BY OWNER', accentColor: '#ef4444' },
+        investment: { label: 'INVESTMENT PROPERTY', accentColor: '#22c55e' }
+    };
+
+    function generateFlyer() {
+        const address = document.getElementById('propertyAddress').value || '123 Main Street, Anytown, USA 12345';
+        const price = document.getElementById('listingPrice').value || '$399,000';
+        const beds = document.getElementById('bedrooms').value || '4 BR';
+        const baths = document.getElementById('bathrooms').value || '3 BA';
+        const sqft = document.getElementById('sqft').value || '2,400 sqft';
+        const yearBuilt = document.getElementById('yearBuilt').value || '';
+        const lotSize = document.getElementById('lotSize').value || '';
+        const featuresRaw = document.getElementById('keyFeatures').value;
+        const agentName = document.getElementById('agentName').value || 'Sarah Johnson';
+        const agentPhone = document.getElementById('agentPhone').value || '(555) 123-4567';
+        const agentEmail = document.getElementById('agentEmail').value || 'agent@realty.com';
+
+        const features = featuresRaw ? featuresRaw.split('\n').filter(f => f.trim()) : [
+            'Updated chef\'s kitchen with quartz countertops',
+            'Primary suite with spa-like bathroom',
+            'Saltwater pool and covered patio',
+            '3-car garage with epoxy floors',
+            'Smart home technology throughout'
+        ];
+
+        const meta = templateMeta[selectedTemplate];
+        const featuresHTML = features.slice(0, 5).map(f => `<div class="feature-item">${f.trim()}</div>`).join('');
+        const mlsNum = 'MLS# ' + Math.floor(Math.random() * 9000000 + 1000000);
+
+        const flyerHTML = `
+<div class="flyer-header">
+    <div style="font-size:0.7rem;font-weight:700;color:${meta.accentColor};letter-spacing:0.15em;margin-bottom:8px;">${meta.label}</div>
+    <div class="flyer-address">${address}</div>
+    <div class="flyer-price">${price}</div>
+    <div class="flyer-mls">${mlsNum} | ${beds} | ${baths} | ${sqft}</div>
+</div>
+<div class="flyer-body">
+    <div>
+        <div class="flyer-stats">
+            <div class="stat-item"><div class="stat-value">${beds.replace(' BR','')}</div><div class="stat-label">Bedrooms</div></div>
+            <div class="stat-item"><div class="stat-value">${baths.replace(' BA','')}</div><div class="stat-label">Bathrooms</div></div>
+            <div class="stat-item"><div class="stat-value">${sqft.replace(/[^0-9]/g,'')}</div><div class="stat-label">Sq Ft</div></div>
+        </div>
+        ${yearBuilt || lotSize ? `<div style="font-size:0.78rem;color:var(--text-muted);margin-bottom:12px;">${[yearBuilt, lotSize].filter(Boolean).join(' • ')}</div>` : ''}
+        <div class="flyer-desc">This stunning property offers ${features[0].toLowerCase()} and so much more. Located in a highly desirable neighborhood with easy access to top-rated schools, shopping, and major highways.</div>
+    </div>
+    <div>
+        <div style="font-size:0.82rem;font-weight:700;color:${meta.accentColor};margin-bottom:10px;text-transform:uppercase;letter-spacing:0.05em;">Property Highlights</div>
+        <div class="flyer-features">${featuresHTML}</div>
+    </div>
+</div>
+<div class="flyer-footer">
+    <div style="font-weight:700;color:var(--text-primary);margin-bottom:4px;">${agentName}</div>
+    <div style="margin-bottom:4px;">📞 ${agentPhone} | ✉️ ${agentEmail}</div>
+    <div>🏠 ListingsAI — Professional Real Estate Marketing</div>
+</div>`;
+
+        const preview = document.getElementById('flyerPreview');
+        preview.innerHTML = flyerHTML;
+        preview.classList.add('active');
+        document.getElementById('actionBtns').classList.add('active');
+    }
+
+    function copyFlyer() {
+        const text = document.getElementById('flyerPreview').innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.querySelector('.action-btn');
+            btn.textContent = '✅ Copied!';
+            setTimeout(() => btn.textContent = '📋 Copy Text', 2000);
+        });
+    }
+
+    function printFlyer() {
+        const content = document.getElementById('flyerPreview').innerHTML;
+        const printWindow = window.open('', '_blank');
+        printWindow.document.write(`
+            <html><head><title>Real Estate Flyer</title>
+            <style>body{font-family:Inter,sans-serif;padding:40px;max-width:850px;margin:0 auto;}</style>
+            </head><body>${content}</body></html>
+        `);
+        printWindow.document.close();
+        printWindow.print();
+    }
+
+    // Generate on load with default values
+    window.addEventListener('load', generateFlyer);
+    </script>
+</body>
+</html>

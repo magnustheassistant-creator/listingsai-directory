@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0d1117;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .clip {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+      }
+      .title-main {
+        font-size: 96px;
+        font-weight: 700;
+        color: #f59e0b;
+        text-align: center;
+        line-height: 1.2;
+        text-shadow: 0 0 60px rgba(245, 158, 11, 0.5);
+      }
+      .title-sub {
+        font-size: 48px;
+        color: #a8b2d1;
+        margin-top: 30px;
+        text-align: center;
+        max-width: 1400px;
+      }
+      .tagline {
+        font-size: 36px;
+        color: #79b8ff;
+        margin-top: 20px;
+        text-align: center;
+      }
+      .problem-text {
+        font-size: 72px;
+        color: #f85149;
+        text-align: center;
+        font-weight: 700;
+        line-height: 1.4;
+        max-width: 1400px;
+      }
+      .solution-text {
+        font-size: 80px;
+        color: #f59e0b;
+        text-align: center;
+        font-weight: 700;
+        text-shadow: 0 0 40px rgba(245, 158, 11, 0.6);
+      }
+      .cta-text {
+        font-size: 64px;
+        color: #3fb950;
+        text-align: center;
+        font-weight: 700;
+      }
+      .url-text {
+        font-size: 48px;
+        color: #79b8ff;
+        text-align: center;
+        margin-top: 24px;
+      }
+      .tool-screenshot {
+        width: 1400px;
+        height: 800px;
+        background: #161b22;
+        border: 2px solid #f59e0b44;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .tool-header {
+        background: #0d1b2a;
+        width: 100%;
+        padding: 20px 40px;
+        display: flex;
+        gap: 10px;
+        position: absolute;
+        top: 0;
+        border-radius: 20px 20px 0 0;
+      }
+      .dot { width: 16px; height: 16px; border-radius: 50%; }
+      .dot-r { background: #f85149; }
+      .dot-y { background: #d29922; }
+      .dot-g { background: #3fb950; }
+      .tool-title {
+        position: absolute;
+        top: 60px;
+        font-size: 36px;
+        color: #f59e0b;
+        font-weight: 700;
+      }
+      .score-display {
+        position: absolute;
+        top: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .score-number {
+        font-size: 160px;
+        font-weight: 800;
+        color: #3fb950;
+        text-shadow: 0 0 80px rgba(63, 185, 80, 0.6);
+        line-height: 1;
+      }
+      .score-label {
+        font-size: 48px;
+        color: #3fb950;
+        font-weight: 700;
+        margin-top: 10px;
+      }
+      .score-bar-bg {
+        width: 1000px;
+        height: 24px;
+        background: #1a2d44;
+        border-radius: 12px;
+        margin-top: 20px;
+        overflow: hidden;
+      }
+      .score-bar-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #f59e0b, #3fb950);
+        border-radius: 12px;
+        width: 87%;
+      }
+      .factors-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        position: absolute;
+        top: 340px;
+        width: 1200px;
+      }
+      .factor-item {
+        background: #1a2d44;
+        border: 1px solid #2a3f5f;
+        border-radius: 12px;
+        padding: 16px 20px;
+        text-align: center;
+      }
+      .factor-label {
+        font-size: 14px;
+        color: #6b7a99;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .factor-value {
+        font-size: 28px;
+        color: #f59e0b;
+        font-weight: 700;
+        margin-top: 8px;
+      }
+      .factor-score {
+        font-size: 16px;
+        color: #3fb950;
+        font-weight: 600;
+        margin-top: 4px;
+      }
+      .hot-badge {
+        position: absolute;
+        bottom: 30px;
+        background: linear-gradient(135deg, #3fb950, #28a745);
+        color: #fff;
+        font-size: 28px;
+        font-weight: 700;
+        padding: 12px 40px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        margin-top: 40px;
+      }
+      .step-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .step-num {
+        font-size: 56px;
+        font-weight: 800;
+        color: #f59e0b;
+        min-width: 80px;
+      }
+      .step-text {
+        font-size: 32px;
+        color: #e8e8e8;
+        font-weight: 600;
+      }
+      .step-desc {
+        font-size: 24px;
+        color: #8b949e;
+        margin-top: 8px;
+      }
+      .end-brand {
+        font-size: 72px;
+        font-weight: 800;
+        color: #58a6ff;
+        margin-bottom: 20px;
+      }
+      .end-sub {
+        font-size: 36px;
+        color: #a8b2d1;
+        margin-top: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="90"
+      data-width="1920"
+      data-height="1080"
+    >
+
+      <!-- HOOK: Problem (0-17s) -->
+      <div id="hook-text" class="clip" data-start="0" data-duration="17" data-track-index="1">
+        <div class="problem-text">Stop wasting hours chasing leads<br>that will never convert</div>
+      </div>
+
+      <!-- SOLUTION reveal (17-27s) -->
+      <div id="solution-text" class="clip" data-start="17" data-duration="10" data-track-index="1">
+        <div class="solution-text">There's a FREE tool for that</div>
+      </div>
+
+      <!-- TOOL INTRO (27-37s) -->
+      <div id="tool-intro" class="clip" data-start="27" data-duration="10" data-track-index="1">
+        <div class="title-main">Lead Qualification Score Calculator</div>
+        <div class="title-sub">Scores every lead 0-100 using four factors: Budget, Timeline, Motivation, and Agent Readiness</div>
+      </div>
+
+      <!-- DEMO: Score display (37-67s) - shows score building -->
+      <div id="demo-score" class="clip" data-start="37" data-duration="30" data-track-index="1">
+        <div class="tool-screenshot">
+          <div class="tool-header">
+            <div class="dot dot-r"></div>
+            <div class="dot dot-y"></div>
+            <div class="dot dot-g"></div>
+          </div>
+          <div class="tool-title">Lead Qualification Score Calculator — Live Demo</div>
+
+          <!-- Score display -->
+          <div class="score-display">
+            <div class="score-number" id="score-num">0</div>
+            <div class="score-label">/ 100</div>
+            <div class="score-bar-bg">
+              <div class="score-bar-fill" id="score-bar" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <!-- Four factors -->
+          <div class="factors-grid">
+            <div class="factor-item">
+              <div class="factor-label">Budget</div>
+              <div class="factor-value">$500K–$750K</div>
+              <div class="factor-score">+40 pts</div>
+            </div>
+            <div class="factor-item">
+              <div class="factor-label">Timeline</div>
+              <div class="factor-value">Within 30 days</div>
+              <div class="factor-score">+40 pts</div>
+            </div>
+            <div class="factor-item">
+              <div class="factor-label">Motivation</div>
+              <div class="factor-value">Extremely motivated</div>
+              <div class="factor-score">+40 pts</div>
+            </div>
+            <div class="factor-item">
+              <div class="factor-label">Agent Readiness</div>
+              <div class="factor-value">Ready to interview</div>
+              <div class="factor-score">+50 pts</div>
+            </div>
+          </div>
+
+          <div class="hot-badge" id="hot-badge" style="opacity:0">🔥 HOT LEAD</div>
+        </div>
+      </div>
+
+      <!-- HOW IT WORKS (67-77s) -->
+      <div id="how-it-works" class="clip" data-start="67" data-duration="10" data-track-index="1">
+        <div class="title-main" style="font-size: 72px; color: #fff;">How It Works</div>
+        <div class="steps-grid">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div>
+              <div class="step-text">Enter the 4 factors</div>
+              <div class="step-desc">Budget, Timeline, Motivation, Agent Readiness</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div>
+              <div class="step-text">Get your 0-100 score</div>
+              <div class="step-desc">Instant calculation, no signup required</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div>
+              <div class="step-text">Hot = 75+, Warm = 50-74</div>
+              <div class="step-desc">Know exactly who to call first</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div>
+              <div class="step-text">Free, works on mobile</div>
+              <div class="step-desc">No signup, get your score in seconds</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA (77-84s) -->
+      <div id="cta-section" class="clip" data-start="77" data-duration="7" data-track-index="1">
+        <div class="title-main" style="color: #3fb950;">Try It Free — Link in Description</div>
+        <div class="url-text">listingsai.directory/tools/lead-qualification-score-calculator</div>
+        <div class="tagline" style="margin-top: 40px; font-size: 32px; color: #8b949e;">No signup required • Mobile responsive • Get your score in seconds</div>
+      </div>
+
+      <!-- BRANDING END CARD (84-90s) -->
+      <div id="end-card" class="clip" data-start="84" data-duration="6" data-track-index="1">
+        <div class="end-brand">ListingsAI</div>
+        <div class="end-sub">50+ Free AI Tools for Real Estate Agents</div>
+        <div class="url-text" style="margin-top: 40px;">listingsai.directory</div>
+      </div>
+
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // Hook: Problem fades in
+      tl.from("#hook-text", { opacity: 0, scale: 0.9, duration: 2 }, 0);
+      tl.to("#hook-text", { opacity: 0, duration: 1 }, 14);
+
+      // Solution: pops in
+      tl.from("#solution-text", { opacity: 0, scale: 0.8, duration: 1 }, 17);
+      tl.to("#solution-text", { opacity: 0, duration: 1 }, 25);
+
+      // Tool intro
+      tl.from("#tool-intro", { opacity: 0, y: 50, duration: 1.5 }, 27);
+      tl.to("#tool-intro", { opacity: 0, duration: 1 }, 35);
+
+      // Demo score section — animate score counter and factors
+      tl.from("#demo-score", { opacity: 0, duration: 1 }, 37);
+
+      // Animate score building: 0 -> 40 (budget)
+      tl.to("#score-num", { textContent: 40, duration: 2, snap: { textContent: 1 }, ease: "power2.out" }, 40);
+      tl.to("#score-bar", { width: "40%", duration: 2, ease: "power2.out" }, 40);
+
+      // +40 (timeline) at 45s
+      tl.to("#score-num", { textContent: 80, duration: 2, snap: { textContent: 1 }, ease: "power2.out" }, 47);
+      tl.to("#score-bar", { width: "80%", duration: 2, ease: "power2.out" }, 47);
+
+      // +7 (partial motivation) at 52s
+      tl.to("#score-num", { textContent: 87, duration: 2, snap: { textContent: 1 }, ease: "power2.out" }, 52);
+      tl.to("#score-bar", { width: "87%", duration: 2, ease: "power2.out" }, 52);
+
+      // Show HOT badge at 57s
+      tl.to("#hot-badge", { opacity: 1, scale: 1.1, duration: 0.5, ease: "back.out(2)" }, 57);
+      tl.to("#hot-badge", { scale: 1, duration: 0.3 }, 58);
+
+      // Fade out demo at 65
+      tl.to("#demo-score", { opacity: 0, duration: 1 }, 65);
+
+      // How it works
+      tl.from("#how-it-works", { opacity: 0, y: 30, duration: 1.5 }, 67);
+      tl.to("#how-it-works", { opacity: 0, duration: 1 }, 75);
+
+      // CTA
+      tl.from("#cta-section", { opacity: 0, scale: 0.95, duration: 1.5 }, 77);
+
+      // End card
+      tl.from("#end-card", { opacity: 0, duration: 2 }, 84);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -432,7 +432,15 @@
             .tool-header { padding: 110px 0 30px; }
             .result-value { font-size: 1.5rem; }
         }
-    </style>
+    
+        .faq-section { padding: 60px 0; border-top: 1px solid var(--border); }
+        .faq-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 32px; text-align: center; }
+        .faq-grid { display: grid; gap: 20px; }
+        .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+        .faq-item h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; color: var(--accent); }
+        .faq-item p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+        </style>
 </head>
 <body>
 
@@ -760,5 +768,34 @@
         }
     </script>
 
-</body>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+
+                <div class="faq-item">
+                    <h3>How do you calculate ROI on a real estate investment?</h3>
+                    <p>ROI = (Net Profit / Total Investment) × 100. For real estate, include purchase price, closing costs, renovation costs, and all ongoing expenses against rental income and eventual sale price.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What is a good ROI for rental property?</h3>
+                    <p>A good ROI for rental properties is typically 8-12% annually. Properties under 10% may still be worthwhile if appreciation and tax benefits are strong. High cash-on-cash returns of 10%+ are excellent for cash-flow focused investors.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What is cash-on-cash return vs overall ROI?</h3>
+                    <p>Cash-on-cash return = Annual Cash Flow / Total Cash Invested (down payment + closing costs). ROI is more comprehensive — it includes equity buildup, appreciation, and tax benefits over the entire holding period.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do renovation costs affect real estate ROI?</h3>
+                    <p>Renovations improve property value and rental income but increase your total investment. The key is whether the renovation cost per unit of value added yields a positive ROI — a general rule is $1 spent should add $1.50+ in value.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What expenses should I include in my ROI calculation?</h3>
+                    <p>Include: purchase price, closing costs (2-5%), renovation/repair costs, carrying costs (mortgage, taxes, insurance, utilities), property management fees (8-10% of rent), maintenance reserves (1% of value annually), and vacancy allowance (5-10% of rental income).</p>
+                </div>
+            </div>
+        </section>
+
+    </body>
 </html>

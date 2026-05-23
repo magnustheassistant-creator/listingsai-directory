@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-05-21T08:25:12.569205+00:00",
+  "site": "realestateaitools.shop + listingsai.directory",
+  "scope": {
+    "realestateaitools_blog": "58 articles (all live, sitemap OK)",
+    "listingsai_tools": "4 tool pages (all live, sitemap OK)",
+    "listingsai_articles": "0 deployed (404 on all paths)"
+  },
+  "gsc_status": "AUTH_ERROR - wrong OAuth scopes",
+  "findings": {
+    "blog_articles": {
+      "total": 58,
+      "generic_meta_descriptions": 55,
+      "good_meta_descriptions": 3,
+      "faq_schema_count": 0,
+      "fixable": 55,
+      "issue": "deploy-articles.py extract_meta() generates 'Complete guide about [title]' for all articles"
+    },
+    "tool_pages": {
+      "total": 4,
+      "missing_faq": 3,
+      "short_meta": 1
+    }
+  },
+  "priority_fixes": [
+    {
+      "priority": "CRITICAL",
+      "action": "Fix extract_meta() in deploy-articles.py to pull actual intro paragraph as meta description",
+      "affected": "55 articles",
+      "estimated_gain": "10-20% CTR improvement"
+    },
+    {
+      "priority": "CRITICAL",
+      "action": "Add FAQPage schema to all 58 blog articles",
+      "estimated_gain": "5-15% visibility boost from rich snippets"
+    },
+    {
+      "priority": "HIGH",
+      "action": "Add FAQPage schema to 3 listingsai tool pages"
+    },
+    {
+      "priority": "HIGH",
+      "action": "Fix GSC OAuth - need https://www.googleapis.com/auth/webmasters scope"
+    }
+  ],
+  "telegram_reported": true
+}

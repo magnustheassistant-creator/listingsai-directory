@@ -1,0 +1,93 @@
+{
+  "last_updated": "2026-05-21",
+  "total_tools_on_site": 103,
+  "total_active_html_tools": 3,
+  "videos": [
+    {
+      "id": "video-01",
+      "title": "Lead Qualification Calculator",
+      "tool": "lead-qualification-score-calculator",
+      "tool_url": "https://listingsai.directory/tools/lead-qualification-score-calculator.html",
+      "script": "video-01-lead-qualification-calculator.md",
+      "script_status": "done",
+      "render_status": "done",
+      "upload_status": "done",
+      "youtube_id": "Vx_m4wBStsQ",
+      "youtube_url": "https://www.youtube.com/watch?v=Vx_m4wBStsQ",
+      "privacy": "public",
+      "duration_s": 90,
+      "has_subtitles": false,
+      "has_ken_burns": false,
+      "has_music": false,
+      "rendered_at": "2026-05-21",
+      "notes": "Original render. No subtitles. Will need re-upload with captions."
+    },
+    {
+      "id": "video-02",
+      "title": "Real Estate ROI Calculator",
+      "tool": "roi-calculator",
+      "tool_url": "https://listingsai.directory/tools/roi-calculator.html",
+      "script": "video-01-roi-calculator.md",
+      "script_status": "done",
+      "render_status": "done",
+      "upload_status": "done",
+      "youtube_id": "OBV5BruwQ3I",
+      "youtube_url": "https://www.youtube.com/watch?v=OBV5BruwQ3I",
+      "privacy": "public",
+      "duration_s": 100,
+      "has_subtitles": false,
+      "has_ken_burns": true,
+      "has_music": true,
+      "rendered_at": "2026-05-21",
+      "notes": "Ken Burns + ambient music 15%. No subtitles yet."
+    },
+    {
+      "id": "video-03",
+      "title": "Door Knocking Scripts Generator",
+      "tool": "real-estate-door-knocking-scripts",
+      "tool_url": "https://listingsai.directory/tools/real-estate-door-knocking-scripts.html",
+      "script": "video-02-door-knocking-scripts.md",
+      "script_status": "done",
+      "render_status": "pending",
+      "upload_status": "pending",
+      "has_subtitles": true,
+      "has_ken_burns": true,
+      "has_music": true,
+      "notes": "Script ready. Tool page archived - needs to be restored. Next render."
+    },
+    {
+      "id": "video-04",
+      "title": "Mortgage Payment Estimator",
+      "tool": "mortgage-payment-estimator",
+      "tool_url": "https://listingsai.directory/tools/mortgage-payment-estimator.html",
+      "script": null,
+      "script_status": "pending",
+      "render_status": "pending",
+      "upload_status": "pending",
+      "has_subtitles": true,
+      "has_ken_burns": true,
+      "has_music": true,
+      "notes": "Active tool page exists. Script not yet written. Next after video-03."
+    },
+    {
+      "id": "video-05",
+      "title": "Next Tool TBD",
+      "tool": "TBD",
+      "tool_url": null,
+      "script": null,
+      "script_status": "pending",
+      "render_status": "pending",
+      "upload_status": "pending",
+      "priority": "queue",
+      "notes": "Pick next high-affiliate tool from listingsai.directory"
+    }
+  ],
+  "automation": {
+    "tool_watch_path": "/home/hermes/listingsai.directory/tools",
+    "script_dir": "/home/hermes/brain-storm-corp/youtube/scripts",
+    "render_dir": "/home/hermes/brain-storm-corp/youtube",
+    "tracker_file": "/home/hermes/brain-storm-corp/youtube/PRODUCTION_TRACKER.json",
+    "trigger_on": ["new .html file in tools/ (not archived, not -article)"],
+    "cron_interval": "60min"
+  }
+}

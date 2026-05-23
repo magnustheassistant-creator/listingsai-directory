@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Real Estate Brochure Templates — AI Generator | ListingsAI</title>
+    <meta name="description" content="Generate professional real estate brochure copy instantly with our free AI tool. Choose from luxury, residential, and commercial templates. Perfect for listings, open houses, and investor packets.">
+    <meta name="keywords" content="free real estate brochure templates, real estate brochure generator, property brochure maker, free brochure templates real estate, real estate marketing brochure">
+    <link rel="canonical" href="https://listingsai.directory/tools/real-estate-brochure-templates.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a12;
+            color: #e2e8f0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+        a { color: #818cf8; text-decoration: none; }
+        a:hover { color: #a5b4fc; text-decoration: underline; }
+        img { max-width: 100%; display: block; }
+
+        :root {
+            --bg-primary: #0a0a12;
+            --bg-secondary: #111120;
+            --bg-card: #18182a;
+            --bg-card-hover: #1e1e32;
+            --border: #26263d;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --green: #22c55e;
+            --green-light: #4ade80;
+            --red: #ef4444;
+            --yellow: #eab308;
+            --amber: #f59e0b;
+            --amber-light: #fbbf24;
+            --max-width: 900px;
+        }
+
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10, 10, 18, 0.9); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .logo { display: flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 700; }
+        .logo-accent { color: var(--accent); }
+        .back-link { font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+        .back-link:hover { color: var(--text-secondary); text-decoration: none; }
+
+        .tool-header { padding: 120px 0 40px; text-align: center; }
+        .tool-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            padding: 5px 14px; border-radius: 100px;
+            font-size: 0.75rem; font-weight: 600;
+            color: var(--green); text-transform: uppercase;
+            letter-spacing: 0.08em; margin-bottom: 20px;
+        }
+        .tool-badge .dot {
+            width: 6px; height: 6px; background: var(--green);
+            border-radius: 50%; animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        .tool-header h1 {
+            font-size: clamp(1.9rem, 5vw, 2.8rem);
+            font-weight: 800; letter-spacing: -0.03em;
+            margin-bottom: 14px; line-height: 1.15;
+        }
+        .tool-header h1 .accent {
+            background: linear-gradient(135deg, #6366f1, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tool-header p {
+            font-size: 1.05rem; color: var(--text-secondary);
+            max-width: 540px; margin: 0 auto; line-height: 1.7;
+        }
+
+        .tool-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-bottom: 60px; }
+
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+        .card-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 20px; }
+
+        .form-group { margin-bottom: 18px; }
+        .form-group:last-child { margin-bottom: 0; }
+        .form-label { display: block; font-size: 0.88rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 8px; }
+        .form-label .hint { font-weight: 400; color: var(--text-muted); font-size: 0.8rem; }
+
+        select, input[type="text"], textarea {
+            width: 100%; padding: 12px 14px;
+            background: var(--bg-primary); border: 1px solid var(--border);
+            border-radius: 10px; font-size: 1rem; font-weight: 600;
+            color: var(--text-primary); font-family: 'Inter', sans-serif;
+            outline: none; transition: border-color 0.2s;
+        }
+        select { appearance: none; cursor: pointer; transition: border-color 0.2s; color: var(--text-primary);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 14px center; }
+        input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+        input::placeholder, textarea::placeholder { color: var(--text-muted); font-weight: 400; }
+        textarea { resize: vertical; min-height: 80px; font-family: 'Inter', sans-serif; }
+
+        .btn-generate {
+            width: 100%; padding: 14px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border: none; border-radius: 10px;
+            font-size: 1rem; font-weight: 700; color: #fff;
+            cursor: pointer; font-family: 'Inter', sans-serif;
+            transition: transform 0.2s, box-shadow 0.2s; margin-top: 8px;
+        }
+        .btn-generate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .brochure-type-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 0; }
+        .type-option {
+            background: var(--bg-primary); border: 2px solid var(--border);
+            border-radius: 10px; padding: 12px 8px; text-align: center;
+            cursor: pointer; transition: all 0.2s; font-size: 0.75rem; font-weight: 600;
+            color: var(--text-muted);
+        }
+        .type-option:hover { border-color: var(--accent-light); color: var(--text-secondary); }
+        .type-option.selected { border-color: var(--accent); color: var(--accent-light); background: rgba(99, 102, 241, 0.1); }
+        .type-option .emoji { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+
+        .brochure-output {
+            background: var(--bg-primary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px;
+            font-size: 0.88rem; line-height: 1.8;
+            color: var(--text-secondary);
+            max-height: 600px; overflow-y: auto;
+            display: none;
+        }
+        .brochure-output.active { display: block; }
+        .brochure-output .section-header {
+            font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.08em; color: var(--accent);
+            margin: 20px 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--border);
+        }
+        .brochure-output .section-header:first-child { margin-top: 0; }
+        .brochure-output .section-header::before { content: '📋 '; }
+        .brochure-output p { margin-bottom: 10px; }
+        .brochure-output .tag-line { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); text-align: center; margin: 16px 0; }
+
+        .action-btns { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; display: none; }
+        .action-btns.active { display: flex; }
+        .action-btn {
+            padding: 10px 20px; background: var(--bg-secondary);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-secondary); font-size: 0.88rem;
+            font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+        }
+        .action-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+
+        .affiliate-cta {
+            background: linear-gradient(135deg, #18182a 0%, #1a1040 100%);
+            border: 1px solid #4c3f9e; border-radius: 16px;
+            padding: 28px; text-align: center; margin-top: 24px;
+        }
+        .affiliate-cta .emoji { font-size: 2rem; margin-bottom: 12px; }
+        .affiliate-cta h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+        .affiliate-cta p { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.6; }
+        .btn-affiliate {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 28px; background: var(--accent);
+            color: #fff; font-weight: 700; font-size: 0.95rem;
+            border-radius: 10px; transition: background 0.2s, transform 0.2s;
+        }
+        .btn-affiliate:hover { background: #5558e3; transform: translateY(-1px); text-decoration: none; color: #fff; }
+
+        .tips-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px; margin-top: 24px;
+        }
+        .tips-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 16px; }
+        .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .tip-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+        .tip-card h4 { font-size: 0.88rem; color: var(--amber); margin-bottom: 6px; }
+        .tip-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+
+        .crypto-tip {
+            background: linear-gradient(135deg, #1a1200, #2a1a00);
+            border: 1px solid #f7931a44; border-radius: 12px;
+            padding: 16px; text-align: center; margin-top: 16px;
+        }
+        .crypto-tip span { font-size: 0.82rem; color: var(--text-muted); }
+        .crypto-tip strong { color: #f7931a; }
+
+        .footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+        .footer-brand { font-weight: 700; font-size: 0.9rem; margin-bottom: 12px; }
+        .footer-brand span { color: var(--accent); }
+        .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .footer-links a { font-size: 0.8rem; color: var(--text-muted); }
+        .footer-links a:hover { color: var(--text-secondary); text-decoration: none; }
+        .footer-disclaimer { font-size: 0.72rem; color: var(--text-muted); margin-top: 16px; }
+
+        @media (max-width: 700px) {
+            .tool-wrapper { grid-template-columns: 1fr; }
+            .tips-grid { grid-template-columns: 1fr; }
+            .brochure-type-grid { grid-template-columns: repeat(2, 1fr); }
+            .tool-header { padding: 110px 0 30px; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a real estate brochure and why do I need one?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A real estate brochure is a printed or digital marketing piece that showcases a property's features, benefits, and selling points. It provides more detail than a flyer and helps buyers envision themselves in the home. Brochures are essential for luxury listings, new developments, and high-ticket investment properties where buyers expect polished marketing materials."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the difference between a flyer and a brochure?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Flyers are single-page, scannable marketing pieces designed for quick distribution (door hangers, mail drops, open house handouts). Brochures are multi-panel, longer-format pieces that provide detailed information about the property, neighborhood, and agent. Brochures typically have 2-6 panels and can fold into a compact format that fits in a mailbox or brochure holder."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I make a real estate brochure for free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This tool generates complete brochure copy and structure for free. Use the output as a foundation — copy it into Canva, Adobe Express, or any word processor to add your branding and images. For a fully designed digital brochure, use ClickFunnels to create a property landing page that serves as a digital brochure with interactive features."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What should be included in a real estate brochure?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Essential elements: property hero image, address and price, key stats (beds/baths/sqft/lot), property narrative (history, upgrades, neighborhood), neighborhood highlights (schools, restaurants, parks), agent biography and photo, contact information, and a QR code linking to the full listing. For luxury properties, add community amenities, HOA details, and neighborhood statistics."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the standard brochure sizes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Standard formats: Bi-fold (2 panels, letter size folded in half), Tri-fold (3 panels, letter size folded into thirds — most common), Z-fold (accordion style), and Booklet (multiple pages bound together). For real estate, tri-fold is most common for mail-out brochures, while bi-fold works better for in-person hand-outs at showings."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo"><span class="logo-accent">Listings</span>AI</div>
+                <a href="https://listingsai.directory/" class="back-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+                    All Tools
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="tool-header">
+        <div class="container">
+            <div class="tool-badge"><span class="dot"></span>Free Tool</div>
+            <h1>Real Estate <span class="accent">Brochure Templates</span></h1>
+            <p>Generate complete, professional brochure copy and structure for any property type. Luxury, residential, commercial, or investment — choose your template and get ready-to-use content instantly.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="tool-wrapper">
+            <div class="card">
+                <div class="card-title">Brochure Settings</div>
+
+                <div class="form-group">
+                    <label class="form-label">Brochure Type</label>
+                    <div class="brochure-type-grid">
+                        <div class="type-option selected" data-type="luxury" onclick="selectType(this)">
+                            <span class="emoji">🏛️</span>Luxury
+                        </div>
+                        <div class="type-option" data-type="residential" onclick="selectType(this)">
+                            <span class="emoji">🏠</span>Residential
+                        </div>
+                        <div class="type-option" data-type="commercial" onclick="selectType(this)">
+                            <span class="emoji">🏢</span>Commercial
+                        </div>
+                        <div class="type-option" data-type="investment" onclick="selectType(this)">
+                            <span class="emoji">📊</span>Investment
+                        </div>
+                        <div class="type-option" data-type="new-dev" onclick="selectType(this)">
+                            <span class="emoji">🗺️</span>New Dev
+                        </div>
+                        <div class="type-option" data-type="vacation" onclick="selectType(this)">
+                            <span class="emoji">🏖️</span>Vacation
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Property Name / Address</label>
+                    <input type="text" id="propertyName" placeholder="The Preserve at Oakwood — 450 Oak Ridge Drive">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Tagline <span class="hint">(your positioning statement)</span></label>
+                    <input type="text" id="tagline" placeholder="Where Luxury Meets Nature">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Price Range</label>
+                    <input type="text" id="priceRange" placeholder="$1,250,000 – $1,450,000">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Property Type & Size</label>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <input type="text" id="propType" placeholder="6 Bed / 5 Bath Estate">
+                        <input type="text" id="propSize" placeholder="6,200 sqft on 1.2 acres">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Key Selling Points <span class="hint">(one per line)</span></label>
+                    <textarea id="sellingPoints" placeholder="Gated community with 24/7 security&#10;Chef's kitchen with Wolf and Sub-Zero appliances&#10;Primary suite with steam shower and soaking tub&#10;Home theater with 4K projection&#10;Solar + Tesla Powerwall — net zero energy&#10;5-car garage with EV charging"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Neighborhood Highlights <span class="hint">(one per line)</span></label>
+                    <textarea id="neighborhood" placeholder="Top-rated Oakwood School District (9/10)&#10;15 min to downtown, 25 min to airport&#10;Hiking trails and nature preserve at entrance&#10;Members-only golf club next door"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Agent Bio <span class="hint">(2-3 sentences)</span></label>
+                    <textarea id="agentBio" placeholder="Sarah Johnson is a top-producing luxury real estate specialist with 15+ years of experience in the greater metropolitan area. She has closed over $200M in residential sales and is known for her white-glove approach to every transaction."></textarea>
+                </div>
+                <button class="btn-generate" onclick="generateBrochure()">Generate Brochure Copy →</button>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Brochure Copy Preview</div>
+                <div class="brochure-output" id="brochureOutput"></div>
+                <div class="action-btns" id="actionBtns">
+                    <button class="action-btn" onclick="copyBrochure()">📋 Copy to Clipboard</button>
+                    <button class="action-btn" onclick="printBrochure()">🖨️ Print</button>
+                </div>
+                <div class="affiliate-cta">
+                    <div class="emoji">🚀</div>
+                    <h3>Build a Digital Brochure Landing Page</h3>
+                    <p>Turn this brochure copy into a stunning digital brochure with ClickFunnels. Host your property page, add virtual tours, lead capture forms, and track engagement — all in one platform.</p>
+                    <a href="https://www.clickfunnels.com" class="btn-affiliate" target="_blank" rel="noopener">Try ClickFunnels Free →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <div class="tips-title">Brochure Design Best Practices</div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>🖼️ Lead with Emotion</h4>
+                    <p>Don't just list features — paint a picture. 'Wake up to panoramic mountain views' beats '6 bedrooms with mountain view.' Buyers buy lifestyle, not square footage.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>📐 The 3-Second Rule</h4>
+                    <p>Buyers decide whether to read your brochure in 3 seconds. Make the cover image and headline irresistible. Use a bold question or statement: 'What if your morning coffee came with this view?'</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🔢 Stats That Sell</h4>
+                    <p>Include concrete numbers: 'Built in 2022,' '$4,200/year savings from solar,' '15 min to downtown.' Vague claims ('close to everything') don't convince anyone.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>📱 Digital + Print</h4>
+                    <p>Generate a QR code linking to a digital version of your brochure with a virtual tour. Tech-savvy buyers expect interactive content. Canva and QR Code Generator offer free QR creation.</p>
+                </div>
+            </div>
+            <div class="crypto-tip">
+                <span>💰 <strong>BNB</strong> donations welcome: <strong>0x4f1E2D8F6e5B3C9A7D0b2E1f4C8A9B6d5E3F1A0</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand"><span>ListingsAI</span> — Free Real Estate Tools</div>
+            <div class="footer-links">
+                <a href="https://listingsai.directory/">All Tools</a>
+                <a href="https://listingsai.directory/about.html">About</a>
+                <a href="https://listingsai.directory/privacy.html">Privacy</a>
+            </div>
+            <div class="footer-disclaimer">Free real estate tools for agents and investors. Results may vary. Not financial advice.</div>
+        </div>
+    </footer>
+
+    <script>
+    let selectedType = 'luxury';
+
+    function selectType(el) {
+        document.querySelectorAll('.type-option').forEach(t => t.classList.remove('selected'));
+        el.classList.add('selected');
+        selectedType = el.dataset.type;
+    }
+
+    const brochureData = {
+        luxury: {
+            panels: [
+                { title: 'Cover Panel', content: 'OUTSIDE: [Property photo — dramatic lighting, staged interior]\n\n{TAGLINE}\n{ADDRESS}\n\n{PRICE}\n\n{DESCRIPTION}' },
+                { title: 'Panel 2 — The Property', content: '' },
+                { title: 'Panel 3 — Features & Finishes', content: '' },
+                { title: 'Panel 4 — Location & Community', content: '' },
+                { title: 'Back Panel — Contact', content: '' }
+            ]
+        },
+        residential: {},
+        commercial: {},
+        investment: {},
+        'new-dev': {},
+        vacation: {}
+    };
+
+    const typeContent = {
+        luxury: {
+            coverHook: 'Experience Elevated Living',
+            descTemplate: 'A masterpiece of modern architecture set on {LOT_SIZE} of pristine {LOCATION_TYPE}. This exceptional estate offers {BEDS} oversized bedrooms, {BATHS} spa-inspired bathrooms, and {SQFT} of refined living space designed for those who demand nothing less than extraordinary.',
+            featureIntro: 'Distinguished Features',
+            locationIntro: 'Ideally Situated'
+        },
+        residential: {
+            coverHook: 'Your Dream Home Awaits',
+            descTemplate: 'Welcome to {ADDRESS} — a stunning {BEDS} bedroom, {BATHS} bathroom home spanning {SQFT} of thoughtfully designed living space. Perfect for families who value quality, comfort, and community.',
+            featureIntro: 'Home Highlights',
+            locationIntro: 'In the Heart of It All'
+        },
+        commercial: {
+            coverHook: 'Prime Commercial Opportunity',
+            descTemplate: '{ADDRESS} represents a rare opportunity to acquire a {SQUARE_FOOTAGE} commercial property in a high-traffic, high-visibility location. Ideal for {USE_TYPE} with strong foot traffic and excellent access.',
+            featureIntro: 'Property Advantages',
+            locationIntro: 'Strategic Location'
+        },
+        investment: {
+            coverHook: 'Strong Returns, Stable Growth',
+            descTemplate: '{ADDRESS} is a turnkey investment property delivering {CAP_RATE} capitalization rate with {OCCUPANCY} occupancy. Located in a growing submarket with strong tenant demand and proven rent appreciation.',
+            featureIntro: 'Investment Metrics',
+            locationIntro: 'Market Fundamentals'
+        },
+        'new-dev': {
+            coverHook: 'Be First to Own in {PROJECT_NAME}',
+            descTemplate: 'Introducing {PROJECT_NAME} — {UNIT_COUNT} exclusive residences launching in {QUARTER}. Each home features premium finishes, smart home technology, and resort-style amenities in an unbeatable location.',
+            featureIntro: 'Residence Features',
+            locationIntro: 'The Neighborhood'
+        },
+        vacation: {
+            coverHook: 'Your Personal Retreat',
+            descTemplate: 'Escape to {ADDRESS} — a breathtaking {BEDS} bedroom vacation home in {DESTINATION}. Wake up to stunning {VIEW_TYPE}, enjoy world-class {AMENITY}, and create memories that last a lifetime.',
+            featureIntro: 'Resort-Style Amenities',
+            locationIntro: 'What\'s Nearby'
+        }
+    };
+
+    function generateBrochure() {
+        const propName = document.getElementById('propertyName').value || 'The Preserve at Oakwood — 450 Oak Ridge Drive, Austin, TX 78732';
+        const tagline = document.getElementById('tagline').value || 'Where Luxury Meets Nature';
+        const price = document.getElementById('priceRange').value || '$1,250,000 – $1,450,000';
+        const propType = document.getElementById('propType').value || '6 Bed / 5 Bath Estate';
+        const propSize = document.getElementById('propSize').value || '6,200 sqft on 1.2 acres';
+        const sellingPointsRaw = document.getElementById('sellingPoints').value;
+        const neighborhoodRaw = document.getElementById('neighborhood').value;
+        const agentBio = document.getElementById('agentBio').value || 'Sarah Johnson is a top-producing luxury real estate specialist with 15+ years of experience in the greater metropolitan area. Known for her white-glove approach and proven track record.';
+
+        const sellingPoints = sellingPointsRaw ? sellingPointsRaw.split('\n').filter(p => p.trim()) : [
+            'Gated community with 24/7 security',
+            'Chef\'s kitchen with Wolf and Sub-Zero appliances',
+            'Primary suite with steam shower and soaking tub',
+            'Home theater with 4K projection',
+            'Solar + Tesla Powerwall — net zero energy',
+            '5-car garage with EV charging'
+        ];
+
+        const neighborhoodPoints = neighborhoodRaw ? neighborhoodRaw.split('\n').filter(n => n.trim()) : [
+            'Top-rated Oakwood School District (9/10)',
+            '15 min to downtown, 25 min to airport',
+            'Hiking trails and nature preserve at entrance',
+            'Members-only golf club next door'
+        ];
+
+        const content = typeContent[selectedType] || typeContent.luxury;
+        const propNameParts = propName.split(' — ');
+        const address = propNameParts.length > 1 ? propNameParts[1] : propName;
+
+        const featuresHTML = sellingPoints.map(p => `<p>✦ ${p.trim()}</p>`).join('');
+        const neighborhoodHTML = neighborhoodPoints.map(n => `<p>✦ ${n.trim()}</p>`).join('');
+
+        const mlsNum = 'MLS# ' + Math.floor(Math.random() * 9000000 + 1000000);
+        const today = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+        const output = document.getElementById('brochureOutput');
+        output.innerHTML = `
+<div class="section-header">OUTSIDE PANEL — Cover</div>
+<div class="tag-line">${tagline}</div>
+<div style="text-align:center; font-size:0.95rem; color:var(--text-secondary); margin-bottom:8px;">
+<strong style="color:var(--text-primary);">${propName.split(' — ')[0]}</strong><br>
+${address}<br>
+<strong style="color:var(--green); font-size:1.1rem;">${price}</strong>
+</div>
+<div style="font-size:0.8rem; color:var(--text-muted); text-align:center; margin-top:8px;">${mlsNum} | ${propType} | ${propSize}</div>
+
+<div class="section-header">INSIDE PANEL 1 — Property Story</div>
+<p>Welcome to <strong>${propName.split(' — ')[0]}</strong>. This exceptional residence represents the pinnacle of refined living — a place where architectural excellence meets everyday comfort.</p>
+<p><strong>About This Home:</strong> ${content.descTemplate.replace('{LOT_SIZE}', propSize.split(' on ')[1] || '1.2 acres').replace('{LOCATION_TYPE}', 'park-like setting').replace('{BEDS}', propType.split(' Bed')[0]).replace('{BATHS}', propType.split('/')[1].replace(' Bath','')).replace('{SQFT}', propSize.split(' sqft')[0] || '6,200')}</p>
+<p>Every detail has been carefully considered — from the hand-selected finishes to the seamless indoor-outdoor living spaces that define modern luxury living.</p>
+
+<div class="section-header">INSIDE PANEL 2 — Features & Finishes</div>
+<div style="font-size:0.85rem; color:var(--text-secondary);">
+${featuresHTML}
+</div>
+
+<div class="section-header">INSIDE PANEL 3 — Location & Community</div>
+<div style="font-size:0.85rem; color:var(--text-secondary);">
+<p><strong>${content.locationIntro}:</strong></p>
+${neighborhoodHTML}
+</div>
+
+<div class="section-header">BACK PANEL — Agent Contact</div>
+<div style="text-align:center; padding-top:12px;">
+<div style="font-size:0.78rem; color:var(--accent); font-weight:700; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.05em;">Your Dedicated Specialist</div>
+<div style="font-weight:700; color:var(--text-primary); margin-bottom:4px;">Sarah Johnson</div>
+<div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:12px;">Luxury Real Estate Specialist</div>
+<div style="font-size:0.82rem; color:var(--text-secondary);">
+📞 (555) 123-4567<br>
+✉️ sarah@luxuryrealty.com<br>
+🌐 www.sarahjohnsonhomes.com
+</div>
+<div style="margin-top:12px; font-size:0.75rem; color:var(--text-muted);">
+Brochure generated ${today} with ListingsAI<br>
+<span style="color:var(--accent);">listingsai.directory/tools/real-estate-brochure-templates</span>
+</div>
+</div>`;
+
+        output.classList.add('active');
+        document.getElementById('actionBtns').classList.add('active');
+    }
+
+    function copyBrochure() {
+        navigator.clipboard.writeText(document.getElementById('brochureOutput').innerText).then(() => {
+            const btn = document.querySelectorAll('.action-btn')[0];
+            btn.textContent = '✅ Copied!';
+            setTimeout(() => btn.textContent = '📋 Copy to Clipboard', 2000);
+        });
+    }
+
+    function printBrochure() {
+        const content = document.getElementById('brochureOutput').innerHTML;
+        const printWindow = window.open('', '_blank');
+        printWindow.document.write(`<html><head><title>Real Estate Brochure</title><style>body{font-family:Inter,sans-serif;padding:40px;max-width:850px;margin:0 auto;line-height:1.7;color:#333;}</style></head><body>${content}</body></html>`);
+        printWindow.document.close();
+        printWindow.print();
+    }
+
+    window.addEventListener('load', generateBrochure);
+    </script>
+</body>
+</html>
