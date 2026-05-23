@@ -20,7 +20,7 @@ Estimate monthly mortgage payments instantly. Enter home price, down payment, ra
 
 ## Affiliate
 
-ClickFunnels (40% commission) — https://www.shopperprime.com/recommends/clickfunnels/
+ClickFunnels (40% commission) — https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380
 
 ## Author
 
