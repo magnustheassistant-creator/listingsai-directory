@@ -4,10 +4,9 @@ Last updated: 2026-05-23T08:00:00.000000
 ## Status: 72 tools built / 50 target
 
 ## New Tools Under Construction
-- real-estate-fsbo-email-templates (high-priority keyword: "fsbo email templates")
-- real-estate-seller-net-proceeds-calculator (high-priority: "how much will I net from selling my house")
-- real-estate-objection-handler-scripts (medium priority: "real estate objection handling scripts")
-- real-estate-showing-feedback-form (low priority: "real estate showing feedback form")
+- real-estate-objection-handler-scripts (DONE — build + README)
+- real-estate-showing-feedback-form (DONE — build + README)
+- (all in-progress items now complete)
 
 ## Priority New Tools (from keyword research)
 1. [x] real-estate-door-knocking-scripts - "best door knocking scripts for real estate agents" - Jasper affiliate
