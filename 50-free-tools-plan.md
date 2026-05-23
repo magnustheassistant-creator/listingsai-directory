@@ -20,6 +20,8 @@ Last updated: 2026-05-23T08:00:00.000000
 9. [x] real-estate-seller-net-proceeds-calculator - "how much will I net from selling my house" - ClickFunnels affiliate
 10. [x] real-estate-objection-handler-scripts - "real estate objection handling scripts" - ClickFunnels affiliate
 11. [x] real-estate-buyer-lead-intake-form - "buyer lead intake form" - ClickFunnels affiliate
+12. [x] real-estate-open-house-sign-in-sheet - "real estate open house sign in sheet" - ClickFunnels affiliate
+13. [ ] real-estate-buyer-questionnaire-form - "real estate buyer questionnaire form" - ClickFunnels affiliate
 
 ## Keywords to target
 - "best door knocking scripts for real estate agents" (door knocking)

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Real Estate Buyer Questionnaire Form | ListingsAI</title>
+  <meta name="description" content="Fill out our free real estate buyer questionnaire form to capture buyer preferences, financing, and timeline. Perfect for agents qualifying leads.">
+  <meta name="keywords" content="real estate buyer questionnaire form, buyer questionnaire real estate, real estate buyer form pdf, free buyer questionnaire real estate">
+  <link rel="canonical" href="https://listingsai.directory/tools/real-estate-buyer-questionnaire-form.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #0a0a12; color: #e2e8f0; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+    a { color: #818cf8; text-decoration: none; }
+    a:hover { color: #a5b4fc; text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+    :root {
+      --bg-primary: #0a0a12;
+      --bg-secondary: #111120;
+      --bg-card: #18182a;
+      --bg-card-hover: #1e1e32;
+      --border: #26263d;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --green: #22c55e;
+      --green-light: #4ade80;
+      --red: #ef4444;
+      --yellow: #eab308;
+      --amber: #f59e0b;
+      --amber-light: #fbbf24;
+      --max-width: 860px;
+    }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    .header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10, 10, 18, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { display: flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 700; }
+    .logo-accent { color: var(--accent); }
+    .back-link { font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+    .back-link:hover { color: var(--text-secondary); text-decoration: none; }
+    .tool-header { padding: 120px 0 40px; text-align: center; }
+    .tool-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--bg-card); border: 1px solid var(--border); padding: 5px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; }
+    .tool-badge .dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .tool-header h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px; line-height: 1.15; }
+    .tool-header h1 .accent { background: linear-gradient(135deg, #6366f1, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .tool-header p { font-size: 1.05rem; color: var(--text-secondary); max-width: 540px; margin: 0 auto; line-height: 1.7; }
+    .form-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 24px; }
+    .section-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group.full-width { grid-column: 1 / -1; }
+    .form-group:last-child { margin-bottom: 0; }
+    .form-label { display: block; font-size: 0.88rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 8px; }
+    .form-label .hint { font-weight: 400; color: var(--text-muted); font-size: 0.8rem; }
+    .form-input, .form-select, .form-textarea { width: 100%; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; padding: 11px 14px; font-size: 0.9rem; color: var(--text-primary); font-family: inherit; transition: border-color 0.2s, box-shadow 0.2s; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15); }
+    .form-textarea { resize: vertical; min-height: 80px; }
+    .form-select { appearance: none; cursor: pointer; }
+    .radio-group { display: flex; gap: 16px; flex-wrap: wrap; }
+    .radio-item { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+    .radio-item input[type="radio"] { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; }
+    .radio-item span { font-size: 0.85rem; color: var(--text-secondary); }
+    .checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .checkbox-item { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+    .checkbox-item input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; }
+    .checkbox-item span { font-size: 0.85rem; color: var(--text-secondary); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--accent); color: #fff; border: none; border-radius: 10px; padding: 14px 28px; font-size: 0.95rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: background 0.2s, transform 0.1s; width: 100%; margin-top: 8px; }
+    .btn:hover { background: var(--accent-light); }
+    .btn:active { transform: scale(0.98); }
+    .btn-secondary { background: var(--bg-card-hover); color: var(--text-secondary); border: 1px solid var(--border); }
+    .btn-secondary:hover { background: var(--border); color: var(--text-primary); }
+    .cta-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; text-align: center; margin: 40px 0; }
+    .cta-section h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
+    .cta-section p { color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: #0a0a12; border: none; border-radius: 10px; padding: 14px 32px; font-size: 1rem; font-weight: 700; font-family: inherit; cursor: pointer; transition: background 0.2s, transform 0.1s; text-decoration: none; }
+    .cta-btn:hover { background: var(--green-light); color: #0a0a12; text-decoration: none; transform: scale(1.02); }
+    .affiliate-banner { background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(168, 85, 247, 0.1)); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 12px; padding: 20px; text-align: center; margin-top: 24px; }
+    .affiliate-banner p { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px; }
+    .affiliate-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; border: none; border-radius: 10px; padding: 12px 28px; font-size: 0.95rem; font-weight: 600; font-family: inherit; cursor: pointer; transition: background 0.2s; text-decoration: none; }
+    .affiliate-btn:hover { background: var(--accent-light); color: #fff; text-decoration: none; }
+    .faq-section { padding: 40px 0 60px; }
+    .faq-section h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 24px; text-align: center; }
+    .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; }
+    .faq-item h3 { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
+    .faq-item p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
+    .footer { text-align: center; padding: 40px 0; color: var(--text-muted); font-size: 0.8rem; }
+    @media (max-width: 640px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .checkbox-group { grid-template-columns: 1fr; }
+      .radio-group { flex-direction: column; gap: 8px; }
+    }
+    @media print {
+      body { background: #fff; color: #000; }
+      .header, .cta-section, .affiliate-banner, .btn, .faq-section, .footer { display: none; }
+      .form-card { border: 1px solid #ccc; box-shadow: none; padding: 20px; }
+      .form-input, .form-select, .form-textarea { border: 1px solid #999; background: #fff; color: #000; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a real estate buyer questionnaire form?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A real estate buyer questionnaire form is a document that captures key information about a potential buyer's preferences, financial situation, timeline, and goals. Agents use it to qualify leads and provide personalized service."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I get a free real estate buyer questionnaire form PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This tool provides a free, printable buyer questionnaire form you can use right now. Simply fill it out online or print it and use it at open houses, showings, or consultations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What information should a buyer questionnaire include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A comprehensive buyer questionnaire should cover contact information, property type preferences, bedroom/bathroom requirements, preferred neighborhoods, price range, financing status, timeline, and motivation for buying."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do real estate agents use buyer questionnaires?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Agents use buyer questionnaires to qualify leads, understand client needs, match buyers with relevant listings, and demonstrate professionalism. The data helps agents save time and close more deals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I customize this buyer questionnaire for my brokerage?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This form is provided as a free resource you can print and use as-is, or modify for your own business. Many agents add their broker's logo, contact information, and branding to personalize it for their clients."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-accent">&lt;/&gt;</span> ListingsAI
+      </div>
+      <a href="https://listingsai.directory" class="back-link">
+        <span>←</span> Back to directory
+      </a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="tool-header">
+      <div class="tool-badge"><span class="dot"></span> Free Tool</div>
+      <h1>Free <span class="accent">Real Estate Buyer Questionnaire</span> Form</h1>
+      <p>Fill out this comprehensive buyer questionnaire to help your agent find your perfect home. Print it or save as PDF — free to use.</p>
+    </div>
+
+    <div class="form-card">
+      <div class="section-title">Buyer Basics</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label" for="fullName">Full Name <span class="hint">*</span></label>
+          <input type="text" class="form-input" id="fullName" placeholder="Michael R. Thompson" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address <span class="hint">*</span></label>
+          <input type="email" class="form-input" id="email" placeholder="michael.thompson@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone Number <span class="hint">*</span></label>
+          <input type="tel" class="form-input" id="phone" placeholder="(555) 867-5309" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="bestContact">Best Time to Contact</label>
+          <select class="form-select" id="bestContact">
+            <option value="">Select...</option>
+            <option value="morning">Morning (9am – 12pm)</option>
+            <option value="afternoon">Afternoon (12pm – 5pm)</option>
+            <option value="evening">Evening (5pm – 8pm)</option>
+            <option value="anytime">Anytime</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="section-title">Property Preferences</div>
+      <div class="form-grid">
+        <div class="form-group full-width">
+          <label class="form-label">Property Type</label>
+          <div class="checkbox-group">
+            <label class="checkbox-item"><input type="checkbox" name="propType" value="single-family"><span>Single Family Home</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="propType" value="condo"><span>Condo</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="propType" value="townhouse"><span>Townhouse</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="propType" value="multi-family"><span>Multi-Family</span></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="bedrooms">Number of Bedrooms</label>
+          <select class="form-select" id="bedrooms">
+            <option value="">No preference</option>
+            <option value="studio">Studio</option>
+            <option value="1">1 Bedroom</option>
+            <option value="2">2 Bedrooms</option>
+            <option value="3">3 Bedrooms</option>
+            <option value="4">4 Bedrooms</option>
+            <option value="5+">5+ Bedrooms</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="bathrooms">Number of Bathrooms</label>
+          <select class="form-select" id="bathrooms">
+            <option value="">No preference</option>
+            <option value="1">1 Bathroom</option>
+            <option value="1.5">1.5 Bathrooms</option>
+            <option value="2">2 Bathrooms</option>
+            <option value="2.5">2.5 Bathrooms</option>
+            <option value="3+">3+ Bathrooms</option>
+          </select>
+        </div>
+        <div class="form-group full-width">
+          <label class="form-label" for="neighborhoods">Preferred Areas / Neighborhoods</label>
+          <textarea class="form-textarea" id="neighborhoods" placeholder="Downtown, Westside, Lakewood, Riverside..."></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="priceMin">Price Range — Min</label>
+          <select class="form-select" id="priceMin">
+            <option value="">No minimum</option>
+            <option value="100000">$100,000</option>
+            <option value="150000">$150,000</option>
+            <option value="200000">$200,000</option>
+            <option value="250000">$250,000</option>
+            <option value="300000">$300,000</option>
+            <option value="350000">$350,000</option>
+            <option value="400000">$400,000</option>
+            <option value="450000">$450,000</option>
+            <option value="500000">$500,000</option>
+            <option value="600000">$600,000</option>
+            <option value="750000">$750,000</option>
+            <option value="1000000">$1,000,000+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="priceMax">Price Range — Max</label>
+          <select class="form-select" id="priceMax">
+            <option value="">No maximum</option>
+            <option value="150000">$150,000</option>
+            <option value="200000">$200,000</option>
+            <option value="250000">$250,000</option>
+            <option value="300000">$300,000</option>
+            <option value="350000">$350,000</option>
+            <option value="400000">$400,000</option>
+            <option value="450000">$450,000</option>
+            <option value="500000">$500,000</option>
+            <option value="600000">$600,000</option>
+            <option value="750000">$750,000</option>
+            <option value="1000000">$1,000,000</option>
+            <option value="1500000">$1,500,000+</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="section-title">Financing</div>
+      <div class="form-grid">
+        <div class="form-group full-width">
+          <label class="form-label">Have You Been Pre-Approved?</label>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="preApproved" value="yes"><span>Yes</span></label>
+            <label class="radio-item"><input type="radio" name="preApproved" value="no"><span>No</span></label>
+            <label class="radio-item"><input type="radio" name="preApproved" value="in-progress"><span>In Process</span></label>
+            <label class="radio-item"><input type="radio" name="preApproved" value="not-yet"><span>Not Yet</span></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="preApprovedAmount">Pre-Approved Amount</label>
+          <input type="text" class="form-input" id="preApprovedAmount" placeholder="$450,000">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="financingMethod">Financing Method</label>
+          <select class="form-select" id="financingMethod">
+            <option value="">Select...</option>
+            <option value="conventional">Conventional</option>
+            <option value="fha">FHA</option>
+            <option value="va">VA</option>
+            <option value="usda">USDA</option>
+            <option value="jumbo">Jumbo</option>
+            <option value="cash">Cash</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="downPayment">Down Payment Available</label>
+          <input type="text" class="form-input" id="downPayment" placeholder="$90,000">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="closingTimeline">Preferred Closing Timeline</label>
+          <select class="form-select" id="closingTimeline">
+            <option value="">Select...</option>
+            <option value="30">30 Days</option>
+            <option value="45">45 Days</option>
+            <option value="60">60 Days</option>
+            <option value="90">90 Days</option>
+            <option value="flexible">Flexible</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="section-title">Timeline & Motivation</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label" for="whenBuy">When Do You Want to Buy?</label>
+          <select class="form-select" id="whenBuy">
+            <option value="">Select...</option>
+            <option value="immediately">Immediately (under 30 days)</option>
+            <option value="1-3-months">1 – 3 Months</option>
+            <option value="3-6-months">3 – 6 Months</option>
+            <option value="6-12-months">6 – 12 Months</option>
+            <option value="exploring">Just Exploring</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="motivation">Primary Motivation for Buying</label>
+          <select class="form-select" id="motivation">
+            <option value="">Select...</option>
+            <option value="first-home">First-Time Homebuyer</option>
+            <option value="upgrade">Upgrading / Larger Home</option>
+            <option value="downsize">Downsizing</option>
+            <option value="investment">Investment Property</option>
+            <option value="relocation">Job Relocation</option>
+            <option value="lifestyle">Lifestyle Change</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group full-width">
+          <label class="form-label" for="whyBuying">Why Are You Buying? (Optional)</label>
+          <textarea class="form-textarea" id="whyBuying" placeholder="We're looking to settle down, need more space for the kids, work from home需要一个 home office..."></textarea>
+        </div>
+        <div class="form-group full-width">
+          <label class="form-label" for="specificDeadlines">Any Specific Deadlines?</label>
+          <input type="text" class="form-input" id="specificDeadlines" placeholder="Lease ends June 1st, job transfer effective July 1st...">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="section-title">Current Housing Situation</div>
+      <div class="form-grid">
+        <div class="form-group full-width">
+          <label class="form-label">Do You Currently Rent or Own?</label>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="currentSituation" value="rent"><span>Renting</span></label>
+            <label class="radio-item"><input type="radio" name="currentSituation" value="own"><span>Own</span></label>
+            <label class="radio-item"><input type="radio" name="currentSituation" value="living-with-family"><span>Living with Family</span></label>
+            <label class="radio-item"><input type="radio" name="currentSituation" value="other"><span>Other</span></label>
+          </div>
+        </div>
+        <div class="form-group full-width">
+          <label class="form-label">Are You Selling a Home First?</label>
+          <div class="radio-group">
+            <label class="radio-item"><input type="radio" name="sellingFirst" value="yes"><span>Yes — I have a home to sell</span></label>
+            <label class="radio-item"><input type="radio" name="sellingFirst" value="no"><span>No — no home to sell</span></label>
+            <label class="radio-item"><input type="radio" name="sellingFirst" value="maybe"><span>Maybe / Not Sure Yet</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="section-title">Referral Source</div>
+      <div class="form-grid">
+        <div class="form-group full-width">
+          <label class="form-label">How Did You Find Me / This Form?</label>
+          <div class="checkbox-group">
+            <label class="checkbox-item"><input type="checkbox" name="referral" value="open-house"><span>Open House</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="referral" value="online-search"><span>Online Search</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="referral" value="social-media"><span>Social Media</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="referral" value="friend-family"><span>Friend / Family</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="referral" value="referral"><span>Agent Referral</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="referral" value="zillow"><span>Zillow / Realtor.com</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="referral" value="direct-mail"><span>Direct Mail</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="referral" value="other"><span>Other</span></label>
+          </div>
+        </div>
+        <div class="form-group full-width">
+          <label class="form-label" for="referralName">Referred By (Name, if applicable)</label>
+          <input type="text" class="form-input" id="referralName" placeholder="Jane Smith recommended I reach out...">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="section-title">Additional Notes</div>
+      <div class="form-group">
+        <label class="form-label" for="notes">Any Additional Notes, Questions, or Special Requirements</label>
+        <textarea class="form-textarea" id="notes" placeholder="We need a quiet street, want a large backyard, work from home and need a dedicated office space..."></textarea>
+      </div>
+      <div class="affiliate-banner">
+        <p>Want a smarter system to manage your leads and follow up automatically?</p>
+        <a href="https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380" class="affiliate-btn" target="_blank" rel="noopener">
+          <span>🚀</span> Build a Lead Capture Funnel — Free Trial
+        </a>
+      </div>
+    </div>
+
+    <button class="btn" onclick="window.print()">
+      <span>🖨️</span> Print / Download PDF
+    </button>
+
+    <div class="cta-section">
+      <h2>Ready to Find Your Dream Home?</h2>
+      <p>Fill out this questionnaire and connect with a top agent who can match you with the perfect property based on your preferences and timeline.</p>
+      <a href="https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380" class="cta-btn" target="_blank" rel="noopener">
+        <span>🚀</span> Start Free — Build Your First Funnel
+      </a>
+    </div>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What is a real estate buyer questionnaire form?</h3>
+        <p>A real estate buyer questionnaire form is a document that captures key information about a potential buyer's preferences, financial situation, timeline, and goals. Agents use it to qualify leads and provide personalized service.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Where can I get a free real estate buyer questionnaire form PDF?</h3>
+        <p>This tool provides a free, printable buyer questionnaire form you can use right now. Simply fill it out online or print it and use it at open houses, showings, or consultations.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What information should a buyer questionnaire include?</h3>
+        <p>A comprehensive buyer questionnaire should cover contact information, property type preferences, bedroom/bathroom requirements, preferred neighborhoods, price range, financing status, timeline, and motivation for buying.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do real estate agents use buyer questionnaires?</h3>
+        <p>Agents use buyer questionnaires to qualify leads, understand client needs, match buyers with relevant listings, and demonstrate professionalism. The data helps agents save time and close more deals.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I customize this buyer questionnaire for my brokerage?</h3>
+        <p>This form is provided as a free resource you can print and use as-is, or modify for your own business. Many agents add their broker's logo, contact information, and branding to personalize it for their clients.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p><a href="https://listingsai.directory">ListingsAI</a> — Free Real Estate AI Tools</p>
+  </footer>
+</body>
+</html>
