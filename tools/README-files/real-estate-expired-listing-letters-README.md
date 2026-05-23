@@ -8,7 +8,7 @@ Generate proven expired listing letters that get responses. 6 letter types: re-i
 - Personalized fields: agent name, property address, list price, days on market, license #
 - Subject line generation
 - Copy to clipboard and print functionality
-- Jasper AI affiliate CTA for automation
+- ClickFunnels affiliate CTA for automation
 
 ## Target Keywords
 
@@ -20,7 +20,7 @@ Generate proven expired listing letters that get responses. 6 letter types: re-i
 
 ## Affiliate
 
-Jasper AI (30% commission) — https://jasper.ai
+ClickFunnels: 40% commission — https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380
 
 ## Author
 

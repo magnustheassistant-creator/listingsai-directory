@@ -31,7 +31,7 @@ Generates proven, high-converting email templates for real estate agents looking
 
 ## Target Audience
 
-Real estate agents and brokers who want to convert FSBO leads into listing clients. Designed for agents using ManyChat or similar automation platforms for follow-up sequences.
+Real estate agents and brokers who want to convert FSBO leads into listing clients. Designed for agents building automated follow-up sequences with ClickFunnels.
 
 ## Tool Type
 
@@ -39,7 +39,7 @@ Free browser-based generator — no account needed, no data stored.
 
 ## Affiliate Integration
 
-Uses **ManyChat** affiliate link for automation features. ManyChat is ideal for FSBO follow-up sequences because it handles email automation, CRM integration, and appointment scheduling in one platform.
+Uses **ClickFunnels** affiliate link for automation features. ClickFunnels is ideal for FSBO follow-up sequences because it handles email automation, CRM integration, and funnel building in one platform.
 
 ## Related Tools
 
