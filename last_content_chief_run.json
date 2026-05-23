@@ -1,26 +1,13 @@
 {
-  "last_run": "2026-05-23T13:01:00.000000+00:00",
+  "last_run": "2026-05-23T13:36:38.589871+00:00",
   "tools_updated": [
-    "listing-description-generator.html",
-    "real-estate-door-knocking-scripts.html",
-    "real-estate-email-sequence-builder.html",
-    "real-estate-expired-listing-letters.html",
-    "real-estate-fsbo-email-templates.html",
-    "real-estate-objection-handler-scripts.html",
-    "real-estate-showing-feedback-form.html",
-    "cold-email-sequence-generator.html",
-    "fsbo-cold-email-generator.html",
-    "lead-magnet-generator.html",
-    "lead-nurture-sequence-planner.html",
-    "lead-qualification-calculator.html",
-    "cma-report-generator.html",
-    "lead-qualification-score-calculator.html",
-    "mortgage-payment-estimator-article.html",
-    "cma-report-generator-article.html",
-    "real-estate-flyer-maker.html",
-    "lead-qualification-score-calculator-article.html",
-    "mortgage-payment-estimator.html"
+    "cma-report-generator-article-README.md",
+    "cold-email-sequence-generator-README.md",
+    "fsbo-cold-email-generator-README.md",
+    "lead-magnet-generator-README.md",
+    "lead-nurture-sequence-planner-README.md",
+    "lead-qualification-calculator-README.md"
   ],
-  "summary": "Replaced ALL dead affiliate links (Jasper, ManyChat, Canva) with ClickFunnels across all 26 tools. 0 tools still have dead affiliates.",
-  "commit": "fix: replace all dead affiliates (Jasper/ManyChat/Canva) with ClickFunnels"
+  "summary": "Added README files for 6 tools \u2014 all 27 HTML tools now have documentation.",
+  "commit": "feat: add READMEs for 6 tools missing documentation"
 }

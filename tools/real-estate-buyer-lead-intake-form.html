@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Buyer Lead Intake Form Generator — Printable Real Estate Buyer Questionnaire | ListingsAI</title>
+    <meta name="description" content="Generate a professional buyer lead intake form in seconds. Perfect for open houses, networking events, and real estate agent CRM data collection. Free to use.">
+    <meta name="keywords" content="buyer lead intake form, real estate buyer questionnaire, open house sign-in sheet, real estate buyer lead form template, free buyer intake form real estate">
+    <link rel="canonical" href="https://listingsai.directory/tools/real-estate-buyer-lead-intake-form.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a12;
+            color: #e2e8f0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+        a { color: #818cf8; text-decoration: none; }
+        a:hover { color: #a5b4fc; text-decoration: underline; }
+        img { max-width: 100%; display: block; }
+
+        :root {
+            --bg-primary: #0a0a12;
+            --bg-secondary: #111120;
+            --bg-card: #18182a;
+            --bg-card-hover: #1e1e32;
+            --border: #26263d;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --green: #22c55e;
+            --green-light: #4ade80;
+            --red: #ef4444;
+            --yellow: #eab308;
+            --amber: #f59e0b;
+            --amber-light: #fbbf24;
+            --max-width: 900px;
+        }
+
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10, 10, 18, 0.9); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .logo { display: flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 700; }
+        .logo-accent { color: var(--accent); }
+        .back-link { font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+        .back-link:hover { color: var(--text-secondary); text-decoration: none; }
+
+        .tool-header { padding: 120px 0 40px; text-align: center; }
+        .tool-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            padding: 5px 14px; border-radius: 100px;
+            font-size: 0.75rem; font-weight: 600;
+            color: var(--green); text-transform: uppercase;
+            letter-spacing: 0.08em; margin-bottom: 20px;
+        }
+        .tool-badge .dot {
+            width: 6px; height: 6px; background: var(--green);
+            border-radius: 50%; animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        .tool-header h1 {
+            font-size: clamp(1.9rem, 5vw, 2.8rem);
+            font-weight: 800; letter-spacing: -0.03em;
+            margin-bottom: 14px; line-height: 1.15;
+        }
+        .tool-header h1 .accent {
+            background: linear-gradient(135deg, #6366f1, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tool-header p {
+            font-size: 1.05rem; color: var(--text-secondary);
+            max-width: 540px; margin: 0 auto; line-height: 1.7;
+        }
+
+        .tool-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-bottom: 60px; }
+
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+        .card-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 20px; }
+
+        .form-group { margin-bottom: 18px; }
+        .form-group:last-child { margin-bottom: 0; }
+        .form-label { display: block; font-size: 0.88rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 8px; }
+        .form-label .hint { font-weight: 400; color: var(--text-muted); font-size: 0.8rem; }
+        .form-input, .form-select, .form-textarea {
+            width: 100%; background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 11px 14px; font-size: 0.9rem;
+            color: var(--text-primary); font-family: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+        }
+        .form-textarea { resize: vertical; min-height: 80px; }
+        .form-select { appearance: none; cursor: pointer; }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            background: var(--accent); color: #fff; border: none;
+            border-radius: 10px; padding: 12px 24px;
+            font-size: 0.95rem; font-weight: 600; font-family: inherit;
+            cursor: pointer; transition: background 0.2s, transform 0.1s;
+            width: 100%;
+        }
+        .btn:hover { background: var(--accent-light); }
+        .btn:active { transform: scale(0.98); }
+        .btn-secondary {
+            background: var(--bg-card-hover); color: var(--text-secondary);
+            border: 1px solid var(--border); margin-top: 10px;
+        }
+        .btn-secondary:hover { background: var(--border); color: var(--text-primary); }
+
+        .output-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px;
+            display: none;
+        }
+        .output-card.visible { display: block; }
+        .output-card .card-title { margin-bottom: 16px; }
+
+        .form-output {
+            background: #fff; color: #1a1a2e; border-radius: 10px;
+            padding: 20px; font-size: 0.82rem; line-height: 1.7;
+            max-height: 500px; overflow-y: auto;
+            white-space: pre-wrap; font-family: 'Courier New', monospace;
+        }
+        .form-output strong { color: #6366f1; }
+
+        .checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .checkbox-item { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+        .checkbox-item input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; }
+        .checkbox-item span { font-size: 0.85rem; color: var(--text-secondary); }
+
+        .error-msg { color: var(--red); font-size: 0.8rem; margin-top: 6px; display: none; }
+
+        .affiliate-banner {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(168, 85, 247, 0.1));
+            border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 12px;
+            padding: 20px; text-align: center; margin-top: 16px;
+        }
+        .affiliate-banner p { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px; }
+        .affiliate-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--accent); color: #fff; border: none;
+            border-radius: 10px; padding: 12px 28px;
+            font-size: 0.95rem; font-weight: 600; font-family: inherit;
+            cursor: pointer; transition: background 0.2s;
+            text-decoration: none;
+        }
+        .affiliate-btn:hover { background: var(--accent-light); color: #fff; text-decoration: none; }
+
+        .cta-section {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; text-align: center;
+            margin: 40px 0;
+        }
+        .cta-section h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
+        .cta-section p { color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem; }
+        .cta-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--green); color: #0a0a12; border: none;
+            border-radius: 10px; padding: 14px 32px;
+            font-size: 1rem; font-weight: 700; font-family: inherit;
+            cursor: pointer; transition: background 0.2s, transform 0.1s;
+            text-decoration: none;
+        }
+        .cta-btn:hover { background: var(--green-light); color: #0a0a12; text-decoration: none; transform: scale(1.02); }
+
+        .faq-section { padding: 40px 0 60px; }
+        .faq-section h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 24px; text-align: center; }
+        .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; }
+        .faq-item h3 { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
+        .faq-item p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
+
+        .footer { text-align: center; padding: 40px 0; color: var(--text-muted); font-size: 0.8rem; }
+
+        @media (max-width: 640px) {
+            .tool-wrapper { grid-template-columns: 1fr; }
+            .checkbox-group { grid-template-columns: 1fr; }
+        }
+
+        @media print {
+            body { background: #fff; color: #000; }
+            .header, .card:first-child, .output-card, .cta-section, .footer, .affiliate-banner { display: none; }
+            .form-output { border: 1px solid #ccc; max-height: none; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a buyer lead intake form?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A buyer lead intake form is a questionnaire real estate agents use to collect key information from potential buyers — including budget, property preferences, timeline, and financing — to qualify leads and serve them better."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why should I use a buyer intake form at open houses?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Open houses generate high-intent leads but most agents lose that data within 24 hours. A structured intake form captures name, contact, budget, and preferences so you can follow up with relevant listings and close more deals."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this buyer lead intake form free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. This tool generates a complete buyer lead intake form for free. You can print it, fill it in by hand at events, or customize it digitally for your CRM."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I print this form for open house sign-in sheets?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. The form is print-ready. Use your browser's Print function to generate clean, professional hard copies for open houses and networking events."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the best way to follow up with buyer leads?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "After collecting a buyer lead intake form, import the data into a CRM and send a personalized follow-up within 24 hours. Reference their specific preferences — neighborhood, price range, bedroom count — to show you listened."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">
+                <span class="logo-accent">&lt;/&gt;</span> ListingsAI
+            </div>
+            <a href="https://listingsai.directory" class="back-link">
+                <span>←</span> Back to directory
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="tool-header">
+            <div class="tool-badge"><span class="dot"></span> Free Tool</div>
+            <h1>Free <span class="accent">Buyer Lead Intake Form</span> Generator</h1>
+            <p>Generate a professional buyer lead intake questionnaire in seconds. Perfect for open houses, networking events, and CRM data collection.</p>
+        </div>
+
+        <div class="tool-wrapper">
+            <div class="card">
+                <div class="card-title">Customize Your Form</div>
+                <div class="form-group">
+                    <label class="form-label">Agent / Company Name <span class="hint">(or leave blank)</span></label>
+                    <input type="text" class="form-input" id="agentName" placeholder="Sarah Johnson — Bright Realty">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Include Property Type?</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item"><input type="checkbox" id="incSingle" checked><span>Single Family</span></label>
+                        <label class="checkbox-item"><input type="checkbox" id="incCondo" checked><span>Condo / Townhome</span></label>
+                        <label class="checkbox-item"><input type="checkbox" id="incMulti" checked><span>Multi-Family</span></label>
+                        <label class="checkbox-item"><input type="checkbox" id="incLand"><span>Land / Lot</span></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Include Financing Section?</label>
+                    <select class="form-select" id="financing">
+                        <option value="yes">Yes — include financing pre-approval fields</option>
+                        <option value="no">No — keep it simple</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Form Style</label>
+                    <select class="form-select" id="formStyle">
+                        <option value="standard">Standard Questionnaire</option>
+                        <option value="compact">Compact Sign-In Sheet</option>
+                        <option value="detailed">Detailed Buyer Profile</option>
+                    </select>
+                </div>
+                <button class="btn" onclick="generateForm()">
+                    <span>⚡</span> Generate Intake Form
+                </button>
+            </div>
+
+            <div class="output-card" id="outputCard">
+                <div class="card-title">Your Buyer Lead Intake Form</div>
+                <div class="form-output" id="formOutput"></div>
+                <button class="btn btn-secondary" onclick="printForm()" style="margin-top:14px;">
+                    <span>🖨️</span> Print / Save as PDF
+                </button>
+                <div class="affiliate-banner" style="margin-top:16px;">
+                    <p style="margin-bottom:12px;">Need a smarter way to manage and follow up with your leads?</p>
+                    <a href="https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380" class="affiliate-btn" target="_blank" rel="noopener">
+                        <span>🚀</span> Build a Lead Capture Funnel — Free Trial
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Turn Open House Leads Into Clients</h2>
+            <p>Most agents collect 10–20 leads at an open house and follow up with none. A structured intake form + a ClickFunnels landing page changes that.</p>
+            <a href="https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380" class="cta-btn" target="_blank" rel="noopener">
+                <span>🚀</span> Start Free — Build Your First Funnel
+            </a>
+        </div>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What is a buyer lead intake form?</h3>
+                <p>A buyer lead intake form is a questionnaire real estate agents use to collect key information from potential buyers — including budget, property preferences, timeline, and financing — to qualify leads and serve them better.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Why should I use a buyer intake form at open houses?</h3>
+                <p>Open houses generate high-intent leads but most agents lose that data within 24 hours. A structured intake form captures name, contact, budget, and preferences so you can follow up with relevant listings and close more deals.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is this buyer lead intake form free to use?</h3>
+                <p>Yes. This tool generates a complete buyer lead intake form for free. You can print it, fill it in by hand at events, or customize it digitally for your CRM.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I print this form for open house sign-in sheets?</h3>
+                <p>Absolutely. The form is print-ready. Use your browser's Print function to generate clean, professional hard copies for open houses and networking events.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What's the best way to follow up with buyer leads?</h3>
+                <p>After collecting a buyer lead intake form, import the data into a CRM and send a personalized follow-up within 24 hours. Reference their specific preferences — neighborhood, price range, bedroom count — to show you listened and have relevant listings ready.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p><a href="https://listingsai.directory">ListingsAI</a> — Free Real Estate AI Tools</p>
+    </footer>
+
+    <script>
+        function generateForm() {
+            const agentName = document.getElementById('agentName').value.trim();
+            const financing = document.getElementById('financing').value === 'yes';
+            const formStyle = document.getElementById('formStyle').value;
+
+            const propTypes = [];
+            if (document.getElementById('incSingle').checked) propTypes.push('☐ Single Family');
+            if (document.getElementById('incCondo').checked) propTypes.push('☐ Condo / Townhome');
+            if (document.getElementById('incMulti').checked) propTypes.push('☐ Multi-Family');
+            if (document.getElementById('incLand').checked) propTypes.push('☐ Land / Lot');
+
+            const style = formStyle;
+            const header = agentName 
+                ? `${agentName}\nBUYER LEAD INTAKE FORM`
+                : 'BUYER LEAD INTAKE FORM';
+            const divider = '─'.repeat(44);
+
+            let form = `${header}\n${divider}\n`;
+            form += `Date: ____________     Event / Location: ____________________\n\n`;
+            form += `━━━ CONTACT INFORMATION ━━━\n`;
+            form += `Full Name: ___________________________________________\n`;
+            form += `Phone: _____________________  Email: ___________________\n`;
+            form += `Best Time to Contact: ☐ Morning  ☐ Afternoon  ☐ Evening\n\n`;
+            form += `━━━ PROPERTY PREFERENCES ━━━\n`;
+            form += `Neighborhood(s) of Interest: ___________________________\n`;
+            form += `_____________________________________________________\n`;
+            form += `Property Type: ${propTypes.length > 0 ? propTypes.join('   ') : '☐ Not specified'}\n`;
+            form += `# of Bedrooms: ☐ Studio  ☐ 1  ☐ 2  ☐ 3  ☐ 4  ☐ 5+\n`;
+            form += `# of Bathrooms: ☐ 1  ☐ 1.5  ☐ 2  ☐ 2.5  ☐ 3+\n`;
+            form += `Square Footage: ☐ <1,000  ☐ 1,000-1,500  ☐ 1,500-2,500  ☐ 2,500+\n`;
+            form += `Must-Have Features: ___________________________________\n`;
+            form += `_____________________________________________________\n`;
+            form += `Preferences / Deal-Breakers: ___________________________\n`;
+            form += `_____________________________________________________\n\n`;
+
+            if (financing) {
+                form += `━━━ FINANCING PRE-APPROVAL ━━━\n`;
+                form += `Pre-Approved: ☐ Yes  ☐ No  ☐ In Process\n`;
+                form += `Lender Name: _________________________________________\n`;
+                form += `Pre-Approved Amount: $_______________________________\n`;
+                form += `Financing Type: ☐ FHA  ☐ VA  ☐ Conventional  ☐ Cash  ☐ Other\n`;
+                form += `Down Payment Available: $___________________________\n`;
+                form += `Closing Timeline: ☐ 30 days  ☐ 60 days  ☐ 90 days  ☐ Flexible\n\n`;
+            }
+
+            if (style === 'detailed') {
+                form += `━━━ BUYER Motivation & TIMELINE ━━━\n`;
+                form += `Primary Reason for Buying: ___________________________\n`;
+                form += `_____________________________________________________\n`;
+                form += `Timeline: ☐ Urgent (30 days)  ☐ Soon (60-90 days)\n`;
+                form += `       ☐ Exploring (6 months)  ☐ Just Starting\n`;
+                form += `Selling a Home First: ☐ Yes  ☐ No\n`;
+                form += `_____________________________________________________\n\n`;
+                form += `━━━ Lead Source ━━━\n`;
+                form += `How Did You Hear About Us / This Property?\n`;
+                form += `☐ Open House  ☐ Online Search  ☐ Referral  ☐ Social Media\n`;
+                form += `☐ Friend/Family  ☐ Direct Mail  ☐ Other: _____________\n\n`;
+            }
+
+            if (style === 'compact') {
+                form += `━━━ QUICK QUALIFIERS ━━━\n`;
+                form += `Budget Range: ☐ <$200K  ☐ $200-350K  ☐ $350-500K\n`;
+                form += `             ☐ $500-750K  ☐ $750K-1M  ☐ $1M+\n`;
+                form += `Financing: ☐ Cash  ☐ Conventional  ☐ FHA/VA  ☐ Other\n`;
+                form += `Timeline: ☐ <30 days  ☐ 30-60 days  ☐ 60-90 days  ☐ Flexible\n`;
+                form += `Comments: ___________________________________________\n`;
+                form += `_____________________________________________________\n\n`;
+            } else {
+                form += `━━━ NOTES (Agent Use) ━━━\n`;
+                form += `_____________________________________________________\n`;
+                form += `_____________________________________________________\n`;
+                form += `_____________________________________________________\n\n`;
+            }
+
+            form += `─── For Office Use Only ───\n`;
+            form += `Lead Score: ☐ Hot  ☐ Warm  ☐ Cold   Source: ___________\n`;
+            form += `Follow-Up Date: _____________  Agent: __________________\n`;
+            form += `\n${'─'.repeat(44)}\n`;
+            form += `Generated at ListingsAI.directory`;
+
+            document.getElementById('formOutput').textContent = form;
+            document.getElementById('outputCard').classList.add('visible');
+            document.getElementById('outputCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function printForm() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

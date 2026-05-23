@@ -27,6 +27,7 @@
 | 2 | real-estate-business-plan-generator | ClickFunnels (40%) | compositions/business-plan-generator.html | composition_done | Script: video-04-real-estate-business-plan-generator.md |
 | 3 | real-estate-contract-template | Real Estate Contract Template — Free AI Generator Review | compositions/contract-template.html | composition_done | Script: video-05-real-estate-contract-template.md |
 | 4 | real-estate-fsbo-email-templates | ManyChat (30%) | pending | pending | |
+| 5 | real-estate-commission-split-calculator | ClickFunnels (40%) | compositions/commission-split-calculator.html | composition_done | Script: video-06-real-estate-commission-split-calculator.md |
 
 ## Video Format
 - Hook (15 sec): Problem statement + "There's a free tool for that"
@@ -50,7 +51,14 @@ Published compositions:
 - Obscura (headless Chrome) is running on port 9222 but HyperFrames doesn't support --cdp-url flag
 - Workaround: Render on a machine with working Chrome, copy the .mp4, then upload to YouTube
 
-## Completed This Run (2026-05-23 12:00 UTC)
+## Completed This Run (2026-05-23 13:39 UTC)
+- Script written: video-06-real-estate-commission-split-calculator.md
+- Composition created: compositions/commission-split-calculator.html (0 errors, 6 warnings — track_density expected on this kernel)
+- Plan updated: real-estate-commission-split-calculator added as video #5 (ClickFunnels affiliate)
+- Render blocked: SIGTRAP/cpufreq on this kernel — needs machine with working Chrome to produce MP4
+
+## Previous Runs
+### 2026-05-23 12:00 UTC
 - Script written: video-05-real-estate-contract-template.md
 - Composition created: compositions/contract-template.html (0 errors, 5 warnings)
 - Plan updated: real-estate-contract-template moved to composition_done
