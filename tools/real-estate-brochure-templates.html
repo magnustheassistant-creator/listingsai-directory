@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Real Estate Brochure Templates — AI Generator | ListingsAI</title>
-    <meta name="description" content="Generate professional real estate brochure copy instantly with our free AI tool. Choose from luxury, residential, and commercial templates. Perfect for listings, open houses, and investor packets.">
+    <meta name="description" content="Generate professional real estate brochure copy in seconds. Free AI-powered templates — no signup, no design skills needed.">
     <meta name="keywords" content="free real estate brochure templates, real estate brochure generator, property brochure maker, free brochure templates real estate, real estate marketing brochure">
     <link rel="canonical" href="https://listingsai.directory/tools/real-estate-brochure-templates.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -215,6 +215,15 @@
             .brochure-type-grid { grid-template-columns: repeat(2, 1fr); }
             .tool-header { padding: 110px 0 30px; }
         }
+    
+    <style>
+    .faq-section { padding: 3rem 1rem; max-width: 800px; margin: 0 auto; }
+    .faq-section h2 { font-size: 1.75rem; margin-bottom: 1.5rem; text-align: center; }
+    .faq-grid { display: grid; gap: 1rem; }
+    .faq-item { background: #f8f9fa; border-radius: 8px; padding: 1.25rem; }
+    .faq-item h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #1a1a2e; }
+    .faq-item p { margin: 0; color: #555; line-height: 1.6; }
+    </style>
     </style>
 
     <script type="application/ld+json">
@@ -563,12 +572,59 @@ Brochure generated ${today} with ListingsAI<br>
     function printBrochure() {
         const content = document.getElementById('brochureOutput').innerHTML;
         const printWindow = window.open('', '_blank');
-        printWindow.document.write(`<html><head><title>Real Estate Brochure</title><style>body{font-family:Inter,sans-serif;padding:40px;max-width:850px;margin:0 auto;line-height:1.7;color:#333;}</style></head><body>${content}</body></html>`);
+        printWindow.document.write(`<html><head><title>Real Estate Brochure</title><style>body{font-family:Inter,sans-serif;padding:40px;max-width:850px;margin:0 auto;line-height:1.7;color:#333;}
+    <style>
+    .faq-section { padding: 3rem 1rem; max-width: 800px; margin: 0 auto; }
+    .faq-section h2 { font-size: 1.75rem; margin-bottom: 1.5rem; text-align: center; }
+    .faq-grid { display: grid; gap: 1rem; }
+    .faq-item { background: #f8f9fa; border-radius: 8px; padding: 1.25rem; }
+    .faq-item h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #1a1a2e; }
+    .faq-item p { margin: 0; color: #555; line-height: 1.6; }
+    </style>
+    </style></head><body>${content}
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What should be on a real estate brochure?</h3>
+                    <p>Essential elements: property address, price, bed/bath/sqft, high-quality photos, a compelling description, agent contact info, and your brokerage branding. QR codes linking to the listing are increasingly popular.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I make a real estate brochure?</h3>
+                    <p>Use our free AI brochure template generator to create professional copy in seconds. Download the result and pair with your property photos for a polished, print-ready brochure.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What size should a real estate brochure be?</h3>
+                    <p>Standard sizes are 8.5x11 (single page) or trifold 11x17 (three panels). The single page format works best for digital sharing; trifold is ideal for print handouts at open houses.</p>
+                </div>
+            </div>
+        </section>
+    </body></html>`);
         printWindow.document.close();
         printWindow.print();
     }
 
     window.addEventListener('load', generateBrochure);
     </script>
-</body>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What should be on a real estate brochure?</h3>
+                    <p>Essential elements: property address, price, bed/bath/sqft, high-quality photos, a compelling description, agent contact info, and your brokerage branding. QR codes linking to the listing are increasingly popular.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I make a real estate brochure?</h3>
+                    <p>Use our free AI brochure template generator to create professional copy in seconds. Download the result and pair with your property photos for a polished, print-ready brochure.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What size should a real estate brochure be?</h3>
+                    <p>Standard sizes are 8.5x11 (single page) or trifold 11x17 (three panels). The single page format works best for digital sharing; trifold is ideal for print handouts at open houses.</p>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>

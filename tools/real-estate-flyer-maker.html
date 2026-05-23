@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Real Estate Flyer Maker — Professional Property Flyers | ListingsAI</title>
-    <meta name="description" content="Create stunning real estate flyers instantly with our free AI-powered flyer maker. Choose from 6 templates, customize property details, and download printable flyers. No signup required.">
+    <meta name="description" content="Create stunning real estate flyers instantly. Free AI-powered flyer maker — no design experience or signup required to get professional results.">
     <meta name="keywords" content="free real estate flyer maker, real estate flyer templates, property flyer maker, free real estate flyer templates, real estate marketing materials">
     <link rel="canonical" href="https://listingsai.directory/tools/real-estate-flyer-maker.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -223,6 +223,15 @@
             .flyer-preview .flyer-features { grid-template-columns: 1fr; }
             .tool-header { padding: 110px 0 30px; }
         }
+    
+    <style>
+    .faq-section { padding: 3rem 1rem; max-width: 800px; margin: 0 auto; }
+    .faq-section h2 { font-size: 1.75rem; margin-bottom: 1.5rem; text-align: center; }
+    .faq-grid { display: grid; gap: 1rem; }
+    .faq-item { background: #f8f9fa; border-radius: 8px; padding: 1.25rem; }
+    .faq-item h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #1a1a2e; }
+    .faq-item p { margin: 0; color: #555; line-height: 1.6; }
+    </style>
     </style>
 
     <script type="application/ld+json">
@@ -513,8 +522,36 @@
         const printWindow = window.open('', '_blank');
         printWindow.document.write(`
             <html><head><title>Real Estate Flyer</title>
-            <style>body{font-family:Inter,sans-serif;padding:40px;max-width:850px;margin:0 auto;}</style>
-            </head><body>${content}</body></html>
+            <style>body{font-family:Inter,sans-serif;padding:40px;max-width:850px;margin:0 auto;}
+    <style>
+    .faq-section { padding: 3rem 1rem; max-width: 800px; margin: 0 auto; }
+    .faq-section h2 { font-size: 1.75rem; margin-bottom: 1.5rem; text-align: center; }
+    .faq-grid { display: grid; gap: 1rem; }
+    .faq-item { background: #f8f9fa; border-radius: 8px; padding: 1.25rem; }
+    .faq-item h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #1a1a2e; }
+    .faq-item p { margin: 0; color: #555; line-height: 1.6; }
+    </style>
+    </style>
+            </head><body>${content}
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What makes a real estate flyer effective?</h3>
+                    <p>Great real estate flyers have a professional design, clear headline, key property facts (beds/baths/sqft/price), 2-3 high-quality photos, and your contact information. Less text is more — buyers should want to learn more and call you.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I make a real estate flyer for free?</h3>
+                    <p>Use our free AI flyer maker to generate the property description and headline copy in seconds. Pair the AI-generated text with your property photos and broker branding for a professional result.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Should real estate flyers be digital or print?</h3>
+                    <p>Both! Digital flyers work great for email, social media, and text messages. Print flyers are still expected at open houses and as leave-behinds. Always have digital versions ready to send instantly.</p>
+                </div>
+            </div>
+        </section>
+    </body></html>
         `);
         printWindow.document.close();
         printWindow.print();
@@ -523,5 +560,24 @@
     // Generate on load with default values
     window.addEventListener('load', generateFlyer);
     </script>
-</body>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What makes a real estate flyer effective?</h3>
+                    <p>Great real estate flyers have a professional design, clear headline, key property facts (beds/baths/sqft/price), 2-3 high-quality photos, and your contact information. Less text is more — buyers should want to learn more and call you.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I make a real estate flyer for free?</h3>
+                    <p>Use our free AI flyer maker to generate the property description and headline copy in seconds. Pair the AI-generated text with your property photos and broker branding for a professional result.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Should real estate flyers be digital or print?</h3>
+                    <p>Both! Digital flyers work great for email, social media, and text messages. Print flyers are still expected at open houses and as leave-behinds. Always have digital versions ready to send instantly.</p>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>
