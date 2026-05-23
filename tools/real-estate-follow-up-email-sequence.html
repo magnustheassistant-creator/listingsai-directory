@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Follow-Up Email Sequence Generator — Free Tool</title>
+    <meta name="description" content="Generate personalized real estate follow-up email sequences for new leads, past clients, and sphere of influence contacts. Includes 7-day, 14-day, and 30-day sequences with subject lines and timing.">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        h1 { font-size: 1.8rem; color: #3b82f6; margin-bottom: 8px; }
+        .subtitle { color: #94a3b8; margin-bottom: 24px; font-size: 0.95rem; }
+        .card { background: #1e293b; border-radius: 12px; padding: 24px; margin-bottom: 20px; border: 1px solid #334155; }
+        .card h2 { font-size: 1.1rem; color: #38bdf8; margin-bottom: 16px; }
+        label { display: block; color: #cbd5e1; margin-bottom: 6px; font-size: 0.9rem; }
+        select, input, textarea { width: 100%; padding: 10px 14px; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #e2e8f0; font-size: 0.95rem; margin-bottom: 14px; }
+        textarea { resize: vertical; min-height: 80px; }
+        button { background: #3b82f6; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin-right: 10px; margin-bottom: 10px; transition: background 0.2s; }
+        button:hover { background: #2563eb; }
+        button.secondary { background: #334155; }
+        button.secondary:hover { background: #475569; }
+        .output { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 16px; margin-top: 16px; white-space: pre-wrap; font-size: 0.9rem; line-height: 1.6; }
+        .email-block { background: #1e293b; padding: 16px; border-radius: 8px; margin-bottom: 12px; border-left: 3px solid #3b82f6; }
+        .email-block .day { color: #38bdf8; font-weight: 700; font-size: 0.85rem; margin-bottom: 6px; }
+        .email-block .subject { color: #fbbf24; font-size: 0.88rem; margin-bottom: 8px; }
+        .email-block .body { color: #cbd5e1; }
+        .disclaimer { text-align: center; color: #475569; font-size: 0.8rem; margin-top: 30px; }
+        .cta-box { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 2px solid #3b82f6; border-radius: 12px; padding: 24px; text-align: center; margin-top: 24px; }
+        .cta-box h3 { color: #38bdf8; font-size: 1.1rem; margin-bottom: 8px; }
+        .cta-box p { color: #94a3b8; font-size: 0.9rem; margin-bottom: 16px; }
+        .cta-btn { background: #3b82f6; color: white; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-weight: 700; display: inline-block; transition: background 0.2s; }
+        .cta-btn:hover { background: #2563eb; }
+        .badge { display: inline-block; background: #3b82f6; color: white; font-size: 0.75rem; padding: 2px 8px; border-radius: 20px; margin-bottom: 12px; }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How soon should I follow up with a real estate lead?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Follow up within 5 minutes of a lead inquiry — leads are 8x more likely to convert when contacted within that window. Then maintain a 7-day, 14-day, and 30-day sequence."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the best email sequence for real estate leads?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A 3-touch sequence over 30 days works best: Day 1 (introduction + value), Day 7 (market report or listing), and Day 30 (closing ask). Always personalize with merge fields."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I write a follow-up email that gets responses?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Keep emails short (under 100 words), lead with value (not asking), use a specific subject line referencing their property or situation, and include a clear but low-commitment call to action."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many follow-up emails should I send before giving up?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Send at least 6-8 touches before marking a lead cold. The average real estate deal requires 8-12 touches. Automated email sequences make this effortless."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+<div class="container">
+
+    <span class="badge">Free Tool</span>
+    <h1>Real Estate Follow-Up Email Sequence Generator</h1>
+    <p class="subtitle">Generate personalized real estate follow-up email sequences for new leads, past clients, and SOI contacts — 7-day, 14-day, and 30-day sequences with subject lines included.</p>
+
+    <div class="card">
+        <h2>Configure Your Email Sequence</h2>
+        <label for="leadType">Lead Type</label>
+        <select id="leadType">
+            <option value="new">New Lead Inquiry</option>
+            <option value="past">Past Client Re-engagement</option>
+            <option value="soi">Sphere of Influence (SOI)</option>
+            <option value="fsbo">FSBO Prospect</option>
+            <option value="expired">Expired Listing Lead</option>
+        </select>
+
+        <label for="leadName">Prospect First Name</label>
+        <input type="text" id="leadName" placeholder="e.g. Michael" value="Michael">
+
+        <label for="propertyType">Property Interest</label>
+        <select id="propertyType">
+            <option value="home">Residential Home</option>
+            <option value="condo">Condo / Townhome</option>
+            <option value="investment">Investment Property</option>
+            <option value="land">Land / Lot</option>
+            <option value="commercial">Commercial Property</option>
+        </select>
+
+        <label for="agentName">Your Name</label>
+        <input type="text" id="agentName" placeholder="Agent name" value="Sarah Mitchell">
+
+        <label for="agentPhone">Your Phone Number</label>
+        <input type="text" id="agentPhone" placeholder="(555) 123-4567" value="(555) 123-4567">
+
+        <label for="agentEmail">Your Email Address</label>
+        <input type="email" id="agentEmail" placeholder="sarah@realestate.com" value="sarah@realestate.com">
+
+        <button onclick="generateSequence()">Generate Email Sequence</button>
+        <button class="secondary" onclick="resetForm()">Reset</button>
+    </div>
+
+    <div class="card">
+        <h2>Your Email Sequence</h2>
+        <div id="output" class="output" style="color:#475569;">Fill in the form and click "Generate Email Sequence" to create your personalized follow-up emails.</div>
+        <div style="margin-top:14px;">
+            <button class="secondary" onclick="copyAll()">Copy All Emails</button>
+        </div>
+    </div>
+
+    <div class="cta-box">
+        <h3>Automate Your Follow-Up Emails With ClickFunnels</h3>
+        <p>Stop manually chasing leads. ClickFunnels lets you build automated email sequences, nurture funnels, and CRMs that follow up with every lead — 24/7 — on autopilot. Get 40% recurring commission as an affiliate.</p>
+        <a href="https://www.clickfunnels.com/signup-flow?aff=108e2ab3f13e6bf0ef03c71339d2dcb330873383a8541ea451851aaf63da7380" class="cta-btn" target="_blank" rel="noopener">Start Free With ClickFunnels →</a>
+    </div>
+
+</div>
+
+<script>
+const sequences = {
+    new: {
+        days: [
+            {
+                day: "Day 1 — Initial Response (within 5 minutes of inquiry)",
+                subject: "Re: Your home search inquiry, {name} — here's what to know",
+                body: `Hi {name},
+
+Thanks for reaching out about your home search! I wanted to personally respond — I know how overwhelming the process can feel, and I'm here to make it simple.
+
+I've already set up a search for listings matching your criteria. Here are a few I'd love to show you this week:
+
+[Insert 1-3 specific listings or neighborhood context here]
+
+Would Tuesday or Wednesday evening work for a quick 15-minute tour? I'm flexible and happy to work around your schedule.
+
+Talk soon,
+{agent}
+{agentPhone} | {agentEmail}`
+            },
+            {
+                day: "Day 3 — Value Add (no response yet)",
+                subject: "{name}, here's your personalized market snapshot",
+                body: `Hi {name},
+
+I put together a quick market snapshot for {city/target area} — it covers current inventory, average days on market, and what buyers in your range are seeing.
+
+[Insert market report or link to CMA tool]
+
+One thing I'm noticing: homes in your price range are getting multiple offers within the first week. Having a strategy — and an agent in your corner — makes a big difference.
+
+Still happy to show you around whenever you're ready. Just reply and I'll set it up.
+
+Warmly,
+{agent}
+{agentPhone}`
+            },
+            {
+                day: "Day 7 — Personal Check-In",
+                subject: "Quick check-in, {name} — any questions?",
+                body: `Hi {name},
+
+Just checking in! I know life gets busy — no pressure at all.
+
+A few new listings just hit the market that might be a good fit for you. Want me to send over the top picks?
+
+Or if your situation has changed, that's totally fine. I'm here whenever you're ready.
+
+Best,
+{agent}
+{agentPhone} | {agentEmail}`
+            },
+            {
+                day: "Day 14 — New Listing Alert",
+                subject: "New listing alert for you, {name}",
+                body: `Hi {name},
+
+A great new option just came on the market that matches what you're looking for — I'd love to get you in for a tour before the weekend crowd.
+
+Quick details: [Insert property highlights]
+
+Let me know a time and I'll have it ready for you.
+
+{agent}
+{agentPhone}`
+            },
+            {
+                day: "Day 30 — Closing Ask (last attempt)",
+                subject: "One final thought, {name}",
+                body: `Hi {name},
+
+I've enjoyed helping you explore your options these past few weeks. I want to respect your time, so this will be my last note for a while.
+
+If anything changes or you need a trusted agent referral, I'm always here. If I don't hear from you, I truly wish you the best in your home search.
+
+Take care,
+{agent}
+{agentPhone} | {agentEmail}`
+            }
+        ]
+    },
+    past: {
+        days: [
+            {
+                day: "Day 1 — Re-Engagement",
+                subject: "Hey {name}, it's been a while — here's what's moving",
+                body: `Hi {name},
+
+It's hard to believe it's been [X months/years] since we worked together! I still remember helping you find your home — hope it's been treating you well.
+
+I wanted to reach out because the market has shifted quite a bit recently, and I thought you might be curious about what it's like right now.
+
+Here's a quick snapshot: [Insert market update or link to CMA]
+
+Would love to catch up over coffee or a quick call. No agenda — just reconnect.
+
+Best,
+{agent}
+{agentPhone} | {agentEmail}`
+            },
+            {
+                day: "Day 7 — Value Share",
+                subject: "{name}, something I thought you'd find interesting",
+                body: `Hi {name},
+
+I came across [article/tip/market insight relevant to their past purchase or area] and it reminded me of your place.
+
+A few highlights:
+- [Insert 2-3 market points relevant to them]
+
+Have a great week!
+
+{agent}
+{agentPhone}`
+            },
+            {
+                day: "Day 14 — Referral Ask",
+                subject: "Can I ask a favor, {name}? (won't take long)",
+                body: `Hi {name},
+
+Hope you're doing well! I'm always grateful for referrals from people I trust — and I trust you.
+
+If you know anyone buying, selling, or just curious about the market, I'd be honored to be their agent. And if I can ever help you with anything — even just a quick question — I'm one call away.
+
+Thanks so much for your time.
+
+Warmly,
+{agent}
+{agentPhone} | {agentEmail}`
+            },
+            {
+                day: "Day 30 — Annual Check-In",
+                subject: "{name} — home anniversary check-in! 🎉",
+                body: `Hi {name},
+
+Happy anniversary in your home! I hope it's been a wonderful place for you and your family.
+
+The market has been keeping me busy — if you ever want a free home valuation or just an update on what your home might be worth today, just reply.
+
+Thinking of you,
+{agent}
+{agentPhone}`
+            }
+        ]
+    },
+    soi: {
+        days: [
+            {
+                day: "Day 1 — Warm Introduction",
+                subject: "Hey {name}, it's {agent} — let's grab coffee",
+                body: `Hi {name},
+
+It's {agent} from [brokerage/location]. We've run in the same circles for a while and I always appreciated connecting with you at [event/meeting, or just "around town"].
+
+I'm building out my sphere of influence in a focused way and I'd love to catch up. Coffee on me — no agenda, just networking.
+
+Always happy to return the favor if you ever need anything real estate related.
+
+{agent}
+{agentPhone} | {agentEmail}`
+            },
+            {
+                day: "Day 7 — Value Add",
+                subject: "{name}, thought you'd find this useful",
+                body: `Hi {name},
+
+Came across [relevant article/resource] and it made me think of you — specifically [reason it applies to them].
+
+Here's the quick version:
+- [Point 1]
+- [Point 2]
+
+Let me know if you ever want to chat about real estate — happy to help however I can.
+
+{agent}
+{agentPhone}`
+            },
+            {
+                day: "Day 14 — Quarterly Touch",
+                subject: "Quarterly check-in, {name} 👋",
+                body: `Hi {name},
+
+Just touching base like I do with my SOI circle every quarter. Hope everything's going well on your end!
+
+Quick market update: [Insert 1-2 relevant market points]
+
+If you or anyone you know ever needs a real estate agent — buying, selling, investing — I'd be honored to be considered. I promise to take great care of any referral.
+
+Have a wonderful rest of your week!
+
+Warmly,
+{agent}
+{agentPhone} | {agentEmail}`
+            },
+            {
+                day: "Day 30 — Friendly Reminder",
+                subject: "{name} — any real estate needs this quarter?",
+                body: `Hi {name},
+
+Just a friendly reminder I'm here and available! Whether it's a valuation, a referral to a trusted lender, or a full buying/selling conversation — I've got you.
+
+Reply anytime — I typically respond within a few hours.
+
+{agent}
+{agentPhone}`
+            }
+        ]
+    },
+    fsbo: {
+        days: [
+            {
+                day: "Day 1 — Complimentary Valuation",
+                subject: "{name}, I ran some numbers on your home — take a look",
+                body: `Hi {name},
+
+I noticed your home at [address] is listed by owner — congratulations on taking that on! FSBO is no small feat.
+
+I did a quick analysis of your home and the current market, and I wanted to offer a completely free, no-obligation valuation. You might be surprised by what homes like yours are selling for right now.
+
+[Insert CMA link or quick estimate]
+
+I'd love to show you what working with an agent could look like — and honestly, the right agent pays for themselves in the negotiation and speed of sale.
+
+Happy to chat for 10 minutes if you're open to it.
+
+{agent}
+{agentPhone} | {agentEmail}`
+            },
+            {
+                day: "Day 5 — Market Stats Value",
+                subject: "{name} — how's the FSBO going? Here's what the data shows",
+                body: `Hi {name},
+
+Curious how things are going with your FSBO process! I've been tracking a few patterns in our local market that I think you'll find useful:
+
+📊 Homes like yours that are agent-represented are selling for [X%] more on average
+📊 FSBO homes often take [X weeks] longer to close
+📊 Agent negotiation support typically nets [$X] more at closing
+
+I put together a free FSBO kit with pricing strategies, negotiation scripts, and a comparison report — would love to share it.
+
+Reply "FSBO kit" and I'll send it over right away.
+
+{agent}
+{agentPhone}`
+            },
+            {
+                day: "Day 12 — Soft Offer to Help",
+                subject: "Quick question about your home, {name}",
+                body: `Hi {name},
+
+I drove by [address] the other day — great looking home. I wanted to follow up because I work with a lot of buyers in your area, and some of them are specifically looking for homes like yours.
+
+If you ever get tired of the FSBO process, or if you'd just like a second set of eyes on your marketing, I'm one call away. No pressure, no strings.
+
+Have a great week!
+
+{agent}
+{agentPhone} | {agentEmail}`
+            },
+            {
+                day: "Day 30 — Exit Offer",
+                subject: "{name} — last note from me on this one",
+                body: `Hi {name},
+
+I've reached out a few times about your home at [address] and I completely understand if now isn't the right time — I respect that fully.
+
+If things slow down, or if you find yourself wishing you had more buyers through the door, I'd love to help. I work on a [commission rate] basis and I'm confident I can help you close faster and for more money.
+
+Wishing you the best of luck with the sale. Truly.
+
+Warmly,
+{agent}
+{agentPhone}`
+            }
+        ]
+    },
+    expired: {
+        days: [
+            {
+                day: "Day 1 — Congrats + Analysis",
+                subject: "{name}, congratulations on your home — here's my analysis",
+                body: `Hi {name},
+
+I saw that your listing at [address] expired recently. First — I know that result can be frustrating. Second — I want you to know it happens to great homes all the time, and it often says more about the market or the marketing than the home itself.
+
+I've taken a look at your property and the current inventory. Here's what I found:
+
+✅ [Strength 1 — e.g., "Strong location near top schools"]
+✅ [Strength 2 — e.g., "Unique floorplan that stands out"]
+⚠️ [Opportunity — e.g., "Photos that could be updated to show the backyard"]
+
+I'd love to meet for 20 minutes to discuss what's changed in the market since your last listing and what a re-launch could look like.
+
+{agent}
+{agentPhone} | {agentEmail}`
+            },
+            {
+                day: "Day 5 — Pricing Conversation",
+                subject: "{name} — let's talk pricing strategy",
+                body: `Hi {name},
+
+I wanted to follow up because in today's market, pricing is everything — especially after a listing expired. Buyers are savvy, and they use expired listings as negotiating leverage.
+
+I'd love to show you what a smart repricing strategy could look like, along with a refreshed marketing plan that actually works in 2024.
+
+Reply "pricing" and I'll send over a free pricing analysis.
+
+{agent}
+{agentPhone}`
+            },
+            {
+                day: "Day 14 — Success Story Social Proof",
+                subject: "{name} — this recently expired home just sold for $X",
+                body: `Hi {name},
+
+Sharing a quick success story: I just helped a client at [similar address or neighborhood] sell their home for [price] after it sat on the market for [X] weeks. We repriced, relaunched, and had it under contract in [X] days.
+
+Your home has a lot going for it. I'd love to talk about what a similar approach could do for [address].
+
+Let me know if you're free for a quick call this week.
+
+{agent}
+{agentPhone} | {agentEmail}`
+            },
+            {
+                day: "Day 30 — Final Outreach",
+                subject: "{name}, one last thought before I let you be",
+                body: `Hi {name},
+
+This will be my last outreach about your home at [address]. I know your time is valuable and I respect that you've got a lot going on.
+
+If you do decide you want a fresh perspective — or if the right offer hasn't come yet — my door is open. I've helped [X] sellers in your neighborhood and I'd be honored to add you to that list.
+
+Wishing you all the best wherever you are in the process.
+
+{agent}
+{agentPhone}`
+            }
+        ]
+    }
+};
+
+let generatedEmails = [];
+
+function generateSequence() {
+    const leadType = document.getElementById('leadType').value;
+    const name = document.getElementById('leadName').value || 'Friend';
+    const agent = document.getElementById('agentName').value || 'Your Agent';
+    const phone = document.getElementById('agentPhone').value || '555-000-0000';
+    const email = document.getElementById('agentEmail').value || 'agent@realestate.com';
+
+    const seq = sequences[leadType];
+    let html = '';
+
+    generatedEmails = seq.days.map(emailData => {
+        const subjectFilled = emailData.subject.replace(/{name}/g, name).replace(/{agent}/g, agent).replace(/{city\/target area}/g, 'your area');
+        const bodyFilled = emailData.body.replace(/{name}/g, name).replace(/{agent}/g, agent).replace(/{agentPhone}/g, phone).replace(/{agentEmail}/g, email).replace(/{city\/target area}/g, 'your area');
+
+        return {
+            day: emailData.day,
+            subject: subjectFilled,
+            body: bodyFilled
+        };
+    });
+
+    generatedEmails.forEach((e, i) => {
+        html += `<div class="email-block">
+<span class="day">📅 ${e.day}</span>
+<span class="subject">✉️ Subject: ${e.subject}</span>
+<div class="body">${e.body.replace(/\n/g, '<br>')}</div>
+</div>`;
+    });
+
+    document.getElementById('output').innerHTML = html;
+    document.getElementById('output').style.color = '#cbd5e1';
+}
+
+function copyAll() {
+    if (!generatedEmails.length) return alert('Generate the sequence first!');
+    const text = generatedEmails.map(e => `${e.day}\nSubject: ${e.subject}\n\n${e.body}`).join('\n\n---\n\n');
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.secondary');
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = orig, 1500);
+    });
+}
+
+function resetForm() {
+    document.getElementById('leadName').value = 'Michael';
+    document.getElementById('agentName').value = 'Sarah Mitchell';
+    document.getElementById('agentPhone').value = '(555) 123-4567';
+    document.getElementById('agentEmail').value = 'sarah@realestate.com';
+    document.getElementById('leadType').value = 'new';
+    document.getElementById('propertyType').value = 'home';
+    document.getElementById('output').innerHTML = 'Fill in the form and click "Generate Email Sequence" to create your personalized follow-up emails.';
+    document.getElementById('output').style.color = '#475569';
+    generatedEmails = [];
+}
+</script>
+</body>
+</html>
