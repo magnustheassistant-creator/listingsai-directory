@@ -4,7 +4,8 @@ Last updated: 2026-05-23T08:00:00.000000
 ## Status: 20 main tools deployed / 60+ remaining in archived
 
 ## New Tools Under Construction
-- real-estate-objection-handler-scripts (DONE — build + README)
+- real-estate-commission-split-calculator (DONE — build + README)
+- real-estate-door-knocking-scripts (DONE — build + README)
 - real-estate-showing-feedback-form (DONE — build + README)
 - (all in-progress items now complete)
 
