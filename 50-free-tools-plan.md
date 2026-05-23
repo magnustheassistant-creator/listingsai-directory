@@ -3,6 +3,12 @@ Last updated: 2026-05-23T08:00:00.000000
 
 ## Status: 72 tools built / 50 target
 
+## New Tools Under Construction
+- real-estate-fsbo-email-templates (high-priority keyword: "fsbo email templates")
+- real-estate-seller-net-proceeds-calculator (high-priority: "how much will I net from selling my house")
+- real-estate-objection-handler-scripts (medium priority: "real estate objection handling scripts")
+- real-estate-showing-feedback-form (low priority: "real estate showing feedback form")
+
 ## Priority New Tools (from keyword research)
 1. [x] real-estate-door-knocking-scripts - "best door knocking scripts for real estate agents" - Jasper affiliate
 2. [x] real-estate-listing-description-generator - "how to write a real estate listing description that sells" - Jasper affiliate  
@@ -11,6 +17,9 @@ Last updated: 2026-05-23T08:00:00.000000
 5. [x] real-estate-email-sequence-builder - "free real estate email templates" - ManyChat affiliate
 6. [x] real-estate-business-plan-generator - "free real estate business plan" - ClickFunnels affiliate
 7. [x] real-estate-contract-template - "free real estate contract template" - ClickFunnels affiliate
+8. [ ] real-estate-fsbo-email-templates - "fsbo email templates that actually work" - ManyChat affiliate
+9. [ ] real-estate-seller-net-proceeds-calculator - "how much will I net from selling my house" - ClickFunnels affiliate
+10. [ ] real-estate-objection-handler-scripts - "real estate objection handling scripts" - Jasper affiliate
 
 ## Keywords to target
 - "best door knocking scripts for real estate agents" (door knocking)
@@ -22,6 +31,12 @@ Last updated: 2026-05-23T08:00:00.000000
 - "real estate email sequence builder" (email sequences)
 - "real estate follow up emails" (follow-up)
 - "fsbo email templates" (FSBO)
+- "how much will I net from selling my house" (net proceeds)
+- "real estate seller net proceeds calculator" (net proceeds)
+- "real estate objection handling scripts" (objection handling)
+- "real estate showing feedback form" (showings)
+- "best fsbo email templates" (FSBO)
+- "real estate follow-up email sequence" (follow-up)
 
 ## Affiliate Partners
 - ClickFunnels: 40% commission

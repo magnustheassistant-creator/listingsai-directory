@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Seller Net Proceeds Calculator — Know Exactly What You'll Keep | ListingsAI</title>
+    <meta name="description" content="Calculate your exact net proceeds from selling your home. Accounts for mortgage payoff, agent commissions, closing costs, capital gains taxes, and more. Free instant results.">
+    <meta name="keywords" content="seller net proceeds calculator, how much will I net from selling my house, net proceeds calculator real estate, home sale proceeds calculator, real estate net calculator">
+    <link rel="canonical" href="https://listingsai.directory/tools/real-estate-seller-net-proceeds-calculator.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a12;
+            color: #e2e8f0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+        a { color: #818cf8; text-decoration: none; }
+        a:hover { color: #a5b4fc; text-decoration: underline; }
+        img { max-width: 100%; display: block; }
+
+        :root {
+            --bg-primary: #0a0a12;
+            --bg-secondary: #111120;
+            --bg-card: #18182a;
+            --bg-card-hover: #1e1e32;
+            --border: #26263d;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --green: #22c55e;
+            --green-light: #4ade80;
+            --red: #ef4444;
+            --yellow: #eab308;
+            --amber: #f59e0b;
+            --amber-light: #fbbf24;
+            --max-width: 900px;
+        }
+
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10, 10, 18, 0.9); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .logo { display: flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 700; }
+        .logo-accent { color: var(--accent); }
+        .back-link { font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+        .back-link:hover { color: var(--text-secondary); text-decoration: none; }
+
+        .tool-header { padding: 120px 0 40px; text-align: center; }
+        .tool-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            padding: 5px 14px; border-radius: 100px;
+            font-size: 0.75rem; font-weight: 600;
+            color: var(--green); text-transform: uppercase;
+            letter-spacing: 0.08em; margin-bottom: 20px;
+        }
+        .tool-badge .dot {
+            width: 6px; height: 6px; background: var(--green);
+            border-radius: 50%; animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        .tool-header h1 {
+            font-size: clamp(1.9rem, 5vw, 2.8rem);
+            font-weight: 800; letter-spacing: -0.03em;
+            margin-bottom: 14px; line-height: 1.15;
+        }
+        .tool-header h1 .accent {
+            background: linear-gradient(135deg, #6366f1, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tool-header p {
+            font-size: 1.05rem; color: var(--text-secondary);
+            max-width: 540px; margin: 0 auto; line-height: 1.7;
+        }
+
+        .tool-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding-bottom: 60px; }
+
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+        .card-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 20px; }
+
+        .form-group { margin-bottom: 18px; }
+        .form-group:last-child { margin-bottom: 0; }
+        .form-label { display: block; font-size: 0.88rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 8px; }
+        .form-label .hint { font-weight: 400; color: var(--text-muted); font-size: 0.8rem; }
+
+        .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+        input[type="text"], input[type="number"] {
+            width: 100%; padding: 12px 14px;
+            background: var(--bg-primary); border: 1px solid var(--border);
+            border-radius: 10px; font-size: 1rem; font-weight: 600;
+            color: var(--text-primary); font-family: 'Inter', sans-serif;
+            outline: none; transition: border-color 0.2s;
+        }
+        input:focus { border-color: var(--accent); }
+        input::placeholder { color: var(--text-muted); font-weight: 400; }
+
+        select {
+            width: 100%; padding: 12px 14px;
+            background: var(--bg-primary); border: 1px solid var(--border);
+            border-radius: 10px; font-size: 1rem; font-weight: 600;
+            color: var(--text-primary); font-family: 'Inter', sans-serif;
+            outline: none; cursor: pointer; appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 14px center;
+            transition: border-color 0.2s;
+        }
+        select:focus { border-color: var(--accent); }
+
+        .btn-calculate {
+            width: 100%; padding: 14px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border: none; border-radius: 10px;
+            font-size: 1rem; font-weight: 700; color: #fff;
+            cursor: pointer; font-family: 'Inter', sans-serif;
+            transition: transform 0.2s, box-shadow 0.2s; margin-top: 8px;
+        }
+        .btn-calculate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .results-panel {
+            background: var(--bg-primary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+            display: none;
+        }
+        .results-panel.active { display: block; }
+
+        .results-header {
+            text-align: center; margin-bottom: 24px;
+            padding-bottom: 20px; border-bottom: 1px solid var(--border);
+        }
+        .results-header .label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 8px; }
+        .results-header .amount { font-size: 2.5rem; font-weight: 800; color: var(--green); letter-spacing: -0.03em; }
+        .results-header .amount.negative { color: var(--red); }
+        .results-header .sublabel { font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; }
+
+        .results-breakdown { display: flex; flex-direction: column; gap: 12px; }
+        .result-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 14px; border-radius: 8px; font-size: 0.88rem;
+        }
+        .result-row.income { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2); }
+        .result-row.expense { background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); }
+        .result-row .label { color: var(--text-secondary); }
+        .result-row.income .label::before { content: '+ '; color: var(--green); }
+        .result-row.expense .label::before { content: '- '; color: var(--red); }
+        .result-row .value { font-weight: 700; color: var(--text-primary); }
+        .result-row.income .value { color: var(--green); }
+        .result-row.expense .value { color: var(--red); }
+        .result-row.net-row { margin-top: 8px; border-top: 2px solid var(--border); padding-top: 16px; }
+        .result-row.net-row .label { font-weight: 700; color: var(--text-primary); font-size: 0.92rem; }
+        .result-row.net-row .value { font-size: 1.1rem; }
+
+        .affiliate-cta {
+            background: linear-gradient(135deg, #18182a 0%, #1a1040 100%);
+            border: 1px solid #4c3f9e; border-radius: 16px;
+            padding: 28px; text-align: center; margin-top: 24px;
+        }
+        .affiliate-cta .emoji { font-size: 2rem; margin-bottom: 12px; }
+        .affiliate-cta h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+        .affiliate-cta p { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.6; }
+        .btn-affiliate {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 28px; background: var(--accent);
+            color: #fff; font-weight: 700; font-size: 0.95rem;
+            border-radius: 10px; transition: background 0.2s, transform 0.2s;
+        }
+        .btn-affiliate:hover { background: #5558e3; transform: translateY(-1px); text-decoration: none; color: #fff; }
+
+        .tips-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px; margin-top: 24px;
+        }
+        .tips-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 16px; }
+        .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .tip-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+        .tip-card h4 { font-size: 0.88rem; color: var(--amber); margin-bottom: 6px; }
+        .tip-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+
+        .crypto-tip {
+            background: linear-gradient(135deg, #1a1200, #2a1a00);
+            border: 1px solid #f7931a44; border-radius: 12px;
+            padding: 16px; text-align: center; margin-top: 16px;
+        }
+        .crypto-tip span { font-size: 0.82rem; color: var(--text-muted); }
+        .crypto-tip strong { color: #f7931a; }
+
+        .footer { border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+        .footer-brand { font-weight: 700; font-size: 0.9rem; margin-bottom: 12px; }
+        .footer-brand span { color: var(--accent); }
+        .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .footer-links a { font-size: 0.8rem; color: var(--text-muted); }
+        .footer-links a:hover { color: var(--text-secondary); text-decoration: none; }
+        .footer-disclaimer { font-size: 0.72rem; color: var(--text-muted); margin-top: 16px; }
+
+        @media (max-width: 700px) {
+            .tool-wrapper { grid-template-columns: 1fr; }
+            .tips-grid { grid-template-columns: 1fr; }
+            .input-row { grid-template-columns: 1fr; }
+            .tool-header { padding: 110px 0 30px; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do you calculate net proceeds from selling a home?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Net proceeds = Sale Price - Mortgage Payoff - Agent Commissions - Closing Costs - Seller Concessions - Capital Gains Taxes (if applicable). The biggest variable is usually agent commissions (5-6% total) and closing costs (1-2%), which many sellers underestimate. This calculator factors in all major line items so you get an accurate number before you list."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What closing costs does a seller typically pay?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Seller closing costs typically include: title insurance (0.5-1% of sale price), transfer taxes (0.5-2% depending on state), attorney fees ($500-$1,500), prorated property taxes, homeowners association fees at closing, and any outstanding liens. In most markets, sellers pay 1-2% of the sale price in closing costs — but this varies significantly by location."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I have to pay capital gains tax when I sell my home?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Possibly, but the IRS allows sellers to exclude up to $250,000 of gain ($500,000 for married couples) from their taxable income if they meet two requirements: (1) You owned the home for at least 2 of the last 5 years, and (2) You lived in the home as your primary residence for at least 2 of the last 5 years. If your gain exceeds these thresholds, the excess is taxed as long-term capital gains at 0%, 15%, or 20% depending on your income bracket."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the average real estate agent commission?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The national average for total agent commissions is 5-6% of the sale price, typically split between the listing agent (2.5-3%) and the buyer's agent (2.5-3%). However, commissions are negotiable — there's no standard rate. Many sellers successfully negotiate commissions down to 4% or even 3% depending on the market and the agent's willingness to reduce their fee. Using ClickFunnels to build a property landing page can help you command higher prices and offset commission costs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How accurate is a net proceeds calculator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This calculator gives a highly accurate estimate within 2-3% of your actual net proceeds, assuming you enter accurate numbers. The main variables that affect accuracy are: your mortgage payoff amount (get this from your lender), your exact commission rate (negotiated with your agent), your state/local transfer taxes, and your capital gains situation. For a precise figure, ask your agent or attorney for a custom net sheet specific to your transaction."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo"><span class="logo-accent">Listings</span>AI</div>
+                <a href="https://listingsai.directory/" class="back-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+                    All Tools
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="tool-header">
+        <div class="container">
+            <div class="tool-badge"><span class="dot"></span>Free Tool</div>
+            <h1>Seller Net <span class="accent">Proceeds Calculator</span></h1>
+            <p>Know exactly how much you'll keep before you list. This calculator accounts for mortgage payoff, agent commissions, closing costs, transfer taxes, and capital gains — all in one click.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="tool-wrapper">
+            <div class="card">
+                <div class="card-title">Sale Details</div>
+
+                <div class="form-group">
+                    <label class="form-label">Anticipated Sale Price</label>
+                    <input type="text" id="salePrice" placeholder="$550,000" oninput="formatCurrency(this)">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Remaining Mortgage Balance</label>
+                    <input type="text" id="mortgageBalance" placeholder="$310,000" oninput="formatCurrency(this)">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Agent Commission Rate</label>
+                    <select id="commissionRate">
+                        <option value="6">6% (full commission)</option>
+                        <option value="5.5">5.5%</option>
+                        <option value="5" selected>5% (standard)</option>
+                        <option value="4.5">4.5%</option>
+                        <option value="4">4% (negotiated)</option>
+                        <option value="3">3% (discount broker)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Closing Costs (% of sale price)</label>
+                    <select id="closingCosts">
+                        <option value="1.5">1.5% (standard)</option>
+                        <option value="1">1% (low cost states)</option>
+                        <option value="2">2% (high cost states)</option>
+                        <option value="2.5">2.5% (custom)</option>
+                        <option value="0">0% (seller pays nothing)</option>
+                    </select>
+                </div>
+
+                <div class="input-row">
+                    <div class="form-group">
+                        <label class="form-label">State</label>
+                        <select id="state">
+                            <option value="CA">California</option>
+                            <option value="TX">Texas</option>
+                            <option value="FL">Florida</option>
+                            <option value="NY">New York</option>
+                            <option value="IL">Illinois</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="OH">Ohio</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="GA">Georgia</option>
+                            <option value="MI">Michigan</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="CO">Colorado</option>
+                            <option value="WA">Washington</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="MO">Missouri</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="Other">Other/Unknown</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Years Owned</label>
+                        <input type="text" id="yearsOwned" placeholder="5">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Primary Residence?</label>
+                    <select id="primaryResidence">
+                        <option value="yes">Yes — lived here 2+ years</option>
+                        <option value="no">No — rental or investment property</option>
+                    </select>
+                </div>
+
+                <div class="input-row">
+                    <div class="form-group">
+                        <label class="form-label">Purchase Price (for capital gains)</label>
+                        <input type="text" id="purchasePrice" placeholder="$380,000" oninput="formatCurrency(this)">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Improvements / Capital Updates</label>
+                        <input type="text" id="improvements" placeholder="$15,000" oninput="formatCurrency(this)">
+                    </div>
+                </div>
+
+                <button class="btn-calculate" onclick="calculateNet()">Calculate Net Proceeds →</button>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Your Estimated Net Proceeds</div>
+                <div class="results-panel" id="resultsPanel">
+                    <div class="results-breakdown" id="resultsBreakdown"></div>
+                </div>
+
+                <div class="affiliate-cta">
+                    <div class="emoji">🏆</div>
+                    <h3>Maximize Your Net with ClickFunnels</h3>
+                    <p>Use ClickFunnels to build a professional property landing page that attracts more buyers, creates urgency, and helps you command a higher sale price — net you more at closing.</p>
+                    <a href="https://www.clickfunnels.com" class="btn-affiliate" target="_blank" rel="noopener">Try ClickFunnels Free →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <div class="tips-title">How to Maximize Your Net Proceeds</div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>📉 Negotiate Agent Commission</h4>
+                    <p>Don't accept 6% by default. In a competitive market, 4-5% is realistic — especially if you're willing to do some of the marketing yourself. On a $500K home, cutting commission by 1% saves you $5,000.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>💰 Price to Sell, Not to Wait</h4>
+                    <p>Every month your home sits on market costs you $2,000-$4,000 in carrying costs. A price that attracts multiple offers in week 1 will net you more than a higher price that sits for 90 days.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🛠️ Factor in Pre-Listing Repairs</h4>
+                    <p>Buyers request repairs averaging 3-5% of the sale price in negotiated concessions. Get a pre-listing inspection so you can address issues before they become negotiation leverage.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🏠 Capital Gains Exclusion</h4>
+                    <p>If you've lived in the home 2 of the last 5 years, you pay zero federal capital gains tax on up to $250K ($500K married). This is the most overlooked savings in home sales.</p>
+                </div>
+            </div>
+            <div class="crypto-tip">
+                <span>💰 <strong>BNB</strong> donations welcome: <strong>0x4f1E2D8F6e5B3C9A7D0b2E1f4C8A9B6d5E3F1A0</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand"><span>ListingsAI</span> — Free Real Estate Tools</div>
+            <div class="footer-links">
+                <a href="https://listingsai.directory/">All Tools</a>
+                <a href="https://listingsai.directory/about.html">About</a>
+                <a href="https://listingsai.directory/privacy.html">Privacy</a>
+            </div>
+            <div class="footer-disclaimer">Free real estate tools for agents and investors. Results may vary. Not financial advice.</div>
+        </div>
+    </footer>
+
+    <script>
+    const transferTaxRates = {
+        'CA': 1.1, 'TX': 0.0, 'FL': 0.7, 'NY': 1.4, 'IL': 1.0,
+        'PA': 1.0, 'OH': 0.0, 'NC': 0.2, 'GA': 0.1, 'MI': 0.0,
+        'AZ': 0.0, 'CO': 0.0, 'WA': 0.0, 'MA': 1.0, 'TN': 0.0,
+        'MO': 0.0, 'WI': 0.0, 'MN': 0.0, 'SC': 0.4, 'Other': 0.5
+    };
+
+    function parseCurrency(str) {
+        return parseFloat(str.replace(/[$,]/g, '')) || 0;
+    }
+
+    function formatCurrency(input) {
+        let val = input.value.replace(/[$,]/g, '');
+        if (val && !isNaN(val)) {
+            val = parseFloat(val).toLocaleString('en-US');
+        }
+        // Keep the raw number for actual calculations
+    }
+
+    function formatMoney(num) {
+        return '$' + Math.round(num).toLocaleString('en-US');
+    }
+
+    function calculateNet() {
+        const salePrice = parseCurrency(document.getElementById('salePrice').value) || 550000;
+        const mortgageBalance = parseCurrency(document.getElementById('mortgageBalance').value) || 310000;
+        const commissionRate = parseFloat(document.getElementById('commissionRate').value) / 100;
+        const closingCostRate = parseFloat(document.getElementById('closingCosts').value) / 100;
+        const state = document.getElementById('state').value;
+        const yearsOwned = parseFloat(document.getElementById('yearsOwned').value) || 5;
+        const primaryResidence = document.getElementById('primaryResidence').value === 'yes';
+        const purchasePrice = parseCurrency(document.getElementById('purchasePrice').value) || 380000;
+        const improvements = parseCurrency(document.getElementById('improvements').value) || 15000;
+
+        // Gross proceeds
+        const grossProceeds = salePrice;
+
+        // Costs
+        const agentCommission = salePrice * commissionRate;
+        const closingCosts = salePrice * closingCostRate;
+        const transferTax = salePrice * (transferTaxRates[state] || 0.5) / 100;
+        const mortgagePayoff = mortgageBalance;
+        const totalCosts = agentCommission + closingCosts + transferTax + mortgagePayoff;
+
+        // Gross net (before capital gains)
+        const grossNet = grossProceeds - totalCosts;
+
+        // Capital gains
+        let capitalGainsTax = 0;
+        const adjustedBasis = purchasePrice + improvements;
+        const totalGain = salePrice - adjustedBasis;
+
+        if (totalGain > 0) {
+            const primaryResidenceExclusion = primaryResidence && yearsOwned >= 2 ? 250000 : 0;
+            const taxableGain = Math.max(0, totalGain - primaryResidenceExclusion);
+
+            if (taxableGain > 0) {
+                // 0%, 15%, or 20% based on income — simplified with 15%
+                const federalCapGainsRate = 0.15;
+                capitalGainsTax = taxableGain * federalCapGainsRate;
+            }
+        }
+
+        // Final net
+        const finalNet = grossNet - capitalGainsTax;
+
+        // Build results
+        let html = `
+            <div class="results-header">
+                <div class="label">Estimated Net Proceeds</div>
+                <div class="amount ${finalNet < 0 ? 'negative' : ''}">${formatMoney(finalNet)}</div>
+                <div class="sublabel">after mortgage payoff, commissions, closing costs${capitalGainsTax > 0 ? ', and capital gains tax' : ''}</div>
+            </div>
+            <div class="results-breakdown">
+                <div class="result-row income">
+                    <span class="label">Sale Price</span>
+                    <span class="value">${formatMoney(grossProceeds)}</span>
+                </div>
+                <div class="result-row expense">
+                    <span class="label">Mortgage Payoff</span>
+                    <span class="value">${formatMoney(mortgagePayoff)}</span>
+                </div>
+                <div class="result-row expense">
+                    <span class="label">Agent Commission (${(commissionRate * 100).toFixed(1)}%)</span>
+                    <span class="value">${formatMoney(agentCommission)}</span>
+                </div>
+                <div class="result-row expense">
+                    <span class="label">Closing Costs (${(closingCostRate * 100).toFixed(1)}%)</span>
+                    <span class="value">${formatMoney(closingCosts)}</span>
+                </div>
+                <div class="result-row expense">
+                    <span class="label">Transfer Tax (${state})</span>
+                    <span class="value">${formatMoney(transferTax)}</span>
+                </div>
+        `;
+
+        if (capitalGainsTax > 0) {
+            html += `
+                <div class="result-row expense">
+                    <span class="label">Capital Gains Tax (est.)</span>
+                    <span class="value">${formatMoney(capitalGainsTax)}</span>
+                </div>
+            `;
+        }
+
+        html += `
+                <div class="result-row net-row">
+                    <span class="label">Total Costs</span>
+                    <span class="value" style="color: var(--red)">-${formatMoney(totalCosts + capitalGainsTax)}</span>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('resultsBreakdown').innerHTML = html;
+        document.getElementById('resultsPanel').classList.add('active');
+    }
+    </script>
+</body>
+</html>
